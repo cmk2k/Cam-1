@@ -4,9 +4,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = target.offsetTop - navbarHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
         }
     });
@@ -18,34 +20,42 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
 
     // Get form values
     const formData = new FormData(this);
+    const data = {
+        company: formData.get('name'),
+        contact: formData.get('contact'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        message: formData.get('message')
+    };
 
-    // Show success message (you can customize this)
-    alert('Thank you for your message! We will get back to you soon.');
+    // Show success message
+    alert('Thank you for your inquiry! Our team will contact you within 24 hours.');
 
     // Reset form
     this.reset();
+
+    // Here you would typically send the data to your backend
+    console.log('Form submission:', data);
 });
 
-// Add scroll effect to navbar
-let lastScroll = 0;
+// Add subtle scroll effect to navbar
 const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
 
-    if (currentScroll > 100) {
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
+    if (currentScroll > 50) {
+        navbar.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.1)';
     } else {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        navbar.style.boxShadow = 'none';
+        navbar.style.borderBottom = '1px solid #e5e7eb';
     }
-
-    lastScroll = currentScroll;
 });
 
-// Add animation to elements when they come into view
+// Add subtle fade-in animation for product cards
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.15,
+    rootMargin: '0px 0px -30px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -57,10 +67,10 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe feature cards
-document.querySelectorAll('.feature-card').forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-    observer.observe(card);
+// Observe product and service cards
+document.querySelectorAll('.product-card, .service-item, .industry-item').forEach((element, index) => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(15px)';
+    element.style.transition = `opacity 0.5s ease ${index * 0.05}s, transform 0.5s ease ${index * 0.05}s`;
+    observer.observe(element);
 });
