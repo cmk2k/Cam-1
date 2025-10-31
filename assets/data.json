@@ -1,0 +1,160 @@
+{
+  "calculators": [
+    {
+      "id": "temp-cf",
+      "title": "Temperature °C↔°F",
+      "inputs": ["value", "unit"],
+      "outputs": ["convertedValue", "convertedUnit"],
+      "equation": "C = 0.56 × (F – 32); F = (1.8 × C) + 32",
+      "units": "°C, °F",
+      "notes": "Use linear formulas; show both.",
+      "sourcePage": "i3"
+    },
+    {
+      "id": "hp-torque",
+      "title": "HP ↔ Torque",
+      "inputs": ["rpm", "hp OR torque"],
+      "outputs": ["hp OR torque"],
+      "equation": "hp = (Torque(in-lb) × rpm) / 63025; Torque(in-lb) = (63025 × hp)/rpm",
+      "units": "hp, in-lb, rpm",
+      "notes": "Also show ft-lb version with 5252.",
+      "sourcePage": "i5–i6"
+    },
+    {
+      "id": "pump-hp",
+      "title": "Pump HP",
+      "inputs": ["GPM", "psi", "efficiency"],
+      "outputs": ["hp"],
+      "equation": "hp = (GPM × psi) / (1714 × efficiency)",
+      "units": "GPM, psi, hp, efficiency",
+      "notes": "Default efficiency 0.85; editable.",
+      "sourcePage": "i5–i6"
+    },
+    {
+      "id": "cv-helper",
+      "title": "Valve Cv Helper",
+      "inputs": ["flowRate", "pressureDrop", "specificGravity"],
+      "outputs": ["cv"],
+      "equation": "Cv = Q × sqrt(SG / ΔP)",
+      "units": "GPM, psi, Cv",
+      "notes": "Downstream pressure should be ~53% of upstream for best control. This is the 53% rule.",
+      "sourcePage": "i7"
+    }
+  ],
+  "bearingFailureModes": [
+    {
+      "id": "spalling",
+      "name": "Spalling",
+      "description": "Surface fatigue causing material removal",
+      "causes": ["Overloading", "Contamination", "Improper lubrication", "Misalignment"],
+      "actions": ["Check load capacity", "Inspect seals", "Verify lubrication schedule", "Check alignment"],
+      "imagePlaceholder": "spalling.png"
+    },
+    {
+      "id": "cracking",
+      "name": "Cracking",
+      "description": "Fractures in races or rolling elements",
+      "causes": ["Shock loads", "Excessive interference fit", "Thermal stress", "Material defects"],
+      "actions": ["Review loading conditions", "Check mounting tolerances", "Inspect for overheating", "Replace with quality bearing"],
+      "imagePlaceholder": "cracking.png"
+    },
+    {
+      "id": "wear",
+      "name": "Abrasive Wear",
+      "description": "Material loss from foreign particles",
+      "causes": ["Contamination", "Failed seals", "Inadequate filtration", "Environmental exposure"],
+      "actions": ["Improve sealing", "Check filtration system", "Clean environment", "Replace bearing"],
+      "imagePlaceholder": "wear.png"
+    },
+    {
+      "id": "corrosion",
+      "name": "Corrosion",
+      "description": "Chemical or electrochemical degradation",
+      "causes": ["Moisture", "Acidic environment", "Fretting", "Improper storage"],
+      "actions": ["Improve sealing", "Use corrosion-resistant bearing", "Check for shaft currents", "Store properly"],
+      "imagePlaceholder": "corrosion.png"
+    },
+    {
+      "id": "brinelling",
+      "name": "Brinelling",
+      "description": "Permanent indentations from static overload",
+      "causes": ["Impact during installation", "Vibration during transport", "Excessive static load", "Hammering"],
+      "actions": ["Use proper mounting tools", "Secure during transport", "Verify load ratings", "Replace bearing"],
+      "imagePlaceholder": "brinelling.png"
+    },
+    {
+      "id": "fluting",
+      "name": "Electrical Fluting",
+      "description": "Washboard pattern from electrical arcing",
+      "causes": ["Stray currents", "Poor grounding", "VFD operation", "Static discharge"],
+      "actions": ["Install shaft grounding brush", "Check electrical system", "Use insulated bearing", "Improve grounding"],
+      "imagePlaceholder": "fluting.png"
+    },
+    {
+      "id": "false-brinelling",
+      "name": "False Brinelling",
+      "description": "Wear marks from vibration without rotation",
+      "causes": ["Vibration during transport", "Machinery shutdown vibration", "Inadequate preload", "External vibration"],
+      "actions": ["Isolate from vibration", "Apply adequate preload", "Use during transport locks", "Start equipment regularly"],
+      "imagePlaceholder": "false-brinelling.png"
+    }
+  ],
+  "tables": [
+    {
+      "id": "pressure-conversions",
+      "title": "Pressure Unit Conversions",
+      "headers": ["From", "To", "Multiply By"],
+      "rows": [
+        ["psi", "kPa", "6.895"],
+        ["kPa", "psi", "0.145"],
+        ["bar", "psi", "14.504"],
+        ["psi", "bar", "0.06895"]
+      ],
+      "sourcePage": "i4"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Horsepower",
+      "definition": "Rate of doing work; 33,000 lb-ft/min. One horsepower equals 550 ft-lb/s or 746 watts.",
+      "sourcePage": "i5",
+      "relatedTerms": ["Torque", "Work", "Power"]
+    },
+    {
+      "term": "Torque",
+      "definition": "Turning moment; force × radius. Measured in lb-ft or lb-in. Creates rotational motion.",
+      "sourcePage": "i5–i6",
+      "relatedTerms": ["Horsepower", "Force"]
+    },
+    {
+      "term": "Cv (Flow Coefficient)",
+      "definition": "Valve flow coefficient. GPM of water at 60°F with 1 psi pressure drop. Used to size control valves.",
+      "sourcePage": "i7",
+      "relatedTerms": ["Flow Rate", "Pressure Drop"]
+    },
+    {
+      "term": "GPM",
+      "definition": "Gallons Per Minute. Common flow rate measurement for hydraulic and process systems.",
+      "sourcePage": "i4",
+      "relatedTerms": ["Flow Rate", "Cv"]
+    },
+    {
+      "term": "Specific Gravity",
+      "definition": "Ratio of fluid density to water density. Water = 1.0. Used in flow calculations.",
+      "sourcePage": "i7",
+      "relatedTerms": ["Density", "Cv"]
+    },
+    {
+      "term": "Efficiency",
+      "definition": "Ratio of output power to input power. Expressed as decimal (0.85) or percentage (85%). Accounts for losses.",
+      "sourcePage": "i5–i6",
+      "relatedTerms": ["Horsepower", "Power"]
+    },
+    {
+      "term": "Pressure Drop",
+      "definition": "Difference in pressure between two points in a system. Critical for sizing valves and pipes. Measured in psi or bar.",
+      "sourcePage": "i7",
+      "relatedTerms": ["Cv", "Pressure"]
+    }
+  ]
+}
