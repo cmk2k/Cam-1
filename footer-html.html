@@ -1,0 +1,284 @@
+<!-- FOOTER HTML - Paste this before closing </body> tag or in Footer HTML area -->
+
+<script>
+// ===================================
+// STICKY HEADER ON SCROLL
+// ===================================
+
+const header = document.getElementById('header');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    // Add shadow when scrolled
+    if (currentScroll > 10) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+
+    lastScroll = currentScroll;
+});
+
+// ===================================
+// SMOOTH SCROLLING FOR ANCHOR LINKS
+// ===================================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            const headerOffset = 100;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// ===================================
+// CTA BUTTON HANDLERS
+// ===================================
+
+// Primary CTA - Explore Categories
+document.querySelectorAll('.btn-primary').forEach(button => {
+    button.addEventListener('click', () => {
+        console.log('Explore Categories clicked');
+        // Add your navigation logic here
+        // window.location.href = '/categories';
+
+        // For demo - smooth scroll to a categories section if it exists
+        const categoriesSection = document.querySelector('#categories');
+        if (categoriesSection) {
+            categoriesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+
+// Secondary CTA - Request a Quote
+document.querySelectorAll('.btn-secondary, .btn-quote-header').forEach(button => {
+    button.addEventListener('click', () => {
+        console.log('Request a Quote clicked');
+        // Add your quote modal/form logic here
+        showQuoteModal();
+    });
+});
+
+// Floating Contact Button
+const floatingContact = document.querySelector('.floating-contact');
+if (floatingContact) {
+    floatingContact.addEventListener('click', () => {
+        console.log('Chat with Expert clicked');
+        // Add your chat widget logic here
+        initiateChatWidget();
+    });
+}
+
+// ===================================
+// MODAL/FORM HANDLERS (PLACEHOLDERS)
+// ===================================
+
+function showQuoteModal() {
+    // Placeholder for quote modal functionality
+    // Replace with your actual form integration
+    alert('Quote form would open here. Integrate with your form system.');
+
+    // Examples for different systems:
+    // HubSpot Form: window.hbspt.forms.create({ ... });
+    // Custom Modal: document.getElementById('quoteModal').style.display = 'block';
+    // External Page: window.location.href = '/request-quote';
+}
+
+function initiateChatWidget() {
+    // Placeholder for chat widget functionality
+    // Replace with your actual chat integration
+    alert('Chat widget would open here. Integrate with your chat system.');
+
+    // Examples for different chat systems:
+    // Intercom: window.Intercom('show');
+    // Drift: window.drift.api.openChat();
+    // LiveChat: window.LC_API.open_chat_window();
+    // Zendesk: window.zE('messenger', 'open');
+}
+
+// ===================================
+// ANIMATED COUNTER FOR STATS
+// ===================================
+
+function animateCounter(element, target, duration = 2000) {
+    const start = 0;
+    const increment = target / (duration / 16);
+    let current = start;
+
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = formatStatValue(target);
+            clearInterval(timer);
+        } else {
+            element.textContent = formatStatValue(Math.floor(current));
+        }
+    }, 16);
+}
+
+function formatStatValue(value) {
+    if (value >= 1000) {
+        return (value / 1000).toFixed(1) + 'K+';
+    }
+    return value.toString();
+}
+
+// ===================================
+// INTERSECTION OBSERVER FOR ANIMATIONS
+// ===================================
+
+const observerOptions = {
+    threshold: 0.2,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+
+            // Animate stat counters when they come into view
+            if (entry.target.classList.contains('stat-value')) {
+                const text = entry.target.textContent;
+                const number = parseFloat(text.replace(/[^0-9.]/g, ''));
+
+                if (!isNaN(number) && !entry.target.dataset.animated) {
+                    entry.target.dataset.animated = 'true';
+                    animateCounter(entry.target, number);
+                }
+            }
+        }
+    });
+}, observerOptions);
+
+// Observe hero stats
+document.querySelectorAll('.stat-value').forEach(stat => {
+    observer.observe(stat);
+});
+
+// Observe data widgets for animation
+document.querySelectorAll('.data-widget').forEach(widget => {
+    observer.observe(widget);
+});
+
+// ===================================
+// RPM GAUGE ANIMATION
+// ===================================
+
+function animateRPM() {
+    const rpmCircle = document.querySelector('.rpm-circle circle:last-child');
+    if (!rpmCircle) return;
+
+    const circumference = 2 * Math.PI * 40; // radius = 40
+    const targetRPM = 3600;
+    const maxRPM = 5000;
+    const percentage = targetRPM / maxRPM;
+    const offset = circumference * (1 - percentage);
+
+    // Animate the stroke-dashoffset
+    rpmCircle.style.strokeDashoffset = offset;
+}
+
+// Trigger RPM animation on page load
+window.addEventListener('load', () => {
+    setTimeout(animateRPM, 500);
+});
+
+// ===================================
+// KEYBOARD ACCESSIBILITY
+// ===================================
+
+// Add keyboard navigation for dropdowns
+document.querySelectorAll('.nav-item').forEach(item => {
+    const link = item.querySelector('.nav-link');
+    const dropdown = item.querySelector('.dropdown');
+
+    if (dropdown) {
+        link.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            }
+        });
+
+        // Close dropdown on Escape
+        dropdown.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                dropdown.style.display = 'none';
+                link.focus();
+            }
+        });
+    }
+});
+
+// ===================================
+// PERFORMANCE OPTIMIZATION
+// ===================================
+
+// Debounce function for scroll events
+function debounce(func, wait = 10) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Apply debounce to scroll handler for better performance
+const debouncedScroll = debounce(() => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > 10) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+}, 10);
+
+window.addEventListener('scroll', debouncedScroll);
+
+// ===================================
+// CONSOLE LOGGING (DEV ONLY - Remove in production)
+// ===================================
+
+console.log('%c🔧 Applied Industrial Bearings', 'font-size: 20px; font-weight: bold; color: #1E3A8A;');
+console.log('%cPowering Motion with Precision', 'font-size: 14px; color: #6B7280;');
+console.log('Hero module loaded successfully ✓');
+
+// ===================================
+// PRELOAD CRITICAL RESOURCES
+// ===================================
+
+// Preload images for faster rendering
+window.addEventListener('load', () => {
+    const criticalImages = [
+        // Add your actual bearing images here
+        // '/images/hero-bearing.jpg',
+        // '/images/machinery.jpg'
+    ];
+
+    criticalImages.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+});
+</script>
