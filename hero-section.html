@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- HEAD HTML - Paste this in your page <head> section or Header HTML area -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied Industrial Bearings - Powering Motion with Precision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+    /* ===================================
+       RESET & BASE STYLES
+       =================================== */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        /* Primary Colors */
+        --primary-blue: #1E3A8A;
+        --primary-blue-dark: #1E40AF;
+        --primary-blue-light: #3B82F6;
+
+        /* Accent Colors */
+        --accent-orange: #FF6B35;
+        --accent-orange-dark: #E55A2B;
+        --accent-yellow: #FFA500;
+
+        /* Neutrals */
+        --gray-900: #1F2937;
+        --gray-800: #374151;
+        --gray-700: #4B5563;
+        --gray-600: #6B7280;
+        --gray-500: #9CA3AF;
+        --gray-400: #D1D5DB;
+        --gray-300: #E5E7EB;
+        --gray-200: #F3F4F6;
+        --gray-100: #F9FAFB;
+        --white: #FFFFFF;
+
+        /* Typography */
+        --font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+        /* Spacing */
+        --container-max: 1280px;
+        --spacing-xs: 0.5rem;
+        --spacing-sm: 1rem;
+        --spacing-md: 1.5rem;
+        --spacing-lg: 2rem;
+        --spacing-xl: 3rem;
+        --spacing-2xl: 4rem;
+
+        /* Transitions */
+        --transition-fast: 150ms ease-in-out;
+        --transition-medium: 300ms ease-in-out;
+        --transition-slow: 500ms ease-in-out;
+    }
+
+    body {
+        font-family: var(--font-primary);
+        color: var(--gray-800);
+        background: var(--white);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===================================
+       HERO SECTION
+       =================================== */
+
+    .hero {
+        margin-top: 0;
+        background: linear-gradient(135deg, #F9FAFB 0%, #E5E7EB 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-container {
+        max-width: var(--container-max);
+        margin: 0 auto;
+        padding: 4rem 2rem 6rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .hero-content {
+        z-index: 2;
+    }
+
+    .hero-headline {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.1;
+        color: var(--gray-900);
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.02em;
+    }
+
+    .hero-subheadline {
+        font-size: 1.25rem;
+        line-height: 1.7;
+        color: var(--gray-600);
+        margin-bottom: 2.5rem;
+        max-width: 540px;
+    }
+
+    .hero-cta-group {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .btn-primary {
+        background: var(--primary-blue);
+        color: var(--white);
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 700;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+        box-shadow: 0 4px 14px rgba(30, 58, 138, 0.3);
+        font-family: var(--font-primary);
+    }
+
+    .btn-primary:hover {
+        background: var(--primary-blue-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
+    }
+
+    .btn-secondary {
+        background: transparent;
+        color: var(--gray-700);
+        border: 2px solid var(--gray-400);
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 700;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+        font-family: var(--font-primary);
+    }
+
+    .btn-secondary:hover {
+        border-color: var(--primary-blue);
+        color: var(--primary-blue);
+        background: rgba(30, 58, 138, 0.05);
+        transform: translateY(-2px);
+    }
+
+    /* Hero Stats */
+    .hero-stats {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .stat-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--gray-900);
+        line-height: 1;
+    }
+
+    .stat-label {
+        font-size: 0.875rem;
+        color: var(--gray-600);
+        margin-top: 0.25rem;
+    }
+
+    /* ===================================
+       HERO IMAGE SECTION
+       =================================== */
+
+    .hero-image {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+    }
+
+    .hero-image-placeholder {
+        width: 100%;
+        max-width: 600px;
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+    }
+
+    .hero-image-placeholder svg {
+        width: 100%;
+        height: auto;
+    }
+
+    .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+    }
+
+    /* Data Widgets */
+    .data-widget {
+        position: absolute;
+        background: var(--white);
+        border-radius: 12px;
+        padding: 1rem 1.25rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    .data-widget:first-child {
+        top: 10%;
+        left: -5%;
+    }
+
+    .rpm-widget {
+        bottom: 15%;
+        right: -8%;
+        animation-delay: 1.5s;
+    }
+
+    .widget-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.75rem;
+    }
+
+    .widget-title {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--gray-600);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .widget-status {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #10B981;
+    }
+
+    .widget-status.active {
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+    }
+
+    .widget-chart {
+        display: flex;
+        gap: 0.5rem;
+        align-items: flex-end;
+        height: 60px;
+        margin-bottom: 0.5rem;
+    }
+
+    .chart-bar {
+        flex: 1;
+        background: linear-gradient(180deg, var(--accent-orange) 0%, var(--accent-orange-dark) 100%);
+        border-radius: 4px;
+        min-height: 20%;
+        animation: grow 1s ease-out;
+    }
+
+    @keyframes grow {
+        from {
+            height: 0;
+        }
+    }
+
+    .widget-value {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: var(--gray-900);
+    }
+
+    /* RPM Widget */
+    .rpm-circle {
+        width: 100px;
+        height: 100px;
+        position: relative;
+    }
+
+    .rpm-circle svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .rpm-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .rpm-value {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--gray-900);
+        line-height: 1;
+    }
+
+    .rpm-label {
+        display: block;
+        font-size: 0.75rem;
+        color: var(--gray-600);
+        margin-top: 0.25rem;
+        font-weight: 700;
+    }
+
+    /* Hero Divider */
+    .hero-divider {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 80px;
+        background: var(--white);
+        clip-path: polygon(0 50%, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    /* ===================================
+       FLOATING CONTACT BUTTON
+       =================================== */
+
+    .floating-contact {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: var(--primary-blue);
+        color: var(--white);
+        border: none;
+        padding: 1rem 1.5rem;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.9375rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
+        transition: all var(--transition-medium);
+        z-index: 999;
+        font-family: var(--font-primary);
+    }
+
+    .floating-contact:hover {
+        background: var(--primary-blue-dark);
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 12px 28px rgba(30, 58, 138, 0.4);
+    }
+
+    .floating-contact svg {
+        flex-shrink: 0;
+    }
+
+    /* ===================================
+       RESPONSIVE DESIGN
+       =================================== */
+
+    @media (max-width: 1024px) {
+        .hero-container {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            padding: 3rem 2rem 4rem;
+        }
+
+        .hero-headline {
+            font-size: 2.75rem;
+        }
+
+        .hero-image {
+            order: -1;
+        }
+
+        .data-widget:first-child {
+            left: 5%;
+        }
+
+        .rpm-widget {
+            right: 5%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-headline {
+            font-size: 2.25rem;
+        }
+
+        .hero-subheadline {
+            font-size: 1.125rem;
+        }
+
+        .hero-cta-group {
+            flex-direction: column;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero-stats {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .floating-contact span {
+            display: none;
+        }
+
+        .floating-contact {
+            padding: 1rem;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-headline {
+            font-size: 1.875rem;
+        }
+
+        .data-widget {
+            padding: 0.75rem 1rem;
+            scale: 0.85;
+        }
+
+        .hero-image-placeholder {
+            max-width: 400px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- BODY HTML / RICH TEXT - Paste this in your page body or Rich Text module -->
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-headline">Powering Motion with Precision Bearings</h1>
+                <p class="hero-subheadline">Explore our full range of ball, roller, mounted, and specialty bearings for every industrial application.</p>
+                <div class="hero-cta-group">
+                    <button class="btn-primary">Explore Categories</button>
+                    <button class="btn-secondary">Request a Quote</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <circle cx="16" cy="16" r="14" stroke="#FF6B35" stroke-width="2"></circle>
+                                <path d="M16 8V16L22 19" stroke="#FF6B35" stroke-width="2" stroke-linecap="round"></path>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value">99.8%</span>
+                            <span class="stat-label">Uptime</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <rect x="6" y="12" width="20" height="14" stroke="#FF6B35" stroke-width="2" rx="2"></rect>
+                                <path d="M12 12V8C12 6.89543 12.8954 6 14 6H18C19.1046 6 20 6.89543 20 8V12" stroke="#FF6B35" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value">50K+</span>
+                            <span class="stat-label">SKUs</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M16 4L18.5 11.5L26 14L18.5 16.5L16 24L13.5 16.5L6 14L13.5 11.5L16 4Z" stroke="#FF6B35" stroke-width="2" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value">24/7</span>
+                            <span class="stat-label">Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-overlay">
+                    <div class="data-widget">
+                        <div class="widget-header">
+                            <span class="widget-title">Load Capacity</span>
+                            <span class="widget-status active"></span>
+                        </div>
+                        <div class="widget-chart">
+                            <div class="chart-bar" style="height: 60%;"></div>
+                            <div class="chart-bar" style="height: 85%;"></div>
+                            <div class="chart-bar" style="height: 70%;"></div>
+                            <div class="chart-bar" style="height: 95%;"></div>
+                        </div>
+                        <span class="widget-value">18,500 N</span>
+                    </div>
+                    <div class="data-widget rpm-widget">
+                        <div class="rpm-circle">
+                            <svg viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="40" stroke="#e5e7eb" stroke-width="8" fill="none"></circle>
+                                <circle cx="50" cy="50" r="40" stroke="#FF6B35" stroke-width="8" fill="none" stroke-dasharray="251.2" stroke-dashoffset="62.8" transform="rotate(-90 50 50)" style="stroke-dashoffset: 70.3717;"></circle>
+                            </svg>
+                            <div class="rpm-content">
+                                <span class="rpm-value">3,600</span>
+                                <span class="rpm-label">RPM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Placeholder for bearing image - replace with actual image -->
+                <div class="hero-image-placeholder">
+                    <svg viewBox="0 0 600 500" fill="none">
+                        <!-- Outer bearing ring -->
+                        <circle cx="300" cy="250" r="180" stroke="#4A5568" stroke-width="4" fill="#718096" opacity="0.1"></circle>
+                        <circle cx="300" cy="250" r="180" stroke="#2D3748" stroke-width="12" fill="none"></circle>
+                        <!-- Inner bearing ring -->
+                        <circle cx="300" cy="250" r="120" stroke="#2D3748" stroke-width="12" fill="none"></circle>
+                        <circle cx="300" cy="250" r="120" stroke="#4A5568" stroke-width="4" fill="#718096" opacity="0.1"></circle>
+                        <!-- Ball bearings -->
+                        <circle cx="300" cy="100" r="25" fill="#4A5568"></circle>
+                        <circle cx="420" cy="180" r="25" fill="#4A5568"></circle>
+                        <circle cx="420" cy="320" r="25" fill="#4A5568"></circle>
+                        <circle cx="300" cy="400" r="25" fill="#4A5568"></circle>
+                        <circle cx="180" cy="320" r="25" fill="#4A5568"></circle>
+                        <circle cx="180" cy="180" r="25" fill="#4A5568"></circle>
+                        <!-- Highlights -->
+                        <circle cx="295" cy="95" r="8" fill="#E2E8F0" opacity="0.6"></circle>
+                        <circle cx="415" cy="175" r="8" fill="#E2E8F0" opacity="0.6"></circle>
+                        <circle cx="415" cy="315" r="8" fill="#E2E8F0" opacity="0.6"></circle>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <!-- Angled divider -->
+        <div class="hero-divider"></div>
+    </section>
+
+    <!-- Floating Contact Button -->
+    <button class="floating-contact" aria-label="Chat with an expert">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <span>Chat with an Expert</span>
+    </button>
+
+    <!-- FOOTER HTML - Paste this before closing </body> tag or in Footer HTML area -->
+
+    <script>
+    // ===================================
+    // SMOOTH SCROLLING FOR ANCHOR LINKS
+    // ===================================
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                const headerOffset = 20;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // ===================================
+    // CTA BUTTON HANDLERS
+    // ===================================
+
+    // Primary CTA - Explore Categories
+    document.querySelectorAll('.btn-primary').forEach(button => {
+        button.addEventListener('click', () => {
+            console.log('Explore Categories clicked');
+            // Add your navigation logic here
+            // window.location.href = '/categories';
+
+            // For demo - smooth scroll to a categories section if it exists
+            const categoriesSection = document.querySelector('#categories');
+            if (categoriesSection) {
+                categoriesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Secondary CTA - Request a Quote
+    document.querySelectorAll('.btn-secondary').forEach(button => {
+        button.addEventListener('click', () => {
+            console.log('Request a Quote clicked');
+            // Add your quote modal/form logic here
+            showQuoteModal();
+        });
+    });
+
+    // Floating Contact Button
+    const floatingContact = document.querySelector('.floating-contact');
+    if (floatingContact) {
+        floatingContact.addEventListener('click', () => {
+            console.log('Chat with Expert clicked');
+            // Add your chat widget logic here
+            initiateChatWidget();
+        });
+    }
+
+    // ===================================
+    // MODAL/FORM HANDLERS (PLACEHOLDERS)
+    // ===================================
+
+    function showQuoteModal() {
+        // Placeholder for quote modal functionality
+        // Replace with your actual form integration
+        alert('Quote form would open here. Integrate with your form system.');
+
+        // Examples for different systems:
+        // HubSpot Form: window.hbspt.forms.create({ ... });
+        // Custom Modal: document.getElementById('quoteModal').style.display = 'block';
+        // External Page: window.location.href = '/request-quote';
+    }
+
+    function initiateChatWidget() {
+        // Placeholder for chat widget functionality
+        // Replace with your actual chat integration
+        alert('Chat widget would open here. Integrate with your chat system.');
+
+        // Examples for different chat systems:
+        // Intercom: window.Intercom('show');
+        // Drift: window.drift.api.openChat();
+        // LiveChat: window.LC_API.open_chat_window();
+        // Zendesk: window.zE('messenger', 'open');
+    }
+
+    // ===================================
+    // ANIMATED COUNTER FOR STATS
+    // ===================================
+
+    function animateCounter(element, target, duration = 2000) {
+        const start = 0;
+        const increment = target / (duration / 16);
+        let current = start;
+
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = formatStatValue(target);
+                clearInterval(timer);
+            } else {
+                element.textContent = formatStatValue(Math.floor(current));
+            }
+        }, 16);
+    }
+
+    function formatStatValue(value) {
+        if (value >= 1000) {
+            return (value / 1000).toFixed(1) + 'K+';
+        }
+        return value.toString();
+    }
+
+    // ===================================
+    // INTERSECTION OBSERVER FOR ANIMATIONS
+    // ===================================
+
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+
+                // Animate stat counters when they come into view
+                if (entry.target.classList.contains('stat-value')) {
+                    const text = entry.target.textContent;
+                    const number = parseFloat(text.replace(/[^0-9.]/g, ''));
+
+                    if (!isNaN(number) && !entry.target.dataset.animated) {
+                        entry.target.dataset.animated = 'true';
+                        animateCounter(entry.target, number);
+                    }
+                }
+            }
+        });
+    }, observerOptions);
+
+    // Observe hero stats
+    document.querySelectorAll('.stat-value').forEach(stat => {
+        observer.observe(stat);
+    });
+
+    // Observe data widgets for animation
+    document.querySelectorAll('.data-widget').forEach(widget => {
+        observer.observe(widget);
+    });
+
+    // ===================================
+    // RPM GAUGE ANIMATION
+    // ===================================
+
+    function animateRPM() {
+        const rpmCircle = document.querySelector('.rpm-circle circle:last-child');
+        if (!rpmCircle) return;
+
+        const circumference = 2 * Math.PI * 40; // radius = 40
+        const targetRPM = 3600;
+        const maxRPM = 5000;
+        const percentage = targetRPM / maxRPM;
+        const offset = circumference * (1 - percentage);
+
+        // Animate the stroke-dashoffset
+        rpmCircle.style.strokeDashoffset = offset;
+    }
+
+    // Trigger RPM animation on page load
+    window.addEventListener('load', () => {
+        setTimeout(animateRPM, 500);
+    });
+
+    // ===================================
+    // CONSOLE LOGGING (DEV ONLY - Remove in production)
+    // ===================================
+
+    console.log('%c🔧 Applied Industrial Bearings', 'font-size: 20px; font-weight: bold; color: #1E3A8A;');
+    console.log('%cPowering Motion with Precision', 'font-size: 14px; color: #6B7280;');
+    console.log('Hero module loaded successfully ✓');
+
+    // ===================================
+    // PRELOAD CRITICAL RESOURCES
+    // ===================================
+
+    // Preload images for faster rendering
+    window.addEventListener('load', () => {
+        const criticalImages = [
+            // Add your actual bearing images here
+            // '/images/hero-bearing.jpg',
+            // '/images/machinery.jpg'
+        ];
+
+        criticalImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    });
+    </script>
+</body>
+</html>
