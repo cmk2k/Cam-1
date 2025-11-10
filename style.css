@@ -93,7 +93,7 @@ body {
     width: 100%;
 }
 
-/* Hero Section */
+/* Hero Section - Rust-Oleum Enhanced */
 .hero {
     background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(17, 24, 39, 0.95) 100%),
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23111827" width="1200" height="600"/><g fill-opacity="0.05"><rect fill="%23fff" x="100" y="100" width="200" height="200"/><rect fill="%23fff" x="400" y="150" width="150" height="150"/><rect fill="%23fff" x="700" y="80" width="180" height="180"/><rect fill="%23fff" x="200" y="350" width="160" height="160"/><rect fill="%23fff" x="550" y="380" width="190" height="190"/><rect fill="%23fff" x="850" y="300" width="140" height="140"/></g></svg>');
@@ -103,6 +103,13 @@ body {
     padding: 180px 0 120px;
     margin-top: 68px;
     position: relative;
+    overflow: hidden;
+}
+
+.hero-rustoleum {
+    background: linear-gradient(135deg, rgba(17, 24, 39, 0.96) 0%, rgba(30, 58, 138, 0.94) 50%, rgba(15, 23, 42, 0.96) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23111827" width="1200" height="600"/><g fill-opacity="0.08"><circle fill="%23ef4444" cx="200" cy="150" r="100"/><circle fill="%23ef4444" cx="900" cy="400" r="120"/><rect fill="%23fff" x="500" y="250" width="200" height="8"/><rect fill="%23fff" x="300" y="400" width="150" height="6"/></g></svg>');
+    padding: 200px 0 140px;
 }
 
 .hero-overlay {
@@ -122,6 +129,57 @@ body {
     z-index: 1;
 }
 
+.hero-content-rustoleum {
+    max-width: 1000px;
+    animation: heroFadeIn 1s ease-out;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Badge */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    margin-bottom: 1.75rem;
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+    }
+}
+
+.badge-icon {
+    font-size: 1.1rem;
+}
+
+.badge-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #fecaca;
+}
+
+/* Hero Title */
 .hero-title {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
@@ -130,6 +188,30 @@ body {
     letter-spacing: -1px;
 }
 
+.hero-title-large {
+    font-size: 4rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: -1.5px;
+}
+
+.highlight-text {
+    color: var(--accent-color);
+    position: relative;
+    display: inline-block;
+}
+
+.highlight-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent-color);
+    opacity: 0.3;
+}
+
+/* Hero Subtitle */
 .hero-subtitle {
     font-size: 1.35rem;
     margin-bottom: 2.5rem;
@@ -141,23 +223,85 @@ body {
     margin-right: auto;
 }
 
+.hero-subtitle-large {
+    font-size: 1.25rem;
+    max-width: 800px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 2.25rem;
+}
+
+/* Hero Features - Quick Scan List */
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.hero-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feature-icon {
+    font-size: 1.2rem;
+    color: #10b981;
+    font-weight: 700;
+}
+
+.feature-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Hero Buttons */
 .hero-buttons {
     display: flex;
     gap: 1rem;
     justify-content: center;
 }
 
-/* Buttons */
+.hero-buttons-stacked {
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Buttons - Enhanced */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     padding: 14px 32px;
     font-size: 1rem;
     border: none;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     font-weight: 600;
     text-decoration: none;
     text-align: center;
+    border-radius: 4px;
+}
+
+.btn-large {
+    padding: 16px 40px;
+    font-size: 1.05rem;
+    min-width: 240px;
+}
+
+.btn-text {
+    display: inline-block;
+}
+
+.btn-arrow {
+    display: inline-block;
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
 }
 
 .btn-primary {
@@ -167,18 +311,79 @@ body {
 
 .btn-primary:hover {
     background: #dc2626;
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-primary:hover .btn-arrow {
+    transform: translateX(4px);
 }
 
 .btn-secondary {
     background: transparent;
     color: var(--white);
-    border: 2px solid var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .btn-secondary:hover {
-    background: var(--white);
-    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Hero Trust Signal */
+.hero-trust {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.trust-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+.trust-text strong {
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: scrollBounce 2s ease-in-out infinite;
+    cursor: pointer;
+    z-index: 10;
+}
+
+@keyframes scrollBounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+.scroll-text {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+}
+
+.scroll-arrow {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Products Section */
@@ -460,12 +665,43 @@ textarea.form-input {
         padding: 140px 0 100px;
     }
 
+    .hero-rustoleum {
+        padding: 160px 0 120px;
+    }
+
+    .hero-badge {
+        padding: 0.4rem 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .badge-text {
+        font-size: 0.8rem;
+    }
+
     .hero-title {
         font-size: 2.5rem;
     }
 
+    .hero-title-large {
+        font-size: 2.75rem;
+        line-height: 1.15;
+    }
+
     .hero-subtitle {
         font-size: 1.15rem;
+    }
+
+    .hero-subtitle-large {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+
+    .hero-features {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: 2rem;
     }
 
     .hero-buttons {
@@ -473,9 +709,28 @@ textarea.form-input {
         gap: 0.75rem;
     }
 
+    .hero-buttons-stacked {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
     .btn {
         width: 100%;
         max-width: 300px;
+    }
+
+    .btn-large {
+        padding: 15px 32px;
+        font-size: 1rem;
+        min-width: auto;
+    }
+
+    .scroll-indicator {
+        bottom: 20px;
+    }
+
+    .scroll-text {
+        font-size: 0.7rem;
     }
 
     .section-title {
@@ -516,12 +771,64 @@ textarea.form-input {
         font-size: 1.2rem;
     }
 
+    .hero-rustoleum {
+        padding: 140px 0 100px;
+    }
+
+    .hero-badge {
+        padding: 0.35rem 0.85rem;
+        font-size: 0.85rem;
+    }
+
+    .badge-icon {
+        font-size: 1rem;
+    }
+
     .hero-title {
         font-size: 2rem;
     }
 
+    .hero-title-large {
+        font-size: 2.25rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+
     .hero-subtitle {
         font-size: 1rem;
+    }
+
+    .hero-subtitle-large {
+        font-size: 1rem;
+        line-height: 1.55;
+        padding: 0 10px;
+    }
+
+    .hero-features {
+        gap: 0.85rem;
+        margin-bottom: 1.75rem;
+    }
+
+    .feature-text {
+        font-size: 0.88rem;
+    }
+
+    .btn-large {
+        padding: 14px 28px;
+        font-size: 0.95rem;
+    }
+
+    .hero-trust {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .trust-text {
+        font-size: 0.85rem;
+    }
+
+    .scroll-indicator {
+        display: none;
     }
 
     .product-card,
