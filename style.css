@@ -5,9 +5,9 @@
 }
 
 :root {
-    --primary-color: #1e3a8a;
-    --secondary-color: #3b82f6;
-    --accent-color: #ef4444;
+    --primary-color: #4E2A84;  /* PMS 274 Purple - C100 M100 Y0 K35 */
+    --secondary-color: #6B46A8;  /* Lighter purple variant */
+    --accent-color: #00857C;  /* PMS 322 Teal - C100 M0 Y33 K35 */
     --text-color: #1f2937;
     --text-light: #6b7280;
     --light-gray: #f9fafb;
@@ -95,7 +95,7 @@ body {
 
 /* Hero Section - Rust-Oleum Enhanced */
 .hero {
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(17, 24, 39, 0.95) 100%),
+    background: linear-gradient(135deg, rgba(78, 42, 132, 0.95) 0%, rgba(0, 133, 124, 0.95) 100%),
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23111827" width="1200" height="600"/><g fill-opacity="0.05"><rect fill="%23fff" x="100" y="100" width="200" height="200"/><rect fill="%23fff" x="400" y="150" width="150" height="150"/><rect fill="%23fff" x="700" y="80" width="180" height="180"/><rect fill="%23fff" x="200" y="350" width="160" height="160"/><rect fill="%23fff" x="550" y="380" width="190" height="190"/><rect fill="%23fff" x="850" y="300" width="140" height="140"/></g></svg>');
     background-size: cover;
     background-position: center;
@@ -107,8 +107,11 @@ body {
 }
 
 .hero-rustoleum {
-    background: linear-gradient(135deg, rgba(17, 24, 39, 0.96) 0%, rgba(30, 58, 138, 0.94) 50%, rgba(15, 23, 42, 0.96) 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23111827" width="1200" height="600"/><g fill-opacity="0.08"><circle fill="%23ef4444" cx="200" cy="150" r="100"/><circle fill="%23ef4444" cx="900" cy="400" r="120"/><rect fill="%23fff" x="500" y="250" width="200" height="8"/><rect fill="%23fff" x="300" y="400" width="150" height="6"/></g></svg>');
+    background: linear-gradient(135deg, rgba(78, 42, 132, 0.92) 0%, rgba(0, 133, 124, 0.88) 100%),
+                url('https://via.placeholder.com/1920x1080/1f2937/1f2937.png?text=Replace+with+Industrial+Floor+Image');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     padding: 200px 0 140px;
 }
 
@@ -118,7 +121,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(17, 24, 39, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(78, 42, 132, 0.85) 0%, rgba(0, 133, 124, 0.90) 100%);
 }
 
 .hero-content {
@@ -150,8 +153,8 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(239, 68, 68, 0.15);
-    border: 1px solid rgba(239, 68, 68, 0.4);
+    background: rgba(0, 133, 124, 0.20);
+    border: 1px solid rgba(0, 133, 124, 0.5);
     padding: 0.5rem 1.25rem;
     border-radius: 50px;
     margin-bottom: 1.75rem;
@@ -160,10 +163,10 @@ body {
 
 @keyframes badgePulse {
     0%, 100% {
-        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+        box-shadow: 0 0 0 0 rgba(0, 133, 124, 0.5);
     }
     50% {
-        box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+        box-shadow: 0 0 0 8px rgba(0, 133, 124, 0);
     }
 }
 
@@ -176,7 +179,7 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: #fecaca;
+    color: #99F6E4;
 }
 
 /* Hero Title */
@@ -310,8 +313,8 @@ body {
 }
 
 .btn-primary:hover {
-    background: #dc2626;
-    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+    background: #006B66;
+    box-shadow: 0 6px 20px rgba(0, 133, 124, 0.5);
     transform: translateY(-2px);
 }
 
@@ -415,7 +418,7 @@ body {
 }
 
 .product-card:hover {
-    border-left-color: var(--accent-color);
+    border-left-color: var(--accent-color);  /* PMS 322 Teal */
     background: var(--white);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
@@ -501,7 +504,7 @@ body {
 }
 
 .industry-item:hover {
-    background: var(--primary-color);
+    background: var(--primary-color);  /* PMS 274 Purple */
     color: var(--white);
     border-color: var(--primary-color);
 }
@@ -571,8 +574,8 @@ body {
 
 .form-input:focus {
     outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(0, 133, 124, 0.15);
 }
 
 textarea.form-input {
