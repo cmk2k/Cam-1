@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a1a;
+            color: #ffffff;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: #252525;
+            border-radius: 8px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .header .time {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #00d4ff;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+            flex: 1;
+        }
+
+        .kpi-card {
+            background: #252525;
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 2px solid #333;
+            transition: all 0.3s ease;
+        }
+
+        .kpi-card.large {
+            grid-column: span 2;
+        }
+
+        .kpi-card.tall {
+            grid-row: span 2;
+        }
+
+        .kpi-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .kpi-value {
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1;
+            margin: 20px 0;
+        }
+
+        .kpi-value.green {
+            color: #00ff88;
+        }
+
+        .kpi-value.yellow {
+            color: #ffcc00;
+        }
+
+        .kpi-value.red {
+            color: #ff4444;
+        }
+
+        .kpi-value.blue {
+            color: #00d4ff;
+        }
+
+        .kpi-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .kpi-change {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .kpi-change.positive {
+            color: #00ff88;
+        }
+
+        .kpi-change.negative {
+            color: #ff4444;
+        }
+
+        .chart-container {
+            flex: 1;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            height: 100%;
+            gap: 8px;
+        }
+
+        .bar {
+            flex: 1;
+            background: linear-gradient(to top, #00ff88, #00d4ff);
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .bar.yellow {
+            background: linear-gradient(to top, #ffcc00, #ffaa00);
+        }
+
+        .bar.red {
+            background: linear-gradient(to top, #ff4444, #ff6666);
+        }
+
+        .line-chart {
+            height: 100%;
+            position: relative;
+        }
+
+        .line-chart canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        .station-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .station-item {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #00ff88;
+        }
+
+        .station-item.warning {
+            border-left-color: #ffcc00;
+        }
+
+        .station-item.critical {
+            border-left-color: #ff4444;
+        }
+
+        .station-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .station-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: #252525;
+            border-radius: 8px;
+            font-size: 1.2rem;
+        }
+
+        .footer-clock {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #00d4ff;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #00ff88;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .metric-row:last-child {
+            border-bottom: none;
+        }
+
+        .metric-label {
+            font-size: 1.2rem;
+            color: #999;
+        }
+
+        .metric-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <h1>OPERATIONS DASHBOARD</h1>
+            <div class="time" id="headerTime"></div>
+        </div>
+
+        <div class="main-grid">
+            <!-- Total Induct Count -->
+            <div class="kpi-card">
+                <div class="kpi-title">Total Induct</div>
+                <div class="kpi-value green" id="totalInduct">0</div>
+                <div class="kpi-subtitle">Units Today</div>
+                <div class="kpi-change positive" id="inductChange">+0%</div>
+            </div>
+
+            <!-- Total Pack Count -->
+            <div class="kpi-card">
+                <div class="kpi-title">Total Pack</div>
+                <div class="kpi-value green" id="totalPack">0</div>
+                <div class="kpi-subtitle">Units Today</div>
+                <div class="kpi-change positive" id="packChange">+0%</div>
+            </div>
+
+            <!-- Total Rebin Count -->
+            <div class="kpi-card">
+                <div class="kpi-title">Total Rebin</div>
+                <div class="kpi-value blue" id="totalRebin">0</div>
+                <div class="kpi-subtitle">Units Today</div>
+                <div class="kpi-change positive" id="rebinChange">+0%</div>
+            </div>
+
+            <!-- Average Rate -->
+            <div class="kpi-card">
+                <div class="kpi-title">Avg Rate</div>
+                <div class="kpi-value green" id="avgRate">0</div>
+                <div class="kpi-subtitle">Units/Hour</div>
+                <div class="kpi-change positive" id="rateChange">+0%</div>
+            </div>
+
+            <!-- Hourly Trends -->
+            <div class="kpi-card large">
+                <div class="kpi-title">Hourly Trends</div>
+                <div class="chart-container">
+                    <div class="bar-chart" id="hourlyTrends"></div>
+                </div>
+            </div>
+
+            <!-- Station Performance -->
+            <div class="kpi-card tall">
+                <div class="kpi-title">Station Performance</div>
+                <div class="station-grid" id="stationGrid"></div>
+            </div>
+
+            <!-- Throughput Chart -->
+            <div class="kpi-card">
+                <div class="kpi-title">Throughput</div>
+                <div class="chart-container">
+                    <canvas id="throughputChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Performance Metrics -->
+            <div class="kpi-card">
+                <div class="kpi-title">Key Metrics</div>
+                <div id="metricsContainer"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>System Online</span>
+            </div>
+            <div>Last Updated: <span id="lastUpdate"></span></div>
+            <div class="footer-clock" id="footerClock"></div>
+        </div>
+    </div>
+
+    <script>
+        // Placeholder function to fetch data from API
+        async function fetchDashboardData() {
+            // Replace with actual API call
+            // const response = await fetch('/api/dashboard-data');
+            // return await response.json();
+
+            // Mock data for demonstration
+            return {
+                totalInduct: Math.floor(Math.random() * 5000) + 15000,
+                totalPack: Math.floor(Math.random() * 4000) + 12000,
+                totalRebin: Math.floor(Math.random() * 1000) + 2000,
+                avgRate: Math.floor(Math.random() * 50) + 250,
+                inductChange: (Math.random() * 20 - 5).toFixed(1),
+                packChange: (Math.random() * 20 - 5).toFixed(1),
+                rebinChange: (Math.random() * 30 - 10).toFixed(1),
+                rateChange: (Math.random() * 15 - 5).toFixed(1),
+                hourlyData: Array.from({length: 12}, () => Math.random() * 100),
+                stations: [
+                    {name: 'Station A1', value: Math.floor(Math.random() * 500) + 200, status: 'good'},
+                    {name: 'Station A2', value: Math.floor(Math.random() * 500) + 200, status: 'good'},
+                    {name: 'Station B1', value: Math.floor(Math.random() * 300) + 100, status: 'warning'},
+                    {name: 'Station B2', value: Math.floor(Math.random() * 500) + 200, status: 'good'},
+                    {name: 'Station C1', value: Math.floor(Math.random() * 200) + 50, status: 'critical'},
+                    {name: 'Station C2', value: Math.floor(Math.random() * 500) + 200, status: 'good'}
+                ],
+                throughputData: Array.from({length: 20}, () => Math.random() * 300 + 100),
+                metrics: {
+                    efficiency: (Math.random() * 15 + 85).toFixed(1),
+                    uptime: (Math.random() * 5 + 95).toFixed(1),
+                    errorRate: (Math.random() * 2).toFixed(2)
+                }
+            };
+        }
+
+        // Update clock
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            });
+            const dateString = now.toLocaleDateString('en-US', {
+                weekday: 'short',
+                month: 'short',
+                day: 'numeric'
+            });
+
+            document.getElementById('headerTime').textContent = timeString;
+            document.getElementById('footerClock').textContent = `${dateString} ${timeString}`;
+        }
+
+        // Update last update timestamp
+        function updateLastUpdate() {
+            const now = new Date();
+            document.getElementById('lastUpdate').textContent = now.toLocaleTimeString('en-US', {
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false
+            });
+        }
+
+        // Render KPI values
+        function renderKPIs(data) {
+            document.getElementById('totalInduct').textContent = data.totalInduct.toLocaleString();
+            document.getElementById('totalPack').textContent = data.totalPack.toLocaleString();
+            document.getElementById('totalRebin').textContent = data.totalRebin.toLocaleString();
+            document.getElementById('avgRate').textContent = data.avgRate;
+
+            // Update changes
+            updateChange('inductChange', data.inductChange);
+            updateChange('packChange', data.packChange);
+            updateChange('rebinChange', data.rebinChange);
+            updateChange('rateChange', data.rateChange);
+
+            // Update value colors based on performance
+            updateValueColor('totalInduct', data.totalInduct, 18000, 15000);
+            updateValueColor('totalPack', data.totalPack, 14000, 12000);
+            updateValueColor('avgRate', data.avgRate, 280, 240);
+        }
+
+        // Update change indicators
+        function updateChange(elementId, value) {
+            const element = document.getElementById(elementId);
+            const numValue = parseFloat(value);
+            element.textContent = `${numValue > 0 ? '+' : ''}${value}%`;
+            element.className = `kpi-change ${numValue >= 0 ? 'positive' : 'negative'}`;
+        }
+
+        // Update value color based on thresholds
+        function updateValueColor(elementId, value, goodThreshold, warningThreshold) {
+            const element = document.getElementById(elementId);
+            element.className = 'kpi-value';
+            if (value >= goodThreshold) {
+                element.classList.add('green');
+            } else if (value >= warningThreshold) {
+                element.classList.add('yellow');
+            } else {
+                element.classList.add('red');
+            }
+        }
+
+        // Render hourly trends bar chart
+        function renderHourlyTrends(data) {
+            const container = document.getElementById('hourlyTrends');
+            container.innerHTML = '';
+
+            data.forEach((value, index) => {
+                const bar = document.createElement('div');
+                bar.className = 'bar';
+
+                if (value < 40) {
+                    bar.classList.add('red');
+                } else if (value < 70) {
+                    bar.classList.add('yellow');
+                }
+
+                bar.style.height = `${value}%`;
+                container.appendChild(bar);
+            });
+        }
+
+        // Render station performance
+        function renderStations(stations) {
+            const container = document.getElementById('stationGrid');
+            container.innerHTML = '';
+
+            stations.forEach(station => {
+                const stationDiv = document.createElement('div');
+                stationDiv.className = `station-item ${station.status === 'warning' ? 'warning' : station.status === 'critical' ? 'critical' : ''}`;
+
+                stationDiv.innerHTML = `
+                    <div class="station-name">${station.name}</div>
+                    <div class="station-value">${station.value}</div>
+                `;
+
+                container.appendChild(stationDiv);
+            });
+        }
+
+        // Render throughput line chart
+        function renderThroughputChart(data) {
+            const canvas = document.getElementById('throughputChart');
+            const ctx = canvas.getContext('2d');
+
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+
+            const width = canvas.width;
+            const height = canvas.height;
+            const padding = 20;
+
+            ctx.clearRect(0, 0, width, height);
+
+            // Draw line
+            ctx.beginPath();
+            ctx.strokeStyle = '#00d4ff';
+            ctx.lineWidth = 3;
+
+            const maxValue = Math.max(...data);
+            const stepX = (width - padding * 2) / (data.length - 1);
+
+            data.forEach((value, index) => {
+                const x = padding + index * stepX;
+                const y = height - padding - ((value / maxValue) * (height - padding * 2));
+
+                if (index === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            });
+
+            ctx.stroke();
+
+            // Draw gradient fill
+            ctx.lineTo(width - padding, height - padding);
+            ctx.lineTo(padding, height - padding);
+            ctx.closePath();
+
+            const gradient = ctx.createLinearGradient(0, 0, 0, height);
+            gradient.addColorStop(0, 'rgba(0, 212, 255, 0.3)');
+            gradient.addColorStop(1, 'rgba(0, 212, 255, 0)');
+            ctx.fillStyle = gradient;
+            ctx.fill();
+        }
+
+        // Render key metrics
+        function renderMetrics(metrics) {
+            const container = document.getElementById('metricsContainer');
+            container.innerHTML = `
+                <div class="metric-row">
+                    <div class="metric-label">Efficiency</div>
+                    <div class="metric-value" style="color: ${metrics.efficiency >= 90 ? '#00ff88' : '#ffcc00'}">${metrics.efficiency}%</div>
+                </div>
+                <div class="metric-row">
+                    <div class="metric-label">Uptime</div>
+                    <div class="metric-value" style="color: ${metrics.uptime >= 95 ? '#00ff88' : '#ffcc00'}">${metrics.uptime}%</div>
+                </div>
+                <div class="metric-row">
+                    <div class="metric-label">Error Rate</div>
+                    <div class="metric-value" style="color: ${metrics.errorRate < 1 ? '#00ff88' : '#ff4444'}">${metrics.errorRate}%</div>
+                </div>
+            `;
+        }
+
+        // Main update function
+        async function updateDashboard() {
+            const data = await fetchDashboardData();
+
+            renderKPIs(data);
+            renderHourlyTrends(data.hourlyData);
+            renderStations(data.stations);
+            renderThroughputChart(data.throughputData);
+            renderMetrics(data.metrics);
+
+            updateLastUpdate();
+        }
+
+        // Initialize dashboard
+        function init() {
+            updateClock();
+            updateDashboard();
+
+            // Update clock every second
+            setInterval(updateClock, 1000);
+
+            // Update dashboard every minute
+            setInterval(updateDashboard, 60000);
+        }
+
+        // Start dashboard when page loads
+        window.addEventListener('load', init);
+    </script>
+</body>
+</html>
