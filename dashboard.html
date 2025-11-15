@@ -50,7 +50,7 @@
 
         .main-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(2, 1fr);
             gap: 20px;
             flex: 1;
@@ -169,16 +169,22 @@
 
         .station-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 15px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+            flex: 1;
         }
 
         .station-item {
             background: #1a1a1a;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 4px solid #00ff88;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 6px solid #00ff88;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
         }
 
         .station-item.warning {
@@ -189,15 +195,114 @@
             border-left-color: #ff4444;
         }
 
+        .station-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 60%, rgba(0, 255, 136, 0.1));
+            pointer-events: none;
+        }
+
+        .station-item.warning::before {
+            background: linear-gradient(135deg, transparent 60%, rgba(255, 204, 0, 0.1));
+        }
+
+        .station-item.critical::before {
+            background: linear-gradient(135deg, transparent 60%, rgba(255, 68, 68, 0.1));
+        }
+
         .station-name {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .station-value {
-            font-size: 1.8rem;
+            font-size: 3.2rem;
             font-weight: 700;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .station-value.green {
+            color: #00ff88;
+        }
+
+        .station-value.yellow {
+            color: #ffcc00;
+        }
+
+        .station-value.red {
+            color: #ff4444;
+        }
+
+        .station-label {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .station-rate {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #999;
+            margin-top: 10px;
+        }
+
+        .station-bar {
+            width: 100%;
+            height: 8px;
+            background: #333;
+            border-radius: 4px;
+            margin-top: 12px;
+            overflow: hidden;
+        }
+
+        .station-bar-fill {
+            height: 100%;
+            background: linear-gradient(to right, #00ff88, #00d4ff);
+            transition: width 0.5s ease;
+            border-radius: 4px;
+        }
+
+        .station-bar-fill.yellow {
+            background: linear-gradient(to right, #ffcc00, #ffaa00);
+        }
+
+        .station-bar-fill.red {
+            background: linear-gradient(to right, #ff4444, #ff6666);
+        }
+
+        .station-status-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .station-status-badge.good {
+            background: rgba(0, 255, 136, 0.2);
+            color: #00ff88;
+        }
+
+        .station-status-badge.warning {
+            background: rgba(255, 204, 0, 0.2);
+            color: #ffcc00;
+        }
+
+        .station-status-badge.critical {
+            background: rgba(255, 68, 68, 0.2);
+            color: #ff4444;
         }
 
         .footer {
@@ -266,6 +371,12 @@
         </div>
 
         <div class="main-grid">
+            <!-- Station Performance - EMPHASIZED -->
+            <div class="kpi-card" style="grid-column: span 4; grid-row: span 2;">
+                <div class="kpi-title" style="font-size: 1.8rem;">Station Performance</div>
+                <div class="station-grid" id="stationGrid"></div>
+            </div>
+
             <!-- Total Induct Count -->
             <div class="kpi-card">
                 <div class="kpi-title">Total Induct</div>
@@ -306,20 +417,6 @@
                 </div>
             </div>
 
-            <!-- Station Performance -->
-            <div class="kpi-card tall">
-                <div class="kpi-title">Station Performance</div>
-                <div class="station-grid" id="stationGrid"></div>
-            </div>
-
-            <!-- Throughput Chart -->
-            <div class="kpi-card">
-                <div class="kpi-title">Throughput</div>
-                <div class="chart-container">
-                    <canvas id="throughputChart"></canvas>
-                </div>
-            </div>
-
             <!-- Performance Metrics -->
             <div class="kpi-card">
                 <div class="kpi-title">Key Metrics</div>
@@ -356,12 +453,15 @@
                 rateChange: (Math.random() * 15 - 5).toFixed(1),
                 hourlyData: Array.from({length: 12}, () => Math.random() * 100),
                 stations: [
-                    {name: 'Station A1', value: Math.floor(Math.random() * 500) + 200, status: 'good'},
-                    {name: 'Station A2', value: Math.floor(Math.random() * 500) + 200, status: 'good'},
-                    {name: 'Station B1', value: Math.floor(Math.random() * 300) + 100, status: 'warning'},
-                    {name: 'Station B2', value: Math.floor(Math.random() * 500) + 200, status: 'good'},
-                    {name: 'Station C1', value: Math.floor(Math.random() * 200) + 50, status: 'critical'},
-                    {name: 'Station C2', value: Math.floor(Math.random() * 500) + 200, status: 'good'}
+                    {name: 'Station A1', value: Math.floor(Math.random() * 500) + 200, rate: Math.floor(Math.random() * 100) + 200, target: 300, status: 'good'},
+                    {name: 'Station A2', value: Math.floor(Math.random() * 500) + 200, rate: Math.floor(Math.random() * 100) + 200, target: 300, status: 'good'},
+                    {name: 'Station A3', value: Math.floor(Math.random() * 500) + 200, rate: Math.floor(Math.random() * 100) + 200, target: 300, status: 'good'},
+                    {name: 'Station B1', value: Math.floor(Math.random() * 300) + 100, rate: Math.floor(Math.random() * 80) + 150, target: 300, status: 'warning'},
+                    {name: 'Station B2', value: Math.floor(Math.random() * 500) + 200, rate: Math.floor(Math.random() * 100) + 200, target: 300, status: 'good'},
+                    {name: 'Station B3', value: Math.floor(Math.random() * 300) + 100, rate: Math.floor(Math.random() * 80) + 150, target: 300, status: 'warning'},
+                    {name: 'Station C1', value: Math.floor(Math.random() * 200) + 50, rate: Math.floor(Math.random() * 60) + 80, target: 300, status: 'critical'},
+                    {name: 'Station C2', value: Math.floor(Math.random() * 500) + 200, rate: Math.floor(Math.random() * 100) + 200, target: 300, status: 'good'},
+                    {name: 'Station C3', value: Math.floor(Math.random() * 500) + 200, rate: Math.floor(Math.random() * 100) + 200, target: 300, status: 'good'}
                 ],
                 throughputData: Array.from({length: 20}, () => Math.random() * 300 + 100),
                 metrics: {
@@ -470,9 +570,24 @@
                 const stationDiv = document.createElement('div');
                 stationDiv.className = `station-item ${station.status === 'warning' ? 'warning' : station.status === 'critical' ? 'critical' : ''}`;
 
+                const percentage = Math.min((station.rate / station.target) * 100, 100);
+                const valueClass = station.status === 'good' ? 'green' : station.status === 'warning' ? 'yellow' : 'red';
+                const barClass = station.status === 'good' ? '' : station.status === 'warning' ? 'yellow' : 'red';
+                const statusText = station.status === 'good' ? 'OPTIMAL' : station.status === 'warning' ? 'BELOW TARGET' : 'CRITICAL';
+
                 stationDiv.innerHTML = `
-                    <div class="station-name">${station.name}</div>
-                    <div class="station-value">${station.value}</div>
+                    <div>
+                        <div class="station-status-badge ${station.status}">${statusText}</div>
+                        <div class="station-name">${station.name}</div>
+                        <div class="station-value ${valueClass}">${station.value.toLocaleString()}</div>
+                        <div class="station-label">Units Processed</div>
+                    </div>
+                    <div>
+                        <div class="station-rate">${station.rate}/hr • Target: ${station.target}/hr</div>
+                        <div class="station-bar">
+                            <div class="station-bar-fill ${barClass}" style="width: ${percentage}%"></div>
+                        </div>
+                    </div>
                 `;
 
                 container.appendChild(stationDiv);
@@ -552,7 +667,6 @@
             renderKPIs(data);
             renderHourlyTrends(data.hourlyData);
             renderStations(data.stations);
-            renderThroughputChart(data.throughputData);
             renderMetrics(data.metrics);
 
             updateLastUpdate();
