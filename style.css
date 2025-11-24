@@ -111,7 +111,6 @@ body {
                 url('https://via.placeholder.com/1920x1080/1f2937/1f2937.png?text=Replace+with+Industrial+Floor+Image');
     background-size: cover;
     background-position: center bottom;
-    background-attachment: fixed;
     padding: 200px 0 140px;
 }
 
@@ -134,13 +133,13 @@ body {
 
 .hero-content-rustoleum {
     max-width: 1000px;
-    animation: heroFadeIn 1s ease-out;
+    animation: heroFadeIn 0.5s ease-out;
 }
 
 @keyframes heroFadeIn {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -158,16 +157,6 @@ body {
     padding: 0.5rem 1.25rem;
     border-radius: 50px;
     margin-bottom: 1.75rem;
-    animation: badgePulse 2s ease-in-out infinite;
-}
-
-@keyframes badgePulse {
-    0%, 100% {
-        box-shadow: 0 0 0 0 rgba(0, 133, 124, 0.5);
-    }
-    50% {
-        box-shadow: 0 0 0 8px rgba(0, 133, 124, 0);
-    }
 }
 
 .badge-icon {
@@ -269,7 +258,9 @@ body {
 }
 
 .hero-buttons-stacked {
+    display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 1rem;
     margin-bottom: 2rem;
 }
@@ -714,6 +705,7 @@ textarea.form-input {
 
     .hero-buttons-stacked {
         flex-direction: column;
+        align-items: center;
         gap: 1rem;
     }
 
