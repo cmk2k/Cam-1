@@ -23,21 +23,22 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
-            padding: 20px;
-            gap: 20px;
+            padding: 30px;
+            gap: 30px;
         }
 
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
+            padding: 20px 40px;
             background: #252525;
-            border-radius: 8px;
+            border-radius: 12px;
+            border: 2px solid #333;
         }
 
         .header h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 700;
             letter-spacing: 2px;
         }
@@ -46,361 +47,185 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            gap: 8px;
+            gap: 10px;
         }
 
-        .header .time {
-            font-size: 2.2rem;
+        .current-time {
+            font-size: 2.5rem;
             font-weight: 700;
             color: #00d4ff;
         }
 
         .last-updated {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             color: #999;
         }
 
         .last-updated-time {
             color: #00ff88;
-            font-weight: 600;
+            font-weight: 700;
         }
 
-        .main-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 20px;
+        .data-grid {
             flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            overflow-y: auto;
         }
 
-        .kpi-card {
+        .station-card {
             background: #252525;
-            border-radius: 8px;
+            border: 3px solid #333;
+            border-radius: 12px;
             padding: 30px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            border: 2px solid #333;
-            transition: all 0.3s ease;
-        }
-
-        .kpi-card.large {
-            grid-column: span 2;
-        }
-
-        .kpi-card.tall {
-            grid-row: span 2;
-        }
-
-        .kpi-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
-
-        .kpi-value {
-            font-size: 5rem;
-            font-weight: 700;
-            line-height: 1;
-            margin: 20px 0;
-        }
-
-        .kpi-value.green {
-            color: #00ff88;
-        }
-
-        .kpi-value.yellow {
-            color: #ffcc00;
-        }
-
-        .kpi-value.red {
-            color: #ff4444;
-        }
-
-        .kpi-value.blue {
-            color: #00d4ff;
-        }
-
-        .kpi-subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            font-weight: 500;
-        }
-
-        .kpi-change {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        .kpi-change.positive {
-            color: #00ff88;
-        }
-
-        .kpi-change.negative {
-            color: #ff4444;
-        }
-
-        .chart-container {
-            flex: 1;
-            position: relative;
-            margin-top: 20px;
-        }
-
-        .bar-chart {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            height: 100%;
-            gap: 8px;
-        }
-
-        .bar {
-            flex: 1;
-            background: linear-gradient(to top, #00ff88, #00d4ff);
-            border-radius: 4px 4px 0 0;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .bar.yellow {
-            background: linear-gradient(to top, #ffcc00, #ffaa00);
-        }
-
-        .bar.red {
-            background: linear-gradient(to top, #ff4444, #ff6666);
-        }
-
-        .line-chart {
-            height: 100%;
-            position: relative;
-        }
-
-        .line-chart canvas {
-            width: 100%;
-            height: 100%;
-        }
-
-        .station-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            margin-top: 20px;
-            flex: 1;
-        }
-
-        .station-item {
-            background: #1a1a1a;
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 6px solid #00ff88;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
             position: relative;
             overflow: hidden;
         }
 
-        .station-item.warning {
-            border-left-color: #ffcc00;
-        }
-
-        .station-item.critical {
-            border-left-color: #ff4444;
-        }
-
-        .station-item::before {
+        .station-card::before {
             content: '';
             position: absolute;
             top: 0;
-            right: 0;
-            width: 100%;
+            left: 0;
+            width: 8px;
             height: 100%;
-            background: linear-gradient(135deg, transparent 60%, rgba(0, 255, 136, 0.1));
-            pointer-events: none;
+            background: #00ff88;
         }
 
-        .station-item.warning::before {
-            background: linear-gradient(135deg, transparent 60%, rgba(255, 204, 0, 0.1));
+        .station-card.below::before {
+            background: #ff4444;
         }
 
-        .station-item.critical::before {
-            background: linear-gradient(135deg, transparent 60%, rgba(255, 68, 68, 0.1));
+        .station-card.hitting::before {
+            background: #00ff88;
+        }
+
+        .station-card.above::before {
+            background: #00d4ff;
+        }
+
+        .station-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .station-name {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
-        .station-value {
-            font-size: 3.8rem;
-            font-weight: 700;
-            line-height: 1;
-            margin-bottom: 10px;
-        }
-
-        .station-value.green {
-            color: #00ff88;
-        }
-
-        .station-value.yellow {
-            color: #ffcc00;
-        }
-
-        .station-value.red {
-            color: #ff4444;
-        }
-
-        .station-label {
-            font-size: 1.3rem;
-            color: #666;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .station-rate {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #999;
-            margin-top: 10px;
-        }
-
-        .station-bar {
-            width: 100%;
-            height: 12px;
-            background: #333;
-            border-radius: 6px;
-            margin-top: 12px;
-            overflow: hidden;
-        }
-
-        .station-bar-fill {
-            height: 100%;
-            background: linear-gradient(to right, #00ff88, #00d4ff);
-            transition: width 0.5s ease;
-            border-radius: 4px;
-        }
-
-        .station-bar-fill.yellow {
-            background: linear-gradient(to right, #ffcc00, #ffaa00);
-        }
-
-        .station-bar-fill.red {
-            background: linear-gradient(to right, #ff4444, #ff6666);
-        }
-
-        .station-status-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 1.1rem;
+        .status-icon {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1.6rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
         }
 
-        .station-status-badge.good {
-            background: rgba(0, 255, 136, 0.2);
-            color: #00ff88;
-        }
-
-        .station-status-badge.warning {
-            background: rgba(255, 204, 0, 0.2);
-            color: #ffcc00;
-        }
-
-        .station-status-badge.critical {
+        .status-icon.below {
             background: rgba(255, 68, 68, 0.2);
             color: #ff4444;
         }
 
-        .footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            background: #252525;
-            border-radius: 8px;
-            font-size: 1.4rem;
+        .status-icon.hitting {
+            background: rgba(0, 255, 136, 0.2);
+            color: #00ff88;
         }
 
-        .footer-clock {
-            font-size: 1.8rem;
-            font-weight: 700;
+        .status-icon.above {
+            background: rgba(0, 212, 255, 0.2);
             color: #00d4ff;
         }
 
-        .status-indicator {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .status-dot {
-            width: 16px;
-            height: 16px;
+        .status-icon::before {
+            content: '';
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
-            background: #00ff88;
-            animation: pulse 2s ease-in-out infinite;
+            background: currentColor;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+        .station-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
-        .metric-row {
+        .metric {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid #333;
-        }
-
-        .metric-row:last-child {
-            border-bottom: none;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .metric-label {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #999;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .metric-value {
-            font-size: 1.6rem;
+            font-size: 3.5rem;
             font-weight: 700;
+            line-height: 1;
+        }
+
+        .metric-value.jobs {
+            color: #00d4ff;
+        }
+
+        .metric-value.jph {
+            color: #00ff88;
+        }
+
+        .metric-value.wall {
+            color: #ffcc00;
         }
 
         .upload-section {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             background: #252525;
-            border: 2px solid #333;
-            border-radius: 8px;
-            padding: 15px 20px;
+            border: 3px solid #333;
+            border-radius: 12px;
+            padding: 40px 60px;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 15px;
+            gap: 25px;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
         }
 
-        .upload-label {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #999;
+        .upload-section.hidden {
+            display: none;
+        }
+
+        .upload-icon {
+            font-size: 5rem;
+            color: #00d4ff;
+        }
+
+        .upload-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         .file-input-wrapper {
@@ -415,35 +240,32 @@
             background: linear-gradient(135deg, #00d4ff, #00ff88);
             color: #1a1a1a;
             border: none;
-            padding: 12px 24px;
-            border-radius: 6px;
-            font-size: 1.1rem;
+            padding: 18px 40px;
+            border-radius: 8px;
+            font-size: 1.4rem;
             font-weight: 700;
             cursor: pointer;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             transition: all 0.3s ease;
         }
 
         .file-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 212, 255, 0.5);
         }
 
         .file-name {
-            font-size: 1rem;
+            font-size: 1.2rem;
             color: #00ff88;
-            max-width: 200px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            text-align: center;
         }
 
         .upload-status {
-            font-size: 1rem;
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 700;
         }
 
         .upload-status.success {
@@ -455,6 +277,58 @@
             background: rgba(255, 68, 68, 0.2);
             color: #ff4444;
         }
+
+        .no-data {
+            text-align: center;
+            padding: 60px;
+            font-size: 2rem;
+            color: #666;
+        }
+
+        .reload-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #252525;
+            border: 2px solid #333;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 900;
+        }
+
+        .reload-button:hover {
+            background: #333;
+            transform: rotate(180deg);
+        }
+
+        .reload-button svg {
+            width: 35px;
+            height: 35px;
+            fill: #00d4ff;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #444;
+        }
     </style>
 </head>
 <body>
@@ -462,77 +336,20 @@
         <div class="header">
             <h1>OPERATIONS DASHBOARD</h1>
             <div class="header-right">
-                <div class="time" id="headerTime"></div>
-                <div class="last-updated">Last Updated: <span class="last-updated-time" id="lastUpdate"></span></div>
+                <div class="current-time" id="currentTime"></div>
+                <div class="last-updated">Last Updated: <span class="last-updated-time" id="lastUpdate">Never</span></div>
             </div>
         </div>
 
-        <div class="main-grid">
-            <!-- Station Performance - EMPHASIZED -->
-            <div class="kpi-card" style="grid-column: span 4; grid-row: span 2;">
-                <div class="kpi-title" style="font-size: 1.8rem;">Station Performance</div>
-                <div class="station-grid" id="stationGrid"></div>
-            </div>
-
-            <!-- Total Induct Count -->
-            <div class="kpi-card">
-                <div class="kpi-title">Total Induct</div>
-                <div class="kpi-value green" id="totalInduct">0</div>
-                <div class="kpi-subtitle">Units Today</div>
-                <div class="kpi-change positive" id="inductChange">+0%</div>
-            </div>
-
-            <!-- Total Pack Count -->
-            <div class="kpi-card">
-                <div class="kpi-title">Total Pack</div>
-                <div class="kpi-value green" id="totalPack">0</div>
-                <div class="kpi-subtitle">Units Today</div>
-                <div class="kpi-change positive" id="packChange">+0%</div>
-            </div>
-
-            <!-- Total Rebin Count -->
-            <div class="kpi-card">
-                <div class="kpi-title">Total Rebin</div>
-                <div class="kpi-value blue" id="totalRebin">0</div>
-                <div class="kpi-subtitle">Units Today</div>
-                <div class="kpi-change positive" id="rebinChange">+0%</div>
-            </div>
-
-            <!-- Average Rate -->
-            <div class="kpi-card">
-                <div class="kpi-title">Avg Rate</div>
-                <div class="kpi-value green" id="avgRate">0</div>
-                <div class="kpi-subtitle">Units/Hour</div>
-                <div class="kpi-change positive" id="rateChange">+0%</div>
-            </div>
-
-            <!-- Hourly Trends -->
-            <div class="kpi-card large">
-                <div class="kpi-title">Hourly Trends</div>
-                <div class="chart-container">
-                    <div class="bar-chart" id="hourlyTrends"></div>
-                </div>
-            </div>
-
-            <!-- Performance Metrics -->
-            <div class="kpi-card">
-                <div class="kpi-title">Key Metrics</div>
-                <div id="metricsContainer"></div>
-            </div>
-        </div>
-
-        <div class="footer">
-            <div class="status-indicator">
-                <div class="status-dot"></div>
-                <span>System Online</span>
-            </div>
-            <div class="footer-clock" id="footerClock"></div>
+        <div class="data-grid" id="dataGrid">
+            <div class="no-data">Upload an Excel file to view station data</div>
         </div>
     </div>
 
     <!-- Upload Section -->
-    <div class="upload-section">
-        <div class="upload-label">Upload Data</div>
+    <div class="upload-section" id="uploadSection">
+        <div class="upload-icon">📊</div>
+        <div class="upload-title">Upload Excel File</div>
         <div class="file-input-wrapper">
             <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" />
             <button class="file-button" onclick="document.getElementById('fileInput').click()">Choose File</button>
@@ -541,43 +358,16 @@
         <div class="upload-status" id="uploadStatus" style="display: none;"></div>
     </div>
 
-    <script>
-        // Placeholder function to fetch data from API
-        async function fetchDashboardData() {
-            // Replace with actual API call
-            // const response = await fetch('/api/dashboard-data');
-            // return await response.json();
+    <!-- Reload Button -->
+    <div class="reload-button" id="reloadButton" style="display: none;" onclick="showUploadSection()">
+        <svg viewBox="0 0 24 24">
+            <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+        </svg>
+    </div>
 
-            // Mock data for demonstration
-            return {
-                totalInduct: Math.floor(Math.random() * 5000) + 15000,
-                totalPack: Math.floor(Math.random() * 4000) + 12000,
-                totalRebin: Math.floor(Math.random() * 1000) + 2000,
-                avgRate: Math.floor(Math.random() * 50) + 250,
-                inductChange: (Math.random() * 20 - 5).toFixed(1),
-                packChange: (Math.random() * 20 - 5).toFixed(1),
-                rebinChange: (Math.random() * 30 - 10).toFixed(1),
-                rateChange: (Math.random() * 15 - 5).toFixed(1),
-                hourlyData: Array.from({length: 12}, () => Math.random() * 100),
-                stations: [
-                    {name: 'Station A1', value: Math.floor(Math.random() * 500) + 200, rate: Math.floor(Math.random() * 100) + 200, target: 300, status: 'good'},
-                    {name: 'Station A2', value: Math.floor(Math.random() * 500) + 200, rate: Math.floor(Math.random() * 100) + 200, target: 300, status: 'good'},
-                    {name: 'Station A3', value: Math.floor(Math.random() * 500) + 200, rate: Math.floor(Math.random() * 100) + 200, target: 300, status: 'good'},
-                    {name: 'Station B1', value: Math.floor(Math.random() * 300) + 100, rate: Math.floor(Math.random() * 80) + 150, target: 300, status: 'warning'},
-                    {name: 'Station B2', value: Math.floor(Math.random() * 500) + 200, rate: Math.floor(Math.random() * 100) + 200, target: 300, status: 'good'},
-                    {name: 'Station B3', value: Math.floor(Math.random() * 300) + 100, rate: Math.floor(Math.random() * 80) + 150, target: 300, status: 'warning'},
-                    {name: 'Station C1', value: Math.floor(Math.random() * 200) + 50, rate: Math.floor(Math.random() * 60) + 80, target: 300, status: 'critical'},
-                    {name: 'Station C2', value: Math.floor(Math.random() * 500) + 200, rate: Math.floor(Math.random() * 100) + 200, target: 300, status: 'good'},
-                    {name: 'Station C3', value: Math.floor(Math.random() * 500) + 200, rate: Math.floor(Math.random() * 100) + 200, target: 300, status: 'good'}
-                ],
-                throughputData: Array.from({length: 20}, () => Math.random() * 300 + 100),
-                metrics: {
-                    efficiency: (Math.random() * 15 + 85).toFixed(1),
-                    uptime: (Math.random() * 5 + 95).toFixed(1),
-                    errorRate: (Math.random() * 2).toFixed(2)
-                }
-            };
-        }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script>
+        let currentData = [];
 
         // Update clock
         function updateClock() {
@@ -588,207 +378,32 @@
                 second: '2-digit',
                 hour12: false
             });
-            const dateString = now.toLocaleDateString('en-US', {
-                weekday: 'short',
-                month: 'short',
-                day: 'numeric'
-            });
 
-            document.getElementById('headerTime').textContent = timeString;
-            document.getElementById('footerClock').textContent = `${dateString} ${timeString}`;
+            document.getElementById('currentTime').textContent = timeString;
         }
 
         // Update last update timestamp
         function updateLastUpdate() {
             const now = new Date();
-            document.getElementById('lastUpdate').textContent = now.toLocaleTimeString('en-US', {
+            const dateTimeString = now.toLocaleString('en-US', {
+                month: 'short',
+                day: 'numeric',
                 hour: '2-digit',
                 minute: '2-digit',
-                hour12: false
+                hour12: true
             });
+            document.getElementById('lastUpdate').textContent = dateTimeString;
         }
 
-        // Render KPI values
-        function renderKPIs(data) {
-            document.getElementById('totalInduct').textContent = data.totalInduct.toLocaleString();
-            document.getElementById('totalPack').textContent = data.totalPack.toLocaleString();
-            document.getElementById('totalRebin').textContent = data.totalRebin.toLocaleString();
-            document.getElementById('avgRate').textContent = data.avgRate;
-
-            // Update changes
-            updateChange('inductChange', data.inductChange);
-            updateChange('packChange', data.packChange);
-            updateChange('rebinChange', data.rebinChange);
-            updateChange('rateChange', data.rateChange);
-
-            // Update value colors based on performance
-            updateValueColor('totalInduct', data.totalInduct, 18000, 15000);
-            updateValueColor('totalPack', data.totalPack, 14000, 12000);
-            updateValueColor('avgRate', data.avgRate, 280, 240);
+        // Show upload section
+        function showUploadSection() {
+            document.getElementById('uploadSection').classList.remove('hidden');
         }
 
-        // Update change indicators
-        function updateChange(elementId, value) {
-            const element = document.getElementById(elementId);
-            const numValue = parseFloat(value);
-            element.textContent = `${numValue > 0 ? '+' : ''}${value}%`;
-            element.className = `kpi-change ${numValue >= 0 ? 'positive' : 'negative'}`;
-        }
-
-        // Update value color based on thresholds
-        function updateValueColor(elementId, value, goodThreshold, warningThreshold) {
-            const element = document.getElementById(elementId);
-            element.className = 'kpi-value';
-            if (value >= goodThreshold) {
-                element.classList.add('green');
-            } else if (value >= warningThreshold) {
-                element.classList.add('yellow');
-            } else {
-                element.classList.add('red');
-            }
-        }
-
-        // Render hourly trends bar chart
-        function renderHourlyTrends(data) {
-            const container = document.getElementById('hourlyTrends');
-            container.innerHTML = '';
-
-            data.forEach((value, index) => {
-                const bar = document.createElement('div');
-                bar.className = 'bar';
-
-                if (value < 40) {
-                    bar.classList.add('red');
-                } else if (value < 70) {
-                    bar.classList.add('yellow');
-                }
-
-                bar.style.height = `${value}%`;
-                container.appendChild(bar);
-            });
-        }
-
-        // Render station performance
-        function renderStations(stations) {
-            const container = document.getElementById('stationGrid');
-            container.innerHTML = '';
-
-            stations.forEach(station => {
-                const stationDiv = document.createElement('div');
-                stationDiv.className = `station-item ${station.status === 'warning' ? 'warning' : station.status === 'critical' ? 'critical' : ''}`;
-
-                const percentage = Math.min((station.rate / station.target) * 100, 100);
-                const valueClass = station.status === 'good' ? 'green' : station.status === 'warning' ? 'yellow' : 'red';
-                const barClass = station.status === 'good' ? '' : station.status === 'warning' ? 'yellow' : 'red';
-                const statusText = station.status === 'good' ? 'OPTIMAL' : station.status === 'warning' ? 'BELOW TARGET' : 'CRITICAL';
-
-                stationDiv.innerHTML = `
-                    <div>
-                        <div class="station-status-badge ${station.status}">${statusText}</div>
-                        <div class="station-name">${station.name}</div>
-                        <div class="station-value ${valueClass}">${station.value.toLocaleString()}</div>
-                        <div class="station-label">Units Processed</div>
-                    </div>
-                    <div>
-                        <div class="station-rate">${station.rate}/hr • Target: ${station.target}/hr</div>
-                        <div class="station-bar">
-                            <div class="station-bar-fill ${barClass}" style="width: ${percentage}%"></div>
-                        </div>
-                    </div>
-                `;
-
-                container.appendChild(stationDiv);
-            });
-        }
-
-        // Render throughput line chart
-        function renderThroughputChart(data) {
-            const canvas = document.getElementById('throughputChart');
-            const ctx = canvas.getContext('2d');
-
-            canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
-
-            const width = canvas.width;
-            const height = canvas.height;
-            const padding = 20;
-
-            ctx.clearRect(0, 0, width, height);
-
-            // Draw line
-            ctx.beginPath();
-            ctx.strokeStyle = '#00d4ff';
-            ctx.lineWidth = 3;
-
-            const maxValue = Math.max(...data);
-            const stepX = (width - padding * 2) / (data.length - 1);
-
-            data.forEach((value, index) => {
-                const x = padding + index * stepX;
-                const y = height - padding - ((value / maxValue) * (height - padding * 2));
-
-                if (index === 0) {
-                    ctx.moveTo(x, y);
-                } else {
-                    ctx.lineTo(x, y);
-                }
-            });
-
-            ctx.stroke();
-
-            // Draw gradient fill
-            ctx.lineTo(width - padding, height - padding);
-            ctx.lineTo(padding, height - padding);
-            ctx.closePath();
-
-            const gradient = ctx.createLinearGradient(0, 0, 0, height);
-            gradient.addColorStop(0, 'rgba(0, 212, 255, 0.3)');
-            gradient.addColorStop(1, 'rgba(0, 212, 255, 0)');
-            ctx.fillStyle = gradient;
-            ctx.fill();
-        }
-
-        // Render key metrics
-        function renderMetrics(metrics) {
-            const container = document.getElementById('metricsContainer');
-            container.innerHTML = `
-                <div class="metric-row">
-                    <div class="metric-label">Efficiency</div>
-                    <div class="metric-value" style="color: ${metrics.efficiency >= 90 ? '#00ff88' : '#ffcc00'}">${metrics.efficiency}%</div>
-                </div>
-                <div class="metric-row">
-                    <div class="metric-label">Uptime</div>
-                    <div class="metric-value" style="color: ${metrics.uptime >= 95 ? '#00ff88' : '#ffcc00'}">${metrics.uptime}%</div>
-                </div>
-                <div class="metric-row">
-                    <div class="metric-label">Error Rate</div>
-                    <div class="metric-value" style="color: ${metrics.errorRate < 1 ? '#00ff88' : '#ff4444'}">${metrics.errorRate}%</div>
-                </div>
-            `;
-        }
-
-        // Main update function
-        async function updateDashboard() {
-            const data = await fetchDashboardData();
-
-            renderKPIs(data);
-            renderHourlyTrends(data.hourlyData);
-            renderStations(data.stations);
-            renderMetrics(data.metrics);
-
-            updateLastUpdate();
-        }
-
-        // Initialize dashboard
-        function init() {
-            updateClock();
-            updateDashboard();
-
-            // Update clock every second
-            setInterval(updateClock, 1000);
-
-            // Update dashboard every minute
-            setInterval(updateDashboard, 60000);
+        // Hide upload section
+        function hideUploadSection() {
+            document.getElementById('uploadSection').classList.add('hidden');
+            document.getElementById('reloadButton').style.display = 'flex';
         }
 
         // File upload handler
@@ -801,12 +416,7 @@
                 fileNameEl.textContent = file.name;
 
                 // Validate file type
-                const validTypes = ['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                                   'application/vnd.ms-excel',
-                                   'text/csv'];
-
-                if (validTypes.includes(file.type) || file.name.endsWith('.xlsx') || file.name.endsWith('.xls') || file.name.endsWith('.csv')) {
-                    // Process the file
+                if (file.name.endsWith('.xlsx') || file.name.endsWith('.xls') || file.name.endsWith('.csv')) {
                     processExcelFile(file);
                 } else {
                     statusEl.textContent = 'Invalid file type. Please upload Excel or CSV file.';
@@ -819,7 +429,7 @@
             }
         });
 
-        // Process Excel/CSV file
+        // Process Excel file
         async function processExcelFile(file) {
             const statusEl = document.getElementById('uploadStatus');
 
@@ -828,33 +438,27 @@
                 statusEl.className = 'upload-status';
                 statusEl.style.display = 'block';
 
-                // Here you would typically use a library like SheetJS (xlsx) to parse the Excel file
-                // For now, we'll simulate processing
-                const formData = new FormData();
-                formData.append('file', file);
+                const data = await readExcelFile(file);
 
-                // Placeholder for API call to upload and process file
-                // const response = await fetch('/api/upload-data', {
-                //     method: 'POST',
-                //     body: formData
-                // });
-                // const result = await response.json();
+                if (data && data.length > 0) {
+                    currentData = data;
+                    renderDashboard(data);
+                    updateLastUpdate();
 
-                // Simulate successful upload
-                await new Promise(resolve => setTimeout(resolve, 1000));
+                    statusEl.textContent = 'Upload successful!';
+                    statusEl.className = 'upload-status success';
 
-                statusEl.textContent = 'Upload successful!';
-                statusEl.className = 'upload-status success';
-
-                // Refresh dashboard with new data
-                await updateDashboard();
-
-                setTimeout(() => {
-                    statusEl.style.display = 'none';
-                }, 3000);
+                    setTimeout(() => {
+                        statusEl.style.display = 'none';
+                        hideUploadSection();
+                    }, 1500);
+                } else {
+                    throw new Error('No data found in file');
+                }
 
             } catch (error) {
-                statusEl.textContent = 'Upload failed. Please try again.';
+                console.error('Upload error:', error);
+                statusEl.textContent = 'Upload failed. Please check file format.';
                 statusEl.className = 'upload-status error';
 
                 setTimeout(() => {
@@ -863,7 +467,104 @@
             }
         }
 
-        // Start dashboard when page loads
+        // Read Excel file
+        function readExcelFile(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    try {
+                        const data = new Uint8Array(e.target.result);
+                        const workbook = XLSX.read(data, { type: 'array' });
+                        const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+                        const jsonData = XLSX.utils.sheet_to_json(firstSheet);
+
+                        // Parse the data
+                        const parsedData = jsonData.map(row => {
+                            return {
+                                station: row.Station || row.station || '',
+                                status: determineStatus(row.Status || row.status || row.Icon || row.icon || ''),
+                                jobs: parseInt(row.Jobs || row.jobs || 0),
+                                jph: parseInt(row.JPH || row.jph || 0),
+                                wall: parseInt(row.Wall || row.wall || 0)
+                            };
+                        }).filter(item => item.station); // Filter out empty rows
+
+                        resolve(parsedData);
+                    } catch (error) {
+                        reject(error);
+                    }
+                };
+
+                reader.onerror = function(error) {
+                    reject(error);
+                };
+
+                reader.readAsArrayBuffer(file);
+            });
+        }
+
+        // Determine status from icon/status text
+        function determineStatus(statusText) {
+            const text = statusText.toString().toLowerCase();
+            if (text.includes('below') || text.includes('red') || text.includes('under')) {
+                return 'below';
+            } else if (text.includes('above') || text.includes('blue') || text.includes('over')) {
+                return 'above';
+            } else if (text.includes('hitting') || text.includes('green') || text.includes('target')) {
+                return 'hitting';
+            }
+            return 'hitting'; // Default
+        }
+
+        // Render dashboard
+        function renderDashboard(data) {
+            const gridEl = document.getElementById('dataGrid');
+            gridEl.innerHTML = '';
+
+            if (data.length === 0) {
+                gridEl.innerHTML = '<div class="no-data">No station data found in file</div>';
+                return;
+            }
+
+            data.forEach(station => {
+                const card = document.createElement('div');
+                card.className = `station-card ${station.status}`;
+
+                const statusLabel = station.status === 'below' ? 'BELOW' :
+                                   station.status === 'above' ? 'ABOVE' : 'HITTING';
+
+                card.innerHTML = `
+                    <div class="station-header">
+                        <div class="station-name">${station.station}</div>
+                        <div class="status-icon ${station.status}">${statusLabel}</div>
+                    </div>
+                    <div class="station-metrics">
+                        <div class="metric">
+                            <div class="metric-label">Jobs</div>
+                            <div class="metric-value jobs">${station.jobs.toLocaleString()}</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">JPH</div>
+                            <div class="metric-value jph">${station.jph.toLocaleString()}</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">Wall</div>
+                            <div class="metric-value wall">${station.wall.toLocaleString()}</div>
+                        </div>
+                    </div>
+                `;
+
+                gridEl.appendChild(card);
+            });
+        }
+
+        // Initialize
+        function init() {
+            updateClock();
+            setInterval(updateClock, 1000);
+        }
+
         window.addEventListener('load', init);
     </script>
 </body>
