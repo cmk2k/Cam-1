@@ -100,12 +100,12 @@
             background: #ff4444;
         }
 
-        .station-card.hitting::before {
-            background: #00ff88;
+        .station-card.warning::before {
+            background: #ffcc00;
         }
 
-        .station-card.above::before {
-            background: #00d4ff;
+        .station-card.hitting::before {
+            background: #00ff88;
         }
 
         .station-header {
@@ -138,14 +138,14 @@
             color: #ff4444;
         }
 
+        .status-icon.warning {
+            background: rgba(255, 204, 0, 0.2);
+            color: #ffcc00;
+        }
+
         .status-icon.hitting {
             background: rgba(0, 255, 136, 0.2);
             color: #00ff88;
-        }
-
-        .status-icon.above {
-            background: rgba(0, 212, 255, 0.2);
-            color: #00d4ff;
         }
 
         .status-icon::before {
@@ -157,41 +157,34 @@
         }
 
         .station-metrics {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .metric {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 15px;
+            align-items: center;
         }
 
         .metric-label {
-            font-size: 1.3rem;
+            font-size: 1.8rem;
             color: #999;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         .metric-value {
-            font-size: 3.5rem;
+            font-size: 5rem;
             font-weight: 700;
             line-height: 1;
         }
 
-        .metric-value.jobs {
-            color: #00d4ff;
-        }
-
         .metric-value.jph {
             color: #00ff88;
-        }
-
-        .metric-value.wall {
-            color: #ffcc00;
         }
 
         .upload-section {
@@ -481,12 +474,11 @@
 
                         // Parse the data
                         const parsedData = jsonData.map(row => {
+                            const jph = parseInt(row.JPH || row.jph || 0);
                             return {
                                 station: row.Station || row.station || '',
-                                status: determineStatus(row.Status || row.status || row.Icon || row.icon || ''),
-                                jobs: parseInt(row.Jobs || row.jobs || 0),
-                                jph: parseInt(row.JPH || row.jph || 0),
-                                wall: parseInt(row.Wall || row.wall || 0)
+                                jph: jph,
+                                status: determineStatus(jph)
                             };
                         }).filter(item => item.station); // Filter out empty rows
 
@@ -504,17 +496,15 @@
             });
         }
 
-        // Determine status from icon/status text
-        function determineStatus(statusText) {
-            const text = statusText.toString().toLowerCase();
-            if (text.includes('below') || text.includes('red') || text.includes('under')) {
-                return 'below';
-            } else if (text.includes('above') || text.includes('blue') || text.includes('over')) {
-                return 'above';
-            } else if (text.includes('hitting') || text.includes('green') || text.includes('target')) {
+        // Determine status from JPH value
+        function determineStatus(jph) {
+            if (jph >= 180) {
                 return 'hitting';
+            } else if (jph >= 160) {
+                return 'warning';
+            } else {
+                return 'below';
             }
-            return 'hitting'; // Default
         }
 
         // Render dashboard
@@ -531,8 +521,8 @@
                 const card = document.createElement('div');
                 card.className = `station-card ${station.status}`;
 
-                const statusLabel = station.status === 'below' ? 'BELOW' :
-                                   station.status === 'above' ? 'ABOVE' : 'HITTING';
+                const statusLabel = station.status === 'below' ? 'BELOW RATE' :
+                                   station.status === 'warning' ? 'WARNING' : 'HITTING RATE';
 
                 card.innerHTML = `
                     <div class="station-header">
@@ -541,16 +531,8 @@
                     </div>
                     <div class="station-metrics">
                         <div class="metric">
-                            <div class="metric-label">Jobs</div>
-                            <div class="metric-value jobs">${station.jobs.toLocaleString()}</div>
-                        </div>
-                        <div class="metric">
                             <div class="metric-label">JPH</div>
                             <div class="metric-value jph">${station.jph.toLocaleString()}</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-label">Wall</div>
-                            <div class="metric-value wall">${station.wall.toLocaleString()}</div>
                         </div>
                     </div>
                 `;
