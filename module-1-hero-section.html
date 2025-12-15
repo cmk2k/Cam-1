@@ -1,0 +1,460 @@
+<!-- ================================================================
+     MODULE 1: HERO SECTION - Heavyweight Conveyor Belts
+     Applied Industrial Technologies
+     ================================================================ -->
+
+<!-- ==================== HEAD HTML ==================== -->
+<!-- Paste this into the "HEAD HTML" section of your HubSpot Rich Text Module -->
+
+<style>
+/* ========================================
+   MODULE 1: Hero Section - Scoped Styles
+   Namespace: aih- (Applied Industrial Heavyweight)
+   ======================================== */
+
+/* CSS Variables for Easy Editing */
+:root {
+  --aih-primary-navy: #002855;
+  --aih-accent-orange: #FF6B35;
+  --aih-accent-yellow: #FDB515;
+  --aih-text-light: #FFFFFF;
+  --aih-text-dark: #1A1A1A;
+  --aih-overlay-dark: rgba(0, 40, 85, 0.85);
+  --aih-spacing-sm: 1rem;
+  --aih-spacing-md: 2rem;
+  --aih-spacing-lg: 4rem;
+  --aih-border-radius: 4px;
+  --aih-transition: all 0.3s ease;
+}
+
+/* Hero Container */
+.aih-hero {
+  position: relative;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--aih-primary-navy);
+  color: var(--aih-text-light);
+  isolation: isolate;
+}
+
+/* Background Media (Image or Video) */
+.aih-hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.aih-hero__background-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dark Overlay */
+.aih-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--aih-overlay-dark);
+  z-index: -1;
+}
+
+/* Content Wrapper */
+.aih-hero__content {
+  max-width: 1200px;
+  width: 100%;
+  padding: var(--aih-spacing-lg) var(--aih-spacing-md);
+  text-align: center;
+  z-index: 1;
+}
+
+/* Heading Styles */
+.aih-hero__heading {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 var(--aih-spacing-md) 0;
+  letter-spacing: -0.02em;
+  animation: aih-fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.aih-hero__subheading {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0 auto var(--aih-spacing-lg) auto;
+  max-width: 800px;
+  opacity: 0.95;
+  animation: aih-fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* CTA Buttons */
+.aih-hero__cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--aih-spacing-lg);
+  animation: aih-fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.aih-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--aih-border-radius);
+  transition: var(--aih-transition);
+  border: 2px solid transparent;
+  cursor: pointer;
+  min-width: 200px;
+  text-align: center;
+}
+
+.aih-hero__btn--primary {
+  background-color: var(--aih-accent-orange);
+  color: var(--aih-text-light);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.aih-hero__btn--primary:hover,
+.aih-hero__btn--primary:focus {
+  background-color: #E55A2A;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+.aih-hero__btn--secondary {
+  background-color: transparent;
+  color: var(--aih-text-light);
+  border-color: var(--aih-text-light);
+}
+
+.aih-hero__btn--secondary:hover,
+.aih-hero__btn--secondary:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--aih-accent-yellow);
+  color: var(--aih-accent-yellow);
+  transform: translateY(-2px);
+}
+
+/* Focus States for Accessibility */
+.aih-hero__btn:focus {
+  outline: 3px solid var(--aih-accent-yellow);
+  outline-offset: 4px;
+}
+
+/* Highlight Ribbon */
+.aih-hero__ribbon {
+  background: linear-gradient(90deg, var(--aih-accent-yellow) 0%, var(--aih-accent-orange) 100%);
+  padding: 1.5rem 2rem;
+  border-radius: var(--aih-border-radius);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  animation: aih-fadeInUp 0.8s ease-out 0.8s both;
+}
+
+.aih-hero__highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.aih-hero__highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--aih-text-dark);
+  font-weight: 600;
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+}
+
+.aih-hero__highlight-icon {
+  font-size: 1.5rem;
+  color: var(--aih-primary-navy);
+}
+
+/* Separator between highlights (star) */
+.aih-hero__highlight-item:not(:last-child)::after {
+  content: "★";
+  margin-left: 2rem;
+  color: var(--aih-primary-navy);
+  font-size: 1rem;
+}
+
+/* Animations */
+@keyframes aih-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .aih-hero__heading,
+  .aih-hero__subheading,
+  .aih-hero__cta-group,
+  .aih-hero__ribbon {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .aih-hero__btn {
+    transition: none;
+  }
+
+  .aih-hero__btn:hover,
+  .aih-hero__btn:focus {
+    transform: none;
+  }
+}
+
+/* Responsive Breakpoints */
+
+/* Mobile (360px - 767px) */
+@media (max-width: 767px) {
+  .aih-hero {
+    min-height: 550px;
+  }
+
+  .aih-hero__content {
+    padding: var(--aih-spacing-md) var(--aih-spacing-sm);
+  }
+
+  .aih-hero__cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .aih-hero__btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .aih-hero__highlights {
+    gap: 1rem;
+  }
+
+  .aih-hero__highlight-item:not(:last-child)::after {
+    display: none;
+  }
+
+  .aih-hero__highlight-item {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .aih-hero__ribbon {
+    padding: 1.25rem 1rem;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .aih-hero {
+    min-height: 600px;
+  }
+
+  .aih-hero__highlights {
+    gap: 1.5rem;
+  }
+}
+
+/* Small Desktop (1024px - 1279px) */
+@media (min-width: 1024px) {
+  .aih-hero {
+    min-height: 650px;
+  }
+}
+
+/* Large Desktop (1280px+) */
+@media (min-width: 1280px) {
+  .aih-hero {
+    min-height: 700px;
+  }
+
+  .aih-hero__content {
+    padding: var(--aih-spacing-lg) var(--aih-spacing-md);
+  }
+}
+
+/* Editable Text Styling (visible in WYSIWYG) */
+.editable-text {
+  /* No special styling needed - just a marker class for editors */
+}
+
+</style>
+
+<!-- ==================== FOOTER HTML ==================== -->
+<!-- Paste this into the "FOOTER HTML" section of your HubSpot Rich Text Module -->
+
+<script>
+/* ========================================
+   MODULE 1: Hero Section - Minimal Scripts
+   ======================================== */
+
+(function() {
+  'use strict';
+
+  // Auto-play video if present (with user preference respect)
+  const heroVideo = document.querySelector('.aih-hero__background-media');
+
+  if (heroVideo && heroVideo.tagName === 'VIDEO') {
+    // Ensure video is muted for autoplay to work
+    heroVideo.muted = true;
+    heroVideo.playsInline = true;
+
+    // Respect reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReducedMotion) {
+      heroVideo.play().catch(function(error) {
+        console.log('Video autoplay prevented:', error);
+      });
+    }
+  }
+
+  // Smooth scroll for anchor links (if CTA points to page section)
+  const ctaButtons = document.querySelectorAll('.aih-hero__btn[href^="#"]');
+
+  ctaButtons.forEach(function(button) {
+    button.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId !== '#') {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    });
+  });
+
+})();
+</script>
+
+<!-- ==================== RICH TEXT SOURCE CODE BODY ==================== -->
+<!-- Paste this into the "RICH TEXT SOURCE CODE" area of your HubSpot Rich Text Module -->
+
+<!-- Module: Hero Section -->
+<section class="aih-hero" role="banner" aria-labelledby="aih-hero-heading">
+
+  <!-- Background Image or Video -->
+  <div class="aih-hero__background">
+    <!-- EDITOR NOTE: Replace src with your actual image or video file -->
+    <!-- For Image: -->
+    <img
+      src="heavy-belt-hero-conveyor.jpg"
+      alt="Industrial heavyweight conveyor belt in manufacturing facility"
+      class="aih-hero__background-media"
+      loading="eager"
+    />
+
+    <!-- For Video (uncomment and replace image above): -->
+    <!--
+    <video
+      class="aih-hero__background-media"
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-hidden="true"
+    >
+      <source src="video-hero-heavy-belt.mp4" type="video/mp4">
+      <source src="video-hero-heavy-belt.webm" type="video/webm">
+    </video>
+    -->
+  </div>
+
+  <!-- Dark Overlay -->
+  <div class="aih-hero__overlay" aria-hidden="true"></div>
+
+  <!-- Content -->
+  <div class="aih-hero__content">
+
+    <!-- Main Heading -->
+    <h1 id="aih-hero-heading" class="aih-hero__heading">
+      <span class="editable-text">Heavyweight Conveyor Belts</span>
+    </h1>
+
+    <!-- Supporting Subheading -->
+    <p class="aih-hero__subheading">
+      <span class="editable-text">
+        Your trusted source for heavyweight conveyor belt solutions.
+        Applied Industrial Technologies is an authorized distributor and full-service fabricator
+        with nationwide reach, offering 24/7 field service and unmatched reliability.
+      </span>
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="aih-hero__cta-group">
+      <a
+        href="https://applied.com/heavybelt-form"
+        class="aih-hero__btn aih-hero__btn--primary"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="editable-text">Contact an Expert</span>
+      </a>
+
+      <a
+        href="heavyweight-belt-sell-sheet.pdf"
+        class="aih-hero__btn aih-hero__btn--secondary"
+        download
+      >
+        <span class="editable-text">Download Product PDF</span>
+      </a>
+    </div>
+
+    <!-- Highlight Ribbon -->
+    <div class="aih-hero__ribbon">
+      <ul class="aih-hero__highlights">
+        <li class="aih-hero__highlight-item">
+          <span class="aih-hero__highlight-icon" aria-hidden="true">⚙️</span>
+          <span class="editable-text">84" Wide Slitting</span>
+        </li>
+        <li class="aih-hero__highlight-item">
+          <span class="aih-hero__highlight-icon" aria-hidden="true">🔥</span>
+          <span class="editable-text">120" Vulcanization</span>
+        </li>
+        <li class="aih-hero__highlight-item">
+          <span class="aih-hero__highlight-icon" aria-hidden="true">🛠️</span>
+          <span class="editable-text">Full-Service Fabrication</span>
+        </li>
+        <li class="aih-hero__highlight-item">
+          <span class="aih-hero__highlight-icon" aria-hidden="true">📞</span>
+          <span class="editable-text">24/7 Field Service</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</section>
+<!-- End Module: Hero Section -->
