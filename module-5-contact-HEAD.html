@@ -1,0 +1,163 @@
+<style>
+/* ===== CONTACT CTA ===== */
+.aih-contact {
+  padding: 80px 20px;
+  background: var(--aih-primary);
+  color: var(--aih-text-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.aih-contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+    linear-gradient(45deg, rgba(0, 58, 112, 0.3) 0%, transparent 100%);
+  z-index: 1;
+}
+
+.aih-contact__container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.aih-contact__heading {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.aih-contact__description {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+  opacity: 0.95;
+}
+
+.aih-contact__phone-wrapper {
+  margin-bottom: 40px;
+}
+
+.aih-contact__phone-label {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+.aih-contact__phone {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--aih-highlight);
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--aih-transition);
+  letter-spacing: 0.02em;
+}
+
+.aih-contact__phone:hover,
+.aih-contact__phone:focus {
+  color: var(--aih-accent);
+  transform: scale(1.05);
+  text-decoration: underline;
+}
+
+.aih-contact__phone:focus {
+  outline: 3px solid var(--aih-highlight);
+  outline-offset: 8px;
+}
+
+.aih-contact__cta-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.aih-contact__cta {
+  display: inline-block;
+  padding: 16px 40px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: var(--aih-transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-align: center;
+  min-width: 220px;
+}
+
+.aih-contact__cta--primary {
+  background: var(--aih-accent);
+  color: var(--aih-text-light);
+  border-color: var(--aih-accent);
+}
+
+.aih-contact__cta--primary:hover,
+.aih-contact__cta--primary:focus {
+  background: #E55A28;
+  border-color: #E55A28;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+}
+
+.aih-contact__cta--secondary {
+  background: transparent;
+  color: var(--aih-text-light);
+  border-color: var(--aih-text-light);
+}
+
+.aih-contact__cta--secondary:hover,
+.aih-contact__cta--secondary:focus {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.aih-contact__cta:focus {
+  outline: 3px solid var(--aih-highlight);
+  outline-offset: 4px;
+}
+
+.aih-contact__footer-text {
+  font-size: 0.9375rem;
+  opacity: 0.85;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.aih-contact__footer-text strong {
+  color: var(--aih-highlight);
+  font-weight: 700;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .aih-contact {
+    padding: 60px 20px;
+  }
+
+  .aih-contact__cta-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aih-contact__cta {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+</style>
