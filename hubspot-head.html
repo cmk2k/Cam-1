@@ -16,11 +16,11 @@
 /* Hero Section */
 .ait-hero-section {
   position: relative;
-  background: linear-gradient(135deg, #3d2817 0%, #1e3a8a 50%, #0f172a 100%);
-  min-height: 100vh;
+  background: rgba(30, 58, 138, 0.15);
+  min-height: 60vh;
   display: flex;
   align-items: center;
-  padding: 80px 20px;
+  padding: 60px 20px 40px;
   overflow: hidden;
 }
 
@@ -31,8 +31,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(239, 68, 68, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 70% 50%, rgba(30, 58, 138, 0.15) 0%, transparent 50%);
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.25) 0%, rgba(15, 23, 42, 0.35) 100%);
   pointer-events: none;
 }
 
@@ -53,21 +52,22 @@
 }
 
 .ait-hero-title {
-  font-size: 4.5rem;
+  font-size: 3rem;
   font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-  letter-spacing: -1px;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
   color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .ait-hero-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 2.5rem;
-  opacity: 0.9;
-  color: #e5e7eb;
-  max-width: 500px;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  max-width: 550px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .ait-hero-buttons {
@@ -80,40 +80,40 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 16px 36px;
-  font-size: 1.05rem;
+  padding: 14px 32px;
+  font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 4px;
+  border-radius: 3px;
   position: relative;
   overflow: hidden;
 }
 
 .ait-btn-primary {
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  background: #ef4444;
   color: #ffffff;
-  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .ait-btn-primary:hover {
-  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-  box-shadow: 0 6px 30px rgba(239, 68, 68, 0.6);
-  transform: translateY(-2px);
+  background: #dc2626;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
 }
 
 .ait-btn-secondary {
-  background: transparent;
-  color: #ffffff;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1e3a8a;
   border: 2px solid #ffffff;
 }
 
 .ait-btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #ef4444;
-  color: #ef4444;
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #1e3a8a;
 }
 
 .ait-btn-icon {
@@ -132,88 +132,76 @@
 .ait-belt-card {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
   aspect-ratio: 1;
-  background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-  border-radius: 8px;
-  transform: rotate(5deg);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  border: 3px solid rgba(239, 68, 68, 0.6);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ait-belt-card:hover {
-  transform: rotate(5deg) scale(1.05);
-}
-
-.ait-belt-card::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(135deg, #ef4444 0%, #1e3a8a 100%);
-  border-radius: 8px;
-  z-index: -1;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
 }
 
 .ait-belt-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  padding: 20px;
-  background: radial-gradient(circle at center, #ef4444 0%, #1e3a8a 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 6rem;
-  color: rgba(255, 255, 255, 0.9);
+}
+
+/* For actual images - use this class on your img tag */
+.ait-belt-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Stats Section */
 .ait-stats-section {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 40px);
+  position: relative;
+  width: 100%;
   max-width: 1200px;
+  margin: 40px auto 0;
   z-index: 10;
 }
 
 .ait-stats-container {
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(239, 68, 68, 0.3);
-  border-radius: 12px;
-  padding: 40px 60px;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(239, 68, 68, 0.4);
+  border-radius: 4px;
+  padding: 30px 40px;
   position: relative;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
 }
 
 .ait-stats-container::before,
 .ait-stats-container::after {
   content: '';
   position: absolute;
-  width: 80px;
+  width: 60px;
   height: 100%;
   top: 0;
-  border: 2px solid rgba(239, 68, 68, 0.4);
+  border: 2px solid rgba(239, 68, 68, 0.3);
 }
 
 .ait-stats-container::before {
-  left: -40px;
+  left: -30px;
   border-right: none;
-  border-radius: 12px 0 0 12px;
-  background: linear-gradient(90deg, transparent 0%, rgba(239, 68, 68, 0.05) 100%);
+  border-radius: 4px 0 0 4px;
 }
 
 .ait-stats-container::after {
-  right: -40px;
+  right: -30px;
   border-left: none;
-  border-radius: 0 12px 12px 0;
-  background: linear-gradient(270deg, transparent 0%, rgba(239, 68, 68, 0.05) 100%);
+  border-radius: 0 4px 4px 0;
 }
 
 .ait-stats-grid {
@@ -239,18 +227,18 @@
 }
 
 .ait-stat-value {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
   color: #ffffff;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
   .ait-hero-container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 30px;
     text-align: center;
   }
 
@@ -263,7 +251,7 @@
   }
 
   .ait-hero-title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
 
   .ait-hero-subtitle {
@@ -275,50 +263,15 @@
     justify-content: center;
   }
 
-  .ait-stats-section {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    margin-top: 60px;
-  }
-}
-
-@media (max-width: 768px) {
-  .ait-hero-title {
-    font-size: 2.5rem;
-  }
-
-  .ait-hero-subtitle {
-    font-size: 1.1rem;
-  }
-
-  .ait-stats-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .ait-stats-container {
-    padding: 30px 20px;
-  }
-
-  .ait-stats-container::before,
-  .ait-stats-container::after {
-    display: none;
-  }
-
-  .ait-stat-value {
-    font-size: 2.5rem;
-  }
-
   .ait-belt-card {
     max-width: 350px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .ait-hero-section {
-    padding: 60px 15px;
+    min-height: 50vh;
+    padding: 40px 20px 30px;
   }
 
   .ait-hero-title {
@@ -327,6 +280,43 @@
 
   .ait-hero-subtitle {
     font-size: 1rem;
+  }
+
+  .ait-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .ait-stats-container {
+    padding: 25px 20px;
+  }
+
+  .ait-stats-container::before,
+  .ait-stats-container::after {
+    display: none;
+  }
+
+  .ait-stat-value {
+    font-size: 2rem;
+  }
+
+  .ait-belt-card {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ait-hero-section {
+    padding: 30px 15px 20px;
+    min-height: 45vh;
+  }
+
+  .ait-hero-title {
+    font-size: 1.75rem;
+  }
+
+  .ait-hero-subtitle {
+    font-size: 0.95rem;
   }
 
   .ait-hero-buttons {
@@ -340,7 +330,11 @@
   }
 
   .ait-stat-value {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+
+  .ait-stat-label {
+    font-size: 0.85rem;
   }
 }
 </style>

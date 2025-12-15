@@ -47,20 +47,23 @@ This landing page is designed to mimic the NFT Dungeon-Crawling design but adapt
 ### Color Scheme (Applied Industrial Technologies)
 - Primary Blue: #1e3a8a
 - Accent Red: #ef4444
-- Dark Gradient: Brown to Navy (#3d2817 → #1e3a8a → #0f172a)
+- Transparent overlays for background video visibility
 
 ### Key Sections
 
 1. **Hero Section**
-   - Large title on the left
-   - Animated belt pulley graphic on the right
+   - Professional title on the left (3rem, reduced size)
+   - Product image on the right (easy to replace)
    - Two CTA buttons (customizable)
-   - Dark gradient background
+   - **Transparent background** (60% opacity) - perfect for background videos
+   - Reduced height (60vh) for more compact professional appearance
+   - Text shadows for readability over videos
 
 2. **Stats Section**
    - Three key metrics with animated counters
+   - Semi-transparent container (50% opacity)
    - Decorative border design
-   - Positioned at bottom of hero
+   - Positioned below hero content (not overlapping)
 
 ### CTA Buttons
 
@@ -77,7 +80,78 @@ The landing page includes two call-to-action buttons:
 **To customize CTAs:**
 Edit in `hubspot-source.html` lines 26-34
 
+## Adding a Background Video
+
+The page is designed with transparent backgrounds to showcase a video. Here's how to add one:
+
+### Option 1: HubSpot Video Module (Recommended)
+
+1. In HubSpot page editor, go to the section containing the landing page
+2. Click **Settings** on the section
+3. Under **Background**, select **Video**
+4. Upload your video or paste a video URL (YouTube, Vimeo, or direct MP4)
+5. Set video to **Autoplay** and **Loop**
+6. Set **Fallback Image** for mobile devices
+
+### Option 2: Custom Background Video (Advanced)
+
+Add this code to your **Source Code** section, BEFORE the `<div class="ait-landing-page">` line:
+
+```html
+<style>
+.ait-hero-section {
+  position: relative;
+}
+.ait-hero-section video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+</style>
+
+<div class="ait-landing-page">
+  <section class="ait-hero-section">
+    <video autoplay muted loop playsinline>
+      <source src="YOUR-VIDEO-URL.mp4" type="video/mp4">
+    </video>
+    <!-- Rest of content continues below -->
+```
+
+**Video Recommendations:**
+- Format: MP4 (H.264 codec)
+- Resolution: 1920x1080 (Full HD)
+- Length: 10-30 seconds (looping)
+- File size: Under 5MB for fast loading
+- Content: Industrial manufacturing, belt systems, production lines
+
 ## Customization Guide
+
+### Replace the Product Image
+
+The placeholder image makes it very easy to swap in your own:
+
+1. Upload your belt product image to **HubSpot File Manager**
+2. Copy the image URL
+3. In `hubspot-source.html`, find line 40
+4. Replace the placeholder URL with your image:
+
+```html
+<!-- BEFORE -->
+<img src="https://via.placeholder.com/450x450/1e3a8a/ffffff?text=Your+Belt+Image+Here" alt="Heavyweight Industrial Belt Placeholder">
+
+<!-- AFTER -->
+<img src="https://your-hubspot-url.com/your-belt-image.jpg" alt="Heavyweight Industrial Belt">
+```
+
+**Image Recommendations:**
+- Format: JPG or PNG
+- Size: 800x800px minimum (square aspect ratio)
+- File size: Under 200KB (optimized)
+- Content: Clear product shot, white or transparent background
 
 ### Update Statistics
 
@@ -107,20 +181,6 @@ Subtitle (lines 23-26):
 </p>
 ```
 
-### Replace Belt Image
-
-The current design uses an SVG graphic. To use a real product image:
-
-1. Upload your belt image to HubSpot File Manager
-2. Replace the `<div class="ait-belt-image">` content (lines 41-75) with:
-
-```html
-<div class="ait-belt-image">
-  <img src="YOUR-IMAGE-URL" alt="Heavyweight Industrial Belt"
-       style="width: 100%; height: 100%; object-fit: cover; padding: 20px;">
-</div>
-```
-
 ## Global Header/Footer Compatibility
 
 This landing page is **fully scoped** to prevent conflicts:
@@ -142,13 +202,39 @@ The Footer HTML includes:
 - Event ID: `heavyweight_belts_cta_click`
 - Event Labels: Button text (e.g., "Get a Quote")
 
+## Professional Design Adjustments
+
+This landing page has been optimized for a professional industrial audience:
+
+### Transparency for Background Videos
+- Hero background: 15-35% opacity (lets video show through)
+- Stats container: 50% opacity with blur effect
+- Text shadows for readability over video content
+
+### Reduced Size & Compact Layout
+- Hero section: 60vh (down from 100vh)
+- Title: 3rem (professional, not overwhelming)
+- Padding reduced throughout for tighter, more focused design
+- Stats positioned below content (not overlapping)
+
+### Professional Styling
+- Solid color buttons (no flashy gradients)
+- Subtle animations (translate instead of rotate/scale)
+- Clean borders and shadows
+- Corporate color palette
+
+### Easy Image Replacement
+- Simple `<img>` tag - just swap the URL
+- Placeholder image shows exactly where to add yours
+- No complex SVG manipulation needed
+
 ## Responsive Design
 
 The page is fully responsive with breakpoints at:
 
-- **1024px**: Switches to single column, centers content
-- **768px**: Adjusts typography and spacing
-- **480px**: Mobile-optimized layout
+- **1024px**: Single column layout, centered content
+- **768px**: Further reduced sizing (50vh height)
+- **480px**: Mobile-optimized (45vh height)
 
 ## Testing Checklist
 
@@ -179,6 +265,13 @@ Uncomment the additional content section in `hubspot-source.html` (lines 99-129)
 
 ---
 
-**Version**: 1.0
+**Version**: 2.0 - Professional Edition
 **Last Updated**: 2025-12-15
+**Key Updates**:
+- Transparent backgrounds for video support
+- Reduced hero height (60vh)
+- Professional industrial styling
+- Easy image replacement with placeholder
+- Optimized for corporate audiences
+
 **Compatible With**: HubSpot CMS, Marketing Hub Professional/Enterprise
