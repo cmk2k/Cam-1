@@ -12,7 +12,7 @@
 }
 
 .aih-capabilities__container {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
@@ -158,8 +158,8 @@
 /* Service Cards Grid */
 .aih-capabilities__services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
 }
 
 .aih-capabilities__service-card {
@@ -170,6 +170,25 @@
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
+}
+
+/* Industrial Rubber Service - Horizontal Layout */
+.aih-capabilities__service-card--horizontal {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FFFE 100%);
+}
+
+.aih-capabilities__service-card--horizontal .aih-capabilities__service-list {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.aih-capabilities__service-card--horizontal .aih-capabilities__service-item {
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 1rem;
+  background: #F8F9FA;
+  border-radius: 8px;
+  border-left: 4px solid #00A3A1;
 }
 
 .aih-capabilities__service-card::before {
@@ -323,12 +342,16 @@
   }
 
   .aih-capabilities__services-grid {
-    grid-template-columns: 1fr;
     gap: 2rem;
   }
 
   .aih-capabilities__service-card {
     padding: 2rem 1.5rem;
+  }
+
+  .aih-capabilities__service-card--horizontal .aih-capabilities__service-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .aih-capabilities__cta {
@@ -355,7 +378,7 @@
   }
 
   .aih-capabilities__services-grid {
-    gap: 2.5rem;
+    gap: 2rem;
   }
 }
 
