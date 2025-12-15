@@ -16,11 +16,11 @@
 /* Hero Section */
 .ait-hero-section {
   position: relative;
-  background: rgba(30, 58, 138, 0.15);
-  min-height: 60vh;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 58, 138, 0.88) 100%);
+  min-height: 85vh;
   display: flex;
   align-items: center;
-  padding: 60px 20px 40px;
+  padding: 100px 20px 80px;
   overflow: hidden;
 }
 
@@ -31,7 +31,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(30, 58, 138, 0.25) 0%, rgba(15, 23, 42, 0.35) 100%);
+  background:
+    radial-gradient(circle at 20% 30%, rgba(239, 68, 68, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(30, 58, 138, 0.2) 0%, transparent 40%);
   pointer-events: none;
 }
 
@@ -52,22 +54,22 @@
 }
 
 .ait-hero-title {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  letter-spacing: -0.5px;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
   color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .ait-hero-subtitle {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  color: #ffffff;
-  max-width: 550px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-size: 1.35rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 600px;
+  font-weight: 400;
 }
 
 .ait-hero-buttons {
@@ -79,41 +81,44 @@
 .ait-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  padding: 14px 32px;
-  font-size: 1rem;
+  padding: 18px 40px;
+  font-size: 1.05rem;
   font-weight: 600;
   text-decoration: none;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 3px;
+  border-radius: 6px;
   position: relative;
   overflow: hidden;
+  letter-spacing: 0.3px;
 }
 
 .ait-btn-primary {
   background: #ef4444;
   color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
 }
 
 .ait-btn-primary:hover {
   background: #dc2626;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(239, 68, 68, 0.5);
+  transform: translateY(-2px);
 }
 
 .ait-btn-secondary {
-  background: rgba(255, 255, 255, 0.9);
-  color: #1e3a8a;
-  border: 2px solid #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
 }
 
 .ait-btn-secondary:hover {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.25);
   border-color: #ffffff;
-  color: #1e3a8a;
+  transform: translateY(-2px);
 }
 
 .ait-btn-icon {
@@ -132,19 +137,38 @@
 .ait-belt-card {
   position: relative;
   width: 100%;
-  max-width: 450px;
+  max-width: 550px;
   aspect-ratio: 1;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  border: 3px solid rgba(239, 68, 68, 0.6);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(20px);
+}
+
+.ait-belt-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.5), rgba(30, 58, 138, 0.5));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.6;
+  z-index: 1;
 }
 
 .ait-belt-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  border-color: rgba(239, 68, 68, 0.4);
 }
 
 .ait-belt-image {
@@ -154,60 +178,44 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 2;
+  padding: 30px;
 }
 
 /* For actual images - use this class on your img tag */
 .ait-belt-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
 }
 
 /* Stats Section */
 .ait-stats-section {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 40px auto 0;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 1300px;
   z-index: 10;
 }
 
 .ait-stats-container {
-  background: rgba(15, 23, 42, 0.5);
-  backdrop-filter: blur(8px);
-  border: 2px solid rgba(239, 68, 68, 0.4);
-  border-radius: 4px;
-  padding: 30px 40px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 40px 60px;
   position: relative;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-}
-
-.ait-stats-container::before,
-.ait-stats-container::after {
-  content: '';
-  position: absolute;
-  width: 60px;
-  height: 100%;
-  top: 0;
-  border: 2px solid rgba(239, 68, 68, 0.3);
-}
-
-.ait-stats-container::before {
-  left: -30px;
-  border-right: none;
-  border-radius: 4px 0 0 4px;
-}
-
-.ait-stats-container::after {
-  right: -30px;
-  border-left: none;
-  border-radius: 0 4px 4px 0;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 .ait-stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 60px;
+  gap: 0;
   position: relative;
   z-index: 1;
 }
@@ -215,30 +223,57 @@
 .ait-stat-item {
   text-align: center;
   color: #ffffff;
+  padding: 20px 40px;
+  position: relative;
+}
+
+.ait-stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 60%;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2), transparent);
 }
 
 .ait-stat-label {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  opacity: 0.7;
-  margin-bottom: 0.5rem;
-  color: #e5e7eb;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
 }
 
 .ait-stat-value {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
   color: #ffffff;
-  letter-spacing: -0.5px;
+  letter-spacing: -1.5px;
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .ait-stats-section {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 60px;
+  }
+}
+
 @media (max-width: 1024px) {
   .ait-hero-container {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 50px;
     text-align: center;
   }
 
@@ -251,7 +286,7 @@
   }
 
   .ait-hero-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 
   .ait-hero-subtitle {
@@ -264,77 +299,90 @@
   }
 
   .ait-belt-card {
-    max-width: 350px;
+    max-width: 450px;
   }
 }
 
 @media (max-width: 768px) {
   .ait-hero-section {
-    min-height: 50vh;
-    padding: 40px 20px 30px;
+    min-height: 70vh;
+    padding: 80px 20px 60px;
   }
 
   .ait-hero-title {
-    font-size: 2rem;
+    font-size: 2.75rem;
+  }
+
+  .ait-hero-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .ait-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .ait-stat-item:not(:last-child)::after {
+    display: none;
+  }
+
+  .ait-stat-item {
+    padding: 25px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .ait-stat-item:last-child {
+    border-bottom: none;
+  }
+
+  .ait-stats-container {
+    padding: 30px 30px;
+  }
+
+  .ait-stat-value {
+    font-size: 2.75rem;
+  }
+
+  .ait-belt-card {
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ait-hero-section {
+    padding: 60px 20px 40px;
+    min-height: 65vh;
+  }
+
+  .ait-hero-title {
+    font-size: 2.25rem;
   }
 
   .ait-hero-subtitle {
     font-size: 1rem;
   }
 
-  .ait-stats-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .ait-stats-container {
-    padding: 25px 20px;
-  }
-
-  .ait-stats-container::before,
-  .ait-stats-container::after {
-    display: none;
-  }
-
-  .ait-stat-value {
-    font-size: 2rem;
-  }
-
-  .ait-belt-card {
-    max-width: 300px;
-  }
-}
-
-@media (max-width: 480px) {
-  .ait-hero-section {
-    padding: 30px 15px 20px;
-    min-height: 45vh;
-  }
-
-  .ait-hero-title {
-    font-size: 1.75rem;
-  }
-
-  .ait-hero-subtitle {
-    font-size: 0.95rem;
-  }
-
   .ait-hero-buttons {
     flex-direction: column;
     width: 100%;
+    gap: 0.75rem;
   }
 
   .ait-btn {
     width: 100%;
-    justify-content: center;
+    padding: 16px 32px;
   }
 
   .ait-stat-value {
-    font-size: 1.75rem;
+    font-size: 2.25rem;
   }
 
   .ait-stat-label {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  .ait-stats-container {
+    padding: 25px 20px;
   }
 }
 </style>

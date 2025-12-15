@@ -44,26 +44,36 @@ This landing page is designed to mimic the NFT Dungeon-Crawling design but adapt
 
 ## Design Features
 
+This is a **premium, modern landing page** designed to look professional and impressive for industrial audiences.
+
+### Visual Design
+- **Glassmorphism effect**: Frosted glass aesthetic with blur effects
+- **Gradient overlays**: Subtle radial gradients for depth
+- **Modern typography**: Bold, impactful headings with clean hierarchy
+- **Professional animations**: Smooth hover effects and transitions
+
 ### Color Scheme (Applied Industrial Technologies)
 - Primary Blue: #1e3a8a
 - Accent Red: #ef4444
-- Transparent overlays for background video visibility
+- Glass containers with 88-92% opacity backgrounds (allows video to show through)
+- White text with gradient effects for premium look
 
 ### Key Sections
 
-1. **Hero Section**
-   - Professional title on the left (3rem, reduced size)
-   - Product image on the right (easy to replace)
-   - Two CTA buttons (customizable)
-   - **Transparent background** (60% opacity) - perfect for background videos
-   - Reduced height (60vh) for more compact professional appearance
-   - Text shadows for readability over videos
+1. **Hero Section** (85vh full-screen impact)
+   - Large, bold headline (4rem, single line for impact)
+   - Premium subtitle with professional copy
+   - Two modern CTA buttons with shadows and hover effects
+   - **Semi-transparent background** works beautifully with videos
+   - Product showcase card with glassmorphism and gradient border
+   - High-quality placeholder image (easily replaceable)
 
-2. **Stats Section**
-   - Three key metrics with animated counters
-   - Semi-transparent container (50% opacity)
-   - Decorative border design
-   - Positioned below hero content (not overlapping)
+2. **Stats Section** (Positioned at bottom, overlaying hero)
+   - Three key metrics with gradient text effects
+   - Frosted glass container with blur backdrop
+   - Elegant dividers between stats
+   - Large, impressive numbers (3.5rem)
+   - Animated counter effects on scroll
 
 ### CTA Buttons
 
@@ -202,39 +212,55 @@ The Footer HTML includes:
 - Event ID: `heavyweight_belts_cta_click`
 - Event Labels: Button text (e.g., "Get a Quote")
 
-## Professional Design Adjustments
+## What Makes This Landing Page Stand Out
 
-This landing page has been optimized for a professional industrial audience:
+This is a **professional, modern landing page** that looks like it was designed by a top agency:
 
-### Transparency for Background Videos
-- Hero background: 15-35% opacity (lets video show through)
-- Stats container: 50% opacity with blur effect
-- Text shadows for readability over video content
+### Premium Glassmorphism Design
+- **Frosted glass effects** with backdrop blur (modern, trendy aesthetic)
+- **Gradient borders** on product showcase card
+- **Semi-transparent containers** that work beautifully over video backgrounds
+- **Smooth animations** throughout (hover effects, transitions)
 
-### Reduced Size & Compact Layout
-- Hero section: 60vh (down from 100vh)
-- Title: 3rem (professional, not overwhelming)
-- Padding reduced throughout for tighter, more focused design
-- Stats positioned below content (not overlapping)
+### Large, Impactful Layout
+- **Full-screen hero** (85vh) for maximum visual impact
+- **Bold 4rem headline** - professional and commanding
+- **3.5rem stats** with gradient text effects - impressive and eye-catching
+- **Modern glassmorphic card** for product showcase
 
-### Professional Styling
-- Solid color buttons (no flashy gradients)
-- Subtle animations (translate instead of rotate/scale)
-- Clean borders and shadows
-- Corporate color palette
+### Professional Typography & Spacing
+- Clean font hierarchy with proper weight (800 for headings)
+- Generous spacing and padding for breathing room
+- Single-line headline for impact (not broken up awkwardly)
+- Professional copy that speaks to decision-makers
 
-### Easy Image Replacement
-- Simple `<img>` tag - just swap the URL
-- Placeholder image shows exactly where to add yours
-- No complex SVG manipulation needed
+### Video Background Support
+- 88-92% opacity backgrounds let your video shine through
+- All text remains perfectly readable
+- Gradient overlays add depth without obscuring video
+- Stats positioned to overlay hero for dynamic composition
+
+### Modern Button Design
+- Large, prominent CTAs with proper padding
+- Elegant shadows and hover animations
+- Primary button: Bold red with glow effect
+- Secondary button: Frosted glass with backdrop blur
+
+### Premium Product Showcase
+- Large, impressive product card (550px max)
+- Glassmorphic container with gradient border
+- Smooth hover animation (lifts up on hover)
+- High-quality industrial image placeholder
+- Easy one-line image replacement
 
 ## Responsive Design
 
-The page is fully responsive with breakpoints at:
+The page is fully responsive and looks great on all devices:
 
-- **1024px**: Single column layout, centered content
-- **768px**: Further reduced sizing (50vh height)
-- **480px**: Mobile-optimized (45vh height)
+- **1200px and below**: Stats move below hero content (no longer overlapping)
+- **1024px**: Single column layout, centered content, 3.5rem headline
+- **768px**: Adjusted spacing (70vh height), stacked stats with dividers
+- **480px**: Mobile-optimized (65vh), full-width buttons, 2.25rem headline
 
 ## Testing Checklist
 
@@ -265,13 +291,17 @@ Uncomment the additional content section in `hubspot-source.html` (lines 99-129)
 
 ---
 
-**Version**: 2.0 - Professional Edition
+**Version**: 3.0 - Premium Edition
 **Last Updated**: 2025-12-15
-**Key Updates**:
-- Transparent backgrounds for video support
-- Reduced hero height (60vh)
-- Professional industrial styling
-- Easy image replacement with placeholder
-- Optimized for corporate audiences
+**Major Redesign**:
+- Complete visual overhaul with modern glassmorphism design
+- Full-screen impact hero (85vh) with premium typography
+- Gradient text effects and frosted glass containers
+- Professional animations and hover effects
+- Large, bold 4rem headline for maximum impact
+- Stats overlay with gradient dividers
+- High-quality industrial image placeholder
+- Optimized for video backgrounds (88-92% opacity)
 
+**Design Style**: Modern, premium, agency-quality
 **Compatible With**: HubSpot CMS, Marketing Hub Professional/Enterprise
