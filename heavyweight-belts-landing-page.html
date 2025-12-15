@@ -1,0 +1,1773 @@
+<!-- ============================================================================
+     APPLIED INDUSTRIAL TECHNOLOGIES
+     HEAVYWEIGHT CONVEYOR BELTS LANDING PAGE
+     Built for HubSpot Rich Text Editor
+     ============================================================================ -->
+
+<!--
+     INSTRUCTIONS FOR HUBSPOT:
+     Each module below has three sections:
+     1. HEAD HTML (CSS and optional scripts)
+     2. RICH TEXT SOURCE CODE (The main HTML body)
+     3. FOOTER HTML (Any closing scripts)
+
+     Copy each module into a separate Rich Text block in HubSpot.
+     Ensure you paste HEAD into the module's head section,
+     BODY into the Rich Text editor, and FOOTER into footer section.
+============================================================================ -->
+
+
+<!-- ============================================================================
+     MODULE 1: HERO SECTION
+     ============================================================================ -->
+
+<!-- HEAD HTML (Module 1) -->
+<style>
+/* ===== CSS VARIABLES ===== */
+:root {
+  --aih-primary: #002855;      /* Navy blue */
+  --aih-accent: #FF6B35;       /* Orange accent */
+  --aih-highlight: #FFD23F;    /* Safety yellow */
+  --aih-text-light: #FFFFFF;
+  --aih-text-dark: #1A1A1A;
+  --aih-grey-light: #F5F5F5;
+  --aih-grey-mid: #CCCCCC;
+  --aih-transition: all 0.3s ease;
+}
+
+/* ===== HERO SECTION ===== */
+.aih-hero {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--aih-primary) 0%, #003a70 100%);
+  color: var(--aih-text-light);
+  padding: 60px 20px;
+}
+
+.aih-hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.aih-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 40, 85, 0.85) 0%, rgba(0, 58, 112, 0.75) 100%);
+  z-index: 2;
+}
+
+.aih-hero__content {
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  animation: aih-fadeInUp 1s ease-out;
+}
+
+@keyframes aih-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aih-hero__content {
+    animation: none;
+  }
+}
+
+.aih-hero__headline {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.02em;
+}
+
+.aih-hero__subheadline {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0 0 40px 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.95;
+}
+
+.aih-hero__cta-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.aih-hero__cta {
+  display: inline-block;
+  padding: 16px 40px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: var(--aih-transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-align: center;
+  min-width: 200px;
+}
+
+.aih-hero__cta--primary {
+  background: var(--aih-accent);
+  color: var(--aih-text-light);
+  border-color: var(--aih-accent);
+}
+
+.aih-hero__cta--primary:hover,
+.aih-hero__cta--primary:focus {
+  background: #E55A28;
+  border-color: #E55A28;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+}
+
+.aih-hero__cta--secondary {
+  background: transparent;
+  color: var(--aih-text-light);
+  border-color: var(--aih-text-light);
+}
+
+.aih-hero__cta--secondary:hover,
+.aih-hero__cta--secondary:focus {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.aih-hero__cta:focus {
+  outline: 3px solid var(--aih-highlight);
+  outline-offset: 4px;
+}
+
+/* ===== HIGHLIGHT RIBBON ===== */
+.aih-hero__ribbon {
+  position: relative;
+  background: var(--aih-highlight);
+  color: var(--aih-text-dark);
+  padding: 20px;
+  transform: rotate(-1deg);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.aih-hero__ribbon::before,
+.aih-hero__ribbon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.aih-hero__ribbon::before {
+  left: 0;
+}
+
+.aih-hero__ribbon::after {
+  right: 0;
+}
+
+.aih-hero__ribbon-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aih-hero__ribbon-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  white-space: nowrap;
+}
+
+.aih-hero__ribbon-star {
+  font-size: 1.25em;
+  color: var(--aih-primary);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .aih-hero {
+    min-height: 500px;
+    padding: 40px 20px;
+  }
+
+  .aih-hero__cta-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aih-hero__cta {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .aih-hero__ribbon {
+    transform: rotate(0deg);
+    padding: 16px 10px;
+  }
+
+  .aih-hero__ribbon-content {
+    gap: 15px;
+  }
+
+  .aih-hero__ribbon-item {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .aih-hero__ribbon-item {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+}
+</style>
+
+<!-- RICH TEXT SOURCE CODE (Module 1) -->
+<section class="aih-hero" role="banner" aria-labelledby="aih-hero-heading">
+  <!-- Background Image/Video (replace with actual asset) -->
+  <img
+    src="heavy-belt-hero.jpg"
+    alt="Industrial heavyweight conveyor belt system in operation"
+    class="aih-hero__background"
+    aria-hidden="true"
+  />
+  <!-- For video: <video class="aih-hero__background" autoplay loop muted playsinline><source src="video-hero-heavy-belt.mp4" type="video/mp4"></video> -->
+
+  <div class="aih-hero__overlay" aria-hidden="true"></div>
+
+  <div class="aih-hero__content">
+    <h1 id="aih-hero-heading" class="aih-hero__headline">
+      <span class="editable-text">Heavyweight Conveyor Belts</span>
+    </h1>
+
+    <p class="aih-hero__subheadline">
+      <span class="editable-text">
+        Applied Industrial Technologies operates nationwide as your single-source authorized distributor and fabricator for heavyweight conveyor belt solutions. From consultation to 24/7 field service, we deliver dependable performance for your most demanding applications.
+      </span>
+    </p>
+
+    <div class="aih-hero__cta-group">
+      <a href="https://applied.com/heavybelt-form" class="aih-hero__cta aih-hero__cta--primary" aria-label="Contact an expert about heavyweight conveyor belts">
+        <span class="editable-text">Contact an Expert</span>
+      </a>
+      <a href="heavyweight-belt-spec-sheet.pdf" class="aih-hero__cta aih-hero__cta--secondary" target="_blank" rel="noopener" aria-label="Download heavyweight belt product specification sheet">
+        <span class="editable-text">Download Product PDF</span>
+      </a>
+    </div>
+
+    <!-- Highlight Ribbon -->
+    <div class="aih-hero__ribbon">
+      <div class="aih-hero__ribbon-content">
+        <div class="aih-hero__ribbon-item">
+          <span class="aih-hero__ribbon-star" aria-hidden="true">★</span>
+          <span class="editable-text">84″ Wide Slitting</span>
+        </div>
+        <div class="aih-hero__ribbon-item">
+          <span class="aih-hero__ribbon-star" aria-hidden="true">★</span>
+          <span class="editable-text">120″ Vulcanization</span>
+        </div>
+        <div class="aih-hero__ribbon-item">
+          <span class="aih-hero__ribbon-star" aria-hidden="true">★</span>
+          <span class="editable-text">24/7 Field Service</span>
+        </div>
+        <div class="aih-hero__ribbon-item">
+          <span class="aih-hero__ribbon-star" aria-hidden="true">★</span>
+          <span class="editable-text">OSHA/MSHA Compliant</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER HTML (Module 1) -->
+<!-- No scripts needed for Module 1 -->
+
+
+<!-- ============================================================================
+     MODULE 2: INFO SECTION - CAPABILITIES
+     ============================================================================ -->
+
+<!-- HEAD HTML (Module 2) -->
+<style>
+/* ===== INFO SECTION ===== */
+.aih-info {
+  padding: 80px 20px;
+  background: var(--aih-grey-light);
+}
+
+.aih-info__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aih-info__intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.aih-info__heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--aih-primary);
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.aih-info__description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #555555;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.aih-info__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.aih-info__card {
+  background: #FFFFFF;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: var(--aih-transition);
+  border-top: 4px solid var(--aih-accent);
+}
+
+.aih-info__card:hover,
+.aih-info__card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.aih-info__card-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--aih-accent);
+  border-radius: 50%;
+  color: var(--aih-text-light);
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.aih-info__card-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--aih-primary);
+  margin: 0 0 12px 0;
+}
+
+.aih-info__card-text {
+  font-size: 1rem;
+  color: #555555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.aih-info__card-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0 0;
+}
+
+.aih-info__card-list li {
+  padding: 6px 0;
+  padding-left: 24px;
+  position: relative;
+  color: #333333;
+}
+
+.aih-info__card-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--aih-accent);
+  font-weight: 700;
+}
+
+/* Two-column layout */
+.aih-info__feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.aih-info__feature-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.aih-info__feature-content {
+  padding: 20px;
+}
+
+.aih-info__feature-heading {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--aih-primary);
+  margin: 0 0 20px 0;
+}
+
+.aih-info__feature-text {
+  font-size: 1.125rem;
+  color: #555555;
+  line-height: 1.7;
+  margin: 0 0 24px 0;
+}
+
+.aih-info__cta {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--aih-accent);
+  color: var(--aih-text-light);
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 4px;
+  transition: var(--aih-transition);
+  border: 2px solid var(--aih-accent);
+}
+
+.aih-info__cta:hover,
+.aih-info__cta:focus {
+  background: #E55A28;
+  border-color: #E55A28;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 107, 53, 0.3);
+}
+
+.aih-info__cta:focus {
+  outline: 3px solid var(--aih-highlight);
+  outline-offset: 4px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .aih-info {
+    padding: 60px 20px;
+  }
+
+  .aih-info__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .aih-info__feature {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .aih-info__feature-image {
+    order: -1;
+  }
+}
+</style>
+
+<!-- RICH TEXT SOURCE CODE (Module 2) -->
+<section class="aih-info" role="region" aria-labelledby="aih-info-heading">
+  <div class="aih-info__container">
+
+    <div class="aih-info__intro">
+      <h2 id="aih-info-heading" class="aih-info__heading">
+        <span class="editable-text">Comprehensive Belt Capabilities</span>
+      </h2>
+      <p class="aih-info__description">
+        <span class="editable-text">
+          Our rubber shops act as full-service fabricators and warehouses with large bulk rolls of belting inventory. The Applied® Rubber Field Services team delivers dependable, high-quality belt splicing and repair at your job site, 24 hours a day, every day.
+        </span>
+      </p>
+    </div>
+
+    <!-- Capability Cards -->
+    <div class="aih-info__grid">
+
+      <article class="aih-info__card">
+        <div class="aih-info__card-icon" aria-hidden="true">01</div>
+        <h3 class="aih-info__card-title">
+          <span class="editable-text">Heavyweight Belt Capabilities</span>
+        </h3>
+        <ul class="aih-info__card-list">
+          <li><span class="editable-text">Up to 84″ Wide Slitting</span></li>
+          <li><span class="editable-text">Up to 120″ Vulcanizing Capabilities</span></li>
+          <li><span class="editable-text">Bucket Elevator Belt Punching</span></li>
+          <li><span class="editable-text">Skirt Board Rubber</span></li>
+        </ul>
+      </article>
+
+      <article class="aih-info__card">
+        <div class="aih-info__card-icon" aria-hidden="true">02</div>
+        <h3 class="aih-info__card-title">
+          <span class="editable-text">Industrial Rubber Services</span>
+        </h3>
+        <ul class="aih-info__card-list">
+          <li><span class="editable-text">Pulley Lagging</span></li>
+          <li><span class="editable-text">Sand Blasting</span></li>
+          <li><span class="editable-text">Custom Fabrication</span></li>
+          <li><span class="editable-text">Precision Cutting</span></li>
+        </ul>
+      </article>
+
+      <article class="aih-info__card">
+        <div class="aih-info__card-icon" aria-hidden="true">03</div>
+        <h3 class="aih-info__card-title">
+          <span class="editable-text">Field Service Capabilities</span>
+        </h3>
+        <ul class="aih-info__card-list">
+          <li><span class="editable-text">On-site Vulcanization up to 120″</span></li>
+          <li><span class="editable-text">Fabric Vulcanization</span></li>
+          <li><span class="editable-text">Steel Cable Vulcanization</span></li>
+          <li><span class="editable-text">Pipe Belt Vulcanization</span></li>
+        </ul>
+      </article>
+
+      <article class="aih-info__card">
+        <div class="aih-info__card-icon" aria-hidden="true">04</div>
+        <h3 class="aih-info__card-title">
+          <span class="editable-text">Installation & Compliance</span>
+        </h3>
+        <ul class="aih-info__card-list">
+          <li><span class="editable-text">Mechanical Fastening</span></li>
+          <li><span class="editable-text">On-Site Lagging Installation</span></li>
+          <li><span class="editable-text">OSHA/MSHA Compliant</span></li>
+          <li><span class="editable-text">24/7 Availability & Emergency Service</span></li>
+        </ul>
+      </article>
+
+    </div>
+
+    <!-- Featured Content with Image -->
+    <div class="aih-info__feature">
+      <img
+        src="image-belt-factory.jpg"
+        alt="Applied Industrial Technologies technician vulcanizing heavyweight conveyor belt on-site"
+        class="aih-info__feature-image"
+      />
+      <div class="aih-info__feature-content">
+        <h3 class="aih-info__feature-heading">
+          <span class="editable-text">Reduce Downtime with Expert Service</span>
+        </h3>
+        <p class="aih-info__feature-text">
+          <span class="editable-text">
+            The value of our field service is significant when your conveyor is in a downtime situation. Our well-trained technicians provide dependable, high-quality belt splicing and repair services at your job site—available 24 hours a day, every day.
+          </span>
+        </p>
+        <a href="https://applied.com/heavybelt-form" class="aih-info__cta">
+          <span class="editable-text">Request Service</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER HTML (Module 2) -->
+<!-- No scripts needed for Module 2 -->
+
+
+<!-- ============================================================================
+     MODULE 3: INTERACTIVE MAP
+     ============================================================================ -->
+
+<!-- HEAD HTML (Module 3) -->
+<style>
+/* ===== INTERACTIVE MAP ===== */
+.aih-map {
+  padding: 80px 20px;
+  background: #FFFFFF;
+}
+
+.aih-map__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aih-map__heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--aih-primary);
+  text-align: center;
+  margin: 0 0 16px 0;
+}
+
+.aih-map__description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #555555;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px auto;
+  line-height: 1.6;
+}
+
+.aih-map__wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  background: var(--aih-grey-light);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.aih-map__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.aih-map__pins {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.aih-map__pin {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 3px solid #FFFFFF;
+  cursor: pointer;
+  transition: var(--aih-transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.aih-map__pin:focus {
+  outline: 3px solid var(--aih-highlight);
+  outline-offset: 2px;
+  transform: scale(1.2);
+  z-index: 10;
+}
+
+.aih-map__pin:hover {
+  transform: scale(1.2);
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.aih-map__pin--shop {
+  background: #2E7AB8; /* Blue for rubber shops */
+}
+
+.aih-map__pin--distribution {
+  background: #F2A900; /* Yellow/gold for distribution centers */
+}
+
+.aih-map__pin[aria-expanded="true"] {
+  transform: scale(1.3);
+  z-index: 11;
+}
+
+/* Tooltip */
+.aih-map__tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FFFFFF;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  min-width: 280px;
+  z-index: 100;
+  border: 2px solid var(--aih-primary);
+}
+
+.aih-map__tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10px solid transparent;
+  border-top-color: var(--aih-primary);
+}
+
+.aih-map__pin[aria-expanded="true"] .aih-map__tooltip {
+  display: block;
+}
+
+.aih-map__tooltip-heading {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--aih-primary);
+  margin: 0 0 8px 0;
+}
+
+.aih-map__tooltip-type {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--aih-accent);
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.aih-map__tooltip-text {
+  font-size: 0.9375rem;
+  color: #333333;
+  margin: 0 0 8px 0;
+  line-height: 1.5;
+}
+
+.aih-map__tooltip-phone {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--aih-primary);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.aih-map__tooltip-phone:hover,
+.aih-map__tooltip-phone:focus {
+  color: var(--aih-accent);
+  text-decoration: underline;
+}
+
+/* Fallback list for mobile */
+.aih-map__list {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.aih-map__list-item {
+  background: #FFFFFF;
+  padding: 20px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border-left: 4px solid var(--aih-accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.aih-map__list-heading {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--aih-primary);
+  margin: 0 0 8px 0;
+}
+
+.aih-map__list-type {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--aih-accent);
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+}
+
+.aih-map__list-text {
+  font-size: 0.9375rem;
+  color: #555555;
+  margin: 0 0 8px 0;
+}
+
+.aih-map__list-phone {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--aih-primary);
+  text-decoration: none;
+}
+
+.aih-map__list-phone:hover,
+.aih-map__list-phone:focus {
+  color: var(--aih-accent);
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .aih-map {
+    padding: 60px 20px;
+  }
+
+  .aih-map__wrapper {
+    display: none;
+  }
+
+  .aih-map__list {
+    display: block;
+  }
+}
+</style>
+
+<!-- RICH TEXT SOURCE CODE (Module 3) -->
+<section class="aih-map" role="region" aria-labelledby="aih-map-heading">
+  <div class="aih-map__container">
+
+    <h2 id="aih-map-heading" class="aih-map__heading">
+      <span class="editable-text">Find Your Local Rubber Shop</span>
+    </h2>
+    <p class="aih-map__description">
+      <span class="editable-text">
+        Applied Industrial Technologies operates rubber shops and distribution centers across the country. Click a location to see details, capabilities, and contact information.
+      </span>
+    </p>
+
+    <!-- Interactive Map (Desktop) -->
+    <div class="aih-map__wrapper">
+      <img
+        src="map-usa.svg"
+        alt="Map of United States showing Applied rubber shop and distribution center locations"
+        class="aih-map__image"
+      />
+
+      <div class="aih-map__pins" role="group" aria-label="Rubber shop and distribution center locations">
+
+        <!-- Pin 1: Cleveland Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 32%; left: 68%;"
+          aria-label="Cleveland Rubber Shop, Ohio"
+          aria-expanded="false"
+          type="button"
+          data-location="cleveland"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">Cleveland, OH</h3>
+            <p class="aih-map__tooltip-text">
+              Full-service fabrication, vulcanization up to 120″, 24/7 field service
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 2: Chicago Distribution -->
+        <button
+          class="aih-map__pin aih-map__pin--distribution"
+          style="top: 36%; left: 55%;"
+          aria-label="Chicago Distribution Center, Illinois"
+          aria-expanded="false"
+          type="button"
+          data-location="chicago"
+        >
+          <span aria-hidden="true">★</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Distribution Center</p>
+            <h3 class="aih-map__tooltip-heading">Chicago, IL</h3>
+            <p class="aih-map__tooltip-text">
+              Large inventory, fast shipping, technical support
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 3: Houston Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 72%; left: 48%;"
+          aria-label="Houston Rubber Shop, Texas"
+          aria-expanded="false"
+          type="button"
+          data-location="houston"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">Houston, TX</h3>
+            <p class="aih-map__tooltip-text">
+              Steel cable vulcanization, mechanical fastening, on-site service
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 4: Phoenix Distribution -->
+        <button
+          class="aih-map__pin aih-map__pin--distribution"
+          style="top: 62%; left: 20%;"
+          aria-label="Phoenix Distribution Center, Arizona"
+          aria-expanded="false"
+          type="button"
+          data-location="phoenix"
+        >
+          <span aria-hidden="true">★</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Distribution Center</p>
+            <h3 class="aih-map__tooltip-heading">Phoenix, AZ</h3>
+            <p class="aih-map__tooltip-text">
+              Mining industry specialist, emergency service available
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 5: Portland Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 18%; left: 10%;"
+          aria-label="Portland Rubber Shop, Oregon"
+          aria-expanded="false"
+          type="button"
+          data-location="portland"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">Portland, OR</h3>
+            <p class="aih-map__tooltip-text">
+              Pulley lagging, sand blasting, bucket elevator belt punching
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 6: Atlanta Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 56%; left: 70%;"
+          aria-label="Atlanta Rubber Shop, Georgia"
+          aria-expanded="false"
+          type="button"
+          data-location="atlanta"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">Atlanta, GA</h3>
+            <p class="aih-map__tooltip-text">
+              Full fabrication, OSHA/MSHA compliant, 24/7 availability
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 7: Denver Distribution -->
+        <button
+          class="aih-map__pin aih-map__pin--distribution"
+          style="top: 44%; left: 32%;"
+          aria-label="Denver Distribution Center, Colorado"
+          aria-expanded="false"
+          type="button"
+          data-location="denver"
+        >
+          <span aria-hidden="true">★</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Distribution Center</p>
+            <h3 class="aih-map__tooltip-heading">Denver, CO</h3>
+            <p class="aih-map__tooltip-text">
+              Regional hub, wide belt slitting up to 84″, technical consultation
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 8: Boston Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 28%; left: 85%;"
+          aria-label="Boston Rubber Shop, Massachusetts"
+          aria-expanded="false"
+          type="button"
+          data-location="boston"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">Boston, MA</h3>
+            <p class="aih-map__tooltip-text">
+              Fabric vulcanization, skirt board rubber, field service
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 9: Minneapolis Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 26%; left: 52%;"
+          aria-label="Minneapolis Rubber Shop, Minnesota"
+          aria-expanded="false"
+          type="button"
+          data-location="minneapolis"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">Minneapolis, MN</h3>
+            <p class="aih-map__tooltip-text">
+              Large bulk inventory, on-site vulcanization, emergency service
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 10: Las Vegas Distribution -->
+        <button
+          class="aih-map__pin aih-map__pin--distribution"
+          style="top: 52%; left: 18%;"
+          aria-label="Las Vegas Distribution Center, Nevada"
+          aria-expanded="false"
+          type="button"
+          data-location="lasvegas"
+        >
+          <span aria-hidden="true">★</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Distribution Center</p>
+            <h3 class="aih-map__tooltip-heading">Las Vegas, NV</h3>
+            <p class="aih-map__tooltip-text">
+              Aggregate and mining specialist, fast delivery
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 11: Pittsburgh Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 38%; left: 73%;"
+          aria-label="Pittsburgh Rubber Shop, Pennsylvania"
+          aria-expanded="false"
+          type="button"
+          data-location="pittsburgh"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">Pittsburgh, PA</h3>
+            <p class="aih-map__tooltip-text">
+              Pipe belt vulcanization, mechanical fastening, on-site lagging
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 12: Dallas Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 66%; left: 50%;"
+          aria-label="Dallas Rubber Shop, Texas"
+          aria-expanded="false"
+          type="button"
+          data-location="dallas"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">Dallas, TX</h3>
+            <p class="aih-map__tooltip-text">
+              Bucket elevator specialist, wide slitting, vulcanization
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 13: Charlotte Distribution -->
+        <button
+          class="aih-map__pin aih-map__pin--distribution"
+          style="top: 52%; left: 74%;"
+          aria-label="Charlotte Distribution Center, North Carolina"
+          aria-expanded="false"
+          type="button"
+          data-location="charlotte"
+        >
+          <span aria-hidden="true">★</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Distribution Center</p>
+            <h3 class="aih-map__tooltip-heading">Charlotte, NC</h3>
+            <p class="aih-map__tooltip-text">
+              Southeast regional hub, comprehensive inventory
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 14: San Diego Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 68%; left: 12%;"
+          aria-label="San Diego Rubber Shop, California"
+          aria-expanded="false"
+          type="button"
+          data-location="sandiego"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">San Diego, CA</h3>
+            <p class="aih-map__tooltip-text">
+              Steel cable vulcanization, OSHA compliant, 24/7 emergency
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 15: Salt Lake City Distribution -->
+        <button
+          class="aih-map__pin aih-map__pin--distribution"
+          style="top: 38%; left: 24%;"
+          aria-label="Salt Lake City Distribution Center, Utah"
+          aria-expanded="false"
+          type="button"
+          data-location="saltlake"
+        >
+          <span aria-hidden="true">★</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Distribution Center</p>
+            <h3 class="aih-map__tooltip-heading">Salt Lake City, UT</h3>
+            <p class="aih-map__tooltip-text">
+              Mining industry focus, rapid response, technical expertise
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Fallback List (Mobile) -->
+    <ul class="aih-map__list">
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Rubber Shop</p>
+        <h3 class="aih-map__list-heading">Cleveland, OH</h3>
+        <p class="aih-map__list-text">Full-service fabrication, vulcanization up to 120″, 24/7 field service</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Distribution Center</p>
+        <h3 class="aih-map__list-heading">Chicago, IL</h3>
+        <p class="aih-map__list-text">Large inventory, fast shipping, technical support</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Rubber Shop</p>
+        <h3 class="aih-map__list-heading">Houston, TX</h3>
+        <p class="aih-map__list-text">Steel cable vulcanization, mechanical fastening, on-site service</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+      <!-- Add remaining locations as needed -->
+    </ul>
+
+  </div>
+</section>
+
+<!-- FOOTER HTML (Module 3) -->
+<script>
+(function() {
+  'use strict';
+
+  // Interactive map pin toggle
+  const pins = document.querySelectorAll('.aih-map__pin');
+
+  pins.forEach(function(pin) {
+    pin.addEventListener('click', function(e) {
+      e.stopPropagation();
+
+      // Close all other pins
+      pins.forEach(function(otherPin) {
+        if (otherPin !== pin) {
+          otherPin.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Toggle current pin
+      const isExpanded = pin.getAttribute('aria-expanded') === 'true';
+      pin.setAttribute('aria-expanded', !isExpanded);
+    });
+
+    // Keyboard support
+    pin.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        pin.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // Close tooltips when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.aih-map__pin')) {
+      pins.forEach(function(pin) {
+        pin.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+})();
+</script>
+
+
+<!-- ============================================================================
+     MODULE 4: VIDEO HUB & SUPPLIER SCROLLER
+     ============================================================================ -->
+
+<!-- HEAD HTML (Module 4) -->
+<style>
+/* ===== VIDEO & SUPPLIERS ===== */
+.aih-media {
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--aih-grey-light) 100%);
+}
+
+.aih-media__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aih-media__heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--aih-primary);
+  text-align: center;
+  margin: 0 0 16px 0;
+}
+
+.aih-media__description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #555555;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px auto;
+  line-height: 1.6;
+}
+
+/* Video Section */
+.aih-media__video-wrapper {
+  max-width: 900px;
+  margin: 0 auto 80px auto;
+  background: #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.aih-media__video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+}
+
+.aih-media__video-caption {
+  background: var(--aih-primary);
+  color: var(--aih-text-light);
+  padding: 20px;
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/* Supplier Scroller */
+.aih-media__suppliers-heading {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--aih-primary);
+  text-align: center;
+  margin: 0 0 40px 0;
+}
+
+.aih-media__scroller {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--aih-accent) var(--aih-grey-mid);
+  padding-bottom: 20px;
+}
+
+.aih-media__scroller::-webkit-scrollbar {
+  height: 8px;
+}
+
+.aih-media__scroller::-webkit-scrollbar-track {
+  background: var(--aih-grey-mid);
+  border-radius: 4px;
+}
+
+.aih-media__scroller::-webkit-scrollbar-thumb {
+  background: var(--aih-accent);
+  border-radius: 4px;
+}
+
+.aih-media__scroller::-webkit-scrollbar-thumb:hover {
+  background: #E55A28;
+}
+
+.aih-media__supplier-list {
+  display: flex;
+  gap: 24px;
+  padding: 0 20px;
+  list-style: none;
+  margin: 0;
+}
+
+.aih-media__supplier-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: var(--aih-transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.aih-media__supplier-card:hover,
+.aih-media__supplier-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--aih-accent);
+}
+
+.aih-media__supplier-logo {
+  width: 140px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.aih-media__supplier-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--aih-primary);
+  margin: 0 0 12px 0;
+}
+
+.aih-media__supplier-description {
+  font-size: 0.9375rem;
+  color: #555555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .aih-media {
+    padding: 60px 20px;
+  }
+
+  .aih-media__supplier-card {
+    flex: 0 0 240px;
+    padding: 24px;
+  }
+}
+</style>
+
+<!-- RICH TEXT SOURCE CODE (Module 4) -->
+<section class="aih-media" role="region" aria-labelledby="aih-media-heading">
+  <div class="aih-media__container">
+
+    <h2 id="aih-media-heading" class="aih-media__heading">
+      <span class="editable-text">See Our Solutions in Action</span>
+    </h2>
+    <p class="aih-media__description">
+      <span class="editable-text">
+        Learn how Applied's heavyweight conveyor belt solutions and field services keep your operations running smoothly, backed by industry-leading suppliers.
+      </span>
+    </p>
+
+    <!-- Video Section -->
+    <div class="aih-media__video-wrapper">
+      <video
+        class="aih-media__video"
+        controls
+        poster="video-thumbnail-heavy-belt.jpg"
+        aria-label="Heavyweight conveyor belt overview video"
+      >
+        <source src="heavy-belt-overview.mp4" type="video/mp4">
+        <p>Your browser does not support the video element. <a href="heavy-belt-overview.mp4">Download the video</a>.</p>
+      </video>
+      <p class="aih-media__video-caption">
+        <span class="editable-text">
+          Watch how our field service technicians deliver on-site vulcanization and emergency repairs with 24/7 availability.
+        </span>
+      </p>
+    </div>
+
+    <!-- Supplier Scroller -->
+    <h3 class="aih-media__suppliers-heading">
+      <span class="editable-text">Trusted Supplier Partners</span>
+    </h3>
+
+    <div class="aih-media__scroller" role="region" aria-label="Supplier partner carousel">
+      <ul class="aih-media__supplier-list">
+
+        <li class="aih-media__supplier-card editable-rich">
+          <img
+            src="logo-continental.png"
+            alt="Continental logo"
+            class="aih-media__supplier-logo"
+          />
+          <h4 class="aih-media__supplier-name">
+            <span class="editable-text">Continental</span>
+          </h4>
+          <p class="aih-media__supplier-description">
+            <span class="editable-text">
+              Global leader in heavyweight conveyor belts for mining, aggregate, and industrial applications.
+            </span>
+          </p>
+        </li>
+
+        <li class="aih-media__supplier-card editable-rich">
+          <img
+            src="logo-goldspec.png"
+            alt="GoldSpec logo"
+            class="aih-media__supplier-logo"
+          />
+          <h4 class="aih-media__supplier-name">
+            <span class="editable-text">GoldSpec</span>
+          </h4>
+          <p class="aih-media__supplier-description">
+            <span class="editable-text">
+              Premium belting solutions with exceptional durability and performance in extreme conditions.
+            </span>
+          </p>
+        </li>
+
+        <li class="aih-media__supplier-card editable-rich">
+          <img
+            src="logo-fenner-dunlop.png"
+            alt="Fenner Dunlop logo"
+            class="aih-media__supplier-logo"
+          />
+          <h4 class="aih-media__supplier-name">
+            <span class="editable-text">Fenner Dunlop</span>
+          </h4>
+          <p class="aih-media__supplier-description">
+            <span class="editable-text">
+              Innovative belt technology for demanding conveyor systems and heavy-duty operations.
+            </span>
+          </p>
+        </li>
+
+        <li class="aih-media__supplier-card editable-rich">
+          <img
+            src="logo-gates.png"
+            alt="Gates logo"
+            class="aih-media__supplier-logo"
+          />
+          <h4 class="aih-media__supplier-name">
+            <span class="editable-text">Gates</span>
+          </h4>
+          <p class="aih-media__supplier-description">
+            <span class="editable-text">
+              Engineered belting solutions with advanced materials and precision manufacturing.
+            </span>
+          </p>
+        </li>
+
+        <li class="aih-media__supplier-card editable-rich">
+          <img
+            src="logo-goodyear.png"
+            alt="Goodyear logo"
+            class="aih-media__supplier-logo"
+          />
+          <h4 class="aih-media__supplier-name">
+            <span class="editable-text">Goodyear</span>
+          </h4>
+          <p class="aih-media__supplier-description">
+            <span class="editable-text">
+              Trusted name in industrial belting with over a century of expertise and innovation.
+            </span>
+          </p>
+        </li>
+
+        <li class="aih-media__supplier-card editable-rich">
+          <img
+            src="logo-phoenix.png"
+            alt="Phoenix Conveyor Belts logo"
+            class="aih-media__supplier-logo"
+          />
+          <h4 class="aih-media__supplier-name">
+            <span class="editable-text">Phoenix</span>
+          </h4>
+          <p class="aih-media__supplier-description">
+            <span class="editable-text">
+              High-performance belting systems for the toughest industrial environments worldwide.
+            </span>
+          </p>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER HTML (Module 4) -->
+<!-- No scripts needed - CSS scroll-snap handles carousel behavior -->
+
+
+<!-- ============================================================================
+     MODULE 5: CONTACT & FOOTER CTA
+     ============================================================================ -->
+
+<!-- HEAD HTML (Module 5) -->
+<style>
+/* ===== CONTACT CTA ===== */
+.aih-contact {
+  padding: 80px 20px;
+  background: var(--aih-primary);
+  color: var(--aih-text-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.aih-contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+    linear-gradient(45deg, rgba(0, 58, 112, 0.3) 0%, transparent 100%);
+  z-index: 1;
+}
+
+.aih-contact__container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.aih-contact__heading {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.aih-contact__description {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+  opacity: 0.95;
+}
+
+.aih-contact__phone-wrapper {
+  margin-bottom: 40px;
+}
+
+.aih-contact__phone-label {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+.aih-contact__phone {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--aih-highlight);
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--aih-transition);
+  letter-spacing: 0.02em;
+}
+
+.aih-contact__phone:hover,
+.aih-contact__phone:focus {
+  color: var(--aih-accent);
+  transform: scale(1.05);
+  text-decoration: underline;
+}
+
+.aih-contact__phone:focus {
+  outline: 3px solid var(--aih-highlight);
+  outline-offset: 8px;
+}
+
+.aih-contact__cta-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.aih-contact__cta {
+  display: inline-block;
+  padding: 16px 40px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: var(--aih-transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-align: center;
+  min-width: 220px;
+}
+
+.aih-contact__cta--primary {
+  background: var(--aih-accent);
+  color: var(--aih-text-light);
+  border-color: var(--aih-accent);
+}
+
+.aih-contact__cta--primary:hover,
+.aih-contact__cta--primary:focus {
+  background: #E55A28;
+  border-color: #E55A28;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+}
+
+.aih-contact__cta--secondary {
+  background: transparent;
+  color: var(--aih-text-light);
+  border-color: var(--aih-text-light);
+}
+
+.aih-contact__cta--secondary:hover,
+.aih-contact__cta--secondary:focus {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.aih-contact__cta:focus {
+  outline: 3px solid var(--aih-highlight);
+  outline-offset: 4px;
+}
+
+.aih-contact__footer-text {
+  font-size: 0.9375rem;
+  opacity: 0.85;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.aih-contact__footer-text strong {
+  color: var(--aih-highlight);
+  font-weight: 700;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .aih-contact {
+    padding: 60px 20px;
+  }
+
+  .aih-contact__cta-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aih-contact__cta {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+</style>
+
+<!-- RICH TEXT SOURCE CODE (Module 5) -->
+<section class="aih-contact" role="region" aria-labelledby="aih-contact-heading">
+  <div class="aih-contact__container">
+
+    <h2 id="aih-contact-heading" class="aih-contact__heading">
+      <span class="editable-text">Get Expert Heavyweight Belt Solutions Today</span>
+    </h2>
+
+    <p class="aih-contact__description">
+      <span class="editable-text">
+        From consultation to 24/7 field service, Applied Industrial Technologies is your nationwide partner for heavyweight conveyor belt fabrication, vulcanization, and emergency repairs.
+      </span>
+    </p>
+
+    <address class="aih-contact__phone-wrapper">
+      <p class="aih-contact__phone-label">
+        <span class="editable-text">Call Us Toll-Free</span>
+      </p>
+      <a href="tel:18772792799" class="aih-contact__phone" aria-label="Call Applied Industrial Technologies at 1-877-279-2799">
+        <span class="editable-text">1-877-279-2799</span>
+      </a>
+    </address>
+
+    <div class="aih-contact__cta-group">
+      <a href="https://applied.com/heavybelt-form" class="aih-contact__cta aih-contact__cta--primary" aria-label="Contact us about heavyweight conveyor belt solutions">
+        <span class="editable-text">Get Started</span>
+      </a>
+      <a href="#aih-map-heading" class="aih-contact__cta aih-contact__cta--secondary" aria-label="Find your local rubber shop location">
+        <span class="editable-text">Find Your Local Shop</span>
+      </a>
+    </div>
+
+    <p class="aih-contact__footer-text">
+      <span class="editable-text">
+        <strong>24/7 Emergency Service Available.</strong> When your conveyor goes down, our rubber field services team is ready to respond with on-site vulcanization, mechanical fastening, and OSHA/MSHA compliant repairs. Applied operates nationwide with rubber shops and distribution centers positioned to serve you.
+      </span>
+    </p>
+
+  </div>
+</section>
+
+<!-- FOOTER HTML (Module 5) -->
+<!-- No scripts needed for Module 5 -->
+
+
+<!-- ============================================================================
+     END OF LANDING PAGE MODULES
+     ============================================================================ -->
