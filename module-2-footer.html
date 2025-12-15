@@ -1,0 +1,63 @@
+<script>
+/* ========================================
+   MODULE 2: Capabilities Section - Minimal Scripts
+   ======================================== */
+
+(function() {
+  'use strict';
+
+  // Animate capability cards on scroll
+  if ('IntersectionObserver' in window) {
+    const cardObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '50px'
+    });
+
+    // Animate service cards
+    const serviceCards = document.querySelectorAll('.aih-capabilities__service-card');
+    serviceCards.forEach(function(card, index) {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!prefersReducedMotion) {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        card.style.transitionDelay = (index * 0.15) + 's';
+      }
+
+      cardObserver.observe(card);
+    });
+
+    // Animate highlight box
+    const highlightBox = document.querySelector('.aih-capabilities__highlight');
+    if (highlightBox) {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!prefersReducedMotion) {
+        highlightBox.style.opacity = '0';
+        highlightBox.style.transform = 'scale(0.95)';
+        highlightBox.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+      }
+
+      cardObserver.observe(highlightBox);
+    }
+  }
+
+  // Format phone number link for tel: protocol
+  const phoneLinks = document.querySelectorAll('.aih-capabilities__highlight-phone a');
+  phoneLinks.forEach(function(link) {
+    const phoneNumber = link.textContent.replace(/\D/g, '');
+    if (phoneNumber && !link.getAttribute('href').startsWith('tel:')) {
+      link.setAttribute('href', 'tel:+1' + phoneNumber);
+    }
+  });
+
+})();
+</script>
