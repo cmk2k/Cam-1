@@ -15,7 +15,8 @@
 /* CSS Variables for Easy Editing */
 :root {
   --aih-primary-navy: #002855;
-  --aih-accent-orange: #FF6B35;
+  --aih-accent-orange: #00A3A1;
+  --aih-accent-teal: #00A3A1;
   --aih-accent-yellow: #FDB515;
   --aih-text-light: #FFFFFF;
   --aih-text-dark: #1A1A1A;
@@ -57,14 +58,14 @@
   display: block;
 }
 
-/* Dark Overlay */
+/* Dark Overlay with Left-to-Right Gradient */
 .aih-hero__overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--aih-overlay-dark);
+  background: linear-gradient(to right, rgba(0, 40, 85, 0.9), rgba(0, 40, 85, 0.6) 50%, transparent);
   z-index: -1;
 }
 
