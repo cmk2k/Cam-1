@@ -16,11 +16,13 @@
 /* Hero Section */
 .ait-hero-section {
   position: relative;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 58, 138, 0.88) 100%);
-  min-height: 85vh;
+  background: linear-gradient(180deg, #0a1628 0%, #1e3a8a 50%, #0f172a 100%);
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 100px 20px 80px;
+  justify-content: center;
+  padding: 80px 20px 120px;
   overflow: hidden;
 }
 
@@ -32,50 +34,111 @@
   right: 0;
   bottom: 0;
   background:
-    radial-gradient(circle at 20% 30%, rgba(239, 68, 68, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(30, 58, 138, 0.2) 0%, transparent 40%);
+    radial-gradient(circle at 50% 30%, rgba(30, 58, 138, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.2) 0%, transparent 70%);
   pointer-events: none;
 }
 
-.ait-hero-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+/* Background Glow Card */
+.ait-glow-card {
   position: relative;
-  z-index: 1;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 0.75;
+  margin: 0 auto 60px;
+  z-index: 2;
 }
 
+.ait-glow-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(15, 23, 42, 0.5) 100%);
+  border: 2px solid rgba(30, 58, 138, 0.4);
+  overflow: hidden;
+  box-shadow:
+    0 0 80px rgba(30, 58, 138, 0.6),
+    0 0 120px rgba(30, 58, 138, 0.4),
+    inset 0 0 60px rgba(30, 58, 138, 0.2);
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 80px rgba(30, 58, 138, 0.6),
+      0 0 120px rgba(30, 58, 138, 0.4),
+      inset 0 0 60px rgba(30, 58, 138, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 100px rgba(30, 58, 138, 0.8),
+      0 0 150px rgba(30, 58, 138, 0.6),
+      inset 0 0 80px rgba(30, 58, 138, 0.3);
+  }
+}
+
+.ait-glow-card-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: auto;
+  filter: drop-shadow(0 0 40px rgba(30, 58, 138, 0.8));
+}
+
+/* REPLACE THIS IMG TAG WITH YOUR GLOWING PRODUCT IMAGE */
+.ait-glow-card-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Content Container */
 .ait-hero-content {
-  color: #ffffff;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ait-hero-tagline {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .ait-hero-title {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 800;
-  line-height: 1.15;
-  margin-bottom: 1.5rem;
-  letter-spacing: -1px;
-  color: #ffffff;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  color: #1e3a8a;
+  background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 80px rgba(30, 58, 138, 0.5);
+  letter-spacing: -2px;
 }
 
-.ait-hero-subtitle {
-  font-size: 1.35rem;
-  line-height: 1.7;
-  margin-bottom: 2.5rem;
-  color: rgba(255, 255, 255, 0.95);
-  max-width: 600px;
-  font-weight: 400;
+.ait-hero-title .highlight {
+  color: #3b82f6;
+  -webkit-text-fill-color: #3b82f6;
 }
 
 .ait-hero-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
+  justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 80px;
 }
 
 .ait-btn {
@@ -83,133 +146,126 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 18px 40px;
-  font-size: 1.05rem;
+  padding: 20px 50px;
+  font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 6px;
+  border-radius: 8px;
   position: relative;
   overflow: hidden;
   letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 0.95rem;
 }
 
 .ait-btn-primary {
-  background: #ef4444;
+  background: #1e3a8a;
   color: #ffffff;
-  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
+  border: 2px solid #3b82f6;
+  box-shadow:
+    0 4px 20px rgba(30, 58, 138, 0.5),
+    inset 0 0 20px rgba(59, 130, 246, 0.2);
 }
 
 .ait-btn-primary:hover {
-  background: #dc2626;
-  box-shadow: 0 6px 24px rgba(239, 68, 68, 0.5);
+  background: #1e40af;
+  box-shadow:
+    0 6px 30px rgba(30, 58, 138, 0.7),
+    inset 0 0 30px rgba(59, 130, 246, 0.3);
   transform: translateY(-2px);
+  border-color: #60a5fa;
 }
 
 .ait-btn-secondary {
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
+  background: transparent;
+  color: #3b82f6;
+  border: 2px solid rgba(59, 130, 246, 0.5);
 }
 
 .ait-btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: #ffffff;
+  background: rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
   transform: translateY(-2px);
 }
 
-.ait-btn-icon {
-  width: 20px;
-  height: 20px;
-}
-
-/* Hero Image */
-.ait-hero-image {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.ait-belt-card {
-  position: relative;
-  width: 100%;
-  max-width: 550px;
-  aspect-ratio: 1;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-  transition: all 0.4s ease;
-  backdrop-filter: blur(20px);
-}
-
-.ait-belt-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 12px;
-  padding: 2px;
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.5), rgba(30, 58, 138, 0.5));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0.6;
-  z-index: 1;
-}
-
-.ait-belt-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
-  border-color: rgba(239, 68, 68, 0.4);
-}
-
-.ait-belt-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-  padding: 30px;
-}
-
-/* For actual images - use this class on your img tag */
-.ait-belt-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
-}
-
-/* Stats Section */
-.ait-stats-section {
+/* Brand Logos Section */
+.ait-brands-section {
   position: absolute;
   bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 40px);
-  max-width: 1300px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 0 20px;
+}
+
+.ait-brands-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.ait-brands-scroll {
+  display: flex;
+  gap: 80px;
+  animation: scroll-brands 30s linear infinite;
+  width: fit-content;
+}
+
+.ait-brands-scroll:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-brands {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ait-brand-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+  filter: grayscale(100%) brightness(2);
+}
+
+.ait-brand-item:hover {
+  opacity: 0.8;
+}
+
+.ait-brand-item img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Stats Section - Alternative to brands */
+.ait-stats-section {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto 0;
   z-index: 10;
 }
 
 .ait-stats-container {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(30, 58, 138, 0.2);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   border-radius: 16px;
   padding: 40px 60px;
   position: relative;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    inset 0 0 40px rgba(30, 58, 138, 0.2);
 }
 
 .ait-stats-grid {
@@ -235,7 +291,7 @@
   transform: translateY(-50%);
   width: 1px;
   height: 60%;
-  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(to bottom, transparent, rgba(59, 130, 246, 0.3), transparent);
 }
 
 .ait-stat-label {
@@ -243,7 +299,7 @@
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 0.75rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 500;
 }
 
@@ -251,70 +307,37 @@
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1;
-  color: #ffffff;
+  color: #3b82f6;
   letter-spacing: -1.5px;
-  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
-  .ait-stats-section {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    margin-top: 60px;
-  }
-}
-
 @media (max-width: 1024px) {
-  .ait-hero-container {
-    grid-template-columns: 1fr;
-    gap: 50px;
-    text-align: center;
-  }
-
-  .ait-hero-content {
-    order: 1;
-  }
-
-  .ait-hero-image {
-    order: 2;
-  }
-
   .ait-hero-title {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
 
-  .ait-hero-subtitle {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .ait-hero-buttons {
-    justify-content: center;
-  }
-
-  .ait-belt-card {
-    max-width: 450px;
+  .ait-glow-card {
+    max-width: 400px;
   }
 }
 
 @media (max-width: 768px) {
   .ait-hero-section {
-    min-height: 70vh;
-    padding: 80px 20px 60px;
+    padding: 60px 20px 100px;
+  }
+
+  .ait-glow-card {
+    max-width: 320px;
+    margin-bottom: 40px;
   }
 
   .ait-hero-title {
-    font-size: 2.75rem;
+    font-size: 3rem;
   }
 
-  .ait-hero-subtitle {
-    font-size: 1.15rem;
+  .ait-hero-tagline {
+    font-size: 0.85rem;
   }
 
   .ait-stats-grid {
@@ -328,7 +351,7 @@
 
   .ait-stat-item {
     padding: 25px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
   }
 
   .ait-stat-item:last-child {
@@ -336,53 +359,52 @@
   }
 
   .ait-stats-container {
-    padding: 30px 30px;
+    padding: 30px 20px;
   }
 
   .ait-stat-value {
-    font-size: 2.75rem;
+    font-size: 2.5rem;
   }
 
-  .ait-belt-card {
-    max-width: 380px;
+  .ait-brands-scroll {
+    gap: 50px;
+  }
+
+  .ait-brand-item img {
+    height: 30px;
   }
 }
 
 @media (max-width: 480px) {
   .ait-hero-section {
-    padding: 60px 20px 40px;
-    min-height: 65vh;
+    padding: 40px 20px 80px;
   }
 
   .ait-hero-title {
     font-size: 2.25rem;
   }
 
-  .ait-hero-subtitle {
-    font-size: 1rem;
-  }
-
   .ait-hero-buttons {
     flex-direction: column;
     width: 100%;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .ait-btn {
     width: 100%;
-    padding: 16px 32px;
+    padding: 18px 40px;
+  }
+
+  .ait-glow-card {
+    max-width: 280px;
   }
 
   .ait-stat-value {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 
-  .ait-stat-label {
-    font-size: 0.8rem;
-  }
-
-  .ait-stats-container {
-    padding: 25px 20px;
+  .ait-brands-section {
+    bottom: 20px;
   }
 }
 </style>
