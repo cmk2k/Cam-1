@@ -1,0 +1,112 @@
+<!-- HubSpot Footer HTML - Heavyweight Belts Landing Page -->
+<!-- Insert this in the FOOTER HTML section of your HubSpot page -->
+
+<script>
+// Smooth scroll for CTA buttons
+document.addEventListener('DOMContentLoaded', function() {
+  // Add smooth scrolling to anchor links within the landing page
+  const links = document.querySelectorAll('.ait-landing-page a[href^="#"]');
+
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href !== '#') {
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    });
+  });
+
+  // Optional: Add animation on scroll for stats
+  const observerOptions = {
+    threshold: 0.5,
+    rootMargin: '0px 0px -100px 0px'
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  const statsSection = document.querySelector('.ait-stats-section');
+  if (statsSection) {
+    statsSection.style.opacity = '0';
+    statsSection.style.transform = 'translateY(30px)';
+    statsSection.style.transition = 'all 0.8s ease-out';
+    observer.observe(statsSection);
+  }
+
+  // Counter animation for stats
+  function animateCounter(element, target, duration = 2000) {
+    const start = 0;
+    const increment = target / (duration / 16);
+    let current = start;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        element.textContent = target.toLocaleString();
+        clearInterval(timer);
+      } else {
+        element.textContent = Math.floor(current).toLocaleString();
+      }
+    }, 16);
+  }
+
+  // Trigger counter animation when stats come into view
+  const statsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const statValues = entry.target.querySelectorAll('.ait-stat-value');
+        statValues.forEach(stat => {
+          const value = parseInt(stat.textContent.replace(/,/g, ''));
+          if (!isNaN(value) && !stat.dataset.animated) {
+            stat.dataset.animated = 'true';
+            animateCounter(stat, value);
+          }
+        });
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  if (statsSection) {
+    statsObserver.observe(statsSection);
+  }
+
+  // Track CTA clicks (optional - integrate with HubSpot analytics)
+  const ctaButtons = document.querySelectorAll('.ait-btn');
+  ctaButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const buttonText = this.textContent.trim();
+
+      // HubSpot event tracking (if available)
+      if (typeof window._hsq !== 'undefined') {
+        window._hsq.push(['trackEvent', {
+          id: 'heavyweight_belts_cta_click',
+          value: buttonText
+        }]);
+      }
+
+      // Google Analytics tracking (if available)
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'cta_click', {
+          'event_category': 'Landing Page',
+          'event_label': buttonText,
+          'value': buttonText
+        });
+      }
+    });
+  });
+});
+</script>
