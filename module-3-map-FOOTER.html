@@ -1,0 +1,41 @@
+<script>
+(function() {
+  'use strict';
+
+  // Interactive map pin toggle
+  const pins = document.querySelectorAll('.aih-map__pin');
+
+  pins.forEach(function(pin) {
+    pin.addEventListener('click', function(e) {
+      e.stopPropagation();
+
+      // Close all other pins
+      pins.forEach(function(otherPin) {
+        if (otherPin !== pin) {
+          otherPin.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Toggle current pin
+      const isExpanded = pin.getAttribute('aria-expanded') === 'true';
+      pin.setAttribute('aria-expanded', !isExpanded);
+    });
+
+    // Keyboard support
+    pin.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        pin.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // Close tooltips when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.aih-map__pin')) {
+      pins.forEach(function(pin) {
+        pin.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+})();
+</script>

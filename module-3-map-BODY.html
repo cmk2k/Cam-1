@@ -1,0 +1,421 @@
+<section class="aih-map" role="region" aria-labelledby="aih-map-heading">
+  <div class="aih-map__container">
+
+    <h2 id="aih-map-heading" class="aih-map__heading">
+      <span class="editable-text">Find Your Local Rubber Shop</span>
+    </h2>
+    <p class="aih-map__description">
+      <span class="editable-text">
+        Applied Industrial Technologies operates rubber shops and distribution centers across the country. Click a location to see details, capabilities, and contact information.
+      </span>
+    </p>
+
+    <!-- Interactive Map (Desktop) -->
+    <div class="aih-map__wrapper">
+      <img
+        src="map-usa.svg"
+        alt="Map of United States showing Applied rubber shop and distribution center locations"
+        class="aih-map__image"
+      />
+
+      <div class="aih-map__pins" role="group" aria-label="Rubber shop and distribution center locations">
+
+        <!-- Pin 1: Cleveland Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 32%; left: 68%;"
+          aria-label="Cleveland Rubber Shop, Ohio"
+          aria-expanded="false"
+          type="button"
+          data-location="cleveland"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">Cleveland, OH</h3>
+            <p class="aih-map__tooltip-text">
+              Full-service fabrication, vulcanization up to 120″, 24/7 field service
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 2: Chicago Distribution -->
+        <button
+          class="aih-map__pin aih-map__pin--distribution"
+          style="top: 36%; left: 55%;"
+          aria-label="Chicago Distribution Center, Illinois"
+          aria-expanded="false"
+          type="button"
+          data-location="chicago"
+        >
+          <span aria-hidden="true">★</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Distribution Center</p>
+            <h3 class="aih-map__tooltip-heading">Chicago, IL</h3>
+            <p class="aih-map__tooltip-text">
+              Large inventory, fast shipping, technical support
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 3: Houston Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 72%; left: 48%;"
+          aria-label="Houston Rubber Shop, Texas"
+          aria-expanded="false"
+          type="button"
+          data-location="houston"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">Houston, TX</h3>
+            <p class="aih-map__tooltip-text">
+              Steel cable vulcanization, mechanical fastening, on-site service
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 4: Phoenix Distribution -->
+        <button
+          class="aih-map__pin aih-map__pin--distribution"
+          style="top: 62%; left: 20%;"
+          aria-label="Phoenix Distribution Center, Arizona"
+          aria-expanded="false"
+          type="button"
+          data-location="phoenix"
+        >
+          <span aria-hidden="true">★</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Distribution Center</p>
+            <h3 class="aih-map__tooltip-heading">Phoenix, AZ</h3>
+            <p class="aih-map__tooltip-text">
+              Mining industry specialist, emergency service available
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 5: Portland Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 18%; left: 10%;"
+          aria-label="Portland Rubber Shop, Oregon"
+          aria-expanded="false"
+          type="button"
+          data-location="portland"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">Portland, OR</h3>
+            <p class="aih-map__tooltip-text">
+              Pulley lagging, sand blasting, bucket elevator belt punching
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 6: Atlanta Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 56%; left: 70%;"
+          aria-label="Atlanta Rubber Shop, Georgia"
+          aria-expanded="false"
+          type="button"
+          data-location="atlanta"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">Atlanta, GA</h3>
+            <p class="aih-map__tooltip-text">
+              Full fabrication, OSHA/MSHA compliant, 24/7 availability
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 7: Denver Distribution -->
+        <button
+          class="aih-map__pin aih-map__pin--distribution"
+          style="top: 44%; left: 32%;"
+          aria-label="Denver Distribution Center, Colorado"
+          aria-expanded="false"
+          type="button"
+          data-location="denver"
+        >
+          <span aria-hidden="true">★</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Distribution Center</p>
+            <h3 class="aih-map__tooltip-heading">Denver, CO</h3>
+            <p class="aih-map__tooltip-text">
+              Regional hub, wide belt slitting up to 84″, technical consultation
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 8: Boston Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 28%; left: 85%;"
+          aria-label="Boston Rubber Shop, Massachusetts"
+          aria-expanded="false"
+          type="button"
+          data-location="boston"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">Boston, MA</h3>
+            <p class="aih-map__tooltip-text">
+              Fabric vulcanization, skirt board rubber, field service
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 9: Minneapolis Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 26%; left: 52%;"
+          aria-label="Minneapolis Rubber Shop, Minnesota"
+          aria-expanded="false"
+          type="button"
+          data-location="minneapolis"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">Minneapolis, MN</h3>
+            <p class="aih-map__tooltip-text">
+              Large bulk inventory, on-site vulcanization, emergency service
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 10: Las Vegas Distribution -->
+        <button
+          class="aih-map__pin aih-map__pin--distribution"
+          style="top: 52%; left: 18%;"
+          aria-label="Las Vegas Distribution Center, Nevada"
+          aria-expanded="false"
+          type="button"
+          data-location="lasvegas"
+        >
+          <span aria-hidden="true">★</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Distribution Center</p>
+            <h3 class="aih-map__tooltip-heading">Las Vegas, NV</h3>
+            <p class="aih-map__tooltip-text">
+              Aggregate and mining specialist, fast delivery
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 11: Pittsburgh Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 38%; left: 73%;"
+          aria-label="Pittsburgh Rubber Shop, Pennsylvania"
+          aria-expanded="false"
+          type="button"
+          data-location="pittsburgh"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">Pittsburgh, PA</h3>
+            <p class="aih-map__tooltip-text">
+              Pipe belt vulcanization, mechanical fastening, on-site lagging
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 12: Dallas Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 66%; left: 50%;"
+          aria-label="Dallas Rubber Shop, Texas"
+          aria-expanded="false"
+          type="button"
+          data-location="dallas"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">Dallas, TX</h3>
+            <p class="aih-map__tooltip-text">
+              Bucket elevator specialist, wide slitting, vulcanization
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 13: Charlotte Distribution -->
+        <button
+          class="aih-map__pin aih-map__pin--distribution"
+          style="top: 52%; left: 74%;"
+          aria-label="Charlotte Distribution Center, North Carolina"
+          aria-expanded="false"
+          type="button"
+          data-location="charlotte"
+        >
+          <span aria-hidden="true">★</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Distribution Center</p>
+            <h3 class="aih-map__tooltip-heading">Charlotte, NC</h3>
+            <p class="aih-map__tooltip-text">
+              Southeast regional hub, comprehensive inventory
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 14: San Diego Rubber Shop -->
+        <button
+          class="aih-map__pin aih-map__pin--shop"
+          style="top: 68%; left: 12%;"
+          aria-label="San Diego Rubber Shop, California"
+          aria-expanded="false"
+          type="button"
+          data-location="sandiego"
+        >
+          <span aria-hidden="true">●</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Rubber Shop</p>
+            <h3 class="aih-map__tooltip-heading">San Diego, CA</h3>
+            <p class="aih-map__tooltip-text">
+              Steel cable vulcanization, OSHA compliant, 24/7 emergency
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+        <!-- Pin 15: Salt Lake City Distribution -->
+        <button
+          class="aih-map__pin aih-map__pin--distribution"
+          style="top: 38%; left: 24%;"
+          aria-label="Salt Lake City Distribution Center, Utah"
+          aria-expanded="false"
+          type="button"
+          data-location="saltlake"
+        >
+          <span aria-hidden="true">★</span>
+          <div class="aih-map__tooltip" role="tooltip">
+            <p class="aih-map__tooltip-type">Distribution Center</p>
+            <h3 class="aih-map__tooltip-heading">Salt Lake City, UT</h3>
+            <p class="aih-map__tooltip-text">
+              Mining industry focus, rapid response, technical expertise
+            </p>
+            <a href="tel:18772792799" class="aih-map__tooltip-phone">1-877-279-2799</a>
+          </div>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Fallback List (Mobile) -->
+    <ul class="aih-map__list">
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Rubber Shop</p>
+        <h3 class="aih-map__list-heading">Cleveland, OH</h3>
+        <p class="aih-map__list-text">Full-service fabrication, vulcanization up to 120″, 24/7 field service</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Distribution Center</p>
+        <h3 class="aih-map__list-heading">Chicago, IL</h3>
+        <p class="aih-map__list-text">Large inventory, fast shipping, technical support</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Rubber Shop</p>
+        <h3 class="aih-map__list-heading">Houston, TX</h3>
+        <p class="aih-map__list-text">Steel cable vulcanization, mechanical fastening, on-site service</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Distribution Center</p>
+        <h3 class="aih-map__list-heading">Phoenix, AZ</h3>
+        <p class="aih-map__list-text">Mining industry specialist, emergency service available</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Rubber Shop</p>
+        <h3 class="aih-map__list-heading">Portland, OR</h3>
+        <p class="aih-map__list-text">Pulley lagging, sand blasting, bucket elevator belt punching</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Rubber Shop</p>
+        <h3 class="aih-map__list-heading">Atlanta, GA</h3>
+        <p class="aih-map__list-text">Full fabrication, OSHA/MSHA compliant, 24/7 availability</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Distribution Center</p>
+        <h3 class="aih-map__list-heading">Denver, CO</h3>
+        <p class="aih-map__list-text">Regional hub, wide belt slitting up to 84″, technical consultation</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Rubber Shop</p>
+        <h3 class="aih-map__list-heading">Boston, MA</h3>
+        <p class="aih-map__list-text">Fabric vulcanization, skirt board rubber, field service</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Rubber Shop</p>
+        <h3 class="aih-map__list-heading">Minneapolis, MN</h3>
+        <p class="aih-map__list-text">Large bulk inventory, on-site vulcanization, emergency service</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Distribution Center</p>
+        <h3 class="aih-map__list-heading">Las Vegas, NV</h3>
+        <p class="aih-map__list-text">Aggregate and mining specialist, fast delivery</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Rubber Shop</p>
+        <h3 class="aih-map__list-heading">Pittsburgh, PA</h3>
+        <p class="aih-map__list-text">Pipe belt vulcanization, mechanical fastening, on-site lagging</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Rubber Shop</p>
+        <h3 class="aih-map__list-heading">Dallas, TX</h3>
+        <p class="aih-map__list-text">Bucket elevator specialist, wide slitting, vulcanization</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Distribution Center</p>
+        <h3 class="aih-map__list-heading">Charlotte, NC</h3>
+        <p class="aih-map__list-text">Southeast regional hub, comprehensive inventory</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Rubber Shop</p>
+        <h3 class="aih-map__list-heading">San Diego, CA</h3>
+        <p class="aih-map__list-text">Steel cable vulcanization, OSHA compliant, 24/7 emergency</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+      <li class="aih-map__list-item">
+        <p class="aih-map__list-type">Distribution Center</p>
+        <h3 class="aih-map__list-heading">Salt Lake City, UT</h3>
+        <p class="aih-map__list-text">Mining industry focus, rapid response, technical expertise</p>
+        <a href="tel:18772792799" class="aih-map__list-phone">1-877-279-2799</a>
+      </li>
+    </ul>
+
+  </div>
+</section>
