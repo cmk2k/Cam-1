@@ -33,7 +33,7 @@
   min-height: 650px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   overflow: hidden;
   background-color: var(--aih-primary-navy);
   color: var(--aih-text-light);
@@ -73,7 +73,7 @@
   max-width: 1200px;
   width: 100%;
   padding: var(--aih-spacing-lg) var(--aih-spacing-md);
-  text-align: center;
+  text-align: left;
   z-index: 1;
 }
 
@@ -91,7 +91,7 @@
   font-size: clamp(1.125rem, 2.5vw, 1.5rem);
   font-weight: 400;
   line-height: 1.6;
-  margin: 0 auto var(--aih-spacing-lg) auto;
+  margin: 0 0 var(--aih-spacing-lg) 0;
   max-width: 800px;
   opacity: 0.95;
   animation: aih-fadeInUp 0.8s ease-out 0.4s both;
@@ -102,9 +102,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1.25rem;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  margin-bottom: var(--aih-spacing-lg);
   animation: aih-fadeInUp 0.8s ease-out 0.6s both;
 }
 
@@ -157,48 +156,6 @@
   outline-offset: 4px;
 }
 
-/* Highlight Ribbon */
-.aih-hero__ribbon {
-  background: linear-gradient(90deg, var(--aih-accent-yellow) 0%, var(--aih-accent-orange) 100%);
-  padding: 1.5rem 2rem;
-  border-radius: var(--aih-border-radius);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  animation: aih-fadeInUp 0.8s ease-out 0.8s both;
-}
-
-.aih-hero__highlights {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.aih-hero__highlight-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: var(--aih-text-dark);
-  font-weight: 600;
-  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
-}
-
-.aih-hero__highlight-icon {
-  font-size: 1.5rem;
-  color: var(--aih-primary-navy);
-}
-
-/* Separator between highlights (star) */
-.aih-hero__highlight-item:not(:last-child)::after {
-  content: "★";
-  margin-left: 2rem;
-  color: var(--aih-primary-navy);
-  font-size: 1rem;
-}
-
 /* Animations */
 @keyframes aih-fadeInUp {
   from {
@@ -215,8 +172,7 @@
 @media (prefers-reduced-motion: reduce) {
   .aih-hero__heading,
   .aih-hero__subheading,
-  .aih-hero__cta-group,
-  .aih-hero__ribbon {
+  .aih-hero__cta-group {
     animation: none;
     opacity: 1;
     transform: none;
@@ -253,33 +209,12 @@
     width: 100%;
     max-width: 320px;
   }
-
-  .aih-hero__highlights {
-    gap: 1rem;
-  }
-
-  .aih-hero__highlight-item:not(:last-child)::after {
-    display: none;
-  }
-
-  .aih-hero__highlight-item {
-    flex-basis: 100%;
-    justify-content: center;
-  }
-
-  .aih-hero__ribbon {
-    padding: 1.25rem 1rem;
-  }
 }
 
 /* Tablet (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .aih-hero {
     min-height: 600px;
-  }
-
-  .aih-hero__highlights {
-    gap: 1.5rem;
   }
 }
 
@@ -430,28 +365,6 @@
       >
         <span class="editable-text">Download Product PDF</span>
       </a>
-    </div>
-
-    <!-- Highlight Ribbon -->
-    <div class="aih-hero__ribbon">
-      <ul class="aih-hero__highlights">
-        <li class="aih-hero__highlight-item">
-          <span class="aih-hero__highlight-icon" aria-hidden="true">⚙️</span>
-          <span class="editable-text">84" Wide Slitting</span>
-        </li>
-        <li class="aih-hero__highlight-item">
-          <span class="aih-hero__highlight-icon" aria-hidden="true">🔥</span>
-          <span class="editable-text">120" Vulcanization</span>
-        </li>
-        <li class="aih-hero__highlight-item">
-          <span class="aih-hero__highlight-icon" aria-hidden="true">🛠️</span>
-          <span class="editable-text">Full-Service Fabrication</span>
-        </li>
-        <li class="aih-hero__highlight-item">
-          <span class="aih-hero__highlight-icon" aria-hidden="true">📞</span>
-          <span class="editable-text">24/7 Field Service</span>
-        </li>
-      </ul>
     </div>
 
   </div>
