@@ -31,7 +31,7 @@
 <section class="applied-hero-parker" style="
   position: relative;
   width: 100%;
-  min-height: 500px;
+  min-height: 650px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,19 +39,19 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 80px 20px;
+  padding: 100px 20px;
   overflow: hidden;
   animation: appliedHeroFadeIn 1s ease-out;
 ">
 
-  <!-- Dark Overlay for Text Readability -->
+  <!-- Dark Overlay for Text Readability - Black fade from left -->
   <div style="
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(27, 15, 58, 0.35) 0%, rgba(0, 118, 128, 0.25) 100%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
     z-index: 1;
   "></div>
 
@@ -63,8 +63,24 @@
     width: 100%;
     text-align: left;
     color: #ffffff;
-    padding: 0 40px;
+    padding: 0 30px;
   ">
+
+    <!-- Parker Logo Container -->
+    <div style="
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: appliedHeroSlideUp 1s ease-out 0.1s forwards;
+    ">
+      <img
+        src="placeholder-parker-logo.png"
+        alt="Parker Hannifin Logo"
+        style="
+          height: 50px;
+          width: auto;
+          display: block;
+        ">
+    </div>
 
     <!-- Eyebrow Label -->
     <p style="
@@ -155,36 +171,47 @@
 
 <!--
   TO CHANGE THE BACKGROUND IMAGE:
-  Line 33: Replace 'placeholder-hero-pneumatic-warehouse.jpg' with your image URL
+  Line 38: Replace 'placeholder-hero-pneumatic-warehouse.jpg' with your image URL
 
   RECOMMENDED IMAGE:
   - High-res warehouse/industrial setting with pneumatic equipment
-  - Minimum 1920x800px
+  - Minimum 1920x1000px (taller hero now)
   - Optimized for web (under 500KB)
   - Upload to: HubSpot File Manager > parker-pneumatic-warranty folder
 
+  TO CHANGE THE PARKER LOGO:
+  Line 76: Replace 'placeholder-parker-logo.png' with your Parker logo URL
+  Line 79: Adjust height (currently 50px) to resize logo
+  Upload Parker logo to HubSpot File Manager
+
   TO CHANGE THE EYEBROW TEXT:
-  Line 66: Change "Genuine Parker Parts"
+  Line 91: Change "Genuine Parker Parts"
 
   TO CHANGE THE HEADLINE:
-  Line 78: Change "5-Year Pneumatic System Warranty"
+  Line 103: Change "5-Year Pneumatic System Warranty"
 
   TO CHANGE THE SUBHEADLINE:
-  Line 88: Change the description paragraph
+  Line 113: Change the description paragraph
 
   TO CHANGE THE PRIMARY CTA:
-  Line 104: Change href="#contact-form" to your form URL/anchor
-  Line 115: Change button text "Talk to an Expert"
+  Line 129: Change href="#contact-form" to your form URL/anchor
+  Line 140: Change button text "Talk to an Expert"
 
   TO CHANGE THE SECONDARY CTA:
-  Line 120: Change href="#learn-more" to your destination
-  Line 131: Change button text "Learn More"
+  Line 145: Change href="#learn-more" to your destination
+  Line 156: Change button text "Learn More"
 
   TO ADJUST COLORS:
-  - Yellow CTA: #FDB81E (line 107)
-  - Navy text: #1B0F3A (line 108)
-  - Overlay gradient: Lines 50-51
+  - Eyebrow color: #FDB81E (line 91)
+  - Teal CTA: #007680 (line 132)
+  - Overlay gradient: Black fade left to right (line 54)
+
+  TO ADJUST HERO HEIGHT:
+  Line 34: Change min-height (currently 650px)
+
+  TO ADJUST TEXT POSITION:
+  Line 66: Change padding (currently 30px from left)
 
   TO ADJUST MOBILE APPEARANCE:
-  See media queries in head.html (lines 165-192)
+  See media queries in head.html
 -->
