@@ -1,0 +1,190 @@
+<!-- ========================================
+     MODULE 1: HERO SECTION
+     Parker 5-Year Pneumatic Warranty
+     Applied Industrial Technologies
+
+     PURPOSE:
+     Bold, conversion-focused hero that immediately
+     communicates the 5-year warranty value proposition.
+
+     FEATURES:
+     - Full-width industrial background image
+     - Overlay for text readability
+     - Headline + subheadline structure
+     - Dual CTA buttons with hover effects
+     - Fade-in animation on load
+     - Mobile responsive
+     - Scoped CSS (no global conflicts)
+
+     HUBSPOT INSTRUCTIONS:
+     1. Add a "Custom HTML" module to your page
+     2. Paste this entire code block
+     3. Replace 'placeholder-hero-pneumatic-warehouse.jpg'
+        with your actual image URL from HubSpot File Manager
+     4. Update CTA button links:
+        - "Talk to an Expert" href="#contact-form"
+        - "Learn More" href="#learn-more"
+     5. Test on mobile/tablet
+
+     ======================================== -->
+
+<section class="applied-hero-parker" style="
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('placeholder-hero-pneumatic-warehouse.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 20px;
+  overflow: hidden;
+  animation: appliedHeroFadeIn 1s ease-out;
+">
+
+  <!-- Dark Overlay for Text Readability -->
+  <div style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(27, 15, 58, 0.85) 0%, rgba(0, 118, 128, 0.75) 100%);
+    z-index: 1;
+  "></div>
+
+  <!-- Hero Content Container -->
+  <div class="applied-hero-content" style="
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 20px;
+  ">
+
+    <!-- Eyebrow Label -->
+    <p style="
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #FDB81E;
+      margin: 0 0 16px 0;
+      animation: appliedHeroSlideUp 1s ease-out 0.2s backwards;
+    ">Genuine Parker Parts</p>
+
+    <!-- Main Headline -->
+    <h1 style="
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #ffffff;
+      margin: 0 0 24px 0;
+      animation: appliedHeroSlideUp 1s ease-out 0.3s backwards;
+    ">5-Year Pneumatic System Warranty</h1>
+
+    <!-- Subheadline -->
+    <p style="
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #ffffff;
+      margin: 0 auto 40px auto;
+      max-width: 700px;
+      animation: appliedHeroSlideUp 1s ease-out 0.4s backwards;
+    ">Best-in-class protection for your pneumatic components. Reduce downtime, protect assets, and lower total cost of ownership with Parker's industry-leading extended warranty.</p>
+
+    <!-- CTA Buttons Container -->
+    <div style="
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: appliedHeroSlideUp 1s ease-out 0.5s backwards;
+    ">
+
+      <!-- Primary CTA Button: Talk to an Expert -->
+      <a href="#contact-form" class="applied-hero-cta-primary" style="
+        display: inline-block;
+        background-color: #FDB81E;
+        color: #1B0F3A;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 16px 40px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(253, 184, 30, 0.3);
+      "
+      onmouseover="this.style.backgroundColor='#e5a71a'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(253, 184, 30, 0.4)';"
+      onmouseout="this.style.backgroundColor='#FDB81E'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(253, 184, 30, 0.3)';">
+        Talk to an Expert
+      </a>
+
+      <!-- Secondary CTA Button: Learn More -->
+      <a href="#learn-more" class="applied-hero-cta-secondary" style="
+        display: inline-block;
+        background-color: transparent;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 16px 40px;
+        border-radius: 4px;
+        border: 2px solid #ffffff;
+        transition: all 0.3s ease;
+      "
+      onmouseover="this.style.backgroundColor='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(-2px)';"
+      onmouseout="this.style.backgroundColor='transparent'; this.style.transform='translateY(0)';">
+        Learn More
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================================
+     EDIT GUIDE FOR HUBSPOT
+     ======================================== -->
+
+<!--
+  TO CHANGE THE BACKGROUND IMAGE:
+  Line 33: Replace 'placeholder-hero-pneumatic-warehouse.jpg' with your image URL
+
+  RECOMMENDED IMAGE:
+  - High-res warehouse/industrial setting with pneumatic equipment
+  - Minimum 1920x800px
+  - Optimized for web (under 500KB)
+  - Upload to: HubSpot File Manager > parker-pneumatic-warranty folder
+
+  TO CHANGE THE EYEBROW TEXT:
+  Line 66: Change "Genuine Parker Parts"
+
+  TO CHANGE THE HEADLINE:
+  Line 78: Change "5-Year Pneumatic System Warranty"
+
+  TO CHANGE THE SUBHEADLINE:
+  Line 88: Change the description paragraph
+
+  TO CHANGE THE PRIMARY CTA:
+  Line 104: Change href="#contact-form" to your form URL/anchor
+  Line 115: Change button text "Talk to an Expert"
+
+  TO CHANGE THE SECONDARY CTA:
+  Line 120: Change href="#learn-more" to your destination
+  Line 131: Change button text "Learn More"
+
+  TO ADJUST COLORS:
+  - Yellow CTA: #FDB81E (line 107)
+  - Navy text: #1B0F3A (line 108)
+  - Overlay gradient: Lines 50-51
+
+  TO ADJUST MOBILE APPEARANCE:
+  See media queries in head.html (lines 165-192)
+-->

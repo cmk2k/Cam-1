@@ -1,0 +1,116 @@
+<!-- ========================================
+     LANDING PAGE CONTENT ENDS
+     ======================================== -->
+
+</div>
+<!-- End .applied-landing-page wrapper -->
+
+<!-- ========================================
+     OPTIONAL: JAVASCRIPT FOR INTERACTIONS
+     Add any custom scripts below
+     ======================================== -->
+
+<script>
+  // ========================================
+  // Smooth Scroll for Anchor Links
+  // ========================================
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+
+      // Don't prevent default for links that just have "#"
+      if (href === '#' || href === '') return;
+
+      e.preventDefault();
+      const target = document.querySelector(href);
+
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // ========================================
+  // Scroll Animation Trigger (Optional)
+  // Triggers animations when elements come into view
+  // ========================================
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, observerOptions);
+
+  // Observe all elements with class 'applied-animate-on-scroll'
+  document.querySelectorAll('.applied-animate-on-scroll').forEach(el => {
+    observer.observe(el);
+  });
+
+  // ========================================
+  // Console Log - Remove in Production
+  // ========================================
+  console.log('Parker Pneumatic Warranty Landing Page - Applied Industrial Technologies');
+  console.log('Version: 1.0');
+
+</script>
+
+<!-- ========================================
+     HUBSPOT INTEGRATION NOTES
+
+     1. PASTE LOCATION:
+        - Paste head.html content into HubSpot page settings > Advanced Options > Header HTML
+        - Or create a Custom HTML module at the top of the page
+
+     2. MODULE INSERTION:
+        - Each module (hero, value-strip, etc.) goes into a separate Custom HTML module
+        - Stack modules vertically in HubSpot page editor
+
+     3. GLOBAL HEADER/FOOTER:
+        - This code is designed to sit BETWEEN Applied's global header and footer
+        - Do not paste this into global header/footer templates
+        - It should only appear on this specific landing page
+
+     4. ASSET MANAGEMENT:
+        - Upload all images to HubSpot File Manager
+        - Copy image URLs and replace placeholder URLs in modules
+        - Recommended image folder: /parker-pneumatic-warranty/
+
+     5. FORM INTEGRATION:
+        - Replace #contact-form links with HubSpot form anchor IDs
+        - Or link directly to HubSpot form URLs
+        - Test form submissions before launching
+
+     6. TESTING CHECKLIST:
+        ✓ Test on desktop (Chrome, Firefox, Safari, Edge)
+        ✓ Test on tablet (iPad, Android tablets)
+        ✓ Test on mobile (iPhone, Android phones)
+        ✓ Verify all CTAs link to correct destinations
+        ✓ Check image loading and quality
+        ✓ Test form submission
+        ✓ Validate smooth scrolling works
+        ✓ Check page load speed
+        ✓ Verify no conflicts with global header/footer
+
+     7. LAUNCH CHECKLIST:
+        ✓ Meta description optimized
+        ✓ Page title set correctly
+        ✓ Open Graph image uploaded
+        ✓ All placeholder text replaced
+        ✓ All images optimized for web
+        ✓ CTAs linked correctly
+        ✓ Mobile responsive verified
+        ✓ Analytics tracking code added (if needed)
+
+     ======================================== -->
+
+</body>
+</html>

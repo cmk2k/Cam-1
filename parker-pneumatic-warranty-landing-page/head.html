@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ========================================
+       PARKER 5-YEAR WARRANTY LANDING PAGE
+       Applied Industrial Technologies
+       HubSpot Compatible Head Section
+       ======================================== -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Page Meta Information -->
+  <meta name="description" content="Parker Hannifin's 5-Year Pneumatic System Warranty offers best-in-class protection for pneumatic components. Reduce downtime and lower total cost of ownership.">
+  <meta name="keywords" content="Parker Hannifin, pneumatic warranty, 5-year warranty, industrial pneumatics, MRO, maintenance, Parker components">
+
+  <!-- Open Graph / Social Media Meta -->
+  <meta property="og:title" content="5-Year Pneumatic System Warranty | Parker Hannifin | Applied Industrial">
+  <meta property="og:description" content="Best-in-class protection for your pneumatic components. Reduce downtime, protect assets, and lower total cost of ownership.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="[INSERT_SOCIAL_SHARE_IMAGE_URL]">
+
+  <!-- Page Title -->
+  <title>5-Year Pneumatic System Warranty | Parker Hannifin | Applied Industrial Technologies</title>
+
+  <!-- ========================================
+       GLOBAL STYLES & ANIMATIONS
+       Scoped to avoid conflicts with HubSpot
+       ======================================== -->
+  <style>
+    /* ========================================
+       CSS RESET FOR LANDING PAGE MODULES ONLY
+       ======================================== */
+    .applied-landing-page * {
+      box-sizing: border-box;
+    }
+
+    /* ========================================
+       BRAND COLORS - Applied Industrial
+       ======================================== */
+    :root {
+      --applied-teal: #007680;
+      --applied-teal-dark: #005f68;
+      --applied-navy: #1B0F3A;
+      --applied-yellow: #FDB81E;
+      --applied-yellow-dark: #e5a71a;
+      --applied-white: #ffffff;
+      --applied-gray-light: #f5f5f5;
+      --applied-gray: #666666;
+      --applied-black: #000000;
+    }
+
+    /* ========================================
+       TYPOGRAPHY UTILITIES
+       ======================================== */
+    .applied-landing-page {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #333333;
+    }
+
+    /* ========================================
+       GLOBAL ANIMATIONS
+       Reusable across all modules
+       ======================================== */
+
+    /* Fade in from opacity 0 to 1 */
+    @keyframes appliedFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Slide up with fade */
+    @keyframes appliedSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Slide down with fade */
+    @keyframes appliedSlideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Slide in from left */
+    @keyframes appliedSlideLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Slide in from right */
+    @keyframes appliedSlideRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Scale up from smaller size */
+    @keyframes appliedScaleUp {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* ========================================
+       HERO MODULE ANIMATIONS
+       ======================================== */
+    @keyframes appliedHeroFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes appliedHeroSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ========================================
+       UTILITY CLASSES
+       ======================================== */
+    .applied-section-padding {
+      padding: 80px 20px;
+    }
+
+    .applied-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .applied-text-center {
+      text-align: center;
+    }
+
+    /* ========================================
+       RESPONSIVE BREAKPOINTS
+       ======================================== */
+
+    /* Tablet */
+    @media (max-width: 768px) {
+      .applied-section-padding {
+        padding: 60px 20px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      .applied-section-padding {
+        padding: 40px 20px;
+      }
+    }
+
+    /* ========================================
+       HERO MODULE SPECIFIC STYLES
+       ======================================== */
+
+    /* Mobile Responsive Styles for Hero */
+    @media (max-width: 768px) {
+      .applied-hero-parker {
+        min-height: 400px !important;
+        padding: 60px 20px !important;
+      }
+
+      .applied-hero-parker h1 {
+        font-size: 32px !important;
+      }
+
+      .applied-hero-parker p {
+        font-size: 16px !important;
+      }
+
+      .applied-hero-cta-primary,
+      .applied-hero-cta-secondary {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .applied-hero-parker h1 {
+        font-size: 28px !important;
+      }
+
+      .applied-hero-cta-primary,
+      .applied-hero-cta-secondary {
+        padding: 14px 30px !important;
+        font-size: 14px !important;
+      }
+    }
+
+  </style>
+
+</head>
+<body>
+
+<!-- ========================================
+     LANDING PAGE CONTENT STARTS BELOW
+     All modules should be wrapped in a div with class="applied-landing-page"
+     ======================================== -->
+
+<div class="applied-landing-page">
