@@ -44,7 +44,8 @@ parker-pneumatic-warranty-landing-page/
 - ✅ **Module 2:** Value Summary Strip (`02-value-summary-strip.html`)
 - ✅ **Module 3:** Program Overview (`03-program-overview.html`)
 - ✅ **Module 4:** Benefits Grid (`04-benefits-grid.html`)
-- ⏳ **Module 5:** Eligibility Requirements (coming next)
+- ✅ **Module 5:** Eligibility Requirements Accordion (`05-eligibility-requirements.html`)
+- ⏳ **Module 6:** How It Works (coming next)
 - ⏳ More modules to follow...
 
 ### **Step 4: Add the Footer**
