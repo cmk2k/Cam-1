@@ -41,7 +41,7 @@ parker-pneumatic-warranty-landing-page/
 
 **Current Modules:**
 - ✅ **Module 1:** Hero Section (`01-hero-module.html`)
-- ⏳ **Module 2:** Value Summary Strip (coming next)
+- ✅ **Module 2:** Value Summary Strip (`02-value-summary-strip.html`)
 - ⏳ **Module 3:** Program Overview (coming next)
 - ⏳ More modules to follow...
 
