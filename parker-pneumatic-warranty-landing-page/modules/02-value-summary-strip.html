@@ -1,0 +1,304 @@
+<!-- ========================================
+     MODULE 2: VALUE SUMMARY STRIP
+     Parker 5-Year Pneumatic Warranty
+     Applied Industrial Technologies
+
+     PURPOSE:
+     Highlight 4 key value propositions in a scannable,
+     icon-driven format. Builds immediate credibility
+     and communicates core benefits at a glance.
+
+     FEATURES:
+     - 4-column grid layout (responsive to 2x2 on mobile)
+     - Icon placeholders for visual impact
+     - Bold stats/headlines with supporting text
+     - Applied Industrial brand colors
+     - Fade-in animation on scroll
+     - Clean, minimal design
+
+     HUBSPOT INSTRUCTIONS:
+     1. Add a "Custom HTML" module below the Hero
+     2. Paste this entire code block
+     3. Replace icon placeholders with actual icons:
+        - Option A: Use HubSpot icon modules
+        - Option B: Upload SVG icons to File Manager
+        - Option C: Use icon font (Font Awesome, etc.)
+     4. Edit text content for each benefit
+     5. Adjust colors if needed
+
+     ======================================== -->
+
+<section class="applied-value-strip" style="
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 60px 20px;
+  position: relative;
+">
+
+  <!-- Container -->
+  <div style="
+    max-width: 1200px;
+    margin: 0 auto;
+  ">
+
+    <!-- Value Grid -->
+    <div class="applied-value-grid" style="
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    ">
+
+      <!-- VALUE 1: 5-Year Warranty -->
+      <div class="applied-value-item" style="
+        text-align: center;
+        padding: 20px;
+        opacity: 0;
+        animation: appliedFadeIn 0.8s ease-out 0.2s forwards;
+      ">
+        <!-- Icon Placeholder -->
+        <div style="
+          width: 80px;
+          height: 80px;
+          margin: 0 auto 20px auto;
+          background-color: #007680;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: transform 0.3s ease;
+        " onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+          <span style="
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff;
+          ">5</span>
+        </div>
+
+        <!-- Stat/Headline -->
+        <h3 style="
+          font-size: 24px;
+          font-weight: 700;
+          color: #1B0F3A;
+          margin: 0 0 12px 0;
+          line-height: 1.2;
+        ">5-Year Warranty</h3>
+
+        <!-- Supporting Text -->
+        <p style="
+          font-size: 14px;
+          color: #666666;
+          line-height: 1.6;
+          margin: 0;
+        ">Best-in-class protection vs. standard 12-month warranty</p>
+      </div>
+
+      <!-- VALUE 2: Same-Day Shipping -->
+      <div class="applied-value-item" style="
+        text-align: center;
+        padding: 20px;
+        opacity: 0;
+        animation: appliedFadeIn 0.8s ease-out 0.3s forwards;
+      ">
+        <!-- Icon Placeholder -->
+        <div style="
+          width: 80px;
+          height: 80px;
+          margin: 0 auto 20px auto;
+          background-color: #007680;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: transform 0.3s ease;
+        " onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+          <span style="
+            font-size: 32px;
+            color: #ffffff;
+          ">📦</span>
+        </div>
+
+        <!-- Stat/Headline -->
+        <h3 style="
+          font-size: 24px;
+          font-weight: 700;
+          color: #1B0F3A;
+          margin: 0 0 12px 0;
+          line-height: 1.2;
+        ">Same-Day Shipping</h3>
+
+        <!-- Supporting Text -->
+        <p style="
+          font-size: 14px;
+          color: #666666;
+          line-height: 1.6;
+          margin: 0;
+        ">Keep your operations running with fast, reliable delivery</p>
+      </div>
+
+      <!-- VALUE 3: Assembled in America -->
+      <div class="applied-value-item" style="
+        text-align: center;
+        padding: 20px;
+        opacity: 0;
+        animation: appliedFadeIn 0.8s ease-out 0.4s forwards;
+      ">
+        <!-- Icon Placeholder -->
+        <div style="
+          width: 80px;
+          height: 80px;
+          margin: 0 auto 20px auto;
+          background-color: #007680;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: transform 0.3s ease;
+        " onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+          <span style="
+            font-size: 32px;
+            color: #ffffff;
+          ">🇺🇸</span>
+        </div>
+
+        <!-- Stat/Headline -->
+        <h3 style="
+          font-size: 24px;
+          font-weight: 700;
+          color: #1B0F3A;
+          margin: 0 0 12px 0;
+          line-height: 1.2;
+        ">Made in America</h3>
+
+        <!-- Supporting Text -->
+        <p style="
+          font-size: 14px;
+          color: #666666;
+          line-height: 1.6;
+          margin: 0;
+        ">Quality components assembled in the USA</p>
+      </div>
+
+      <!-- VALUE 4: Design Tools -->
+      <div class="applied-value-item" style="
+        text-align: center;
+        padding: 20px;
+        opacity: 0;
+        animation: appliedFadeIn 0.8s ease-out 0.5s forwards;
+      ">
+        <!-- Icon Placeholder -->
+        <div style="
+          width: 80px;
+          height: 80px;
+          margin: 0 auto 20px auto;
+          background-color: #007680;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: transform 0.3s ease;
+        " onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+          <span style="
+            font-size: 32px;
+            color: #ffffff;
+          ">⚙️</span>
+        </div>
+
+        <!-- Stat/Headline -->
+        <h3 style="
+          font-size: 24px;
+          font-weight: 700;
+          color: #1B0F3A;
+          margin: 0 0 12px 0;
+          line-height: 1.2;
+        ">Design Tools</h3>
+
+        <!-- Supporting Text -->
+        <p style="
+          font-size: 14px;
+          color: #666666;
+          line-height: 1.6;
+          margin: 0;
+        ">Configurators, CAD libraries, and selection tools</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================================
+     MOBILE RESPONSIVE STYLES
+     ======================================== -->
+
+<style>
+  /* Tablet: 2 columns */
+  @media (max-width: 768px) {
+    .applied-value-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 30px !important;
+    }
+  }
+
+  /* Mobile: 1 column */
+  @media (max-width: 480px) {
+    .applied-value-grid {
+      grid-template-columns: 1fr !important;
+      gap: 40px !important;
+    }
+
+    .applied-value-strip {
+      padding: 40px 20px !important;
+    }
+  }
+</style>
+
+<!-- ========================================
+     EDIT GUIDE FOR HUBSPOT
+     ======================================== -->
+
+<!--
+  TO CHANGE ICON PLACEHOLDERS:
+
+  Option A - Use Emoji (Current):
+  Lines 108, 145, 182, 219: Replace emoji with different emoji
+
+  Option B - Use SVG Icons:
+  Upload SVG to HubSpot File Manager
+  Replace the <span> with:
+  <img src="your-icon-url.svg" alt="Icon" style="width: 40px; height: 40px;">
+
+  Option C - Use Icon Font:
+  Include Font Awesome in your page
+  Replace <span> with:
+  <i class="fas fa-shield-alt" style="font-size: 40px; color: #ffffff;"></i>
+
+  TO CHANGE VALUE CONTENT:
+
+  Value 1 (5-Year Warranty):
+  - Headline: Line 120
+  - Text: Line 131
+
+  Value 2 (Same-Day Shipping):
+  - Headline: Line 157
+  - Text: Line 168
+
+  Value 3 (Made in America):
+  - Headline: Line 194
+  - Text: Line 205
+
+  Value 4 (Design Tools):
+  - Headline: Line 231
+  - Text: Line 242
+
+  TO ADJUST COLORS:
+  - Background color: #f5f5f5 (line 32)
+  - Icon circle: #007680 (lines 97, 134, 171, 208)
+  - Headline color: #1B0F3A (lines 123, 160, 197, 234)
+  - Text color: #666666 (lines 134, 171, 208, 245)
+
+  TO ADJUST SPACING:
+  - Section padding: 60px 20px (line 33)
+  - Grid gap: 40px (line 48)
+  - Item padding: 20px (lines 56, 93, 130, 167)
+-->
