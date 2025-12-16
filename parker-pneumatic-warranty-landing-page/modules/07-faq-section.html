@@ -1,0 +1,566 @@
+<!-- ========================================
+     MODULE 7: FAQ SECTION
+     Parker 5-Year Pneumatic Warranty
+     Applied Industrial Technologies
+
+     PURPOSE:
+     Answer common questions about the warranty program
+     in an easy-to-navigate accordion format. Reduce
+     friction and build confidence with clear answers.
+
+     FEATURES:
+     - Interactive accordion (click to expand/collapse)
+     - 6 frequently asked questions
+     - Clean, organized presentation
+     - JavaScript-powered interactions
+     - Two-column layout on desktop
+
+     HUBSPOT INSTRUCTIONS:
+     1. Add a "Custom HTML" module below How It Works
+     2. Paste this entire code block
+     3. Edit questions/answers as needed
+     4. Test accordion functionality in preview mode
+     5. Adjust colors to match brand
+
+     ======================================== -->
+
+<section class="applied-faq-section" style="
+  width: 100%;
+  background-color: #ffffff;
+  padding: 80px 20px;
+  position: relative;
+">
+
+  <!-- Container -->
+  <div style="
+    max-width: 1000px;
+    margin: 0 auto;
+  ">
+
+    <!-- Section Header -->
+    <div style="
+      text-align: center;
+      margin-bottom: 50px;
+      opacity: 0;
+      animation: appliedFadeIn 0.8s ease-out 0.1s forwards;
+    ">
+      <!-- Eyebrow -->
+      <p style="
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #007680;
+        margin: 0 0 16px 0;
+      ">Common Questions</p>
+
+      <!-- Section Headline -->
+      <h2 style="
+        font-size: 40px;
+        font-weight: 700;
+        color: #1B0F3A;
+        margin: 0 0 20px 0;
+        line-height: 1.2;
+      ">Frequently Asked Questions</h2>
+
+      <!-- Section Subheadline -->
+      <p style="
+        font-size: 18px;
+        color: #666666;
+        margin: 0 auto;
+        max-width: 700px;
+        line-height: 1.6;
+      ">Find answers to the most common questions about Parker's 5-Year Pneumatic System Warranty Program.</p>
+    </div>
+
+    <!-- FAQ Accordion Container -->
+    <div class="applied-faq-accordion" style="
+      opacity: 0;
+      animation: appliedFadeIn 0.8s ease-out 0.2s forwards;
+    ">
+
+      <!-- FAQ 1: What is the GPP Warranty Program? -->
+      <div class="applied-faq-item" style="
+        background-color: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      ">
+        <!-- Header (Clickable) -->
+        <button class="applied-faq-header" onclick="toggleFAQ(this)" style="
+          width: 100%;
+          padding: 24px 28px;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          text-align: left;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#f0f0f0';" onmouseout="this.style.backgroundColor='transparent';">
+
+          <span style="
+            font-size: 18px;
+            font-weight: 700;
+            color: #1B0F3A;
+            flex: 1;
+            padding-right: 20px;
+          ">What is the Genuine Parker Parts (GPP) Pneumatic System Warranty Program?</span>
+
+          <!-- Arrow Icon -->
+          <span class="applied-faq-arrow" style="
+            font-size: 24px;
+            color: #007680;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+          ">▼</span>
+        </button>
+
+        <!-- Content (Hidden by default) -->
+        <div class="applied-faq-content" style="
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        ">
+          <div style="
+            padding: 0 28px 24px 28px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.8;
+          ">
+            <p style="margin: 0 0 12px 0;">The GPP Warranty Program extends the standard warranty for defects in materials and workmanship from 12 months to <strong>60 months from first use</strong> or <strong>66 months from delivery</strong>, whichever occurs first.</p>
+            <p style="margin: 0;">All other standard warranty terms remain the same and are governed by the "Offer of Sale" at parker.com/salesterms.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 2: What are the advantages? -->
+      <div class="applied-faq-item" style="
+        background-color: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      ">
+        <button class="applied-faq-header" onclick="toggleFAQ(this)" style="
+          width: 100%;
+          padding: 24px 28px;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          text-align: left;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#f0f0f0';" onmouseout="this.style.backgroundColor='transparent';">
+
+          <span style="
+            font-size: 18px;
+            font-weight: 700;
+            color: #1B0F3A;
+            flex: 1;
+            padding-right: 20px;
+          ">What are the advantages of this extended warranty?</span>
+
+          <span class="applied-faq-arrow" style="
+            font-size: 24px;
+            color: #007680;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+          ">▼</span>
+        </button>
+
+        <div class="applied-faq-content" style="
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        ">
+          <div style="
+            padding: 0 28px 24px 28px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.8;
+          ">
+            <p style="margin: 0;">The extended warranty program provides <strong>peace of mind</strong> and demonstrates Parker's confidence in product quality. It helps protect your assets, minimize downtime, and reduce total cost of ownership for both specific applications/machines and large system implementations.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 3: What is covered? -->
+      <div class="applied-faq-item" style="
+        background-color: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      ">
+        <button class="applied-faq-header" onclick="toggleFAQ(this)" style="
+          width: 100%;
+          padding: 24px 28px;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          text-align: left;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#f0f0f0';" onmouseout="this.style.backgroundColor='transparent';">
+
+          <span style="
+            font-size: 18px;
+            font-weight: 700;
+            color: #1B0F3A;
+            flex: 1;
+            padding-right: 20px;
+          ">What products are covered under this warranty?</span>
+
+          <span class="applied-faq-arrow" style="
+            font-size: 24px;
+            color: #007680;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+          ">▼</span>
+        </button>
+
+        <div class="applied-faq-content" style="
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        ">
+          <div style="
+            padding: 0 28px 24px 28px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.8;
+          ">
+            <p style="margin: 0;">All Parker Pneumatic Division North America (PDN) products are covered for 60 months from first use or 66 months from delivery, whichever occurs first. This includes <strong>Air Prep (FRLs), Actuators, and Valves</strong>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 4: How do I activate my warranty? -->
+      <div class="applied-faq-item" style="
+        background-color: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      ">
+        <button class="applied-faq-header" onclick="toggleFAQ(this)" style="
+          width: 100%;
+          padding: 24px 28px;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          text-align: left;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#f0f0f0';" onmouseout="this.style.backgroundColor='transparent';">
+
+          <span style="
+            font-size: 18px;
+            font-weight: 700;
+            color: #1B0F3A;
+            flex: 1;
+            padding-right: 20px;
+          ">How do I activate my warranty?</span>
+
+          <span class="applied-faq-arrow" style="
+            font-size: 24px;
+            color: #007680;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+          ">▼</span>
+        </button>
+
+        <div class="applied-faq-content" style="
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        ">
+          <div style="
+            padding: 0 28px 24px 28px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.8;
+          ">
+            <p style="margin: 0;">Contact your OEM dealer or Parker Representative for assistance with warranty activation. They will help ensure your equipment meets all eligibility requirements and complete the registration process.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 5: How do I submit a warranty claim? -->
+      <div class="applied-faq-item" style="
+        background-color: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      ">
+        <button class="applied-faq-header" onclick="toggleFAQ(this)" style="
+          width: 100%;
+          padding: 24px 28px;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          text-align: left;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#f0f0f0';" onmouseout="this.style.backgroundColor='transparent';">
+
+          <span style="
+            font-size: 18px;
+            font-weight: 700;
+            color: #1B0F3A;
+            flex: 1;
+            padding-right: 20px;
+          ">How do I submit a warranty claim?</span>
+
+          <span class="applied-faq-arrow" style="
+            font-size: 24px;
+            color: #007680;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+          ">▼</span>
+        </button>
+
+        <div class="applied-faq-content" style="
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        ">
+          <div style="
+            padding: 0 28px 24px 28px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.8;
+          ">
+            <p style="margin: 0 0 12px 0;">Start by contacting your Parker representative or OEM dealer. Parker will review the application and determine the cause, then recommend a solution.</p>
+            <p style="margin: 0;">If covered parts failed due to defects in materials or workmanship, Parker will replace them at no charge per Sales of Offer terms and conditions. Your representative may need to send the product back to Parker for analysis and replacement.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 6: What documentation do I need? -->
+      <div class="applied-faq-item" style="
+        background-color: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      ">
+        <button class="applied-faq-header" onclick="toggleFAQ(this)" style="
+          width: 100%;
+          padding: 24px 28px;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          text-align: left;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#f0f0f0';" onmouseout="this.style.backgroundColor='transparent';">
+
+          <span style="
+            font-size: 18px;
+            font-weight: 700;
+            color: #1B0F3A;
+            flex: 1;
+            padding-right: 20px;
+          ">What documentation do I need to maintain warranty coverage?</span>
+
+          <span class="applied-faq-arrow" style="
+            font-size: 24px;
+            color: #007680;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+          ">▼</span>
+        </button>
+
+        <div class="applied-faq-content" style="
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        ">
+          <div style="
+            padding: 0 28px 24px 28px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.8;
+          ">
+            <p style="margin: 0;">End users may need to provide <strong>proof of purchase</strong> of approved Parker filter elements and <strong>preventive maintenance records/logs</strong> showing filter replacement dates. Keep all purchase receipts and maintenance logs organized for easy warranty verification.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div style="
+      text-align: center;
+      margin-top: 50px;
+      opacity: 0;
+      animation: appliedFadeIn 0.8s ease-out 0.4s forwards;
+    ">
+      <p style="
+        font-size: 16px;
+        color: #666666;
+        margin: 0 0 24px 0;
+      ">Still have questions?</p>
+
+      <a href="#contact-form" style="
+        display: inline-block;
+        background-color: #007680;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 16px 40px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 118, 128, 0.2);
+      "
+      onmouseover="this.style.backgroundColor='#005f68'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(0, 118, 128, 0.3)';"
+      onmouseout="this.style.backgroundColor='#007680'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 118, 128, 0.2)';">
+        Contact Us
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================================
+     ACCORDION JAVASCRIPT
+     ======================================== -->
+
+<script>
+function toggleFAQ(button) {
+  const item = button.parentElement;
+  const content = item.querySelector('.applied-faq-content');
+  const arrow = button.querySelector('.applied-faq-arrow');
+  const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+  // Close all other FAQs
+  const allItems = document.querySelectorAll('.applied-faq-item');
+  allItems.forEach(otherItem => {
+    if (otherItem !== item) {
+      const otherContent = otherItem.querySelector('.applied-faq-content');
+      const otherArrow = otherItem.querySelector('.applied-faq-arrow');
+      otherContent.style.maxHeight = '0';
+      otherArrow.style.transform = 'rotate(0deg)';
+      otherItem.style.borderColor = '#e0e0e0';
+    }
+  });
+
+  // Toggle current FAQ
+  if (isOpen) {
+    content.style.maxHeight = '0';
+    arrow.style.transform = 'rotate(0deg)';
+    item.style.borderColor = '#e0e0e0';
+  } else {
+    content.style.maxHeight = content.scrollHeight + 'px';
+    arrow.style.transform = 'rotate(180deg)';
+    item.style.borderColor = '#007680';
+  }
+}
+</script>
+
+<!-- ========================================
+     MOBILE RESPONSIVE STYLES
+     ======================================== -->
+
+<style>
+  @media (max-width: 768px) {
+    .applied-faq-section {
+      padding: 60px 20px !important;
+    }
+
+    .applied-faq-section h2 {
+      font-size: 32px !important;
+    }
+
+    .applied-faq-header {
+      padding: 20px 20px !important;
+    }
+
+    .applied-faq-header span {
+      font-size: 16px !important;
+    }
+
+    .applied-faq-content > div {
+      padding: 0 20px 20px 20px !important;
+      font-size: 14px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .applied-faq-section h2 {
+      font-size: 28px !important;
+    }
+  }
+</style>
+
+<!-- ========================================
+     EDIT GUIDE FOR HUBSPOT
+     ======================================== -->
+
+<!--
+  TO EDIT FAQ QUESTIONS & ANSWERS:
+
+  FAQ 1 (What is the GPP Warranty Program?):
+  - Question: Line 107
+  - Answer: Lines 133-135
+
+  FAQ 2 (What are the advantages?):
+  - Question: Line 167
+  - Answer: Line 193
+
+  FAQ 3 (What is covered?):
+  - Question: Line 227
+  - Answer: Line 253
+
+  FAQ 4 (How do I activate?):
+  - Question: Line 287
+  - Answer: Line 313
+
+  FAQ 5 (How do I submit a claim?):
+  - Question: Line 347
+  - Answer: Lines 373-374
+
+  FAQ 6 (What documentation?):
+  - Question: Line 407
+  - Answer: Line 433
+
+  TO ADD MORE FAQs:
+  - Copy any FAQ item block (lines 86-141)
+  - Paste below the last FAQ
+  - Update question and answer text
+
+  TO ADJUST COLORS:
+  - Background: #f9f9f9 (FAQ cards)
+  - Border: #e0e0e0 default, #007680 when open
+  - Questions: #1B0F3A
+  - Answers: #666666
+  - Arrow: #007680
+  - CTA button: #007680
+
+  TO CHANGE CTA:
+  - Line 463: Change href="#contact-form"
+  - Line 473: Change button text "Contact Us"
+-->
