@@ -1,0 +1,916 @@
+<!-- ========================================
+     MODULE 5: ELIGIBILITY REQUIREMENTS
+     Parker 5-Year Pneumatic Warranty
+     Applied Industrial Technologies
+
+     PURPOSE:
+     Present the 10 warranty eligibility requirements
+     in a scannable, easy-to-understand accordion format.
+     Help users quickly determine if they qualify.
+
+     FEATURES:
+     - Interactive accordion (click to expand/collapse)
+     - 10 requirement cards
+     - Icon indicators for each requirement
+     - Clean, organized presentation
+     - JavaScript-powered interactions
+     - Anchor ID for direct linking
+
+     HUBSPOT INSTRUCTIONS:
+     1. Add a "Custom HTML" module below Benefits Grid
+     2. Paste this entire code block
+     3. Edit requirement text as needed
+     4. Test accordion functionality in preview mode
+     5. Adjust colors to match brand
+
+     ======================================== -->
+
+<section class="applied-eligibility-section" id="eligibility" style="
+  width: 100%;
+  background-color: #ffffff;
+  padding: 80px 20px;
+  position: relative;
+">
+
+  <!-- Container -->
+  <div style="
+    max-width: 1000px;
+    margin: 0 auto;
+  ">
+
+    <!-- Section Header -->
+    <div style="
+      text-align: center;
+      margin-bottom: 50px;
+      opacity: 0;
+      animation: appliedFadeIn 0.8s ease-out 0.1s forwards;
+    ">
+      <!-- Eyebrow -->
+      <p style="
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #007680;
+        margin: 0 0 16px 0;
+      ">Program Requirements</p>
+
+      <!-- Section Headline -->
+      <h2 style="
+        font-size: 40px;
+        font-weight: 700;
+        color: #1B0F3A;
+        margin: 0 0 20px 0;
+        line-height: 1.2;
+      ">Warranty Eligibility Requirements</h2>
+
+      <!-- Section Subheadline -->
+      <p style="
+        font-size: 18px;
+        color: #666666;
+        margin: 0 auto 30px auto;
+        max-width: 700px;
+        line-height: 1.6;
+      ">To qualify for the 5-year extended warranty, systems must meet specific design and installation standards. Review the requirements below to ensure your equipment is eligible.</p>
+
+      <!-- Quick CTA -->
+      <p style="
+        font-size: 16px;
+        color: #007680;
+        margin: 0;
+        font-weight: 600;
+      ">Click each requirement to expand and learn more ↓</p>
+    </div>
+
+    <!-- Accordion Container -->
+    <div class="applied-accordion" style="
+      opacity: 0;
+      animation: appliedFadeIn 0.8s ease-out 0.2s forwards;
+    ">
+
+      <!-- REQUIREMENT 1: All Parker Products -->
+      <div class="applied-accordion-item" style="
+        background-color: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      ">
+        <!-- Header (Clickable) -->
+        <button class="applied-accordion-header" onclick="toggleAccordion(this)" style="
+          width: 100%;
+          padding: 24px 28px;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          text-align: left;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#f0f0f0';" onmouseout="this.style.backgroundColor='transparent';">
+
+          <div style="display: flex; align-items: center; gap: 16px; flex: 1;">
+            <!-- Number Badge -->
+            <span style="
+              background-color: #007680;
+              color: #ffffff;
+              font-size: 16px;
+              font-weight: 700;
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-shrink: 0;
+            ">1</span>
+
+            <!-- Title -->
+            <span style="
+              font-size: 18px;
+              font-weight: 700;
+              color: #1B0F3A;
+            ">All Parker Pneumatic Products Required</span>
+          </div>
+
+          <!-- Arrow Icon -->
+          <span class="applied-accordion-arrow" style="
+            font-size: 24px;
+            color: #007680;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+          ">▼</span>
+        </button>
+
+        <!-- Content (Hidden by default) -->
+        <div class="applied-accordion-content" style="
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        ">
+          <div style="
+            padding: 0 28px 24px 80px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.8;
+          ">
+            <p style="margin: 0;">Equipment or machine must contain <strong>all Parker Pneumatic (PDN) products</strong>. Air Prep (FRLs), Actuators, and Valves must be all Parker PDN products to qualify for the extended warranty.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- REQUIREMENT 2: No Competitive Products -->
+      <div class="applied-accordion-item" style="
+        background-color: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      ">
+        <button class="applied-accordion-header" onclick="toggleAccordion(this)" style="
+          width: 100%;
+          padding: 24px 28px;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          text-align: left;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#f0f0f0';" onmouseout="this.style.backgroundColor='transparent';">
+
+          <div style="display: flex; align-items: center; gap: 16px; flex: 1;">
+            <span style="
+              background-color: #007680;
+              color: #ffffff;
+              font-size: 16px;
+              font-weight: 700;
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-shrink: 0;
+            ">2</span>
+
+            <span style="
+              font-size: 18px;
+              font-weight: 700;
+              color: #1B0F3A;
+            ">No Competitive Products Allowed</span>
+          </div>
+
+          <span class="applied-accordion-arrow" style="
+            font-size: 24px;
+            color: #007680;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+          ">▼</span>
+        </button>
+
+        <div class="applied-accordion-content" style="
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        ">
+          <div style="
+            padding: 0 28px 24px 80px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.8;
+          ">
+            <p style="margin: 0;">No competitive products may be used on equipment being qualified. The program can apply to individual machines within a larger system if that machine has all Parker PDN content.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- REQUIREMENT 3: Parker Filter Elements -->
+      <div class="applied-accordion-item" style="
+        background-color: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      ">
+        <button class="applied-accordion-header" onclick="toggleAccordion(this)" style="
+          width: 100%;
+          padding: 24px 28px;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          text-align: left;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#f0f0f0';" onmouseout="this.style.backgroundColor='transparent';">
+
+          <div style="display: flex; align-items: center; gap: 16px; flex: 1;">
+            <span style="
+              background-color: #007680;
+              color: #ffffff;
+              font-size: 16px;
+              font-weight: 700;
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-shrink: 0;
+            ">3</span>
+
+            <span style="
+              font-size: 18px;
+              font-weight: 700;
+              color: #1B0F3A;
+            ">Use Genuine Parker Filter Elements</span>
+          </div>
+
+          <span class="applied-accordion-arrow" style="
+            font-size: 24px;
+            color: #007680;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+          ">▼</span>
+        </button>
+
+        <div class="applied-accordion-content" style="
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        ">
+          <div style="
+            padding: 0 28px 24px 80px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.8;
+          ">
+            <p style="margin: 0;"><strong>Parker filter elements must be used.</strong> Any other manufacturer's elements will void the warranty. Keep records of filter purchases for warranty verification.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- REQUIREMENT 4: Model-by-Model Qualification -->
+      <div class="applied-accordion-item" style="
+        background-color: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      ">
+        <button class="applied-accordion-header" onclick="toggleAccordion(this)" style="
+          width: 100%;
+          padding: 24px 28px;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          text-align: left;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#f0f0f0';" onmouseout="this.style.backgroundColor='transparent';">
+
+          <div style="display: flex; align-items: center; gap: 16px; flex: 1;">
+            <span style="
+              background-color: #007680;
+              color: #ffffff;
+              font-size: 16px;
+              font-weight: 700;
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-shrink: 0;
+            ">4</span>
+
+            <span style="
+              font-size: 18px;
+              font-weight: 700;
+              color: #1B0F3A;
+            ">Coordinate Qualification with Parker Rep</span>
+          </div>
+
+          <span class="applied-accordion-arrow" style="
+            font-size: 24px;
+            color: #007680;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+          ">▼</span>
+        </button>
+
+        <div class="applied-accordion-content" style="
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        ">
+          <div style="
+            padding: 0 28px 24px 80px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.8;
+          ">
+            <p style="margin: 0;">Qualification is handled model-by-model and system-by-system. Coordinate with your Parker representative to ensure proper enrollment and documentation.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- REQUIREMENT 5: Follow Industry Standards -->
+      <div class="applied-accordion-item" style="
+        background-color: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      ">
+        <button class="applied-accordion-header" onclick="toggleAccordion(this)" style="
+          width: 100%;
+          padding: 24px 28px;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          text-align: left;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#f0f0f0';" onmouseout="this.style.backgroundColor='transparent';">
+
+          <div style="display: flex; align-items: center; gap: 16px; flex: 1;">
+            <span style="
+              background-color: #007680;
+              color: #ffffff;
+              font-size: 16px;
+              font-weight: 700;
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-shrink: 0;
+            ">5</span>
+
+            <span style="
+              font-size: 18px;
+              font-weight: 700;
+              color: #1B0F3A;
+            ">Follow All Industry Standards & Specifications</span>
+          </div>
+
+          <span class="applied-accordion-arrow" style="
+            font-size: 24px;
+            color: #007680;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+          ">▼</span>
+        </button>
+
+        <div class="applied-accordion-content" style="
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        ">
+          <div style="
+            padding: 0 28px 24px 80px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.8;
+          ">
+            <p style="margin: 0;">All industry standards, specifications, and technical information provided with the quote or products (seller instructions, guides, specifications) must be followed for installation and operation.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- REQUIREMENT 6: Preventive Maintenance Plan -->
+      <div class="applied-accordion-item" style="
+        background-color: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      ">
+        <button class="applied-accordion-header" onclick="toggleAccordion(this)" style="
+          width: 100%;
+          padding: 24px 28px;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          text-align: left;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#f0f0f0';" onmouseout="this.style.backgroundColor='transparent';">
+
+          <div style="display: flex; align-items: center; gap: 16px; flex: 1;">
+            <span style="
+              background-color: #007680;
+              color: #ffffff;
+              font-size: 16px;
+              font-weight: 700;
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-shrink: 0;
+            ">6</span>
+
+            <span style="
+              font-size: 18px;
+              font-weight: 700;
+              color: #1B0F3A;
+            ">Establish & Follow Preventive Maintenance</span>
+          </div>
+
+          <span class="applied-accordion-arrow" style="
+            font-size: 24px;
+            color: #007680;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+          ">▼</span>
+        </button>
+
+        <div class="applied-accordion-content" style="
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        ">
+          <div style="
+            padding: 0 28px 24px 80px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.8;
+          ">
+            <p style="margin: 0;">A proper Preventive Maintenance (PM) plan must be established and followed. <strong>Parker recommends filter element change-out every 12 months</strong> (or sooner depending on your application). Maintain records of all maintenance activities.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- REQUIREMENT 7: Meet Application Requirements -->
+      <div class="applied-accordion-item" style="
+        background-color: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      ">
+        <button class="applied-accordion-header" onclick="toggleAccordion(this)" style="
+          width: 100%;
+          padding: 24px 28px;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          text-align: left;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#f0f0f0';" onmouseout="this.style.backgroundColor='transparent';">
+
+          <div style="display: flex; align-items: center; gap: 16px; flex: 1;">
+            <span style="
+              background-color: #007680;
+              color: #ffffff;
+              font-size: 16px;
+              font-weight: 700;
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-shrink: 0;
+            ">7</span>
+
+            <span style="
+              font-size: 18px;
+              font-weight: 700;
+              color: #1B0F3A;
+            ">Meet All Application Requirements</span>
+          </div>
+
+          <span class="applied-accordion-arrow" style="
+            font-size: 24px;
+            color: #007680;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+          ">▼</span>
+        </button>
+
+        <div class="applied-accordion-content" style="
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        ">
+          <div style="
+            padding: 0 28px 24px 80px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.8;
+          ">
+            <p style="margin: 0;">All performance, endurance, maintenance, safety, and warning requirements of the application must be met. Ensure proper installation and operation within specified parameters.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- REQUIREMENT 8: Warranty Duration -->
+      <div class="applied-accordion-item" style="
+        background-color: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      ">
+        <button class="applied-accordion-header" onclick="toggleAccordion(this)" style="
+          width: 100%;
+          padding: 24px 28px;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          text-align: left;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#f0f0f0';" onmouseout="this.style.backgroundColor='transparent';">
+
+          <div style="display: flex; align-items: center; gap: 16px; flex: 1;">
+            <span style="
+              background-color: #007680;
+              color: #ffffff;
+              font-size: 16px;
+              font-weight: 700;
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-shrink: 0;
+            ">8</span>
+
+            <span style="
+              font-size: 18px;
+              font-weight: 700;
+              color: #1B0F3A;
+            ">Extended Warranty Coverage Period</span>
+          </div>
+
+          <span class="applied-accordion-arrow" style="
+            font-size: 24px;
+            color: #007680;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+          ">▼</span>
+        </button>
+
+        <div class="applied-accordion-content" style="
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        ">
+          <div style="
+            padding: 0 28px 24px 80px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.8;
+          ">
+            <p style="margin: 0;">Approved goods are warranted against defects in materials and workmanship for <strong>60 months from first use</strong> or <strong>66 months from delivery</strong>, whichever occurs first.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- REQUIREMENT 9: Terms & Conditions -->
+      <div class="applied-accordion-item" style="
+        background-color: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      ">
+        <button class="applied-accordion-header" onclick="toggleAccordion(this)" style="
+          width: 100%;
+          padding: 24px 28px;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          text-align: left;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#f0f0f0';" onmouseout="this.style.backgroundColor='transparent';">
+
+          <div style="display: flex; align-items: center; gap: 16px; flex: 1;">
+            <span style="
+              background-color: #007680;
+              color: #ffffff;
+              font-size: 16px;
+              font-weight: 700;
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-shrink: 0;
+            ">9</span>
+
+            <span style="
+              font-size: 18px;
+              font-weight: 700;
+              color: #1B0F3A;
+            ">Governed by Parker Terms of Sale</span>
+          </div>
+
+          <span class="applied-accordion-arrow" style="
+            font-size: 24px;
+            color: #007680;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+          ">▼</span>
+        </button>
+
+        <div class="applied-accordion-content" style="
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        ">
+          <div style="
+            padding: 0 28px 24px 80px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.8;
+          ">
+            <p style="margin: 0;">This warranty offer and acceptance are governed by the "Offer of Sale" provisions available at <a href="https://www.parker.com/salesterms" target="_blank" style="color: #007680; text-decoration: underline;">parker.com/salesterms</a>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- REQUIREMENT 10: Warranty Claims Process -->
+      <div class="applied-accordion-item" style="
+        background-color: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      ">
+        <button class="applied-accordion-header" onclick="toggleAccordion(this)" style="
+          width: 100%;
+          padding: 24px 28px;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          text-align: left;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#f0f0f0';" onmouseout="this.style.backgroundColor='transparent';">
+
+          <div style="display: flex; align-items: center; gap: 16px; flex: 1;">
+            <span style="
+              background-color: #007680;
+              color: #ffffff;
+              font-size: 16px;
+              font-weight: 700;
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-shrink: 0;
+            ">10</span>
+
+            <span style="
+              font-size: 18px;
+              font-weight: 700;
+              color: #1B0F3A;
+            ">Warranty Claims & Documentation</span>
+          </div>
+
+          <span class="applied-accordion-arrow" style="
+            font-size: 24px;
+            color: #007680;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+          ">▼</span>
+        </button>
+
+        <div class="applied-accordion-content" style="
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        ">
+          <div style="
+            padding: 0 28px 24px 80px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.8;
+          ">
+            <p style="margin: 0;">Warranty claims follow existing Parker process and procedures. End users may need to provide <strong>proof of purchase</strong> of approved Parker filter elements and <strong>preventive maintenance records/logs</strong> showing filter replacement dates.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div style="
+      text-align: center;
+      margin-top: 50px;
+      opacity: 0;
+      animation: appliedFadeIn 0.8s ease-out 0.4s forwards;
+    ">
+      <p style="
+        font-size: 16px;
+        color: #666666;
+        margin: 0 0 24px 0;
+      ">Ready to enroll your equipment in the warranty program?</p>
+
+      <a href="#contact-form" style="
+        display: inline-block;
+        background-color: #007680;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 16px 40px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 118, 128, 0.2);
+      "
+      onmouseover="this.style.backgroundColor='#005f68'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(0, 118, 128, 0.3)';"
+      onmouseout="this.style.backgroundColor='#007680'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 118, 128, 0.2)';">
+        Contact a Parker Representative
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================================
+     ACCORDION JAVASCRIPT
+     ======================================== -->
+
+<script>
+function toggleAccordion(button) {
+  const item = button.parentElement;
+  const content = item.querySelector('.applied-accordion-content');
+  const arrow = button.querySelector('.applied-accordion-arrow');
+  const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+  // Close all other accordions
+  const allItems = document.querySelectorAll('.applied-accordion-item');
+  allItems.forEach(otherItem => {
+    if (otherItem !== item) {
+      const otherContent = otherItem.querySelector('.applied-accordion-content');
+      const otherArrow = otherItem.querySelector('.applied-accordion-arrow');
+      otherContent.style.maxHeight = '0';
+      otherArrow.style.transform = 'rotate(0deg)';
+      otherItem.style.borderColor = '#e0e0e0';
+    }
+  });
+
+  // Toggle current accordion
+  if (isOpen) {
+    content.style.maxHeight = '0';
+    arrow.style.transform = 'rotate(0deg)';
+    item.style.borderColor = '#e0e0e0';
+  } else {
+    content.style.maxHeight = content.scrollHeight + 'px';
+    arrow.style.transform = 'rotate(180deg)';
+    item.style.borderColor = '#007680';
+  }
+}
+</script>
+
+<!-- ========================================
+     MOBILE RESPONSIVE STYLES
+     ======================================== -->
+
+<style>
+  @media (max-width: 768px) {
+    .applied-eligibility-section {
+      padding: 60px 20px !important;
+    }
+
+    .applied-eligibility-section h2 {
+      font-size: 32px !important;
+    }
+
+    .applied-accordion-header {
+      padding: 20px 20px !important;
+    }
+
+    .applied-accordion-header span:first-child {
+      font-size: 16px !important;
+    }
+
+    .applied-accordion-content > div {
+      padding: 0 20px 20px 60px !important;
+      font-size: 14px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .applied-eligibility-section h2 {
+      font-size: 28px !important;
+    }
+
+    .applied-accordion-header span:nth-child(2) {
+      font-size: 16px !important;
+    }
+  }
+</style>
+
+<!-- ========================================
+     EDIT GUIDE FOR HUBSPOT
+     ======================================== -->
+
+<!--
+  TO EDIT REQUIREMENTS:
+
+  Each requirement follows this structure:
+  - Number badge (lines 121, 191, 261, etc.)
+  - Title text (lines 138, 208, 278, etc.)
+  - Content description (lines 157-163, 227-233, etc.)
+
+  TO ADJUST COLORS:
+  - Background: #f9f9f9 (requirement cards)
+  - Border: #e0e0e0 default, #007680 when open
+  - Number badge: #007680 background
+  - Titles: #1B0F3A
+  - Body text: #666666
+  - Arrow: #007680
+
+  TO ADJUST BEHAVIOR:
+  - Accordion opens one at a time (closes others)
+  - To allow multiple open: modify toggleAccordion() function
+  - Arrow rotates 180deg when open
+
+  TO CHANGE CTA:
+  - Line 889: Change href="#contact-form"
+  - Line 899: Change button text
+-->
