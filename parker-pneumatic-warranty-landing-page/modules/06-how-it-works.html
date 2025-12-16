@@ -1,0 +1,384 @@
+<!-- ========================================
+     MODULE 6: HOW IT WORKS
+     Parker 5-Year Pneumatic Warranty
+     Applied Industrial Technologies
+
+     PURPOSE:
+     Show users the simple 3-step process to enroll
+     in the warranty program. Demystify the process
+     and encourage action with clear, visual steps.
+
+     FEATURES:
+     - 3-step horizontal process flow
+     - Visual step indicators with arrows
+     - Icon + headline + description format
+     - Clean, professional design
+     - Responsive (stacks vertically on mobile)
+     - CTA at the bottom
+
+     HUBSPOT INSTRUCTIONS:
+     1. Add a "Custom HTML" module below Eligibility Requirements
+     2. Paste this entire code block
+     3. Replace icon emojis with actual icons if desired
+     4. Edit step descriptions as needed
+     5. Update CTA link
+
+     ======================================== -->
+
+<section class="applied-how-it-works" style="
+  width: 100%;
+  background-color: #1B0F3A;
+  padding: 80px 20px;
+  position: relative;
+">
+
+  <!-- Container -->
+  <div style="
+    max-width: 1200px;
+    margin: 0 auto;
+  ">
+
+    <!-- Section Header -->
+    <div style="
+      text-align: center;
+      margin-bottom: 60px;
+      opacity: 0;
+      animation: appliedFadeIn 0.8s ease-out 0.1s forwards;
+    ">
+      <!-- Eyebrow -->
+      <p style="
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #FDB81E;
+        margin: 0 0 16px 0;
+      ">Simple Process</p>
+
+      <!-- Section Headline -->
+      <h2 style="
+        font-size: 40px;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0 0 20px 0;
+        line-height: 1.2;
+      ">How It Works</h2>
+
+      <!-- Section Subheadline -->
+      <p style="
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0 auto;
+        max-width: 700px;
+        line-height: 1.6;
+      ">Get your pneumatic systems covered in three easy steps. Work with your Parker representative to qualify and enroll.</p>
+    </div>
+
+    <!-- Steps Container -->
+    <div class="applied-steps-container" style="
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 40px;
+      position: relative;
+      margin-bottom: 50px;
+    ">
+
+      <!-- STEP 1: Qualify Your System -->
+      <div class="applied-step-item" style="
+        flex: 1;
+        text-align: center;
+        position: relative;
+        opacity: 0;
+        animation: appliedSlideUp 0.8s ease-out 0.2s forwards;
+      ">
+        <!-- Step Number Circle -->
+        <div style="
+          width: 100px;
+          height: 100px;
+          background: linear-gradient(135deg, #007680 0%, #005f68 100%);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 24px auto;
+          box-shadow: 0 8px 24px rgba(0, 118, 128, 0.3);
+          transition: transform 0.3s ease;
+        " onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+          <!-- Step Number -->
+          <span style="
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffffff;
+          ">1</span>
+        </div>
+
+        <!-- Step Title -->
+        <h3 style="
+          font-size: 24px;
+          font-weight: 700;
+          color: #ffffff;
+          margin: 0 0 16px 0;
+          line-height: 1.3;
+        ">Qualify Your System</h3>
+
+        <!-- Step Description -->
+        <p style="
+          font-size: 15px;
+          color: rgba(255, 255, 255, 0.8);
+          line-height: 1.8;
+          margin: 0;
+        ">Ensure your equipment meets the eligibility requirements. All components must be Parker Pneumatic products, including FRLs, actuators, and valves.</p>
+      </div>
+
+      <!-- Arrow Between Steps (Desktop Only) -->
+      <div class="applied-step-arrow" style="
+        flex-shrink: 0;
+        align-self: center;
+        margin-top: 50px;
+        color: #FDB81E;
+        font-size: 40px;
+        opacity: 0;
+        animation: appliedFadeIn 0.8s ease-out 0.4s forwards;
+      ">→</div>
+
+      <!-- STEP 2: Register with Parker -->
+      <div class="applied-step-item" style="
+        flex: 1;
+        text-align: center;
+        position: relative;
+        opacity: 0;
+        animation: appliedSlideUp 0.8s ease-out 0.3s forwards;
+      ">
+        <!-- Step Number Circle -->
+        <div style="
+          width: 100px;
+          height: 100px;
+          background: linear-gradient(135deg, #007680 0%, #005f68 100%);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 24px auto;
+          box-shadow: 0 8px 24px rgba(0, 118, 128, 0.3);
+          transition: transform 0.3s ease;
+        " onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+          <!-- Step Number -->
+          <span style="
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffffff;
+          ">2</span>
+        </div>
+
+        <!-- Step Title -->
+        <h3 style="
+          font-size: 24px;
+          font-weight: 700;
+          color: #ffffff;
+          margin: 0 0 16px 0;
+          line-height: 1.3;
+        ">Register & Activate</h3>
+
+        <!-- Step Description -->
+        <p style="
+          font-size: 15px;
+          color: rgba(255, 255, 255, 0.8);
+          line-height: 1.8;
+          margin: 0;
+        ">Contact your Parker representative to enroll your equipment. Registration is handled model-by-model and system-by-system for proper documentation.</p>
+      </div>
+
+      <!-- Arrow Between Steps (Desktop Only) -->
+      <div class="applied-step-arrow" style="
+        flex-shrink: 0;
+        align-self: center;
+        margin-top: 50px;
+        color: #FDB81E;
+        font-size: 40px;
+        opacity: 0;
+        animation: appliedFadeIn 0.8s ease-out 0.5s forwards;
+      ">→</div>
+
+      <!-- STEP 3: You're Protected -->
+      <div class="applied-step-item" style="
+        flex: 1;
+        text-align: center;
+        position: relative;
+        opacity: 0;
+        animation: appliedSlideUp 0.8s ease-out 0.4s forwards;
+      ">
+        <!-- Step Number Circle -->
+        <div style="
+          width: 100px;
+          height: 100px;
+          background: linear-gradient(135deg, #007680 0%, #005f68 100%);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 24px auto;
+          box-shadow: 0 8px 24px rgba(0, 118, 128, 0.3);
+          transition: transform 0.3s ease;
+        " onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+          <!-- Checkmark Icon -->
+          <span style="
+            font-size: 50px;
+            font-weight: 700;
+            color: #ffffff;
+          ">✓</span>
+        </div>
+
+        <!-- Step Title -->
+        <h3 style="
+          font-size: 24px;
+          font-weight: 700;
+          color: #ffffff;
+          margin: 0 0 16px 0;
+          line-height: 1.3;
+        ">You're Protected</h3>
+
+        <!-- Step Description -->
+        <p style="
+          font-size: 15px;
+          color: rgba(255, 255, 255, 0.8);
+          line-height: 1.8;
+          margin: 0;
+        ">Enjoy 5 years of warranty coverage. Follow Parker's preventive maintenance schedule and keep records to maintain your warranty protection.</p>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div style="
+      text-align: center;
+      opacity: 0;
+      animation: appliedFadeIn 0.8s ease-out 0.6s forwards;
+    ">
+      <p style="
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0 0 24px 0;
+      ">Ready to get started?</p>
+
+      <a href="#contact-form" style="
+        display: inline-block;
+        background-color: #FDB81E;
+        color: #1B0F3A;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 16px 40px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(253, 184, 30, 0.3);
+      "
+      onmouseover="this.style.backgroundColor='#e5a71a'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(253, 184, 30, 0.4)';"
+      onmouseout="this.style.backgroundColor='#FDB81E'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(253, 184, 30, 0.3)';">
+        Contact an Expert
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================================
+     MOBILE RESPONSIVE STYLES
+     ======================================== -->
+
+<style>
+  /* Tablet and below: Stack steps vertically */
+  @media (max-width: 968px) {
+    .applied-steps-container {
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 30px !important;
+    }
+
+    .applied-step-arrow {
+      display: none !important;
+    }
+
+    .applied-step-item {
+      max-width: 500px;
+    }
+
+    .applied-how-it-works h2 {
+      font-size: 32px !important;
+    }
+  }
+
+  /* Mobile: Reduce padding and font sizes */
+  @media (max-width: 480px) {
+    .applied-how-it-works {
+      padding: 60px 20px !important;
+    }
+
+    .applied-how-it-works h2 {
+      font-size: 28px !important;
+    }
+
+    .applied-how-it-works h3 {
+      font-size: 20px !important;
+    }
+
+    .applied-step-item > div:first-child {
+      width: 80px !important;
+      height: 80px !important;
+    }
+
+    .applied-step-item > div:first-child span {
+      font-size: 32px !important;
+    }
+  }
+</style>
+
+<!-- ========================================
+     EDIT GUIDE FOR HUBSPOT
+     ======================================== -->
+
+<!--
+  TO CHANGE STEP CONTENT:
+
+  Step 1 (Qualify Your System):
+  - Title: Line 119
+  - Description: Line 130
+
+  Step 2 (Register & Activate):
+  - Title: Line 178
+  - Description: Line 189
+
+  Step 3 (You're Protected):
+  - Title: Line 237
+  - Description: Line 248
+
+  TO CHANGE SECTION HEADER:
+  - Eyebrow: Line 46 ("Simple Process")
+  - Headline: Line 56 ("How It Works")
+  - Subheadline: Line 66
+
+  TO CHANGE CTA:
+  - Link: Line 267 (href="#contact-form")
+  - Button text: Line 277 ("Contact an Expert")
+
+  TO ADJUST COLORS:
+  - Background: #1B0F3A (dark navy)
+  - Eyebrow/Arrows: #FDB81E (yellow)
+  - Step circles: #007680 gradient (teal)
+  - Headlines: #ffffff (white)
+  - Body text: rgba(255, 255, 255, 0.8) (white 80%)
+  - CTA button: #FDB81E (yellow)
+
+  TO ADJUST STEP CIRCLE SIZE:
+  Lines 96, 155, 214: Change width/height (currently 100px)
+
+  TO CHANGE STEP NUMBERS TO ICONS:
+  - Replace step number <span> with icon
+  - Or upload custom SVG icons
+  - Step 3 already uses checkmark (✓)
+
+  RESPONSIVE BEHAVIOR:
+  - Desktop: 3 steps side-by-side with arrows
+  - Tablet/Mobile: Steps stack vertically, arrows hidden
+-->
