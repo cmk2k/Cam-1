@@ -46,8 +46,8 @@ parker-pneumatic-warranty-landing-page/
 - ✅ **Module 4:** Benefits Grid (`04-benefits-grid.html`)
 - ✅ **Module 5:** Eligibility Requirements Accordion (`05-eligibility-requirements.html`)
 - ✅ **Module 6:** How It Works - 3-Step Process (`06-how-it-works.html`)
-- ⏳ **Module 7:** FAQ Section (coming next)
-- ⏳ More modules to follow...
+- ✅ **Module 7:** FAQ Section (`07-faq-section.html`)
+- ⏳ **Module 8:** Final CTA Banner (optional)
 
 ### **Step 4: Add the Footer**
 - Add a **Custom HTML module** at the very bottom of your page
