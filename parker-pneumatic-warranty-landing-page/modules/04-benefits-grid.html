@@ -1,0 +1,462 @@
+<!-- ========================================
+     MODULE 4: BENEFITS GRID
+     Parker 5-Year Pneumatic Warranty
+     Applied Industrial Technologies
+
+     PURPOSE:
+     Communicate the real-world benefits and value
+     of the warranty program. Answer the question:
+     "Why does this matter to me?"
+
+     FEATURES:
+     - 3-column grid layout
+     - Icon + headline + description format
+     - Benefits focused on MRO pain points
+     - Clean, scannable design
+     - Responsive (stacks on mobile)
+     - Subtle hover effects
+
+     HUBSPOT INSTRUCTIONS:
+     1. Add a "Custom HTML" module below Program Overview
+     2. Paste this entire code block
+     3. Replace icon emojis with actual icons if desired
+     4. Edit benefit text as needed
+     5. Adjust colors to match brand
+
+     ======================================== -->
+
+<section class="applied-benefits-grid" style="
+  width: 100%;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  padding: 80px 20px;
+  position: relative;
+">
+
+  <!-- Container -->
+  <div style="
+    max-width: 1200px;
+    margin: 0 auto;
+  ">
+
+    <!-- Section Header -->
+    <div style="
+      text-align: center;
+      margin-bottom: 60px;
+      opacity: 0;
+      animation: appliedFadeIn 0.8s ease-out 0.1s forwards;
+    ">
+      <!-- Eyebrow -->
+      <p style="
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #007680;
+        margin: 0 0 16px 0;
+      ">Why It Matters</p>
+
+      <!-- Section Headline -->
+      <h2 style="
+        font-size: 40px;
+        font-weight: 700;
+        color: #1B0F3A;
+        margin: 0 0 20px 0;
+        line-height: 1.2;
+      ">Protect Your Assets, Minimize Downtime</h2>
+
+      <!-- Section Subheadline -->
+      <p style="
+        font-size: 18px;
+        color: #666666;
+        margin: 0 auto;
+        max-width: 800px;
+        line-height: 1.6;
+      ">The Genuine Parker Parts Warranty Program is designed to provide peace of mind and demonstrate confidence in product quality.</p>
+    </div>
+
+    <!-- Benefits Grid -->
+    <div class="applied-benefits-layout" style="
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    ">
+
+      <!-- BENEFIT 1: Minimize Downtime -->
+      <div class="applied-benefit-card" style="
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        opacity: 0;
+        animation: appliedSlideUp 0.8s ease-out 0.2s forwards;
+      " onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 24px rgba(0, 118, 128, 0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.08)';">
+
+        <!-- Icon -->
+        <div style="
+          width: 70px;
+          height: 70px;
+          background-color: #007680;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 24px;
+        ">
+          <span style="
+            font-size: 32px;
+            color: #ffffff;
+          ">⚡</span>
+        </div>
+
+        <!-- Headline -->
+        <h3 style="
+          font-size: 24px;
+          font-weight: 700;
+          color: #1B0F3A;
+          margin: 0 0 16px 0;
+          line-height: 1.3;
+        ">Minimize Downtime</h3>
+
+        <!-- Description -->
+        <p style="
+          font-size: 15px;
+          color: #666666;
+          line-height: 1.8;
+          margin: 0;
+        ">Fast replacement of covered components means less unplanned downtime. Keep your operations running smoothly with reliable, warranted parts designed for demanding industrial environments.</p>
+      </div>
+
+      <!-- BENEFIT 2: Lower Total Cost of Ownership -->
+      <div class="applied-benefit-card" style="
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        opacity: 0;
+        animation: appliedSlideUp 0.8s ease-out 0.3s forwards;
+      " onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 24px rgba(0, 118, 128, 0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.08)';">
+
+        <!-- Icon -->
+        <div style="
+          width: 70px;
+          height: 70px;
+          background-color: #007680;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 24px;
+        ">
+          <span style="
+            font-size: 32px;
+            color: #ffffff;
+          ">💰</span>
+        </div>
+
+        <!-- Headline -->
+        <h3 style="
+          font-size: 24px;
+          font-weight: 700;
+          color: #1B0F3A;
+          margin: 0 0 16px 0;
+          line-height: 1.3;
+        ">Lower Total Cost</h3>
+
+        <!-- Description -->
+        <p style="
+          font-size: 15px;
+          color: #666666;
+          line-height: 1.8;
+          margin: 0;
+        ">Extended warranty coverage reduces unexpected repair costs and protects your capital investment. Plan your maintenance budget with confidence knowing Parker stands behind every component.</p>
+      </div>
+
+      <!-- BENEFIT 3: Quality Confidence -->
+      <div class="applied-benefit-card" style="
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        opacity: 0;
+        animation: appliedSlideUp 0.8s ease-out 0.4s forwards;
+      " onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 24px rgba(0, 118, 128, 0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.08)';">
+
+        <!-- Icon -->
+        <div style="
+          width: 70px;
+          height: 70px;
+          background-color: #007680;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 24px;
+        ">
+          <span style="
+            font-size: 32px;
+            color: #ffffff;
+          ">✓</span>
+        </div>
+
+        <!-- Headline -->
+        <h3 style="
+          font-size: 24px;
+          font-weight: 700;
+          color: #1B0F3A;
+          margin: 0 0 16px 0;
+          line-height: 1.3;
+        ">Quality Confidence</h3>
+
+        <!-- Description -->
+        <p style="
+          font-size: 15px;
+          color: #666666;
+          line-height: 1.8;
+          margin: 0;
+        ">Parker's 5-year warranty demonstrates unwavering confidence in product quality. Benefit from components engineered and assembled in the USA to the highest standards of excellence.</p>
+      </div>
+
+      <!-- BENEFIT 4: Peace of Mind -->
+      <div class="applied-benefit-card" style="
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        opacity: 0;
+        animation: appliedSlideUp 0.8s ease-out 0.5s forwards;
+      " onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 24px rgba(0, 118, 128, 0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.08)';">
+
+        <!-- Icon -->
+        <div style="
+          width: 70px;
+          height: 70px;
+          background-color: #007680;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 24px;
+        ">
+          <span style="
+            font-size: 32px;
+            color: #ffffff;
+          ">🛡️</span>
+        </div>
+
+        <!-- Headline -->
+        <h3 style="
+          font-size: 24px;
+          font-weight: 700;
+          color: #1B0F3A;
+          margin: 0 0 16px 0;
+          line-height: 1.3;
+        ">Peace of Mind</h3>
+
+        <!-- Description -->
+        <p style="
+          font-size: 15px;
+          color: #666666;
+          line-height: 1.8;
+          margin: 0;
+        ">Sleep better knowing your pneumatic systems are covered for 5 years. Focus on productivity and efficiency instead of worrying about component failures and warranty claims.</p>
+      </div>
+
+      <!-- BENEFIT 5: Simplified Maintenance -->
+      <div class="applied-benefit-card" style="
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        opacity: 0;
+        animation: appliedSlideUp 0.8s ease-out 0.6s forwards;
+      " onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 24px rgba(0, 118, 128, 0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.08)';">
+
+        <!-- Icon -->
+        <div style="
+          width: 70px;
+          height: 70px;
+          background-color: #007680;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 24px;
+        ">
+          <span style="
+            font-size: 32px;
+            color: #ffffff;
+          ">📋</span>
+        </div>
+
+        <!-- Headline -->
+        <h3 style="
+          font-size: 24px;
+          font-weight: 700;
+          color: #1B0F3A;
+          margin: 0 0 16px 0;
+          line-height: 1.3;
+        ">Simplified Maintenance</h3>
+
+        <!-- Description -->
+        <p style="
+          font-size: 15px;
+          color: #666666;
+          line-height: 1.8;
+          margin: 0;
+        ">Follow Parker's preventive maintenance schedules and keep simple records to maintain warranty coverage. Straightforward requirements make compliance easy for your maintenance team.</p>
+      </div>
+
+      <!-- BENEFIT 6: Trusted Partnership -->
+      <div class="applied-benefit-card" style="
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        opacity: 0;
+        animation: appliedSlideUp 0.8s ease-out 0.7s forwards;
+      " onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 24px rgba(0, 118, 128, 0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.08)';">
+
+        <!-- Icon -->
+        <div style="
+          width: 70px;
+          height: 70px;
+          background-color: #007680;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 24px;
+        ">
+          <span style="
+            font-size: 32px;
+            color: #ffffff;
+          ">🤝</span>
+        </div>
+
+        <!-- Headline -->
+        <h3 style="
+          font-size: 24px;
+          font-weight: 700;
+          color: #1B0F3A;
+          margin: 0 0 16px 0;
+          line-height: 1.3;
+        ">Trusted Partnership</h3>
+
+        <!-- Description -->
+        <p style="
+          font-size: 15px;
+          color: #666666;
+          line-height: 1.8;
+          margin: 0;
+        ">Work with Parker and Applied Industrial Technologies—two industry leaders committed to your success. Access expert support, same-day shipping, and comprehensive design tools.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================================
+     MOBILE RESPONSIVE STYLES
+     ======================================== -->
+
+<style>
+  /* Tablet: 2 columns */
+  @media (max-width: 968px) {
+    .applied-benefits-layout {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 30px !important;
+    }
+
+    .applied-benefits-grid h2 {
+      font-size: 32px !important;
+    }
+  }
+
+  /* Mobile: 1 column */
+  @media (max-width: 640px) {
+    .applied-benefits-layout {
+      grid-template-columns: 1fr !important;
+      gap: 30px !important;
+    }
+
+    .applied-benefits-grid {
+      padding: 60px 20px !important;
+    }
+
+    .applied-benefits-grid h2 {
+      font-size: 28px !important;
+    }
+
+    .applied-benefit-card {
+      padding: 30px !important;
+    }
+  }
+</style>
+
+<!-- ========================================
+     EDIT GUIDE FOR HUBSPOT
+     ======================================== -->
+
+<!--
+  TO CHANGE ICONS:
+
+  Current icons (emoji placeholders):
+  - Line 109: ⚡ (Minimize Downtime)
+  - Line 156: 💰 (Lower Total Cost)
+  - Line 203: ✓ (Quality Confidence)
+  - Line 250: 🛡️ (Peace of Mind)
+  - Line 297: 📋 (Simplified Maintenance)
+  - Line 344: 🤝 (Trusted Partnership)
+
+  Replace with:
+  - SVG icons from HubSpot File Manager
+  - Font Awesome icons
+  - Applied Industrial icon library
+
+  TO CHANGE BENEFIT CONTENT:
+
+  Benefit 1 (Minimize Downtime):
+  - Headline: Line 118
+  - Description: Line 129
+
+  Benefit 2 (Lower Total Cost):
+  - Headline: Line 165
+  - Description: Line 176
+
+  Benefit 3 (Quality Confidence):
+  - Headline: Line 212
+  - Description: Line 223
+
+  Benefit 4 (Peace of Mind):
+  - Headline: Line 259
+  - Description: Line 270
+
+  Benefit 5 (Simplified Maintenance):
+  - Headline: Line 306
+  - Description: Line 317
+
+  Benefit 6 (Trusted Partnership):
+  - Headline: Line 353
+  - Description: Line 364
+
+  TO ADJUST COLORS:
+  - Background gradient: #f5f5f5 to #e8e8e8 (line 28)
+  - Eyebrow: #007680 (line 50)
+  - Headlines: #1B0F3A (lines 60, 121, 168, etc.)
+  - Body text: #666666 (lines 70, 132, 179, etc.)
+  - Icon background: #007680 (lines 102, 149, 196, etc.)
+  - Cards: #ffffff (lines 86, 133, 180, etc.)
+
+  TO ADJUST SPACING:
+  - Section padding: 80px 20px (line 29)
+  - Grid gap: 40px (line 80)
+  - Card padding: 40px (lines 89, 136, 183, etc.)
+-->
