@@ -37,6 +37,31 @@
     margin-right: auto;
   }
 
+  /* Glowing Pulse Animation */
+  @keyframes pulseGlow {
+    0% {
+      box-shadow: 0 0 0 0 rgba(27, 15, 58, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(27, 15, 58, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(27, 15, 58, 0);
+    }
+  }
+
+  @keyframes starGlow {
+    0% {
+      text-shadow: 0 0 8px rgba(253, 184, 30, 0.4);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(253, 184, 30, 0.8);
+    }
+    100% {
+      text-shadow: 0 0 8px rgba(253, 184, 30, 0.4);
+    }
+  }
+
   .applied-map-wrapper {
     position: relative;
     width: 100%;
@@ -45,7 +70,8 @@
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    overflow: visible; /* Changed to visible so tooltips don't get cut off */
+    padding: 40px 0; /* Add padding to prevent tooltip cutoff */
   }
 
   .applied-map-image {
@@ -77,7 +103,7 @@
     transition: transform 0.3s ease, z-index 0s 0s;
   }
 
-  /* Pin Style (Rubber Shops) */
+  /* Pin Style (Rubber Shops) - Dark Blue with Glow */
   .applied-map-marker.pin {
     width: 24px;
     height: 24px;
@@ -91,18 +117,20 @@
     transform: translate(-50%, -50%);
     width: 16px;
     height: 16px;
-    background-color: #007680;
+    background-color: #1B0F3A; /* Changed to dark navy blue */
     border: 3px solid #ffffff;
     border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(0, 118, 128, 0.4);
+    box-shadow: 0 2px 8px rgba(27, 15, 58, 0.4);
+    animation: pulseGlow 2s infinite; /* Added glowing animation */
   }
 
   .applied-map-marker.pin:hover::before {
-    background-color: #005f68;
-    box-shadow: 0 4px 12px rgba(0, 118, 128, 0.6);
+    background-color: #0f0823; /* Darker on hover */
+    box-shadow: 0 4px 16px rgba(27, 15, 58, 0.8);
+    animation: none; /* Stop animation on hover */
   }
 
-  /* Star Style (Distribution Centers) */
+  /* Star Style (Distribution Centers) - With Glow Animation */
   .applied-map-marker.star {
     width: 32px;
     height: 32px;
@@ -112,11 +140,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: starGlow 2s infinite; /* Added glowing animation */
   }
 
   .applied-map-marker.star:hover {
     color: #e5a71a;
-    text-shadow: 0 4px 12px rgba(253, 184, 30, 0.6);
+    text-shadow: 0 0 30px rgba(253, 184, 30, 1); /* Stronger glow on hover */
+    animation: none; /* Stop animation on hover */
   }
 
   /* Tooltips */
@@ -173,7 +203,7 @@
   }
 
   .applied-tooltip-type.rubber-shop {
-    color: #007680;
+    color: #1B0F3A; /* Changed to match dark blue pins */
   }
 
   .applied-tooltip-type.distribution {
@@ -189,7 +219,7 @@
 
   .applied-tooltip-phone {
     font-size: 14px;
-    color: #007680;
+    color: #1B0F3A; /* Changed to match dark blue theme */
     margin: 0;
     font-weight: 600;
   }
@@ -222,7 +252,7 @@
   .applied-legend-icon.pin {
     width: 16px;
     height: 16px;
-    background-color: #007680;
+    background-color: #1B0F3A; /* Changed to match dark blue pins */
     border: 2px solid #ffffff;
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
