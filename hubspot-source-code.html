@@ -1,0 +1,175 @@
+<!-- ========================================
+     PASTE THIS INTO: Custom HTML Module in HubSpot Page Editor
+     This is your HERO SECTION with video background
+     ======================================== -->
+
+<div class="applied-landing-page">
+
+  <!-- ========================================
+       HERO SECTION WITH VIDEO BACKGROUND
+       ======================================== -->
+  <section class="applied-hero-conveyor" style="position: relative; width: 100%; min-height: 650px; display: flex; align-items: center; justify-content: center; padding: 100px 20px; overflow: hidden; animation: appliedHeroFadeIn 1s ease-out; background-color: #1a1a1a;">
+
+    <!-- Video Background (Hidden on mobile) -->
+    <video
+      class="applied-hero-video-bg"
+      autoplay
+      loop
+      muted
+      playsinline
+      poster="https://via.placeholder.com/1920x1080/1a1a1a/ffffff?text=Upload+Your+Video+Poster+Image"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+      <source src="YOUR_VIDEO_URL.mp4" type="video/mp4">
+      <source src="YOUR_VIDEO_URL.webm" type="video/webm">
+      <!-- Fallback for browsers that don't support video -->
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Fallback Background Image for Mobile -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://via.placeholder.com/1920x1080/1a1a1a/ffffff?text=Upload+Your+Fallback+Image'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 0; display: none;">
+      <style>
+        @media (max-width: 768px) {
+          .applied-hero-conveyor > div:nth-child(2) {
+            display: block !important;
+          }
+        }
+      </style>
+    </div>
+
+    <!-- Dark Overlay for Text Readability - Black fade from left -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%); z-index: 1;">&nbsp;</div>
+
+    <!-- Hero Content Container -->
+    <div class="applied-hero-content" style="position: relative; z-index: 2; max-width: 1200px; width: 100%; text-align: left; color: #ffffff; padding: 0 30px;">
+
+      <!-- Applied Logo Container -->
+      <div style="margin-bottom: 16px; opacity: 0; animation: appliedHeroSlideUp 1s ease-out 0.1s forwards;">
+        <a href="https://www.applied.com/" rel="noopener" target="_blank">
+          <img
+            src="https://6847819.fs1.hubspotusercontent-na1.net/hubfs/6847819/white.png"
+            width="180"
+            height="54"
+            loading="lazy"
+            alt="Applied Industrial Technologies"
+            style="height: auto; width: 180px; display: block; max-width: 100%;">
+        </a>
+      </div>
+
+      <!-- Eyebrow Label -->
+      <p style="font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #fdb81e; margin: 0 0 16px 0; animation: appliedHeroSlideUp 1s ease-out 0.2s backwards;">
+        <span style="color: #ffffff;">We Are Applied<sup>®</sup></span>
+      </p>
+
+      <!-- Main Headline -->
+      <h1 style="font-size: 48px; font-weight: bold; line-height: 1.2; color: #ffffff; margin: 0 0 24px 0; animation: appliedHeroSlideUp 1s ease-out 0.3s backwards;">
+        HEAVYWEIGHT CONVEYOR BELTS
+      </h1>
+
+      <!-- Subheadline -->
+      <p style="font-size: 20px; font-weight: 400; line-height: 1.6; color: #ffffff; margin: 0 0 40px 0; max-width: 700px; animation: appliedHeroSlideUp 1s ease-out 0.4s backwards;">
+        Your trusted source for heavyweight conveyor belt solutions. Applied Industrial Technologies is an authorized distributor and full-service fabricator with nationwide reach, offering 24/7 field service and unmatched reliability.
+      </p>
+
+      <!-- CTA Buttons Container -->
+      <div style="display: flex; gap: 16px; justify-content: flex-start; flex-wrap: wrap; animation: appliedHeroSlideUp 1s ease-out 0.5s backwards;">
+
+        <!-- Primary CTA Button: Talk to an Expert -->
+        <a
+          href="https://www.applied.com/contact"
+          class="applied-hero-cta-primary"
+          style="display: inline-block; background-color: #007680; color: #ffffff; font-size: 16px; font-weight: bold; text-decoration: none; padding: 16px 40px; border-radius: 4px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 118, 128, 0.3);"
+          onmouseover="this.style.backgroundColor='#005f68'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(0, 118, 128, 0.4)';"
+          onmouseout="this.style.backgroundColor='#007680'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 118, 128, 0.3)';"
+          rel="noopener"
+          target="_blank">
+          Talk to an Expert
+        </a>
+
+        <!-- Secondary CTA Button: View Product Catalog -->
+        <a
+          href="https://www.applied.com/conveyor-belts"
+          class="applied-hero-cta-secondary"
+          style="display: inline-block; background-color: transparent; color: #ffffff; font-size: 16px; font-weight: bold; text-decoration: none; padding: 16px 40px; border-radius: 4px; border: 2px solid #ffffff; transition: all 0.3s ease;"
+          onmouseover="this.style.backgroundColor='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(-2px)';"
+          onmouseout="this.style.backgroundColor='transparent'; this.style.transform='translateY(0)';"
+          rel="noopener"
+          target="_blank">
+          View Product Catalog
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+<!-- ========================================
+     📝 QUICK EDIT GUIDE
+     ======================================== -->
+<!--
+  🎥 TO ADD YOUR VIDEO:
+  =====================
+  Line 23-24: Replace 'YOUR_VIDEO_URL.mp4' and 'YOUR_VIDEO_URL.webm' with your HubSpot file URLs
+  Line 21: Replace poster image URL (shows while video loads)
+  Line 30: Replace mobile fallback image URL (shows on phones/tablets)
+
+  📐 RECOMMENDED VIDEO SPECS:
+  ===========================
+  • Format: MP4 (H.264) + WebM
+  • Resolution: 1920x1080px minimum
+  • Duration: 10-30 seconds (loops automatically)
+  • File size: Under 5MB (compress for fast loading)
+  • Content: Conveyor belts, warehouse operations, industrial scenes
+
+  💡 HOW TO UPLOAD VIDEOS TO HUBSPOT:
+  ====================================
+  1. Go to: Marketing > Files and Templates > Files
+  2. Create folder: "conveyor-belts-videos"
+  3. Upload your .mp4 and .webm files
+  4. Upload poster image (a still frame from video)
+  5. Upload mobile fallback image
+  6. Click each file and copy the URL
+  7. Paste URLs into lines 21, 23-24, 30 above
+
+  ✏️ TO CHANGE TEXT:
+  ==================
+  Line 67: Change eyebrow text "We Are Applied®"
+  Line 73: Change headline "HEAVYWEIGHT CONVEYOR BELTS"
+  Line 78: Change subheadline description
+  Line 93: Change primary CTA link
+  Line 102: Change primary CTA button text
+  Line 107: Change secondary CTA link
+  Line 116: Change secondary CTA button text
+
+  🎨 TO ADJUST STYLING:
+  =====================
+  Line 12: Change hero height (min-height: 650px)
+  Line 43: Change overlay darkness (adjust rgba values)
+  Line 90: Change teal button color (#007680)
+  Line 73: Change headline size (font-size: 48px)
+
+  📱 MOBILE BEHAVIOR:
+  ===================
+  • Video automatically hides on screens under 768px width
+  • Mobile users see the fallback background image instead
+  • Text adjusts responsively for readability
+  • Buttons stack vertically on small screens
+
+  ⚠️ TROUBLESHOOTING:
+  ===================
+  Video not playing?
+  • Make sure it's muted (autoplay requires muted)
+  • Check that both MP4 and WebM formats are uploaded
+  • Verify URLs are correct (no typos)
+  • Clear cache and hard refresh (Ctrl+Shift+R)
+
+  Video looks stretched?
+  • Check object-fit: cover on line 22
+  • Ensure video is 16:9 aspect ratio
+
+  Animations not working?
+  • Make sure HEAD HTML is pasted in Header HTML section
+  • Verify no syntax errors in code
+-->
