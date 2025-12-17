@@ -1,0 +1,430 @@
+<!-- ========================================
+     INTERACTIVE MAP MODULE - SOURCE CODE
+     PASTE THIS INTO: Custom HTML Module in HubSpot
+     ======================================== -->
+
+<div class="applied-landing-page">
+
+  <!-- ========================================
+       INTERACTIVE MAP SECTION
+       ======================================== -->
+  <section class="applied-map-section">
+    <div class="applied-map-container">
+
+      <!-- Section Title -->
+      <div class="applied-map-title">
+        <h2>Nationwide Service Network</h2>
+        <p>With strategically located distribution centers and rubber shops across the United States, we're ready to serve you wherever you are.</p>
+      </div>
+
+      <!-- Map Wrapper -->
+      <div class="applied-map-wrapper">
+
+        <!-- USA Map Image -->
+        <img
+          src="https://6847819.fs1.hubspotusercontent-na1.net/hubfs/6847819/usa-map-placeholder.png"
+          alt="Applied Industrial Technologies Service Locations"
+          class="applied-map-image">
+
+        <!-- Location Markers Overlay -->
+        <div class="applied-map-markers">
+
+          <!-- ========================================
+               DISTRIBUTION CENTERS (Stars)
+               ⭐ Copy this block for each distribution center
+               ======================================== -->
+
+          <!-- Distribution Center: Portland, OR -->
+          <div class="applied-map-marker star" style="top: 14%; left: 8%;">
+            <span>⭐</span>
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type distribution">Distribution Center</div>
+              <div class="applied-tooltip-title">Portland, OR</div>
+              <div class="applied-tooltip-address">
+                1234 Industrial Blvd<br>
+                Portland, OR 97220
+              </div>
+              <div class="applied-tooltip-phone">(503) 555-0100</div>
+            </div>
+          </div>
+
+          <!-- Distribution Center: Los Angeles, CA -->
+          <div class="applied-map-marker star" style="top: 58%; left: 6%;">
+            <span>⭐</span>
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type distribution">Distribution Center</div>
+              <div class="applied-tooltip-title">Los Angeles, CA</div>
+              <div class="applied-tooltip-address">
+                5678 Commerce Way<br>
+                Los Angeles, CA 90040
+              </div>
+              <div class="applied-tooltip-phone">(323) 555-0200</div>
+            </div>
+          </div>
+
+          <!-- Distribution Center: Dallas, TX -->
+          <div class="applied-map-marker star" style="top: 68%; left: 48%;">
+            <span>⭐</span>
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type distribution">Distribution Center</div>
+              <div class="applied-tooltip-title">Dallas, TX</div>
+              <div class="applied-tooltip-address">
+                910 Distribution Dr<br>
+                Dallas, TX 75234
+              </div>
+              <div class="applied-tooltip-phone">(214) 555-0300</div>
+            </div>
+          </div>
+
+          <!-- Distribution Center: Indianapolis, IN -->
+          <div class="applied-map-marker star" style="top: 42%; left: 66%;">
+            <span>⭐</span>
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type distribution">Distribution Center</div>
+              <div class="applied-tooltip-title">Indianapolis, IN</div>
+              <div class="applied-tooltip-address">
+                1122 Logistics Pkwy<br>
+                Indianapolis, IN 46241
+              </div>
+              <div class="applied-tooltip-phone">(317) 555-0400</div>
+            </div>
+          </div>
+
+          <!-- Distribution Center: Atlanta, GA -->
+          <div class="applied-map-marker star" style="top: 62%; left: 75%;">
+            <span>⭐</span>
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type distribution">Distribution Center</div>
+              <div class="applied-tooltip-title">Atlanta, GA</div>
+              <div class="applied-tooltip-address">
+                3344 Supply Chain Rd<br>
+                Atlanta, GA 30349
+              </div>
+              <div class="applied-tooltip-phone">(404) 555-0500</div>
+            </div>
+          </div>
+
+          <!-- ========================================
+               RUBBER SHOPS (Pins)
+               📍 Copy this block for each rubber shop
+               ======================================== -->
+
+          <!-- Rubber Shop: Seattle, WA -->
+          <div class="applied-map-marker pin" style="top: 8%; left: 10%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber-shop">Rubber Shop</div>
+              <div class="applied-tooltip-title">Seattle, WA</div>
+              <div class="applied-tooltip-address">
+                789 Industrial Ave<br>
+                Seattle, WA 98108
+              </div>
+              <div class="applied-tooltip-phone">(206) 555-1000</div>
+            </div>
+          </div>
+
+          <!-- Rubber Shop: Spokane, WA -->
+          <div class="applied-map-marker pin" style="top: 12%; left: 15%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber-shop">Rubber Shop</div>
+              <div class="applied-tooltip-title">Spokane, WA</div>
+              <div class="applied-tooltip-address">
+                456 Factory St<br>
+                Spokane, WA 99201
+              </div>
+              <div class="applied-tooltip-phone">(509) 555-1100</div>
+            </div>
+          </div>
+
+          <!-- Rubber Shop: Boise, ID -->
+          <div class="applied-map-marker pin" style="top: 24%; left: 18%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber-shop">Rubber Shop</div>
+              <div class="applied-tooltip-title">Boise, ID</div>
+              <div class="applied-tooltip-address">
+                321 Manufacturing Ln<br>
+                Boise, ID 83709
+              </div>
+              <div class="applied-tooltip-phone">(208) 555-1200</div>
+            </div>
+          </div>
+
+          <!-- Rubber Shop: Salt Lake City, UT -->
+          <div class="applied-map-marker pin" style="top: 35%; left: 22%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber-shop">Rubber Shop</div>
+              <div class="applied-tooltip-title">Salt Lake City, UT</div>
+              <div class="applied-tooltip-address">
+                654 West Temple<br>
+                Salt Lake City, UT 84101
+              </div>
+              <div class="applied-tooltip-phone">(801) 555-1300</div>
+            </div>
+          </div>
+
+          <!-- Rubber Shop: Phoenix, AZ -->
+          <div class="applied-map-marker pin" style="top: 62%; left: 20%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber-shop">Rubber Shop</div>
+              <div class="applied-tooltip-title">Phoenix, AZ</div>
+              <div class="applied-tooltip-address">
+                987 Desert Rd<br>
+                Phoenix, AZ 85043
+              </div>
+              <div class="applied-tooltip-phone">(602) 555-1400</div>
+            </div>
+          </div>
+
+          <!-- Rubber Shop: San Diego, CA -->
+          <div class="applied-map-marker pin" style="top: 66%; left: 8%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber-shop">Rubber Shop</div>
+              <div class="applied-tooltip-title">San Diego, CA</div>
+              <div class="applied-tooltip-address">
+                147 Harbor Dr<br>
+                San Diego, CA 92101
+              </div>
+              <div class="applied-tooltip-phone">(619) 555-1500</div>
+            </div>
+          </div>
+
+          <!-- Rubber Shop: Denver, CO -->
+          <div class="applied-map-marker pin" style="top: 38%; left: 32%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber-shop">Rubber Shop</div>
+              <div class="applied-tooltip-title">Denver, CO</div>
+              <div class="applied-tooltip-address">
+                258 Mountain View Blvd<br>
+                Denver, CO 80239
+              </div>
+              <div class="applied-tooltip-phone">(303) 555-1600</div>
+            </div>
+          </div>
+
+          <!-- Rubber Shop: Kansas City, MO -->
+          <div class="applied-map-marker pin" style="top: 45%; left: 52%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber-shop">Rubber Shop</div>
+              <div class="applied-tooltip-title">Kansas City, MO</div>
+              <div class="applied-tooltip-address">
+                369 Central Ave<br>
+                Kansas City, MO 64101
+              </div>
+              <div class="applied-tooltip-phone">(816) 555-1700</div>
+            </div>
+          </div>
+
+          <!-- Rubber Shop: Oklahoma City, OK -->
+          <div class="applied-map-marker pin" style="top: 58%; left: 50%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber-shop">Rubber Shop</div>
+              <div class="applied-tooltip-title">Oklahoma City, OK</div>
+              <div class="applied-tooltip-address">
+                741 Industrial Park<br>
+                Oklahoma City, OK 73128
+              </div>
+              <div class="applied-tooltip-phone">(405) 555-1800</div>
+            </div>
+          </div>
+
+          <!-- Rubber Shop: Houston, TX -->
+          <div class="applied-map-marker pin" style="top: 74%; left: 52%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber-shop">Rubber Shop</div>
+              <div class="applied-tooltip-title">Houston, TX</div>
+              <div class="applied-tooltip-address">
+                852 Port Rd<br>
+                Houston, TX 77029
+              </div>
+              <div class="applied-tooltip-phone">(713) 555-1900</div>
+            </div>
+          </div>
+
+          <!-- Rubber Shop: Minneapolis, MN -->
+          <div class="applied-map-marker pin" style="top: 22%; left: 54%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber-shop">Rubber Shop</div>
+              <div class="applied-tooltip-title">Minneapolis, MN</div>
+              <div class="applied-tooltip-address">
+                963 Lake St<br>
+                Minneapolis, MN 55407
+              </div>
+              <div class="applied-tooltip-phone">(612) 555-2000</div>
+            </div>
+          </div>
+
+          <!-- Rubber Shop: Milwaukee, WI -->
+          <div class="applied-map-marker pin" style="top: 30%; left: 62%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber-shop">Rubber Shop</div>
+              <div class="applied-tooltip-title">Milwaukee, WI</div>
+              <div class="applied-tooltip-address">
+                159 Brewery Ave<br>
+                Milwaukee, WI 53218
+              </div>
+              <div class="applied-tooltip-phone">(414) 555-2100</div>
+            </div>
+          </div>
+
+          <!-- Rubber Shop: Chicago, IL -->
+          <div class="applied-map-marker pin" style="top: 36%; left: 64%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber-shop">Rubber Shop</div>
+              <div class="applied-tooltip-title">Chicago, IL</div>
+              <div class="applied-tooltip-address">
+                357 South Side Dr<br>
+                Chicago, IL 60609
+              </div>
+              <div class="applied-tooltip-phone">(312) 555-2200</div>
+            </div>
+          </div>
+
+          <!-- Rubber Shop: Detroit, MI -->
+          <div class="applied-map-marker pin" style="top: 32%; left: 72%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber-shop">Rubber Shop</div>
+              <div class="applied-tooltip-title">Detroit, MI</div>
+              <div class="applied-tooltip-address">
+                753 Motor City Blvd<br>
+                Detroit, MI 48201
+              </div>
+              <div class="applied-tooltip-phone">(313) 555-2300</div>
+            </div>
+          </div>
+
+          <!-- Rubber Shop: Cleveland, OH -->
+          <div class="applied-map-marker pin" style="top: 36%; left: 74%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber-shop">Rubber Shop</div>
+              <div class="applied-tooltip-title">Cleveland, OH</div>
+              <div class="applied-tooltip-address">
+                951 Lakefront Ave<br>
+                Cleveland, OH 44113
+              </div>
+              <div class="applied-tooltip-phone">(216) 555-2400</div>
+            </div>
+          </div>
+
+          <!-- Rubber Shop: Louisville, KY -->
+          <div class="applied-map-marker pin" style="top: 48%; left: 70%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber-shop">Rubber Shop</div>
+              <div class="applied-tooltip-title">Louisville, KY</div>
+              <div class="applied-tooltip-address">
+                357 Derby Ln<br>
+                Louisville, KY 40299
+              </div>
+              <div class="applied-tooltip-phone">(502) 555-2500</div>
+            </div>
+          </div>
+
+        </div>
+        <!-- End Markers -->
+
+      </div>
+      <!-- End Map Wrapper -->
+
+      <!-- Map Legend -->
+      <div class="applied-map-legend">
+        <div class="applied-legend-item">
+          <div class="applied-legend-icon pin"></div>
+          <span>Applied® Rubber Shop Location</span>
+        </div>
+        <div class="applied-legend-item">
+          <div class="applied-legend-icon star">⭐</div>
+          <span>Applied® US Distribution Center Location</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- ========================================
+     📝 HOW TO CUSTOMIZE YOUR LOCATIONS
+     ======================================== -->
+<!--
+  🗺️ STEP 1: UPLOAD YOUR MAP IMAGE
+  ==================================
+  1. Go to HubSpot File Manager
+  2. Upload your USA map image (the one you showed me)
+  3. Copy the file URL
+  4. Replace line 24: src="YOUR_MAP_IMAGE_URL_HERE"
+
+  📍 STEP 2: ADD/EDIT LOCATIONS
+  ==============================
+
+  FOR RUBBER SHOPS (Blue Pins):
+  ------------------------------
+  Copy this template and adjust the position:
+
+  <div class="applied-map-marker pin" style="top: XX%; left: XX%;">
+    <div class="applied-map-tooltip">
+      <div class="applied-tooltip-type rubber-shop">Rubber Shop</div>
+      <div class="applied-tooltip-title">CITY, STATE</div>
+      <div class="applied-tooltip-address">
+        STREET ADDRESS<br>
+        CITY, STATE ZIP
+      </div>
+      <div class="applied-tooltip-phone">PHONE NUMBER</div>
+    </div>
+  </div>
+
+  FOR DISTRIBUTION CENTERS (Yellow Stars):
+  -----------------------------------------
+  Copy this template and adjust the position:
+
+  <div class="applied-map-marker star" style="top: XX%; left: XX%;">
+    <span>⭐</span>
+    <div class="applied-map-tooltip">
+      <div class="applied-tooltip-type distribution">Distribution Center</div>
+      <div class="applied-tooltip-title">CITY, STATE</div>
+      <div class="applied-tooltip-address">
+        STREET ADDRESS<br>
+        CITY, STATE ZIP
+      </div>
+      <div class="applied-tooltip-phone">PHONE NUMBER</div>
+    </div>
+  </div>
+
+  📐 STEP 3: POSITION THE MARKERS
+  ================================
+  Adjust the "top" and "left" percentages:
+  - top: 0% = top of map, 100% = bottom of map
+  - left: 0% = left side of map, 100% = right side
+
+  Example positions (approximate):
+  - Seattle, WA:         top: 8%;  left: 10%;
+  - Los Angeles, CA:     top: 58%; left: 6%;
+  - Phoenix, AZ:         top: 62%; left: 20%;
+  - Denver, CO:          top: 38%; left: 32%;
+  - Dallas, TX:          top: 68%; left: 48%;
+  - Chicago, IL:         top: 36%; left: 64%;
+  - Atlanta, GA:         top: 62%; left: 75%;
+  - New York, NY:        top: 28%; left: 85%;
+
+  💡 TIP: Use trial and error to position markers exactly where you want them!
+
+  🗑️ STEP 4: REMOVE PLACEHOLDER LOCATIONS
+  ========================================
+  Delete any example locations you don't need.
+  Just delete the entire <div class="applied-map-marker...">...</div> block.
+
+  ✏️ STEP 5: UPDATE SECTION TITLE & DESCRIPTION
+  ==============================================
+  Line 17: Change the h2 heading
+  Line 18: Change the description paragraph
+
+  🎨 COLORS USED:
+  ===============
+  - Rubber Shop Pins: #007680 (Applied Teal)
+  - Distribution Stars: #FDB81E (Applied Yellow)
+  - Tooltips: White background with shadow
+  - Text: #1B0F3A (Applied Navy) and #666666 (Gray)
+
+  📱 MOBILE RESPONSIVE:
+  =====================
+  - Markers automatically get larger on mobile for easier tapping
+  - Tooltips adjust size for smaller screens
+  - Map scales responsively
+-->

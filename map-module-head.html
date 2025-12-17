@@ -1,0 +1,330 @@
+<!-- ========================================
+     INTERACTIVE MAP MODULE - HEAD HTML
+     PASTE THIS INTO: Page Settings > Advanced Options > Header HTML
+     (Or add to your existing header HTML)
+     ======================================== -->
+
+<style>
+  /* ========================================
+     INTERACTIVE MAP CONTAINER
+     ======================================== */
+  .applied-map-section {
+    background-color: #f5f5f5;
+    padding: 80px 20px;
+  }
+
+  .applied-map-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .applied-map-title {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .applied-map-title h2 {
+    font-size: 42px;
+    font-weight: bold;
+    color: #1B0F3A;
+    margin: 0 0 16px 0;
+  }
+
+  .applied-map-title p {
+    font-size: 18px;
+    color: #666666;
+    margin: 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ========================================
+     MAP WRAPPER (Maintains aspect ratio)
+     ======================================== */
+  .applied-map-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .applied-map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ========================================
+     LOCATION MARKERS (Pins and Stars)
+     ======================================== */
+  .applied-map-markers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .applied-map-marker {
+    position: absolute;
+    cursor: pointer;
+    pointer-events: all;
+    z-index: 10;
+    transition: transform 0.3s ease, z-index 0s 0.3s;
+  }
+
+  .applied-map-marker:hover {
+    transform: scale(1.2);
+    z-index: 100;
+    transition: transform 0.3s ease, z-index 0s 0s;
+  }
+
+  /* Pin Style (Rubber Shops) */
+  .applied-map-marker.pin {
+    width: 24px;
+    height: 24px;
+  }
+
+  .applied-map-marker.pin::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    background-color: #007680;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 118, 128, 0.4);
+  }
+
+  .applied-map-marker.pin:hover::before {
+    background-color: #005f68;
+    box-shadow: 0 4px 12px rgba(0, 118, 128, 0.6);
+  }
+
+  /* Star Style (Distribution Centers) */
+  .applied-map-marker.star {
+    width: 32px;
+    height: 32px;
+    font-size: 28px;
+    color: #FDB81E;
+    text-shadow: 0 2px 8px rgba(253, 184, 30, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .applied-map-marker.star:hover {
+    color: #e5a71a;
+    text-shadow: 0 4px 12px rgba(253, 184, 30, 0.6);
+  }
+
+  /* ========================================
+     TOOLTIPS (Hover Information)
+     ======================================== */
+  .applied-map-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    background: #ffffff;
+    padding: 16px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 1000;
+    min-width: 200px;
+  }
+
+  .applied-map-marker:hover .applied-map-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-12px);
+  }
+
+  /* Tooltip Arrow */
+  .applied-map-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #ffffff;
+  }
+
+  /* Tooltip Content */
+  .applied-tooltip-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1B0F3A;
+    margin: 0 0 4px 0;
+  }
+
+  .applied-tooltip-type {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 8px 0;
+  }
+
+  .applied-tooltip-type.rubber-shop {
+    color: #007680;
+  }
+
+  .applied-tooltip-type.distribution {
+    color: #FDB81E;
+  }
+
+  .applied-tooltip-address {
+    font-size: 14px;
+    color: #666666;
+    margin: 0 0 4px 0;
+    line-height: 1.4;
+  }
+
+  .applied-tooltip-phone {
+    font-size: 14px;
+    color: #007680;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  /* ========================================
+     LEGEND (Map Key)
+     ======================================== */
+  .applied-map-legend {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  .applied-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #666666;
+  }
+
+  .applied-legend-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .applied-legend-icon.pin {
+    width: 16px;
+    height: 16px;
+    background-color: #007680;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .applied-legend-icon.star {
+    font-size: 20px;
+    color: #FDB81E;
+  }
+
+  /* ========================================
+     MOBILE RESPONSIVE
+     ======================================== */
+  @media (max-width: 768px) {
+    .applied-map-section {
+      padding: 60px 20px;
+    }
+
+    .applied-map-title h2 {
+      font-size: 32px;
+    }
+
+    .applied-map-title p {
+      font-size: 16px;
+    }
+
+    .applied-map-wrapper {
+      border-radius: 8px;
+    }
+
+    /* Larger markers on mobile for easier tapping */
+    .applied-map-marker.pin {
+      width: 32px;
+      height: 32px;
+    }
+
+    .applied-map-marker.pin::before {
+      width: 20px;
+      height: 20px;
+      border-width: 4px;
+    }
+
+    .applied-map-marker.star {
+      width: 40px;
+      height: 40px;
+      font-size: 36px;
+    }
+
+    /* Tooltip adjustments for mobile */
+    .applied-map-tooltip {
+      white-space: normal;
+      max-width: 220px;
+      font-size: 13px;
+    }
+
+    .applied-tooltip-title {
+      font-size: 15px;
+    }
+
+    .applied-tooltip-address {
+      font-size: 13px;
+    }
+
+    .applied-tooltip-phone {
+      font-size: 13px;
+    }
+
+    /* Show tooltip on tap for mobile */
+    .applied-map-marker.active .applied-map-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(-12px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .applied-map-section {
+      padding: 40px 15px;
+    }
+
+    .applied-map-title h2 {
+      font-size: 26px;
+    }
+
+    .applied-legend-item {
+      font-size: 13px;
+    }
+  }
+
+</style>

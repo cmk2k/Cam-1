@@ -1,0 +1,174 @@
+<!-- ========================================
+     INTERACTIVE MAP MODULE - FOOTER HTML
+     PASTE THIS INTO: Page Settings > Advanced Options > Footer HTML
+     (Or add to your existing footer HTML)
+     ======================================== -->
+
+<script>
+(function() {
+  'use strict';
+
+  // ========================================
+  // Mobile Touch Interaction for Map Markers
+  // ========================================
+  function initMapInteractions() {
+    // Only run on touch devices (mobile/tablet)
+    if (!('ontouchstart' in window)) {
+      return; // Desktop - hover works fine
+    }
+
+    var markers = document.querySelectorAll('.applied-map-marker');
+    var activeMarker = null;
+
+    markers.forEach(function(marker) {
+      // Handle tap on marker
+      marker.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        // If this marker is already active, deactivate it
+        if (marker === activeMarker) {
+          marker.classList.remove('active');
+          activeMarker = null;
+        } else {
+          // Deactivate any previously active marker
+          if (activeMarker) {
+            activeMarker.classList.remove('active');
+          }
+
+          // Activate this marker
+          marker.classList.add('active');
+          activeMarker = marker;
+        }
+      });
+    });
+
+    // Close tooltip when tapping elsewhere on the page
+    document.addEventListener('click', function(e) {
+      if (activeMarker && !activeMarker.contains(e.target)) {
+        activeMarker.classList.remove('active');
+        activeMarker = null;
+      }
+    });
+
+    // Prevent tooltip from closing when tapping inside it
+    markers.forEach(function(marker) {
+      var tooltip = marker.querySelector('.applied-map-tooltip');
+      if (tooltip) {
+        tooltip.addEventListener('click', function(e) {
+          e.stopPropagation();
+        });
+      }
+    });
+  }
+
+  // ========================================
+  // Initialize when DOM is ready
+  // ========================================
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMapInteractions);
+  } else {
+    initMapInteractions();
+  }
+
+  // Re-initialize on window load (backup)
+  window.addEventListener('load', function() {
+    setTimeout(initMapInteractions, 100);
+  });
+
+  // ========================================
+  // Optional: Analytics Tracking
+  // Track when users interact with locations
+  // ========================================
+  function trackLocationClick(locationName, locationType) {
+    // Add your analytics tracking code here
+    // Example for Google Analytics:
+    // if (typeof ga !== 'undefined') {
+    //   ga('send', 'event', 'Map', 'Location Click', locationName);
+    // }
+
+    // Example for HubSpot tracking:
+    // if (typeof _hsq !== 'undefined') {
+    //   _hsq.push(['trackEvent', {
+    //     id: 'Map Location Click',
+    //     value: locationName
+    //   }]);
+    // }
+
+    console.log('Location clicked:', locationName, '(' + locationType + ')');
+  }
+
+  // Attach click tracking to markers (optional)
+  function initLocationTracking() {
+    var markers = document.querySelectorAll('.applied-map-marker');
+
+    markers.forEach(function(marker) {
+      marker.addEventListener('click', function() {
+        var tooltip = marker.querySelector('.applied-map-tooltip');
+        if (tooltip) {
+          var title = tooltip.querySelector('.applied-tooltip-title');
+          var type = tooltip.querySelector('.applied-tooltip-type');
+
+          if (title && type) {
+            var locationName = title.textContent.trim();
+            var locationType = type.textContent.trim();
+            trackLocationClick(locationName, locationType);
+          }
+        }
+      });
+    });
+  }
+
+  // Initialize tracking when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLocationTracking);
+  } else {
+    initLocationTracking();
+  }
+
+  // ========================================
+  // Console Log - Remove in Production
+  // ========================================
+  console.log('Applied Industrial Technologies - Interactive Map Module Loaded');
+
+})();
+</script>
+
+<!-- ========================================
+     📊 OPTIONAL: ANALYTICS INTEGRATION
+     ======================================== -->
+<!--
+  The JavaScript above includes optional analytics tracking.
+
+  TO ENABLE TRACKING:
+  ===================
+  1. Uncomment lines 73-83 in the JavaScript
+  2. Choose your analytics platform:
+
+  FOR GOOGLE ANALYTICS:
+  ---------------------
+  if (typeof ga !== 'undefined') {
+    ga('send', 'event', 'Map', 'Location Click', locationName);
+  }
+
+  FOR HUBSPOT ANALYTICS:
+  ----------------------
+  if (typeof _hsq !== 'undefined') {
+    _hsq.push(['trackEvent', {
+      id: 'Map Location Click',
+      value: locationName
+    }]);
+  }
+
+  FOR CUSTOM TRACKING:
+  --------------------
+  Add your own tracking code in the trackLocationClick function.
+
+  WHAT GETS TRACKED:
+  ==================
+  - Location name (e.g., "Seattle, WA")
+  - Location type (e.g., "Rubber Shop" or "Distribution Center")
+  - Can help you understand which locations users are most interested in
+
+  💡 TIP: Check your browser console (F12) to see click events being logged.
+-->
