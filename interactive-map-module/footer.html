@@ -1,0 +1,68 @@
+<!-- ========================================
+     INTERACTIVE MAP - FOOTER HTML
+     PASTE INTO: Page Settings > Advanced Options > Footer HTML
+     ======================================== -->
+
+<script>
+(function() {
+  'use strict';
+
+  // Mobile Touch Interaction for Map Markers
+  function initMapInteractions() {
+    // Only run on touch devices
+    if (!('ontouchstart' in window)) {
+      return;
+    }
+
+    var markers = document.querySelectorAll('.applied-map-marker');
+    var activeMarker = null;
+
+    markers.forEach(function(marker) {
+      marker.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (marker === activeMarker) {
+          marker.classList.remove('active');
+          activeMarker = null;
+        } else {
+          if (activeMarker) {
+            activeMarker.classList.remove('active');
+          }
+          marker.classList.add('active');
+          activeMarker = marker;
+        }
+      });
+    });
+
+    document.addEventListener('click', function(e) {
+      if (activeMarker && !activeMarker.contains(e.target)) {
+        activeMarker.classList.remove('active');
+        activeMarker = null;
+      }
+    });
+
+    markers.forEach(function(marker) {
+      var tooltip = marker.querySelector('.applied-map-tooltip');
+      if (tooltip) {
+        tooltip.addEventListener('click', function(e) {
+          e.stopPropagation();
+        });
+      }
+    });
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMapInteractions);
+  } else {
+    initMapInteractions();
+  }
+
+  window.addEventListener('load', function() {
+    setTimeout(initMapInteractions, 100);
+  });
+
+  console.log('Applied Industrial Technologies - Interactive Map Module Loaded');
+})();
+</script>
