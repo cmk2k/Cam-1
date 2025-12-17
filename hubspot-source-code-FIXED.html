@@ -1,0 +1,227 @@
+<!-- ========================================
+     🎥 FIXED VERSION - JavaScript-Powered Video Autoplay
+     PASTE THIS INTO: Custom HTML Module in HubSpot Page Editor
+     ======================================== -->
+
+<div class="applied-landing-page">
+
+  <!-- ========================================
+       HERO SECTION WITH VIDEO BACKGROUND
+       ======================================== -->
+  <section class="applied-hero-conveyor" style="position: relative; width: 100%; min-height: 650px; display: flex; align-items: center; justify-content: center; padding: 100px 20px; overflow: hidden; animation: appliedHeroFadeIn 1s ease-out; background-color: #1a1a1a;">
+
+    <!-- Video Background with JavaScript trigger -->
+    <video
+      id="hero-video-bg"
+      class="applied-hero-video-bg"
+      muted
+      loop
+      playsinline
+      poster="https://6847819.fs1.hubspotusercontent-na1.net/hubfs/6847819/white.png"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+      <source src="https://6847819.fs1.hubspotusercontent-na1.net/hubfs/6847819/Heavy%20belts%20banner%20(2).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Fallback Background Image for Mobile -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #1a1a1a; background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 0; display: none;">
+      <style>
+        @media (max-width: 768px) {
+          .applied-hero-conveyor > div:nth-child(2) {
+            display: block !important;
+          }
+        }
+      </style>
+    </div>
+
+    <!-- Dark Overlay for Text Readability - Black fade from left -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%); z-index: 1;">&nbsp;</div>
+
+    <!-- Hero Content Container -->
+    <div class="applied-hero-content" style="position: relative; z-index: 2; max-width: 1200px; width: 100%; text-align: left; color: #ffffff; padding: 0 30px;">
+
+      <!-- Applied Logo Container -->
+      <div style="margin-bottom: 16px; opacity: 0; animation: appliedHeroSlideUp 1s ease-out 0.1s forwards;">
+        <a href="https://www.applied.com/" rel="noopener" target="_blank">
+          <img
+            src="https://6847819.fs1.hubspotusercontent-na1.net/hubfs/6847819/white.png"
+            width="180"
+            height="54"
+            loading="lazy"
+            alt="Applied Industrial Technologies"
+            style="height: auto; width: 180px; display: block; max-width: 100%;">
+        </a>
+      </div>
+
+      <!-- Eyebrow Label -->
+      <p style="font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #fdb81e; margin: 0 0 16px 0; animation: appliedHeroSlideUp 1s ease-out 0.2s backwards;">
+        <span style="color: #ffffff;">We Are Applied<sup>®</sup></span>
+      </p>
+
+      <!-- Main Headline -->
+      <h1 style="font-size: 48px; font-weight: bold; line-height: 1.2; color: #ffffff; margin: 0 0 24px 0; animation: appliedHeroSlideUp 1s ease-out 0.3s backwards;">
+        HEAVYWEIGHT CONVEYOR BELTS
+      </h1>
+
+      <!-- Subheadline -->
+      <p style="font-size: 20px; font-weight: 400; line-height: 1.6; color: #ffffff; margin: 0 0 40px 0; max-width: 700px; animation: appliedHeroSlideUp 1s ease-out 0.4s backwards;">
+        Your trusted source for heavyweight conveyor belt solutions. Applied Industrial Technologies is an authorized distributor and full-service fabricator with nationwide reach, offering 24/7 field service and unmatched reliability.
+      </p>
+
+      <!-- CTA Buttons Container -->
+      <div style="display: flex; gap: 16px; justify-content: flex-start; flex-wrap: wrap; animation: appliedHeroSlideUp 1s ease-out 0.5s backwards;">
+
+        <!-- Primary CTA Button: Talk to an Expert -->
+        <a
+          href="https://www.applied.com/contact"
+          class="applied-hero-cta-primary"
+          style="display: inline-block; background-color: #007680; color: #ffffff; font-size: 16px; font-weight: bold; text-decoration: none; padding: 16px 40px; border-radius: 4px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 118, 128, 0.3);"
+          onmouseover="this.style.backgroundColor='#005f68'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(0, 118, 128, 0.4)';"
+          onmouseout="this.style.backgroundColor='#007680'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 118, 128, 0.3)';"
+          rel="noopener"
+          target="_blank">
+          Talk to an Expert
+        </a>
+
+        <!-- Secondary CTA Button: View Product Catalog -->
+        <a
+          href="https://www.applied.com/conveyor-belts"
+          class="applied-hero-cta-secondary"
+          style="display: inline-block; background-color: transparent; color: #ffffff; font-size: 16px; font-weight: bold; text-decoration: none; padding: 16px 40px; border-radius: 4px; border: 2px solid #ffffff; transition: all 0.3s ease;"
+          onmouseover="this.style.backgroundColor='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(-2px)';"
+          onmouseout="this.style.backgroundColor='transparent'; this.style.transform='translateY(0)';"
+          rel="noopener"
+          target="_blank">
+          View Product Catalog
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+<!-- ========================================
+     🔥 JAVASCRIPT TO FORCE VIDEO AUTOPLAY
+     This fixes HubSpot interfering with autoplay
+     ======================================== -->
+<script>
+(function() {
+  'use strict';
+
+  // Wait for page to fully load
+  function initVideoBackground() {
+    var video = document.getElementById('hero-video-bg');
+
+    if (!video) {
+      console.error('Hero video element not found');
+      return;
+    }
+
+    // Set video properties programmatically (in case HubSpot strips them)
+    video.muted = true;
+    video.playsInline = true;
+    video.loop = true;
+    video.autoplay = true;
+
+    // Force play the video
+    var playPromise = video.play();
+
+    if (playPromise !== undefined) {
+      playPromise
+        .then(function() {
+          // Video started playing successfully
+          console.log('✅ Hero video is playing');
+        })
+        .catch(function(error) {
+          // Autoplay was prevented
+          console.error('❌ Video autoplay failed:', error);
+
+          // Try playing again after a short delay
+          setTimeout(function() {
+            video.play().catch(function(err) {
+              console.error('❌ Second attempt failed:', err);
+            });
+          }, 500);
+        });
+    }
+
+    // Add error handler
+    video.addEventListener('error', function(e) {
+      console.error('❌ Video loading error:', e);
+      console.error('Video source:', video.querySelector('source').src);
+    });
+
+    // Log when video is loaded
+    video.addEventListener('loadeddata', function() {
+      console.log('✅ Video data loaded');
+    });
+  }
+
+  // Try to play video when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initVideoBackground);
+  } else {
+    initVideoBackground();
+  }
+
+  // Also try on window load (backup)
+  window.addEventListener('load', function() {
+    setTimeout(initVideoBackground, 100);
+  });
+})();
+</script>
+
+<!-- ========================================
+     📝 WHAT THIS FIXED VERSION DOES:
+     ======================================== -->
+<!--
+  ✅ CHANGES FROM PREVIOUS VERSION:
+
+  1. Added ID to video element (id="hero-video-bg")
+     - Allows JavaScript to target it specifically
+
+  2. Removed "autoplay" attribute from HTML
+     - HubSpot sometimes strips or breaks this
+
+  3. Added JavaScript that:
+     - Waits for page to load
+     - Manually sets video properties (muted, loop, etc.)
+     - Forces video.play() method
+     - Retries if first attempt fails
+     - Logs success/errors to console (F12 to see)
+
+  4. Error handling
+     - Logs if video fails to load
+     - Shows video source URL if there's an error
+     - Attempts second play after 500ms delay
+
+  ⚠️ TO DEBUG:
+  1. Open page in browser
+  2. Press F12 to open Developer Tools
+  3. Go to Console tab
+  4. Look for these messages:
+     ✅ "Hero video is playing" = SUCCESS!
+     ✅ "Video data loaded" = Video file loaded correctly
+     ❌ "Video autoplay failed" = Browser blocking (check error details)
+     ❌ "Video loading error" = File URL wrong or file corrupt
+
+  🎥 WHAT YOU SHOULD SEE:
+  - Video plays automatically with NO sound
+  - Video loops continuously
+  - Text appears on top with fade animation
+  - If you see black screen, check console (F12)
+
+  📱 STILL BLACK SCREEN ON DESKTOP?
+  Try these:
+  1. Hard refresh: Ctrl+Shift+R (or Cmd+Shift+R on Mac)
+  2. Try different browser (Chrome works best)
+  3. Check console (F12) for error messages
+  4. Verify video URL works: paste it in new tab
+  5. Disable ad blockers temporarily
+
+  🔧 NEED TO CHANGE VIDEO URL?
+  Line 21: Change the src="..." to your new video URL
+-->

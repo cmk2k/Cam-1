@@ -1,0 +1,115 @@
+<!-- ========================================
+     🧪 QUICK VIDEO TEST
+     Use this to test if your video file works at all
+     ======================================== -->
+<!--
+  INSTRUCTIONS:
+  1. Create a NEW Custom HTML module in HubSpot
+  2. Paste this ENTIRE file into it
+  3. Save and preview the page
+  4. You should see a simple video player
+
+  WHAT TO LOOK FOR:
+  ✅ Video plays = Your video file is GOOD, problem is in the hero section code
+  ❌ Black screen or error = Your video file has a problem
+  ❌ "Video not found" = URL is wrong or file isn't accessible
+-->
+
+<div style="width: 100%; max-width: 800px; margin: 40px auto; padding: 20px; background: #f5f5f5; border-radius: 8px;">
+
+  <h2 style="color: #333; margin-bottom: 20px;">🧪 Video Test Player</h2>
+
+  <p style="color: #666; margin-bottom: 20px;">
+    If you see your conveyor belt video playing below, the video file is fine.
+    The issue is in the hero section code setup.
+  </p>
+
+  <!-- Simple Video Player -->
+  <video
+    id="test-video"
+    controls
+    autoplay
+    muted
+    loop
+    style="width: 100%; height: auto; border-radius: 8px; background: #000;">
+    <source src="https://6847819.fs1.hubspotusercontent-na1.net/hubfs/6847819/Heavy%20belts%20banner%20(2).mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div id="test-results" style="margin-top: 20px; padding: 15px; background: white; border-radius: 4px; border-left: 4px solid #007680;">
+    <p style="margin: 0; color: #666;">
+      <strong>Status:</strong> <span id="status-text">Testing...</span>
+    </p>
+    <p style="margin: 10px 0 0 0; color: #666; font-size: 14px;">
+      <strong>Video URL:</strong><br>
+      <code style="font-size: 12px; word-break: break-all;">https://6847819.fs1.hubspotusercontent-na1.net/hubfs/6847819/Heavy%20belts%20banner%20(2).mp4</code>
+    </p>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  var video = document.getElementById('test-video');
+  var statusText = document.getElementById('status-text');
+  var resultsDiv = document.getElementById('test-results');
+
+  if (video) {
+    // Check if video loads
+    video.addEventListener('loadeddata', function() {
+      statusText.innerHTML = '✅ <span style="color: #00aa00;">Video loaded successfully!</span>';
+      statusText.innerHTML += '<br><small>Duration: ' + Math.round(video.duration) + ' seconds</small>';
+      resultsDiv.style.borderLeftColor = '#00aa00';
+    });
+
+    // Check for errors
+    video.addEventListener('error', function(e) {
+      statusText.innerHTML = '❌ <span style="color: #cc0000;">Video failed to load</span>';
+      statusText.innerHTML += '<br><small>Error: Check if file exists and is accessible</small>';
+      resultsDiv.style.borderLeftColor = '#cc0000';
+      console.error('Video error:', e);
+    });
+
+    // Check if playing
+    video.addEventListener('playing', function() {
+      var currentStatus = statusText.innerHTML;
+      if (!currentStatus.includes('Playing')) {
+        statusText.innerHTML += '<br><small style="color: #007680;">▶ Video is playing</small>';
+      }
+    });
+
+    // Force play
+    setTimeout(function() {
+      video.play().catch(function(error) {
+        console.error('Autoplay prevented:', error);
+        statusText.innerHTML = '⚠️ <span style="color: #ff9900;">Autoplay blocked - click video to play</span>';
+        resultsDiv.style.borderLeftColor = '#ff9900';
+      });
+    }, 500);
+  }
+})();
+</script>
+
+<!-- ========================================
+     WHAT THE RESULTS MEAN:
+     ======================================== -->
+<!--
+  ✅ "Video loaded successfully!" + video plays
+  = Your video file is PERFECT! Use the FIXED hero code.
+
+  ❌ "Video failed to load"
+  = Video URL is wrong OR file is corrupted OR not accessible
+  = Go to HubSpot File Manager and verify the file exists
+  = Try re-uploading the video
+
+  ⚠️ "Autoplay blocked - click video to play"
+  = Video file is fine, but browser is blocking autoplay
+  = This is rare with muted videos
+  = The FIXED hero code handles this with JavaScript
+
+  🎥 If video plays here but NOT in hero section:
+  1. Make sure you pasted hubspot-head.html in Header HTML
+  2. Use the new hubspot-source-code-FIXED.html file
+  3. Hard refresh your browser (Ctrl+Shift+R)
+  4. Check browser console (F12) for errors
+-->
