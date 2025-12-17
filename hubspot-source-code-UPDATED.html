@@ -1,0 +1,198 @@
+<!-- ========================================
+     PASTE THIS INTO: Custom HTML Module in HubSpot Page Editor
+     This is your HERO SECTION with video background
+     ⚠️ UPDATED WITH YOUR VIDEO URL
+     ======================================== -->
+
+<div class="applied-landing-page">
+
+  <!-- ========================================
+       HERO SECTION WITH VIDEO BACKGROUND
+       ======================================== -->
+  <section class="applied-hero-conveyor" style="position: relative; width: 100%; min-height: 650px; display: flex; align-items: center; justify-content: center; padding: 100px 20px; overflow: hidden; animation: appliedHeroFadeIn 1s ease-out; background-color: #1a1a1a;">
+
+    <!-- Video Background (Hidden on mobile) -->
+    <video
+      class="applied-hero-video-bg"
+      autoplay
+      loop
+      muted
+      playsinline
+      poster="https://6847819.fs1.hubspotusercontent-na1.net/hubfs/6847819/white.png"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+      <source src="https://6847819.fs1.hubspotusercontent-na1.net/hubfs/6847819/Heavy%20belts%20banner%20(2).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Fallback Background Image for Mobile (using same as desktop for now) -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #1a1a1a; background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 0; display: none;">
+      <style>
+        @media (max-width: 768px) {
+          .applied-hero-conveyor > div:nth-child(2) {
+            display: block !important;
+          }
+        }
+      </style>
+    </div>
+
+    <!-- Dark Overlay for Text Readability - Black fade from left -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%); z-index: 1;">&nbsp;</div>
+
+    <!-- Hero Content Container -->
+    <div class="applied-hero-content" style="position: relative; z-index: 2; max-width: 1200px; width: 100%; text-align: left; color: #ffffff; padding: 0 30px;">
+
+      <!-- Applied Logo Container -->
+      <div style="margin-bottom: 16px; opacity: 0; animation: appliedHeroSlideUp 1s ease-out 0.1s forwards;">
+        <a href="https://www.applied.com/" rel="noopener" target="_blank">
+          <img
+            src="https://6847819.fs1.hubspotusercontent-na1.net/hubfs/6847819/white.png"
+            width="180"
+            height="54"
+            loading="lazy"
+            alt="Applied Industrial Technologies"
+            style="height: auto; width: 180px; display: block; max-width: 100%;">
+        </a>
+      </div>
+
+      <!-- Eyebrow Label -->
+      <p style="font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #fdb81e; margin: 0 0 16px 0; animation: appliedHeroSlideUp 1s ease-out 0.2s backwards;">
+        <span style="color: #ffffff;">We Are Applied<sup>®</sup></span>
+      </p>
+
+      <!-- Main Headline -->
+      <h1 style="font-size: 48px; font-weight: bold; line-height: 1.2; color: #ffffff; margin: 0 0 24px 0; animation: appliedHeroSlideUp 1s ease-out 0.3s backwards;">
+        HEAVYWEIGHT CONVEYOR BELTS
+      </h1>
+
+      <!-- Subheadline -->
+      <p style="font-size: 20px; font-weight: 400; line-height: 1.6; color: #ffffff; margin: 0 0 40px 0; max-width: 700px; animation: appliedHeroSlideUp 1s ease-out 0.4s backwards;">
+        Your trusted source for heavyweight conveyor belt solutions. Applied Industrial Technologies is an authorized distributor and full-service fabricator with nationwide reach, offering 24/7 field service and unmatched reliability.
+      </p>
+
+      <!-- CTA Buttons Container -->
+      <div style="display: flex; gap: 16px; justify-content: flex-start; flex-wrap: wrap; animation: appliedHeroSlideUp 1s ease-out 0.5s backwards;">
+
+        <!-- Primary CTA Button: Talk to an Expert -->
+        <a
+          href="https://www.applied.com/contact"
+          class="applied-hero-cta-primary"
+          style="display: inline-block; background-color: #007680; color: #ffffff; font-size: 16px; font-weight: bold; text-decoration: none; padding: 16px 40px; border-radius: 4px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 118, 128, 0.3);"
+          onmouseover="this.style.backgroundColor='#005f68'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(0, 118, 128, 0.4)';"
+          onmouseout="this.style.backgroundColor='#007680'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 118, 128, 0.3)';"
+          rel="noopener"
+          target="_blank">
+          Talk to an Expert
+        </a>
+
+        <!-- Secondary CTA Button: View Product Catalog -->
+        <a
+          href="https://www.applied.com/conveyor-belts"
+          class="applied-hero-cta-secondary"
+          style="display: inline-block; background-color: transparent; color: #ffffff; font-size: 16px; font-weight: bold; text-decoration: none; padding: 16px 40px; border-radius: 4px; border: 2px solid #ffffff; transition: all 0.3s ease;"
+          onmouseover="this.style.backgroundColor='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(-2px)';"
+          onmouseout="this.style.backgroundColor='transparent'; this.style.transform='translateY(0)';"
+          rel="noopener"
+          target="_blank">
+          View Product Catalog
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+<!-- ========================================
+     🐛 TROUBLESHOOTING GUIDE
+     ======================================== -->
+<!--
+  ⚠️ VIDEO NOT SHOWING? TRY THESE STEPS:
+
+  1. CHECK IF HEAD HTML IS INSTALLED
+     ================================
+     - Go to: Page Settings > Advanced Options > Header HTML
+     - Make sure hubspot-head.html content is pasted there
+     - Without it, animations and video won't work properly!
+
+  2. HARD REFRESH YOUR BROWSER
+     ==========================
+     - Chrome/Edge: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)
+     - Firefox: Ctrl+F5 (Windows) or Cmd+Shift+R (Mac)
+     - Safari: Cmd+Option+R (Mac)
+
+  3. CHECK BROWSER CONSOLE FOR ERRORS
+     =================================
+     - Press F12 to open Developer Tools
+     - Click "Console" tab
+     - Look for any red error messages
+     - Common errors:
+       * "Failed to load resource" = video URL is wrong
+       * "autoplay policy" = browser blocking autoplay (rare with muted)
+       * "CORS error" = file permissions issue
+
+  4. TEST IN INCOGNITO/PRIVATE MODE
+     ===============================
+     - Opens a clean browser without cache/extensions
+     - Chrome: Ctrl+Shift+N
+     - Firefox: Ctrl+Shift+P
+     - Safari: Cmd+Shift+N
+
+  5. VERIFY VIDEO FILE IS ACCESSIBLE
+     ================================
+     - Copy this URL and paste in new browser tab:
+       https://6847819.fs1.hubspotusercontent-na1.net/hubfs/6847819/Heavy%20belts%20banner%20(2).mp4
+     - Video should download or play
+     - If you get 404 error, file isn't publicly accessible
+
+  6. CHECK VIDEO FILE SIZE
+     =====================
+     - Files over 10MB may load slowly
+     - HubSpot may have file size limits
+     - Compress video if needed
+
+  7. TRY DIFFERENT BROWSER
+     =====================
+     - Test in Chrome, Firefox, Edge, Safari
+     - Some browsers have stricter autoplay policies
+
+  8. CHECK HUBSPOT PREVIEW VS PUBLISHED
+     ===================================
+     - Video might not work in HubSpot preview mode
+     - Try publishing the page and viewing the live URL
+     - HubSpot preview can block video autoplay
+
+  ✅ WHAT SHOULD HAPPEN:
+  ======================
+  - Video should autoplay immediately on page load
+  - Video should loop continuously
+  - No sound (video is muted for autoplay)
+  - Text should appear on top with fade-up animation
+  - On mobile (<768px), video hides and shows dark background
+
+  📧 STILL NOT WORKING?
+  =====================
+  Check these:
+  1. Is the page published (not just saved as draft)?
+  2. Did you paste HEAD HTML in the right place?
+  3. Did you paste this source code in a Custom HTML module?
+  4. Are you testing on a desktop computer (video hidden on mobile)?
+  5. Is JavaScript enabled in your browser?
+
+  🎥 VIDEO URL CURRENTLY SET TO:
+  ===============================
+  https://6847819.fs1.hubspotusercontent-na1.net/hubfs/6847819/Heavy%20belts%20banner%20(2).mp4
+
+  If you need to change it, search for "Heavy%20belts" in this file.
+
+  📝 TO ADD A POSTER IMAGE:
+  =========================
+  Line 20: Change poster URL to a still frame from your video
+  Current poster: Using Applied white logo as placeholder
+
+  📱 TO ADD MOBILE BACKGROUND:
+  ============================
+  Line 28: Add background-image URL for mobile devices
+  Current: Shows solid dark background (#1a1a1a)
+-->
