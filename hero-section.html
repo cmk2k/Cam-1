@@ -1,0 +1,183 @@
+<!-- ========================================
+     MODULE 1: HERO SECTION WITH VIDEO BACKGROUND
+     Heavyweight Conveyor Belts
+     ======================================== -->
+<section class="applied-hero-conveyor" style="position: relative; width: 100%; min-height: 650px; display: flex; align-items: center; justify-content: center; padding: 100px 20px; overflow: hidden; animation: appliedHeroFadeIn 1s ease-out; background-color: #1a1a1a;">
+
+  <!-- Video Background (Hidden on mobile) -->
+  <video
+    class="applied-hero-video-bg"
+    autoplay
+    loop
+    muted
+    playsinline
+    poster="https://via.placeholder.com/1920x1080/1a1a1a/ffffff?text=Upload+Your+Video+Poster+Image"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+    <source src="YOUR_VIDEO_URL.mp4" type="video/mp4">
+    <source src="YOUR_VIDEO_URL.webm" type="video/webm">
+    <!-- Fallback for browsers that don't support video -->
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Fallback Background Image for Mobile -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://via.placeholder.com/1920x1080/1a1a1a/ffffff?text=Upload+Your+Fallback+Image'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 0; display: none;">
+    <style>
+      @media (max-width: 768px) {
+        .applied-hero-conveyor > div:nth-child(2) {
+          display: block !important;
+        }
+      }
+    </style>
+  </div>
+
+  <!-- Dark Overlay for Text Readability - Black fade from left -->
+  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%); z-index: 1;">&nbsp;</div>
+
+  <!-- Hero Content Container -->
+  <div class="applied-hero-content" style="position: relative; z-index: 2; max-width: 1200px; width: 100%; text-align: left; color: #ffffff; padding: 0 30px;">
+
+    <!-- Applied Logo Container -->
+    <div style="margin-bottom: 16px; opacity: 0; animation: appliedHeroSlideUp 1s ease-out 0.1s forwards;">
+      <a href="https://www.applied.com/" rel="noopener" target="_blank">
+        <img
+          src="https://6847819.fs1.hubspotusercontent-na1.net/hubfs/6847819/white.png"
+          width="180"
+          height="54"
+          loading="lazy"
+          alt="Applied Industrial Technologies"
+          style="height: auto; width: 180px; display: block; max-width: 100%;">
+      </a>
+    </div>
+
+    <!-- Eyebrow Label -->
+    <p style="font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #fdb81e; margin: 0 0 16px 0; animation: appliedHeroSlideUp 1s ease-out 0.2s backwards;">
+      <span style="color: #ffffff;">We Are Applied<sup>®</sup></span>
+    </p>
+
+    <!-- Main Headline -->
+    <h1 style="font-size: 48px; font-weight: bold; line-height: 1.2; color: #ffffff; margin: 0 0 24px 0; animation: appliedHeroSlideUp 1s ease-out 0.3s backwards;">
+      HEAVYWEIGHT CONVEYOR BELTS
+    </h1>
+
+    <!-- Subheadline -->
+    <p style="font-size: 20px; font-weight: 400; line-height: 1.6; color: #ffffff; margin: 0 0 40px 0; max-width: 700px; animation: appliedHeroSlideUp 1s ease-out 0.4s backwards;">
+      Your trusted source for heavyweight conveyor belt solutions. Applied Industrial Technologies is an authorized distributor and full-service fabricator with nationwide reach, offering 24/7 field service and unmatched reliability.
+    </p>
+
+    <!-- CTA Buttons Container -->
+    <div style="display: flex; gap: 16px; justify-content: flex-start; flex-wrap: wrap; animation: appliedHeroSlideUp 1s ease-out 0.5s backwards;">
+
+      <!-- Primary CTA Button: Talk to an Expert -->
+      <a
+        href="https://www.applied.com/contact"
+        class="applied-hero-cta-primary"
+        style="display: inline-block; background-color: #007680; color: #ffffff; font-size: 16px; font-weight: bold; text-decoration: none; padding: 16px 40px; border-radius: 4px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 118, 128, 0.3);"
+        onmouseover="this.style.backgroundColor='#005f68'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(0, 118, 128, 0.4)';"
+        onmouseout="this.style.backgroundColor='#007680'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 118, 128, 0.3)';"
+        rel="noopener"
+        target="_blank">
+        Talk to an Expert
+      </a>
+
+      <!-- Secondary CTA Button: Download Product PDFs -->
+      <a
+        href="https://www.applied.com/conveyor-belts"
+        class="applied-hero-cta-secondary"
+        style="display: inline-block; background-color: transparent; color: #ffffff; font-size: 16px; font-weight: bold; text-decoration: none; padding: 16px 40px; border-radius: 4px; border: 2px solid #ffffff; transition: all 0.3s ease;"
+        onmouseover="this.style.backgroundColor='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(-2px)';"
+        onmouseout="this.style.backgroundColor='transparent'; this.style.transform='translateY(0)';"
+        rel="noopener"
+        target="_blank">
+        View Product Catalog
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================================
+     EDIT GUIDE FOR HUBSPOT
+     ======================================== -->
+<!--
+  TO CHANGE THE VIDEO BACKGROUND:
+  Line 16-18: Replace 'YOUR_VIDEO_URL.mp4' and 'YOUR_VIDEO_URL.webm' with your video URLs
+  Line 14: Replace poster image URL with a high-quality frame from your video
+
+  RECOMMENDED VIDEO SPECS:
+  - Format: MP4 (H.264) and WebM for browser compatibility
+  - Resolution: 1920x1080px minimum (can go higher for 4K displays)
+  - Duration: 10-30 seconds (video will loop automatically)
+  - File size: Under 5MB for fast loading (compress using HandBrake or similar)
+  - Frame rate: 30fps
+  - Aspect ratio: 16:9
+  - Content: Industrial conveyor belts in action, warehouse operations, manufacturing
+  - Upload to: HubSpot File Manager > conveyor-belts folder
+
+  VIDEO BEST PRACTICES:
+  - Use muted video (autoplay only works when muted)
+  - Provide a fallback image for mobile devices (line 25)
+  - Ensure text remains readable over the video (use the overlay gradient)
+  - Test video loading speed - compress if needed
+  - Video automatically hides on mobile devices to save bandwidth
+
+  TO CHANGE THE FALLBACK MOBILE IMAGE:
+  Line 25: Replace the background-image URL with your static image
+  This image shows on mobile devices instead of the video
+  Recommended: 1200x800px, under 300KB, optimized for mobile
+
+  TO CHANGE THE POSTER IMAGE (Video Thumbnail):
+  Line 14: Replace poster attribute URL
+  This image shows while the video is loading
+  Should be a representative frame from your video
+
+  TO CHANGE THE APPLIED LOGO:
+  Line 38: Replace the logo URL with your preferred logo
+  Line 40: Adjust width (currently 180px) to resize logo
+
+  TO CHANGE THE EYEBROW TEXT:
+  Line 49: Change "We Are Applied®"
+
+  TO CHANGE THE HEADLINE:
+  Line 55: Change "HEAVYWEIGHT CONVEYOR BELTS"
+
+  TO CHANGE THE SUBHEADLINE:
+  Line 60: Change the description paragraph
+
+  TO CHANGE THE PRIMARY CTA:
+  Line 67: Change href to your contact form URL
+  Line 77: Change button text "Talk to an Expert"
+
+  TO CHANGE THE SECONDARY CTA:
+  Line 84: Change href to your product catalog URL
+  Line 94: Change button text "View Product Catalog"
+
+  TO ADJUST COLORS:
+  - Eyebrow color: #FDB81E (line 49)
+  - Teal CTA: #007680 (line 70)
+  - Overlay gradient: Black fade left to right (line 32)
+
+  TO ADJUST HERO HEIGHT:
+  Line 5: Change min-height (currently 650px)
+
+  TO ADJUST TEXT POSITION:
+  Line 37: Change padding (currently 30px from left)
+
+  TROUBLESHOOTING VIDEO:
+  - If video doesn't autoplay: Ensure it's muted (required by browsers)
+  - If video doesn't loop: Check the loop attribute is present
+  - If video looks stretched: Adjust object-fit property (cover, contain, fill)
+  - If video loads slowly: Compress the file size or use a CDN
+  - If video doesn't show on Safari: Add playsinline attribute (already included)
+
+  VIDEO HOSTING OPTIONS:
+  1. HubSpot File Manager (recommended for small videos under 10MB)
+  2. Vimeo or YouTube (use their embed codes instead of <video> tag)
+  3. CDN like Cloudflare or AWS S3 (for larger videos)
+
+  TO ADJUST MOBILE APPEARANCE:
+  The video automatically hides on devices under 768px width
+  Mobile users will see the fallback background image instead
+  See media queries in head.html for additional mobile adjustments
+-->
