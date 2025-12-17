@@ -1,0 +1,376 @@
+<!-- ========================================
+     MODULE 4: BENEFITS WITH IMAGE (TWO-COLUMN)
+     Parker 5-Year Pneumatic Warranty
+     Applied Industrial Technologies
+
+     PURPOSE:
+     Communicate key benefits with visual support.
+     Two-column layout: benefits left, image right.
+     More impactful and visual than grid layout.
+
+     FEATURES:
+     - Two-column split (60/40)
+     - Left: 4 key benefits stacked
+     - Right: Large product/industrial image
+     - Icon + headline + description format
+     - Responsive (stacks on mobile)
+     - Clean, professional design
+
+     HUBSPOT INSTRUCTIONS:
+     1. Add a "Custom HTML" module below Value Strip
+     2. Paste this entire code block
+     3. Replace 'placeholder-benefits-image.jpg' with actual image
+     4. Edit benefit text as needed
+
+     ======================================== -->
+
+<section class="applied-benefits-with-image" style="
+  width: 100%;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  padding: 80px 20px;
+  position: relative;
+">
+
+  <!-- Container -->
+  <div style="
+    max-width: 1200px;
+    margin: 0 auto;
+  ">
+
+    <!-- Section Header -->
+    <div style="
+      text-align: center;
+      margin-bottom: 60px;
+      opacity: 0;
+      animation: appliedFadeIn 0.8s ease-out 0.1s forwards;
+    ">
+      <!-- Eyebrow -->
+      <p style="
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #007680;
+        margin: 0 0 16px 0;
+      ">Why It Matters</p>
+
+      <!-- Section Headline -->
+      <h2 style="
+        font-size: 40px;
+        font-weight: 700;
+        color: #1B0F3A;
+        margin: 0 0 20px 0;
+        line-height: 1.2;
+      ">Protect Your Assets, Minimize Downtime</h2>
+
+      <!-- Section Subheadline -->
+      <p style="
+        font-size: 18px;
+        color: #666666;
+        margin: 0 auto;
+        max-width: 800px;
+        line-height: 1.6;
+      ">The Genuine Parker Parts Warranty Program is designed to provide peace of mind and demonstrate confidence in product quality.</p>
+    </div>
+
+    <!-- Two-Column Layout -->
+    <div class="applied-benefits-two-col" style="
+      display: grid;
+      grid-template-columns: 60% 40%;
+      gap: 60px;
+      align-items: center;
+    ">
+
+      <!-- LEFT COLUMN: Benefits List -->
+      <div style="
+        opacity: 0;
+        animation: appliedSlideRight 0.8s ease-out 0.3s forwards;
+      ">
+
+        <!-- BENEFIT 1: Minimize Downtime -->
+        <div style="
+          display: flex;
+          gap: 20px;
+          margin-bottom: 40px;
+          align-items: flex-start;
+        ">
+          <!-- Icon Circle -->
+          <div style="
+            width: 60px;
+            height: 60px;
+            background-color: #007680;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+          ">
+            <span style="
+              font-size: 28px;
+              color: #ffffff;
+            ">⚡</span>
+          </div>
+
+          <!-- Content -->
+          <div>
+            <h3 style="
+              font-size: 22px;
+              font-weight: 700;
+              color: #1B0F3A;
+              margin: 0 0 10px 0;
+              line-height: 1.3;
+            ">Minimize Downtime</h3>
+            <p style="
+              font-size: 15px;
+              color: #666666;
+              line-height: 1.7;
+              margin: 0;
+            ">Fast replacement of covered components means less unplanned downtime. Keep your operations running smoothly with reliable, warranted parts.</p>
+          </div>
+        </div>
+
+        <!-- BENEFIT 2: Lower Total Cost -->
+        <div style="
+          display: flex;
+          gap: 20px;
+          margin-bottom: 40px;
+          align-items: flex-start;
+        ">
+          <!-- Icon Circle -->
+          <div style="
+            width: 60px;
+            height: 60px;
+            background-color: #007680;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+          ">
+            <span style="
+              font-size: 28px;
+              color: #ffffff;
+            ">💰</span>
+          </div>
+
+          <!-- Content -->
+          <div>
+            <h3 style="
+              font-size: 22px;
+              font-weight: 700;
+              color: #1B0F3A;
+              margin: 0 0 10px 0;
+              line-height: 1.3;
+            ">Lower Total Cost</h3>
+            <p style="
+              font-size: 15px;
+              color: #666666;
+              line-height: 1.7;
+              margin: 0;
+            ">Extended warranty coverage reduces unexpected repair costs and protects your capital investment. Plan your maintenance budget with confidence.</p>
+          </div>
+        </div>
+
+        <!-- BENEFIT 3: Quality Confidence -->
+        <div style="
+          display: flex;
+          gap: 20px;
+          margin-bottom: 40px;
+          align-items: flex-start;
+        ">
+          <!-- Icon Circle -->
+          <div style="
+            width: 60px;
+            height: 60px;
+            background-color: #007680;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+          ">
+            <span style="
+              font-size: 28px;
+              color: #ffffff;
+            ">✓</span>
+          </div>
+
+          <!-- Content -->
+          <div>
+            <h3 style="
+              font-size: 22px;
+              font-weight: 700;
+              color: #1B0F3A;
+              margin: 0 0 10px 0;
+              line-height: 1.3;
+            ">Quality Confidence</h3>
+            <p style="
+              font-size: 15px;
+              color: #666666;
+              line-height: 1.7;
+              margin: 0;
+            ">Parker's 5-year warranty demonstrates unwavering confidence in product quality. Benefit from components engineered and assembled in the USA to the highest standards.</p>
+          </div>
+        </div>
+
+        <!-- BENEFIT 4: Peace of Mind -->
+        <div style="
+          display: flex;
+          gap: 20px;
+          margin-bottom: 0;
+          align-items: flex-start;
+        ">
+          <!-- Icon Circle -->
+          <div style="
+            width: 60px;
+            height: 60px;
+            background-color: #007680;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+          ">
+            <span style="
+              font-size: 28px;
+              color: #ffffff;
+            ">🛡️</span>
+          </div>
+
+          <!-- Content -->
+          <div>
+            <h3 style="
+              font-size: 22px;
+              font-weight: 700;
+              color: #1B0F3A;
+              margin: 0 0 10px 0;
+              line-height: 1.3;
+            ">Peace of Mind</h3>
+            <p style="
+              font-size: 15px;
+              color: #666666;
+              line-height: 1.7;
+              margin: 0;
+            ">Sleep better knowing your pneumatic systems are covered for 5 years. Focus on productivity and efficiency instead of worrying about component failures.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: Image -->
+      <div style="
+        opacity: 0;
+        animation: appliedSlideLeft 0.8s ease-out 0.3s forwards;
+      ">
+        <img
+          src="placeholder-benefits-image.jpg"
+          alt="Parker Pneumatic Components"
+          style="
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+          ">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================================
+     MOBILE RESPONSIVE STYLES
+     ======================================== -->
+
+<style>
+  /* Tablet and below: Stack columns */
+  @media (max-width: 968px) {
+    .applied-benefits-two-col {
+      grid-template-columns: 1fr !important;
+      gap: 40px !important;
+    }
+
+    .applied-benefits-with-image h2 {
+      font-size: 32px !important;
+    }
+
+    .applied-benefits-with-image h3 {
+      font-size: 20px !important;
+    }
+  }
+
+  /* Mobile: Reduce padding */
+  @media (max-width: 480px) {
+    .applied-benefits-with-image {
+      padding: 60px 20px !important;
+    }
+
+    .applied-benefits-with-image h2 {
+      font-size: 28px !important;
+    }
+
+    .applied-benefits-with-image h3 {
+      font-size: 18px !important;
+    }
+
+    .applied-benefits-with-image p {
+      font-size: 14px !important;
+    }
+  }
+</style>
+
+<!-- ========================================
+     EDIT GUIDE FOR HUBSPOT
+     ======================================== -->
+
+<!--
+  TO CHANGE THE IMAGE:
+  Line 346: Replace 'placeholder-benefits-image.jpg' with your image URL
+
+  RECOMMENDED IMAGE:
+  - Parker pneumatic components (valves, actuators, FRLs)
+  - Maintenance professional working with equipment
+  - Industrial facility or warehouse scene
+  - Product lineup or technical diagram
+  - Minimum 800x800px
+  - Upload to: HubSpot File Manager > parker-pneumatic-warranty folder
+
+  TO CHANGE BENEFITS:
+
+  Benefit 1 (Minimize Downtime):
+  - Icon: Line 112 (⚡)
+  - Title: Line 124
+  - Description: Line 135
+
+  Benefit 2 (Lower Total Cost):
+  - Icon: Line 156 (💰)
+  - Title: Line 168
+  - Description: Line 179
+
+  Benefit 3 (Quality Confidence):
+  - Icon: Line 200 (✓)
+  - Title: Line 212
+  - Description: Line 223
+
+  Benefit 4 (Peace of Mind):
+  - Icon: Line 244 (🛡️)
+  - Title: Line 256
+  - Description: Line 267
+
+  TO ADJUST LAYOUT:
+  - Column split: Line 84 (currently 60% / 40%)
+  - Gap between columns: Line 85 (currently 60px)
+  - Benefit spacing: margin-bottom on each benefit item
+
+  TO ADJUST COLORS:
+  - Background gradient: #f5f5f5 to #e8e8e8 (line 28)
+  - Eyebrow: #007680 (line 50)
+  - Headlines: #1B0F3A (lines 60, 127, 171, 215, 259)
+  - Body text: #666666 (lines 70, 138, 182, 226, 270)
+  - Icon backgrounds: #007680 (lines 105, 149, 193, 237)
+
+  RESPONSIVE BEHAVIOR:
+  - Desktop (>968px): Side-by-side columns (60/40 split)
+  - Tablet/Mobile (<968px): Stacked vertically (image below benefits)
+-->
