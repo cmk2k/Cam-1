@@ -1,0 +1,198 @@
+<!-- ========================================
+     INTERACTIVE MAP WITH TABS - SOURCE CODE
+     PASTE INTO: Custom HTML Module in HubSpot
+     Part 1 of 2: Map and Tabs
+     ======================================== -->
+
+<div class="applied-landing-page">
+  <section class="applied-map-section">
+    <div class="applied-map-container">
+
+      <!-- Section Title -->
+      <div class="applied-map-title">
+        <h2>Nationwide Service Network</h2>
+        <p>With strategically located service centers and specialized shops across the United States, we're ready to serve you wherever you are.</p>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="applied-tabs-container">
+        <div class="applied-tabs">
+          <button class="applied-tab active" data-tab="all">
+            <span class="applied-tab-icon all"></span>
+            All Locations
+          </button>
+          <button class="applied-tab" data-tab="rubber">
+            <span class="applied-tab-icon rubber"></span>
+            Rubber Shops (10)
+          </button>
+          <button class="applied-tab" data-tab="belt">
+            <span class="applied-tab-icon belt"></span>
+            Belt Shops (3)
+          </button>
+          <button class="applied-tab" data-tab="hose">
+            <span class="applied-tab-icon hose"></span>
+            Hose Shops (6)
+          </button>
+          <button class="applied-tab" data-tab="gearbox">
+            <span class="applied-tab-icon gearbox"></span>
+            Gearbox Repair (3)
+          </button>
+          <button class="applied-tab" data-tab="reducer">
+            <span class="applied-tab-icon reducer"></span>
+            Reducer Assembly (4)
+          </button>
+          <button class="applied-tab" data-tab="fluid">
+            <span class="applied-tab-icon fluid"></span>
+            Fluid Power (1)
+          </button>
+          <button class="applied-tab" data-tab="gearing">
+            <span class="applied-tab-icon gearing"></span>
+            Gearing (1)
+          </button>
+        </div>
+      </div>
+
+      <!-- Map Wrapper (Full Width) -->
+      <div class="applied-map-wrapper">
+        <img
+          src="https://6847819.fs1.hubspotusercontent-na1.net/hubfs/6847819/MAP%20CLEANED%20%20(1).png"
+          alt="Applied Industrial Technologies Service Locations"
+          class="applied-map-image">
+
+        <!-- Location Markers -->
+        <div class="applied-map-markers">
+
+          <!-- ==========================================
+               RUBBER SHOPS (Dark Blue)
+               ========================================== -->
+
+          <!-- Denver Rubber Shop -->
+          <div class="applied-map-marker rubber" style="top: 51%; left: 27%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber">Rubber Shop</div>
+              <div class="applied-tooltip-title">Denver Rubber Shop 2724</div>
+              <div class="applied-tooltip-address">
+                5454 Havana St, Suite 724<br>
+                Denver, CO 80239-2001
+              </div>
+              <div class="applied-tooltip-phone">303-576-2531</div>
+            </div>
+          </div>
+
+          <!-- Omaha Rubber Shop -->
+          <div class="applied-map-marker rubber" style="top: 42%; left: 51%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber">Rubber Shop</div>
+              <div class="applied-tooltip-title">Omaha Rubber Shop 2491</div>
+              <div class="applied-tooltip-address">
+                6150 Grover St<br>
+                Omaha, NE 68106-4390
+              </div>
+              <div class="applied-tooltip-phone">402-556-2394</div>
+            </div>
+          </div>
+
+          <!-- Tucson Rubber Shop -->
+          <div class="applied-map-marker rubber" style="top: 64%; left: 23%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber">Rubber Shop</div>
+              <div class="applied-tooltip-title">Tucson Rubber Shop 2827</div>
+              <div class="applied-tooltip-address">
+                2025 N Dragoon St<br>
+                Tucson, AZ 85745
+              </div>
+              <div class="applied-tooltip-phone">810-364-3800</div>
+            </div>
+          </div>
+
+          <!-- Billings Rubber Shop -->
+          <div class="applied-map-marker rubber" style="top: 15%; left: 23%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber">Rubber Shop</div>
+              <div class="applied-tooltip-title">Billings Rubber Shop 2440</div>
+              <div class="applied-tooltip-address">
+                916 3rd Ave North<br>
+                Billings, MT 59101
+              </div>
+              <div class="applied-tooltip-phone">406-252-3881</div>
+            </div>
+          </div>
+
+          <!-- Fontana Rubber Shop -->
+          <div class="applied-map-marker rubber" style="top: 58%; left: 11%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber">Rubber Shop</div>
+              <div class="applied-tooltip-title">Fontana Rubber Shop</div>
+              <div class="applied-tooltip-address">
+                11895 Cabernet Drive<br>
+                Fontana, CA 92337
+              </div>
+              <div class="applied-tooltip-phone">[Phone Number]</div>
+            </div>
+          </div>
+
+          <!-- Longview Rubber Shop -->
+          <div class="applied-map-marker rubber" style="top: 14%; left: 9%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber">Rubber Shop</div>
+              <div class="applied-tooltip-title">Longview Rubber Shop 2488</div>
+              <div class="applied-tooltip-address">
+                890 Industrial Way<br>
+                Longview, WA 98632
+              </div>
+              <div class="applied-tooltip-phone">360-578-2290</div>
+            </div>
+          </div>
+
+          <!-- Missoula Rubber Shop -->
+          <div class="applied-map-marker rubber" style="top: 13%; left: 16%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber">Rubber Shop</div>
+              <div class="applied-tooltip-title">Missoula Rubber Shop 2429</div>
+              <div class="applied-tooltip-address">
+                101 Trade St<br>
+                Missoula, MT 59808
+              </div>
+              <div class="applied-tooltip-phone">406-543-2825</div>
+            </div>
+          </div>
+
+          <!-- Salt Lake City Rubber Shop -->
+          <div class="applied-map-marker rubber" style="top: 38%; left: 21%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber">Rubber Shop</div>
+              <div class="applied-tooltip-title">Salt Lake City Rubber Shop 2181</div>
+              <div class="applied-tooltip-address">
+                1971 S 4490 W, Suite C<br>
+                Salt Lake City, UT 84104
+              </div>
+              <div class="applied-tooltip-phone">801-972-1100</div>
+            </div>
+          </div>
+
+          <!-- Spokane Rubber Shop -->
+          <div class="applied-map-marker rubber" style="top: 10%; left: 13%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber">Rubber Shop</div>
+              <div class="applied-tooltip-title">Spokane Rubber Shop 2428</div>
+              <div class="applied-tooltip-address">
+                126 S David St<br>
+                Spokane Valley, WA 99212
+              </div>
+              <div class="applied-tooltip-phone">509-535-7340</div>
+            </div>
+          </div>
+
+          <!-- Stockton Rubber Shop -->
+          <div class="applied-map-marker rubber" style="top: 47%; left: 8%;">
+            <div class="applied-map-tooltip">
+              <div class="applied-tooltip-type rubber">Rubber Shop</div>
+              <div class="applied-tooltip-title">Stockton Rubber Shop 2839</div>
+              <div class="applied-tooltip-address">
+                202 Val Dervin Pkwy, Suite 100<br>
+                Stockton, CA 95206
+              </div>
+              <div class="applied-tooltip-phone">209-983-4748</div>
+            </div>
+          </div>
+
