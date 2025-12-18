@@ -1,0 +1,109 @@
+<!-- ========================================
+     INTERACTIVE MAP WITH TABS - FOOTER HTML
+     PASTE INTO: Page Settings > Advanced Options > Footer HTML
+     ======================================== -->
+
+<script>
+(function() {
+  'use strict';
+
+  // Mobile Touch Interaction for Map Markers
+  function initMapInteractions() {
+    if (!('ontouchstart' in window)) {
+      return;
+    }
+
+    var markers = document.querySelectorAll('.applied-map-marker');
+    var activeMarker = null;
+
+    markers.forEach(function(marker) {
+      marker.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (marker === activeMarker) {
+          marker.classList.remove('active');
+          activeMarker = null;
+        } else {
+          if (activeMarker) {
+            activeMarker.classList.remove('active');
+          }
+          marker.classList.add('active');
+          activeMarker = marker;
+        }
+      });
+    });
+
+    document.addEventListener('click', function(e) {
+      if (activeMarker && !activeMarker.contains(e.target)) {
+        activeMarker.classList.remove('active');
+        activeMarker = null;
+      }
+    });
+  }
+
+  // Tab Switching Functionality
+  function initTabs() {
+    var tabs = document.querySelectorAll('.applied-tab');
+    var tabContents = document.querySelectorAll('.applied-tab-content');
+    var markers = document.querySelectorAll('.applied-map-marker');
+
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        var tabType = this.getAttribute('data-tab');
+
+        // Update active tab
+        tabs.forEach(function(t) {
+          t.classList.remove('active');
+        });
+        this.classList.add('active');
+
+        // Update active tab content
+        tabContents.forEach(function(content) {
+          content.classList.remove('active');
+        });
+        var activeContent = document.querySelector('[data-tab-content="' + tabType + '"]');
+        if (activeContent) {
+          activeContent.classList.add('active');
+        }
+
+        // Show/hide markers based on tab
+        markers.forEach(function(marker) {
+          if (tabType === 'all') {
+            marker.classList.remove('hidden');
+          } else if (marker.classList.contains(tabType)) {
+            marker.classList.remove('hidden');
+          } else {
+            marker.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Activate first tab by default
+    if (tabs.length > 0) {
+      tabs[0].click();
+    }
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      initMapInteractions();
+      initTabs();
+    });
+  } else {
+    initMapInteractions();
+    initTabs();
+  }
+
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      initMapInteractions();
+      initTabs();
+    }, 100);
+  });
+
+  console.log('Applied Industrial Technologies - Interactive Map with Tabs Loaded');
+})();
+</script>

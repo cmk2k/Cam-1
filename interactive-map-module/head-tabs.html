@@ -1,0 +1,399 @@
+<!-- ========================================
+     INTERACTIVE MAP WITH TABS - HEAD HTML
+     PASTE INTO: Page Settings > Advanced Options > Header HTML
+     ======================================== -->
+
+<style>
+  /* Interactive Map Styles */
+  .applied-map-section {
+    background-color: #f5f5f5;
+    padding: 80px 20px;
+  }
+
+  .applied-map-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .applied-map-title {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .applied-map-title h2 {
+    font-size: 42px;
+    font-weight: bold;
+    color: #1B0F3A;
+    margin: 0 0 16px 0;
+  }
+
+  .applied-map-title p {
+    font-size: 18px;
+    color: #666666;
+    margin: 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Glowing Pulse Animation */
+  @keyframes pulseGlow {
+    0% {
+      box-shadow: 0 0 0 0 rgba(27, 15, 58, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(27, 15, 58, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(27, 15, 58, 0);
+    }
+  }
+
+  .applied-map-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+    padding: 40px 0;
+  }
+
+  .applied-map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .applied-map-markers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .applied-map-marker {
+    position: absolute;
+    cursor: pointer;
+    pointer-events: all;
+    z-index: 10;
+    transition: transform 0.3s ease, opacity 0.3s ease, z-index 0s 0.3s;
+  }
+
+  .applied-map-marker.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .applied-map-marker:hover {
+    transform: scale(1.3);
+    z-index: 100;
+    transition: transform 0.3s ease, z-index 0s 0s;
+  }
+
+  /* Marker Styles by Type */
+  .applied-map-marker {
+    width: 24px;
+    height: 24px;
+  }
+
+  .applied-map-marker::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    animation: pulseGlow 2s infinite;
+  }
+
+  .applied-map-marker:hover::before {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+    animation: none;
+  }
+
+  /* Rubber Shops - Dark Blue */
+  .applied-map-marker.rubber::before {
+    background-color: #1B0F3A;
+  }
+
+  /* Belt Shops - Purple */
+  .applied-map-marker.belt::before {
+    background-color: #6B46C1;
+  }
+
+  /* Hose Shops - Teal */
+  .applied-map-marker.hose::before {
+    background-color: #007680;
+  }
+
+  /* Gearbox - Orange */
+  .applied-map-marker.gearbox::before {
+    background-color: #F97316;
+  }
+
+  /* Reducer Assembly - Green */
+  .applied-map-marker.reducer::before {
+    background-color: #059669;
+  }
+
+  /* Fluid Power - Red */
+  .applied-map-marker.fluid::before {
+    background-color: #DC2626;
+  }
+
+  /* Gearing - Brown */
+  .applied-map-marker.gearing::before {
+    background-color: #92400E;
+  }
+
+  /* Distribution Centers - Yellow Star */
+  .applied-map-marker.dc {
+    width: 32px;
+    height: 32px;
+  }
+
+  .applied-map-marker.dc::before {
+    content: '⭐';
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #FDB81E;
+    text-shadow: 0 2px 8px rgba(253, 184, 30, 0.4);
+    animation: none;
+  }
+
+  /* Tooltips */
+  .applied-map-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    background: #ffffff;
+    padding: 16px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 1000;
+    min-width: 250px;
+  }
+
+  .applied-map-marker:hover .applied-map-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-12px);
+  }
+
+  .applied-map-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #ffffff;
+  }
+
+  .applied-tooltip-type {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 6px 0;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  .applied-tooltip-type.rubber { background-color: #1B0F3A; color: #fff; }
+  .applied-tooltip-type.belt { background-color: #6B46C1; color: #fff; }
+  .applied-tooltip-type.hose { background-color: #007680; color: #fff; }
+  .applied-tooltip-type.gearbox { background-color: #F97316; color: #fff; }
+  .applied-tooltip-type.reducer { background-color: #059669; color: #fff; }
+  .applied-tooltip-type.fluid { background-color: #DC2626; color: #fff; }
+  .applied-tooltip-type.gearing { background-color: #92400E; color: #fff; }
+  .applied-tooltip-type.dc { background-color: #FDB81E; color: #1B0F3A; }
+
+  .applied-tooltip-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1B0F3A;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+  }
+
+  .applied-tooltip-address {
+    font-size: 13px;
+    color: #666666;
+    margin: 0 0 6px 0;
+    line-height: 1.5;
+    white-space: normal;
+    max-width: 280px;
+  }
+
+  .applied-tooltip-phone {
+    font-size: 14px;
+    color: #007680;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  /* Tab Interface */
+  .applied-tabs-container {
+    max-width: 1200px;
+    margin: 0 auto 32px;
+  }
+
+  .applied-tabs {
+    display: flex;
+    gap: 8px;
+    border-bottom: 2px solid #e0e0e0;
+    overflow-x: auto;
+    flex-wrap: wrap;
+  }
+
+  .applied-tab {
+    background: transparent;
+    border: none;
+    padding: 14px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #666666;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .applied-tab:hover {
+    color: #1B0F3A;
+    background-color: #f5f5f5;
+  }
+
+  .applied-tab.active {
+    color: #1B0F3A;
+    border-bottom-color: #1B0F3A;
+  }
+
+  .applied-tab-icon {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .applied-tab-icon.rubber { background-color: #1B0F3A; }
+  .applied-tab-icon.belt { background-color: #6B46C1; }
+  .applied-tab-icon.hose { background-color: #007680; }
+  .applied-tab-icon.gearbox { background-color: #F97316; }
+  .applied-tab-icon.reducer { background-color: #059669; }
+  .applied-tab-icon.fluid { background-color: #DC2626; }
+  .applied-tab-icon.gearing { background-color: #92400E; }
+  .applied-tab-icon.dc { background-color: #FDB81E; }
+  .applied-tab-icon.all { background: linear-gradient(135deg, #1B0F3A 0%, #007680 100%); }
+
+  /* Tab Content */
+  .applied-tab-content {
+    display: none;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+  }
+
+  .applied-tab-content.active {
+    display: block;
+  }
+
+  .applied-locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+
+  .applied-location-card {
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .applied-location-card:hover {
+    border-color: #1B0F3A;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .applied-location-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1B0F3A;
+    margin: 0 0 8px 0;
+  }
+
+  .applied-location-address {
+    font-size: 14px;
+    color: #666666;
+    margin: 0 0 8px 0;
+    line-height: 1.5;
+  }
+
+  .applied-location-phone {
+    font-size: 14px;
+    color: #007680;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .applied-map-section {
+      padding: 60px 20px;
+    }
+
+    .applied-map-title h2 {
+      font-size: 32px;
+    }
+
+    .applied-tabs {
+      gap: 4px;
+    }
+
+    .applied-tab {
+      padding: 12px 16px;
+      font-size: 13px;
+    }
+
+    .applied-tab-content {
+      padding: 24px 16px;
+    }
+
+    .applied-locations-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .applied-map-marker.active .applied-map-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(-12px);
+    }
+  }
+</style>
