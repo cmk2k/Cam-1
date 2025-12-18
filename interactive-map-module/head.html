@@ -336,4 +336,158 @@
       font-size: 13px;
     }
   }
+
+  /* Location Dropdowns Section */
+  .applied-map-and-locations {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 48px;
+  }
+
+  .applied-locations-sidebar {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+  }
+
+  .applied-locations-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1B0F3A;
+    margin: 0 0 24px 0;
+  }
+
+  .applied-location-dropdown {
+    margin-bottom: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .applied-dropdown-header {
+    background: #f5f5f5;
+    padding: 16px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+
+  .applied-dropdown-header:hover {
+    background: #ebebeb;
+  }
+
+  .applied-dropdown-header-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .applied-dropdown-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .applied-dropdown-icon.pin {
+    width: 16px;
+    height: 16px;
+    background-color: #1B0F3A;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .applied-dropdown-icon.star {
+    font-size: 20px;
+    color: #FDB81E;
+  }
+
+  .applied-dropdown-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1B0F3A;
+  }
+
+  .applied-dropdown-count {
+    font-size: 14px;
+    color: #666666;
+    margin-left: 8px;
+  }
+
+  .applied-dropdown-arrow {
+    font-size: 20px;
+    color: #666666;
+    transition: transform 0.3s ease;
+  }
+
+  .applied-location-dropdown.active .applied-dropdown-arrow {
+    transform: rotate(180deg);
+  }
+
+  .applied-dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .applied-location-dropdown.active .applied-dropdown-content {
+    max-height: 2000px;
+  }
+
+  .applied-location-list {
+    padding: 16px;
+    background: #ffffff;
+  }
+
+  .applied-location-card {
+    padding: 16px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .applied-location-card:last-child {
+    border-bottom: none;
+  }
+
+  .applied-location-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1B0F3A;
+    margin: 0 0 8px 0;
+  }
+
+  .applied-location-address {
+    font-size: 14px;
+    color: #666666;
+    margin: 0 0 6px 0;
+    line-height: 1.5;
+  }
+
+  .applied-location-phone {
+    font-size: 14px;
+    color: #1B0F3A;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  @media (max-width: 992px) {
+    .applied-map-and-locations {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .applied-locations-sidebar {
+      padding: 24px;
+    }
+
+    .applied-locations-title {
+      font-size: 20px;
+    }
+  }
 </style>

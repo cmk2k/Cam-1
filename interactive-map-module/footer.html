@@ -63,6 +63,33 @@
     setTimeout(initMapInteractions, 100);
   });
 
+  // Dropdown Toggle Functionality
+  function initLocationDropdowns() {
+    var dropdowns = document.querySelectorAll('.applied-location-dropdown');
+
+    dropdowns.forEach(function(dropdown) {
+      var header = dropdown.querySelector('.applied-dropdown-header');
+
+      if (header) {
+        header.addEventListener('click', function() {
+          // Toggle the active class
+          dropdown.classList.toggle('active');
+        });
+      }
+    });
+  }
+
+  // Initialize dropdowns when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLocationDropdowns);
+  } else {
+    initLocationDropdowns();
+  }
+
+  window.addEventListener('load', function() {
+    setTimeout(initLocationDropdowns, 100);
+  });
+
   console.log('Applied Industrial Technologies - Interactive Map Module Loaded');
 })();
 </script>
