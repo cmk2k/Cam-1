@@ -51,322 +51,336 @@
         </div>
       </div>
 
-      <!-- Map Wrapper with Google Maps Embed -->
-      <div class="applied-map-wrapper">
-        <iframe 
-          src="https://www.google.com/maps/d/u/0/embed?mid=1vOqynB7xd0I_C2SVyEZ3YnaTDHN_uKw&ehbc=2E312F" 
-          width="100%" 
-          height="600"
-          style="border:0; border-radius: 8px;"
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+
+      <!-- Split Container: Map on Left, Cards on Right -->
+      <div class="applied-split-container">
+        
+        <!-- Left Column: Map (60%) -->
+        <div class="applied-map-column">
+          <!-- Map Wrapper with Google Maps Embed -->
+          <div class="applied-map-wrapper">
+            <iframe 
+              src="https://www.google.com/maps/d/u/0/embed?mid=1vOqynB7xd0I_C2SVyEZ3YnaTDHN_uKw&ehbc=2E312F" 
+              width="100%" 
+              height="600"
+              style="border:0; border-radius: 8px;"
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <!-- End Map Wrapper -->
+        </div>
+
+        <!-- Right Column: Location Cards (40%) -->
+        <div class="applied-cards-column">
+          <!-- Tab Content (Location Cards) -->
+          <div class="applied-tabs-container">
+
+            <!-- All Locations Tab Content -->
+            <div class="applied-tab-content active" data-tab-content="all">
+              <h3 style="margin: 0 0 24px 0; color: #1B0F3A;">All Service Locations</h3>
+              <p style="color: #666; margin-bottom: 24px;">Select a tab above to filter by shop type, or browse all locations below.</p>
+            </div>
+
+            <!-- Rubber Shops Tab Content -->
+            <div class="applied-tab-content" data-tab-content="rubber">
+              <h3 style="margin: 0 0 24px 0; color: #1B0F3A;">Rubber Shops</h3>
+              <div class="applied-locations-grid">
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Denver Rubber Shop 2724</div>
+                      <div class="applied-location-address">
+                        5454 Havana St, Suite 724<br>
+                        Denver, CO 80239-2001
+                      </div>
+                      <div class="applied-location-phone">303-576-2531</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Omaha Rubber Shop 2491</div>
+                      <div class="applied-location-address">
+                        6150 Grover St<br>
+                        Omaha, NE 68106-4390
+                      </div>
+                      <div class="applied-location-phone">402-556-2394</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Tucson Rubber Shop 2827</div>
+                      <div class="applied-location-address">
+                        2025 N Dragoon St<br>
+                        Tucson, AZ 85745
+                      </div>
+                      <div class="applied-location-phone">810-364-3800</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Billings Rubber Shop 2440</div>
+                      <div class="applied-location-address">
+                        916 3rd Ave North<br>
+                        Billings, MT 59101
+                      </div>
+                      <div class="applied-location-phone">406-252-3881</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Fontana Rubber Shop</div>
+                      <div class="applied-location-address">
+                        11895 Cabernet Drive<br>
+                        Fontana, CA 92337
+                      </div>
+                      <div class="applied-location-phone">[Phone Number]</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Longview Rubber Shop 2488</div>
+                      <div class="applied-location-address">
+                        890 Industrial Way<br>
+                        Longview, WA 98632
+                      </div>
+                      <div class="applied-location-phone">360-578-2290</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Missoula Rubber Shop 2429</div>
+                      <div class="applied-location-address">
+                        101 Trade St<br>
+                        Missoula, MT 59808
+                      </div>
+                      <div class="applied-location-phone">406-543-2825</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Salt Lake City Rubber Shop 2181</div>
+                      <div class="applied-location-address">
+                        1971 S 4490 W, Suite C<br>
+                        Salt Lake City, UT 84104
+                      </div>
+                      <div class="applied-location-phone">801-972-1100</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Spokane Rubber Shop 2428</div>
+                      <div class="applied-location-address">
+                        126 S David St<br>
+                        Spokane Valley, WA 99212
+                      </div>
+                      <div class="applied-location-phone">509-535-7340</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Stockton Rubber Shop 2839</div>
+                      <div class="applied-location-address">
+                        202 Val Dervin Pkwy, Suite 100<br>
+                        Stockton, CA 95206
+                      </div>
+                      <div class="applied-location-phone">209-983-4748</div>
+                    </div>
+
+              </div>
+            </div>
+
+            <!-- Belt Shops Tab Content -->
+            <div class="applied-tab-content" data-tab-content="belt">
+              <h3 style="margin: 0 0 24px 0; color: #1B0F3A;">Belt Shops</h3>
+              <div class="applied-locations-grid">
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Crestwood Belt Shop 2359</div>
+                      <div class="applied-location-address">
+                        4643 West 138th St<br>
+                        Crestwood, IL 60445-1930
+                      </div>
+                      <div class="applied-location-phone">708-389-1237</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Appleton Rubber Shop 2310</div>
+                      <div class="applied-location-address">
+                        2400 N Sandra St<br>
+                        Appleton, WI 54911-8660
+                      </div>
+                      <div class="applied-location-phone">920-739-8290</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Carlisle Belt Shop</div>
+                      <div class="applied-location-address">
+                        1103 Claremont Rd<br>
+                        Carlisle, PA 17013
+                      </div>
+                      <div class="applied-location-phone">717-258-7846</div>
+                    </div>
+
+              </div>
+            </div>
+
+            <!-- Hose Shops Tab Content -->
+            <div class="applied-tab-content" data-tab-content="hose">
+              <h3 style="margin: 0 0 24px 0; color: #1B0F3A;">Hose Shops</h3>
+              <div class="applied-locations-grid">
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Fort Worth Hose Shop 2070</div>
+                      <div class="applied-location-address">
+                        15100 Independence Parkway<br>
+                        Fort Worth, TX 76177
+                      </div>
+                      <div class="applied-location-phone">817-491-6835</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Florence Hose Shop 2396</div>
+                      <div class="applied-location-address">
+                        7575 Thoroughbred Blvd<br>
+                        Florence, KY 41042
+                      </div>
+                      <div class="applied-location-phone">859-525-7210</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Carlisle Hose Shop 2187</div>
+                      <div class="applied-location-address">
+                        1103 Claremont Road<br>
+                        Carlisle, PA 17013
+                      </div>
+                      <div class="applied-location-phone">717-258-7846</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Wilmington Hose Shop</div>
+                      <div class="applied-location-address">
+                        240 Ballardvale Street<br>
+                        Wilmington, MA 01887
+                      </div>
+                      <div class="applied-location-phone">978-988-0600</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Atlanta Hose Shop 2243</div>
+                      <div class="applied-location-address">
+                        1525 Distribution Court<br>
+                        Lithia Springs, GA 30122
+                      </div>
+                      <div class="applied-location-phone">678-398-3198</div>
+                    </div>
+
+              </div>
+            </div>
+
+            <!-- Gearbox Repair Tab Content -->
+            <div class="applied-tab-content" data-tab-content="gearbox">
+              <h3 style="margin: 0 0 24px 0; color: #1B0F3A;">Gearbox Repair & Rebuild</h3>
+              <div class="applied-locations-grid">
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Hydra-Gear 2628</div>
+                      <div class="applied-location-address">
+                        1956 Ritter Drive<br>
+                        Daniels, WV 25832-9380<br>
+                        <strong>24/7/365 Service</strong>
+                      </div>
+                      <div class="applied-location-phone">304-763-0550</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Appleton Gearbox Repair 2321</div>
+                      <div class="applied-location-address">
+                        2400 N Sandra St<br>
+                        Appleton, WI 54911
+                      </div>
+                      <div class="applied-location-phone">920-225-8289</div>
+                    </div>
+
+              </div>
+            </div>
+
+            <!-- Reducer Assembly Tab Content -->
+            <div class="applied-tab-content" data-tab-content="reducer">
+              <h3 style="margin: 0 0 24px 0; color: #1B0F3A;">Reducer Assembly</h3>
+              <div class="applied-locations-grid">
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Fort Worth Reducer Assembly 2069</div>
+                      <div class="applied-location-address">
+                        15100 Independence Parkway<br>
+                        Fort Worth, TX 76177
+                      </div>
+                      <div class="applied-location-phone">817-491-6862</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Florence Reducer Assembly 2380</div>
+                      <div class="applied-location-address">
+                        7575 Thoroughbred Blvd<br>
+                        Florence, KY 41042
+                      </div>
+                      <div class="applied-location-phone">859-525-7210</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Atlanta Reducer Assembly 2745</div>
+                      <div class="applied-location-address">
+                        1525 Distribution Court<br>
+                        Lithia Springs, GA 30122
+                      </div>
+                      <div class="applied-location-phone">678-398-3198</div>
+                    </div>
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Portland Reducer Assembly 2499</div>
+                      <div class="applied-location-address">
+                        16785 NE Mason Street<br>
+                        Portland, OR 97230
+                      </div>
+                      <div class="applied-location-phone">503-265-4482</div>
+                    </div>
+
+              </div>
+            </div>
+
+            <!-- Fluid Power Tab Content -->
+            <div class="applied-tab-content" data-tab-content="fluid">
+              <h3 style="margin: 0 0 24px 0; color: #1B0F3A;">Fluid Power</h3>
+              <div class="applied-locations-grid">
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Spokane Hydraulic Center 2428</div>
+                      <div class="applied-location-address">
+                        126 S David St<br>
+                        Spokane Valley, WA 99212
+                      </div>
+                      <div class="applied-location-phone">509-535-7340</div>
+                    </div>
+
+              </div>
+            </div>
+
+            <!-- Gearing Tab Content -->
+            <div class="applied-tab-content" data-tab-content="gearing">
+              <h3 style="margin: 0 0 24px 0; color: #1B0F3A;">Gearing Shops</h3>
+              <div class="applied-locations-grid">
+
+                    <div class="applied-location-card">
+                      <div class="applied-location-name">Spokane Gearing Repair 2428</div>
+                      <div class="applied-location-address">
+                        126 S David St<br>
+                        Spokane Valley, WA 99212
+                      </div>
+                      <div class="applied-location-phone">509-535-7340</div>
+                    </div>
+
+              </div>
+            </div>
+
+          </div>
+          <!-- End Tab Content -->
+        </div>
+
       </div>
-      <!-- End Map Wrapper -->
+      <!-- End Split Container -->
 
-      <!-- Tab Content (Location Cards) -->
-      <div class="applied-tabs-container">
-
-        <!-- All Locations Tab Content -->
-        <div class="applied-tab-content active" data-tab-content="all">
-          <h3 style="margin: 0 0 24px 0; color: #1B0F3A;">All Service Locations</h3>
-          <p style="color: #666; margin-bottom: 24px;">Select a tab above to filter by shop type, or browse all locations below.</p>
-        </div>
-
-        <!-- Rubber Shops Tab Content -->
-        <div class="applied-tab-content" data-tab-content="rubber">
-          <h3 style="margin: 0 0 24px 0; color: #1B0F3A;">Rubber Shops</h3>
-          <div class="applied-locations-grid">
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Denver Rubber Shop 2724</div>
-              <div class="applied-location-address">
-                5454 Havana St, Suite 724<br>
-                Denver, CO 80239-2001
-              </div>
-              <div class="applied-location-phone">303-576-2531</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Omaha Rubber Shop 2491</div>
-              <div class="applied-location-address">
-                6150 Grover St<br>
-                Omaha, NE 68106-4390
-              </div>
-              <div class="applied-location-phone">402-556-2394</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Tucson Rubber Shop 2827</div>
-              <div class="applied-location-address">
-                2025 N Dragoon St<br>
-                Tucson, AZ 85745
-              </div>
-              <div class="applied-location-phone">810-364-3800</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Billings Rubber Shop 2440</div>
-              <div class="applied-location-address">
-                916 3rd Ave North<br>
-                Billings, MT 59101
-              </div>
-              <div class="applied-location-phone">406-252-3881</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Fontana Rubber Shop</div>
-              <div class="applied-location-address">
-                11895 Cabernet Drive<br>
-                Fontana, CA 92337
-              </div>
-              <div class="applied-location-phone">[Phone Number]</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Longview Rubber Shop 2488</div>
-              <div class="applied-location-address">
-                890 Industrial Way<br>
-                Longview, WA 98632
-              </div>
-              <div class="applied-location-phone">360-578-2290</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Missoula Rubber Shop 2429</div>
-              <div class="applied-location-address">
-                101 Trade St<br>
-                Missoula, MT 59808
-              </div>
-              <div class="applied-location-phone">406-543-2825</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Salt Lake City Rubber Shop 2181</div>
-              <div class="applied-location-address">
-                1971 S 4490 W, Suite C<br>
-                Salt Lake City, UT 84104
-              </div>
-              <div class="applied-location-phone">801-972-1100</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Spokane Rubber Shop 2428</div>
-              <div class="applied-location-address">
-                126 S David St<br>
-                Spokane Valley, WA 99212
-              </div>
-              <div class="applied-location-phone">509-535-7340</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Stockton Rubber Shop 2839</div>
-              <div class="applied-location-address">
-                202 Val Dervin Pkwy, Suite 100<br>
-                Stockton, CA 95206
-              </div>
-              <div class="applied-location-phone">209-983-4748</div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Belt Shops Tab Content -->
-        <div class="applied-tab-content" data-tab-content="belt">
-          <h3 style="margin: 0 0 24px 0; color: #1B0F3A;">Belt Shops</h3>
-          <div class="applied-locations-grid">
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Crestwood Belt Shop 2359</div>
-              <div class="applied-location-address">
-                4643 West 138th St<br>
-                Crestwood, IL 60445-1930
-              </div>
-              <div class="applied-location-phone">708-389-1237</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Appleton Rubber Shop 2310</div>
-              <div class="applied-location-address">
-                2400 N Sandra St<br>
-                Appleton, WI 54911-8660
-              </div>
-              <div class="applied-location-phone">920-739-8290</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Carlisle Belt Shop</div>
-              <div class="applied-location-address">
-                1103 Claremont Rd<br>
-                Carlisle, PA 17013
-              </div>
-              <div class="applied-location-phone">717-258-7846</div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Hose Shops Tab Content -->
-        <div class="applied-tab-content" data-tab-content="hose">
-          <h3 style="margin: 0 0 24px 0; color: #1B0F3A;">Hose Shops</h3>
-          <div class="applied-locations-grid">
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Fort Worth Hose Shop 2070</div>
-              <div class="applied-location-address">
-                15100 Independence Parkway<br>
-                Fort Worth, TX 76177
-              </div>
-              <div class="applied-location-phone">817-491-6835</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Florence Hose Shop 2396</div>
-              <div class="applied-location-address">
-                7575 Thoroughbred Blvd<br>
-                Florence, KY 41042
-              </div>
-              <div class="applied-location-phone">859-525-7210</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Carlisle Hose Shop 2187</div>
-              <div class="applied-location-address">
-                1103 Claremont Road<br>
-                Carlisle, PA 17013
-              </div>
-              <div class="applied-location-phone">717-258-7846</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Wilmington Hose Shop</div>
-              <div class="applied-location-address">
-                240 Ballardvale Street<br>
-                Wilmington, MA 01887
-              </div>
-              <div class="applied-location-phone">978-988-0600</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Atlanta Hose Shop 2243</div>
-              <div class="applied-location-address">
-                1525 Distribution Court<br>
-                Lithia Springs, GA 30122
-              </div>
-              <div class="applied-location-phone">678-398-3198</div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Gearbox Repair Tab Content -->
-        <div class="applied-tab-content" data-tab-content="gearbox">
-          <h3 style="margin: 0 0 24px 0; color: #1B0F3A;">Gearbox Repair & Rebuild</h3>
-          <div class="applied-locations-grid">
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Hydra-Gear 2628</div>
-              <div class="applied-location-address">
-                1956 Ritter Drive<br>
-                Daniels, WV 25832-9380<br>
-                <strong>24/7/365 Service</strong>
-              </div>
-              <div class="applied-location-phone">304-763-0550</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Appleton Gearbox Repair 2321</div>
-              <div class="applied-location-address">
-                2400 N Sandra St<br>
-                Appleton, WI 54911
-              </div>
-              <div class="applied-location-phone">920-225-8289</div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Reducer Assembly Tab Content -->
-        <div class="applied-tab-content" data-tab-content="reducer">
-          <h3 style="margin: 0 0 24px 0; color: #1B0F3A;">Reducer Assembly</h3>
-          <div class="applied-locations-grid">
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Fort Worth Reducer Assembly 2069</div>
-              <div class="applied-location-address">
-                15100 Independence Parkway<br>
-                Fort Worth, TX 76177
-              </div>
-              <div class="applied-location-phone">817-491-6862</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Florence Reducer Assembly 2380</div>
-              <div class="applied-location-address">
-                7575 Thoroughbred Blvd<br>
-                Florence, KY 41042
-              </div>
-              <div class="applied-location-phone">859-525-7210</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Atlanta Reducer Assembly 2745</div>
-              <div class="applied-location-address">
-                1525 Distribution Court<br>
-                Lithia Springs, GA 30122
-              </div>
-              <div class="applied-location-phone">678-398-3198</div>
-            </div>
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Portland Reducer Assembly 2499</div>
-              <div class="applied-location-address">
-                16785 NE Mason Street<br>
-                Portland, OR 97230
-              </div>
-              <div class="applied-location-phone">503-265-4482</div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Fluid Power Tab Content -->
-        <div class="applied-tab-content" data-tab-content="fluid">
-          <h3 style="margin: 0 0 24px 0; color: #1B0F3A;">Fluid Power</h3>
-          <div class="applied-locations-grid">
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Spokane Hydraulic Center 2428</div>
-              <div class="applied-location-address">
-                126 S David St<br>
-                Spokane Valley, WA 99212
-              </div>
-              <div class="applied-location-phone">509-535-7340</div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Gearing Tab Content -->
-        <div class="applied-tab-content" data-tab-content="gearing">
-          <h3 style="margin: 0 0 24px 0; color: #1B0F3A;">Gearing Shops</h3>
-          <div class="applied-locations-grid">
-
-            <div class="applied-location-card">
-              <div class="applied-location-name">Spokane Gearing Repair 2428</div>
-              <div class="applied-location-address">
-                126 S David St<br>
-                Spokane Valley, WA 99212
-              </div>
-              <div class="applied-location-phone">509-535-7340</div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-      <!-- End Tab Content -->
 
     </div>
   </section>
