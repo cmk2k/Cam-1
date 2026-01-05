@@ -1,5 +1,5 @@
 <!-- ========================================
-     INTERACTIVE MAP WITH TABS - HEAD HTML
+     INTERACTIVE MAP WITH GOOGLE MAPS - HEAD HTML
      PASTE INTO: Page Settings > Advanced Options > Header HTML
      ======================================== -->
 
@@ -37,19 +37,7 @@
     margin-right: auto;
   }
 
-  /* Glowing Pulse Animation */
-  @keyframes pulseGlow {
-    0% {
-      box-shadow: 0 0 0 0 rgba(27, 15, 58, 0.7);
-    }
-    50% {
-      box-shadow: 0 0 0 8px rgba(27, 15, 58, 0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 rgba(27, 15, 58, 0);
-    }
-  }
-
+  /* Google Maps Iframe Container */
   .applied-map-wrapper {
     width: 100%;
     max-width: 100%;
@@ -57,201 +45,14 @@
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    overflow: visible;
-    padding: 40px;
-    position: relative;
+    overflow: hidden;
+    padding: 20px;
   }
 
-  .applied-map-image {
+  .applied-map-wrapper iframe {
     width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .applied-map-markers {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    right: 40px;
-    bottom: 40px;
-    pointer-events: none;
-  }
-
-  .applied-map-marker {
-    position: absolute;
-    cursor: pointer;
-    pointer-events: all;
-    z-index: 10;
-    transition: transform 0.3s ease, opacity 0.3s ease, z-index 0s 0.3s;
-  }
-
-  .applied-map-marker.hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .applied-map-marker:hover {
-    transform: scale(1.3);
-    z-index: 100;
-    transition: transform 0.3s ease, z-index 0s 0s;
-  }
-
-  /* Marker Styles by Type */
-  .applied-map-marker {
-    width: 24px;
-    height: 24px;
-  }
-
-  .applied-map-marker::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 16px;
-    height: 16px;
-    border: 3px solid #ffffff;
-    border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-    animation: pulseGlow 2s infinite;
-  }
-
-  .applied-map-marker:hover::before {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
-    animation: none;
-  }
-
-  /* Rubber Shops - Dark Blue */
-  .applied-map-marker.rubber::before {
-    background-color: #1B0F3A;
-  }
-
-  /* Belt Shops - Purple */
-  .applied-map-marker.belt::before {
-    background-color: #6B46C1;
-  }
-
-  /* Hose Shops - Teal */
-  .applied-map-marker.hose::before {
-    background-color: #007680;
-  }
-
-  /* Gearbox - Orange */
-  .applied-map-marker.gearbox::before {
-    background-color: #F97316;
-  }
-
-  /* Reducer Assembly - Green */
-  .applied-map-marker.reducer::before {
-    background-color: #059669;
-  }
-
-  /* Fluid Power - Red */
-  .applied-map-marker.fluid::before {
-    background-color: #DC2626;
-  }
-
-  /* Gearing - Brown */
-  .applied-map-marker.gearing::before {
-    background-color: #92400E;
-  }
-
-  /* Distribution Centers - Yellow Star */
-  .applied-map-marker.dc {
-    width: 32px;
-    height: 32px;
-  }
-
-  .applied-map-marker.dc::before {
-    content: '⭐';
-    background: none;
-    border: none;
-    font-size: 28px;
-    color: #FDB81E;
-    text-shadow: 0 2px 8px rgba(253, 184, 30, 0.4);
-    animation: none;
-  }
-
-  /* Tooltips */
-  .applied-map-tooltip {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-8px);
-    background: #ffffff;
-    padding: 16px 20px;
+    min-height: 600px;
     border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-    z-index: 1000;
-    min-width: 250px;
-  }
-
-  .applied-map-marker:hover .applied-map-tooltip {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(-12px);
-  }
-
-  .applied-map-tooltip::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid #ffffff;
-  }
-
-  .applied-tooltip-type {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 0 0 6px 0;
-    padding: 4px 8px;
-    border-radius: 4px;
-    display: inline-block;
-  }
-
-  .applied-tooltip-type.rubber { background-color: #1B0F3A; color: #fff; }
-  .applied-tooltip-type.belt { background-color: #6B46C1; color: #fff; }
-  .applied-tooltip-type.hose { background-color: #007680; color: #fff; }
-  .applied-tooltip-type.gearbox { background-color: #F97316; color: #fff; }
-  .applied-tooltip-type.reducer { background-color: #059669; color: #fff; }
-  .applied-tooltip-type.fluid { background-color: #DC2626; color: #fff; }
-  .applied-tooltip-type.gearing { background-color: #92400E; color: #fff; }
-  .applied-tooltip-type.dc { background-color: #FDB81E; color: #1B0F3A; }
-
-  .applied-tooltip-title {
-    font-size: 16px;
-    font-weight: bold;
-    color: #1B0F3A;
-    margin: 0 0 8px 0;
-    line-height: 1.3;
-  }
-
-  .applied-tooltip-address {
-    font-size: 13px;
-    color: #666666;
-    margin: 0 0 6px 0;
-    line-height: 1.5;
-    white-space: normal;
-    max-width: 280px;
-  }
-
-  .applied-tooltip-phone {
-    font-size: 14px;
-    color: #007680;
-    margin: 0;
-    font-weight: 600;
   }
 
   /* Tab Interface */
@@ -360,18 +161,22 @@
   .applied-location-phone {
     font-size: 14px;
     color: #007680;
-    font-weight: 600;
     margin: 0;
+    font-weight: 600;
   }
 
   /* Mobile Responsive */
   @media (max-width: 768px) {
-    .applied-map-section {
-      padding: 60px 20px;
-    }
-
     .applied-map-title h2 {
       font-size: 32px;
+    }
+
+    .applied-map-wrapper {
+      padding: 12px;
+    }
+
+    .applied-map-wrapper iframe {
+      min-height: 400px;
     }
 
     .applied-tabs {
@@ -380,21 +185,16 @@
 
     .applied-tab {
       padding: 12px 16px;
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .applied-tab-content {
-      padding: 24px 16px;
+      padding: 20px;
     }
 
     .applied-locations-grid {
       grid-template-columns: 1fr;
     }
-
-    .applied-map-marker.active .applied-map-tooltip {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(-50%) translateY(-12px);
-    }
   }
+
 </style>
