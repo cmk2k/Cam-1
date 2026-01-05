@@ -1,0 +1,199 @@
+<!-- ========================================
+     SERVICE CAPABILITIES MODULE - HEAD HTML
+     PASTE INTO: Page Settings > Advanced Options > Header HTML
+     ======================================== -->
+
+<style>
+  /* Service Capabilities Section */
+  .applied-capabilities-section {
+    background: linear-gradient(135deg, #1B0F3A 0%, #2d1a5a 100%);
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Background Pattern */
+  .applied-capabilities-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      linear-gradient(30deg, #007680 12%, transparent 12.5%, transparent 87%, #007680 87.5%, #007680),
+      linear-gradient(150deg, #007680 12%, transparent 12.5%, transparent 87%, #007680 87.5%, #007680),
+      linear-gradient(30deg, #007680 12%, transparent 12.5%, transparent 87%, #007680 87.5%, #007680),
+      linear-gradient(150deg, #007680 12%, transparent 12.5%, transparent 87%, #007680 87.5%, #007680);
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+    opacity: 0.03;
+  }
+
+  .applied-capabilities-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .applied-capabilities-title {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .applied-capabilities-title h2 {
+    font-size: 42px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 0 16px 0;
+  }
+
+  .applied-capabilities-title p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Two Column Grid */
+  .applied-capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .applied-capability-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .applied-capability-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+  }
+
+  .applied-capability-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 3px solid #FDB81E;
+  }
+
+  .applied-capability-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #007680 0%, #005f68 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #ffffff;
+    flex-shrink: 0;
+  }
+
+  .applied-capability-header h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1B0F3A;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .applied-capability-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .applied-capability-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    font-size: 16px;
+    color: #333333;
+    line-height: 1.5;
+  }
+
+  .applied-capability-item::before {
+    content: '✓';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #007680;
+    color: #ffffff;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .applied-capability-highlight {
+    background: #FFF9E6;
+    border-left: 4px solid #FDB81E;
+    padding: 16px 20px;
+    margin-top: 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #1B0F3A;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .applied-capability-highlight::before {
+    content: '⚡';
+    font-size: 24px;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 968px) {
+    .applied-capabilities-section {
+      padding: 60px 20px;
+    }
+
+    .applied-capabilities-title h2 {
+      font-size: 32px;
+    }
+
+    .applied-capabilities-title {
+      margin-bottom: 40px;
+    }
+
+    .applied-capabilities-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .applied-capability-card {
+      padding: 32px 24px;
+    }
+
+    .applied-capability-header h3 {
+      font-size: 20px;
+    }
+
+    .applied-capability-icon {
+      width: 48px;
+      height: 48px;
+      font-size: 24px;
+    }
+
+    .applied-capability-item {
+      font-size: 15px;
+    }
+  }
+
+</style>
