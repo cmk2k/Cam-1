@@ -1,0 +1,1816 @@
+# Dodge Motorized Torque-Arm II Landing Page - Separated Modules
+
+## Updated to Match Applied Industrial Technologies Style Guide
+
+---
+
+## 1️⃣ HEAD HTML (ONE FILE - Copy into HubSpot HEAD HTML)
+
+```html
+<style>
+    /* ============================================================================ */
+    /* Applied Industrial Technologies - Dodge MTA Landing Page Styles */
+    /* Scoped to .aih-lp container - Does not affect global header/footer */
+    /* ============================================================================ */
+
+    /* Module: Global Variables & Base Styles */
+    /* ============================================================================ */
+    .aih-lp {
+        --aih-primary: #00838F;
+        --aih-primary-dark: #005662;
+        --aih-secondary: #E84E0F;
+        --aih-accent: #FDB71A;
+        --aih-navy: #1A2332;
+        --aih-gray-50: #FAFAFA;
+        --aih-gray-100: #F5F5F5;
+        --aih-gray-200: #EEEEEE;
+        --aih-gray-300: #E0E0E0;
+        --aih-gray-400: #BDBDBD;
+        --aih-gray-500: #9E9E9E;
+        --aih-gray-600: #757575;
+        --aih-gray-700: #616161;
+        --aih-gray-800: #424242;
+        --aih-gray-900: #212121;
+        --aih-success: #4CAF50;
+        --aih-white: #FFFFFF;
+        --aih-spacing-xs: 0.5rem;
+        --aih-spacing-sm: 1rem;
+        --aih-spacing-md: 2rem;
+        --aih-spacing-lg: 3rem;
+        --aih-spacing-xl: 4rem;
+        --aih-border-radius: 4px;
+        --aih-transition: all 0.3s ease;
+        --aih-shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+        --aih-shadow-md: 0 4px 12px rgba(0,0,0,0.15);
+        --aih-shadow-lg: 0 8px 24px rgba(0,0,0,0.2);
+    }
+
+    .aih-lp * {
+        box-sizing: border-box;
+    }
+
+    .aih-lp {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--aih-gray-800);
+        background-color: var(--aih-white);
+    }
+
+    /* Typography */
+    .aih-lp h1, .aih-lp h2, .aih-lp h3, .aih-lp h4 {
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0 0 1rem 0;
+        color: var(--aih-navy);
+    }
+
+    .aih-lp h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+    .aih-lp h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+    .aih-lp h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+    .aih-lp h4 { font-size: clamp(1.1rem, 2.5vw, 1.35rem); }
+
+    .aih-lp p {
+        margin: 0 0 1rem 0;
+        font-size: clamp(1rem, 2vw, 1.125rem);
+    }
+
+    /* Container System */
+    .aih-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--aih-spacing-md);
+    }
+
+    .aih-container-wide {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 var(--aih-spacing-md);
+    }
+
+    .aih-container-narrow {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 var(--aih-spacing-md);
+    }
+
+    /* Section Spacing */
+    .aih-section {
+        padding: var(--aih-spacing-xl) 0;
+    }
+
+    .aih-section-sm {
+        padding: var(--aih-spacing-md) 0;
+    }
+
+    .aih-section-lg {
+        padding: calc(var(--aih-spacing-xl) * 1.5) 0;
+    }
+
+    /* Module: Button Styles */
+    /* ============================================================================ */
+    .aih-btn {
+        display: inline-block;
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        border-radius: var(--aih-border-radius);
+        transition: var(--aih-transition);
+        cursor: pointer;
+        border: 2px solid transparent;
+        line-height: 1.5;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .aih-btn-primary {
+        background-color: var(--aih-primary);
+        color: var(--aih-white);
+        box-shadow: var(--aih-shadow-sm);
+    }
+
+    .aih-btn-primary:hover {
+        background-color: var(--aih-primary-dark);
+        transform: translateY(-2px);
+        box-shadow: var(--aih-shadow-md);
+    }
+
+    .aih-btn-secondary {
+        background-color: transparent;
+        color: var(--aih-primary);
+        border-color: var(--aih-primary);
+    }
+
+    .aih-btn-secondary:hover {
+        background-color: var(--aih-primary);
+        color: var(--aih-white);
+        transform: translateY(-2px);
+    }
+
+    .aih-btn-white {
+        background-color: var(--aih-white);
+        color: var(--aih-primary);
+        box-shadow: var(--aih-shadow-sm);
+    }
+
+    .aih-btn-white:hover {
+        background-color: var(--aih-gray-100);
+        transform: translateY(-2px);
+        box-shadow: var(--aih-shadow-md);
+    }
+
+    .aih-btn-lg {
+        padding: 1.125rem 2.5rem;
+        font-size: 1.125rem;
+    }
+
+    /* Module: Hero Section Styles */
+    /* ============================================================================ */
+    .aih-hero {
+        position: relative;
+        background: linear-gradient(135deg, var(--aih-navy) 0%, var(--aih-primary-dark) 100%);
+        color: var(--aih-white);
+        overflow: hidden;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+    }
+
+    .aih-hero-video-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .aih-hero-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.25;
+    }
+
+    .aih-hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(26, 35, 50, 0.95) 0%, rgba(0, 86, 98, 0.85) 100%);
+    }
+
+    .aih-hero-content {
+        position: relative;
+        z-index: 2;
+        padding: var(--aih-spacing-xl) 0;
+    }
+
+    .aih-hero-badge {
+        display: inline-block;
+        background-color: var(--aih-accent);
+        color: var(--aih-navy);
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+        animation: fadeInDown 0.6s ease-out;
+    }
+
+    .aih-hero h1 {
+        color: var(--aih-white);
+        margin-bottom: 1.5rem;
+        animation: fadeInUp 0.6s ease-out 0.2s both;
+    }
+
+    .aih-hero-subtitle {
+        font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+        color: var(--aih-gray-100);
+        margin-bottom: 2rem;
+        max-width: 800px;
+        animation: fadeInUp 0.6s ease-out 0.4s both;
+    }
+
+    .aih-hero-cta-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        animation: fadeInUp 0.6s ease-out 0.6s both;
+    }
+
+    .aih-hero-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
+        animation: fadeInUp 0.6s ease-out 0.8s both;
+    }
+
+    .aih-hero-feature {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .aih-hero-feature-icon {
+        width: 48px;
+        height: 48px;
+        background-color: rgba(255, 255, 255, 0.15);
+        border-radius: var(--aih-border-radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .aih-hero-feature-text {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    /* Module: Trust Bar Styles */
+    /* ============================================================================ */
+    .aih-trust-bar {
+        background-color: var(--aih-gray-50);
+        border-top: 3px solid var(--aih-accent);
+        border-bottom: 3px solid var(--aih-accent);
+    }
+
+    .aih-trust-items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+
+    .aih-trust-item {
+        text-align: center;
+        animation: fadeIn 0.6s ease-out;
+    }
+
+    .aih-trust-icon {
+        width: 64px;
+        height: 64px;
+        background-color: var(--aih-primary);
+        color: var(--aih-white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-size: 1.75rem;
+        font-weight: 700;
+    }
+
+    .aih-trust-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--aih-primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .aih-trust-text {
+        font-size: 0.95rem;
+        color: var(--aih-gray-700);
+        margin: 0;
+    }
+
+    /* Module: Value Props Grid Styles */
+    /* ============================================================================ */
+    .aih-value-props {
+        background-color: var(--aih-white);
+    }
+
+    .aih-section-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+    }
+
+    .aih-section-title {
+        color: var(--aih-primary);
+        margin-bottom: 1rem;
+    }
+
+    .aih-section-subtitle {
+        font-size: 1.25rem;
+        color: var(--aih-gray-700);
+    }
+
+    .aih-value-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .aih-value-card {
+        background-color: var(--aih-white);
+        border: 2px solid var(--aih-gray-200);
+        border-radius: var(--aih-border-radius);
+        padding: 2rem;
+        transition: var(--aih-transition);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .aih-value-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--aih-primary) 0%, var(--aih-accent) 100%);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .aih-value-card:hover {
+        border-color: var(--aih-primary);
+        box-shadow: var(--aih-shadow-md);
+        transform: translateY(-4px);
+    }
+
+    .aih-value-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .aih-value-icon {
+        width: 72px;
+        height: 72px;
+        background: linear-gradient(135deg, var(--aih-primary) 0%, var(--aih-primary-dark) 100%);
+        color: var(--aih-white);
+        border-radius: var(--aih-border-radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        font-size: 1.75rem;
+        font-weight: 700;
+    }
+
+    .aih-value-card h3 {
+        color: var(--aih-primary);
+        margin-bottom: 1rem;
+    }
+
+    .aih-value-card p {
+        color: var(--aih-gray-700);
+        margin-bottom: 0;
+    }
+
+    /* Module: AGMA Section Styles */
+    /* ============================================================================ */
+    .aih-agma-section {
+        background: linear-gradient(135deg, var(--aih-navy) 0%, var(--aih-primary) 100%);
+        color: var(--aih-white);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .aih-agma-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        border-radius: 50%;
+    }
+
+    .aih-agma-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .aih-agma-badge {
+        display: inline-block;
+        background-color: var(--aih-accent);
+        color: var(--aih-navy);
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 2rem;
+    }
+
+    .aih-agma-section h2 {
+        color: var(--aih-white);
+        margin-bottom: 1.5rem;
+    }
+
+    .aih-agma-section p {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+        max-width: 800px;
+    }
+
+    .aih-agma-highlights {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .aih-agma-highlight {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 1.5rem;
+        border-radius: var(--aih-border-radius);
+        border-left: 4px solid var(--aih-accent);
+    }
+
+    .aih-agma-highlight h4 {
+        color: var(--aih-white);
+        margin-bottom: 0.5rem;
+    }
+
+    .aih-agma-highlight p {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    /* Module: Life Comparison Chart Styles */
+    /* ============================================================================ */
+    .aih-life-section {
+        background-color: var(--aih-gray-50);
+    }
+
+    .aih-life-chart {
+        background-color: var(--aih-white);
+        border-radius: var(--aih-border-radius);
+        padding: 2rem;
+        box-shadow: var(--aih-shadow-md);
+        margin-top: 2rem;
+    }
+
+    .aih-chart-bars {
+        display: flex;
+        align-items: flex-end;
+        gap: 2rem;
+        margin: 2rem 0;
+        height: 300px;
+    }
+
+    .aih-chart-bar {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .aih-chart-bar-fill {
+        width: 100%;
+        background: linear-gradient(180deg, var(--aih-primary) 0%, var(--aih-primary-dark) 100%);
+        border-radius: var(--aih-border-radius) var(--aih-border-radius) 0 0;
+        position: relative;
+        transition: transform 0.6s ease-out;
+        transform-origin: bottom;
+    }
+
+    .aih-chart-bar-fill.aih-animate {
+        animation: growUp 1s ease-out forwards;
+    }
+
+    .aih-chart-value {
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--aih-primary);
+        white-space: nowrap;
+    }
+
+    .aih-chart-label {
+        margin-top: 1rem;
+        text-align: center;
+        font-weight: 600;
+        color: var(--aih-navy);
+    }
+
+    .aih-chart-sublabel {
+        font-size: 0.875rem;
+        color: var(--aih-gray-700);
+        margin-top: 0.25rem;
+    }
+
+    /* Module: Tabs Component Styles */
+    /* ============================================================================ */
+    .aih-tabs {
+        background-color: var(--aih-white);
+    }
+
+    .aih-tab-nav {
+        display: flex;
+        border-bottom: 2px solid var(--aih-gray-300);
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .aih-tab-button {
+        padding: 1rem 2rem;
+        background-color: transparent;
+        border: none;
+        border-bottom: 3px solid transparent;
+        color: var(--aih-gray-700);
+        font-size: 1.125rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--aih-transition);
+        margin-bottom: -2px;
+    }
+
+    .aih-tab-button:hover {
+        color: var(--aih-primary);
+        background-color: var(--aih-gray-50);
+    }
+
+    .aih-tab-button.active {
+        color: var(--aih-primary);
+        border-bottom-color: var(--aih-primary);
+    }
+
+    .aih-tab-content {
+        display: none;
+    }
+
+    .aih-tab-content.active {
+        display: block;
+        animation: fadeIn 0.4s ease-out;
+    }
+
+    .aih-feature-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1rem;
+    }
+
+    .aih-feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+        background-color: var(--aih-gray-50);
+        border-radius: var(--aih-border-radius);
+        transition: var(--aih-transition);
+    }
+
+    .aih-feature-item:hover {
+        background-color: var(--aih-white);
+        box-shadow: var(--aih-shadow-sm);
+    }
+
+    .aih-feature-check {
+        width: 24px;
+        height: 24px;
+        background-color: var(--aih-success);
+        color: var(--aih-white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-weight: 700;
+        font-size: 0.75rem;
+    }
+
+    .aih-feature-text {
+        font-size: 1rem;
+        color: var(--aih-navy);
+        margin: 0;
+    }
+
+    /* Module: Twin Bushing Section Styles */
+    /* ============================================================================ */
+    .aih-bushing-section {
+        background-color: var(--aih-white);
+    }
+
+    .aih-bushing-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .aih-bushing-image {
+        width: 100%;
+        border-radius: var(--aih-border-radius);
+        box-shadow: var(--aih-shadow-lg);
+    }
+
+    .aih-bushing-benefits {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0 0 0;
+    }
+
+    .aih-bushing-benefits li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--aih-gray-200);
+    }
+
+    .aih-bushing-benefits li:last-child {
+        border-bottom: none;
+    }
+
+    .aih-bushing-benefits li::before {
+        content: '✓';
+        width: 32px;
+        height: 32px;
+        background-color: var(--aih-primary);
+        color: var(--aih-white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-weight: 700;
+    }
+
+    /* Module: Availability Section Styles */
+    /* ============================================================================ */
+    .aih-availability-section {
+        background: linear-gradient(135deg, var(--aih-gray-50) 0%, var(--aih-white) 100%);
+    }
+
+    .aih-availability-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .aih-availability-comparison {
+        background-color: var(--aih-white);
+        border-radius: var(--aih-border-radius);
+        padding: 2rem;
+        box-shadow: var(--aih-shadow-md);
+    }
+
+    .aih-comparison-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--aih-gray-200);
+    }
+
+    .aih-comparison-row:last-child {
+        border-bottom: none;
+    }
+
+    .aih-comparison-label {
+        font-weight: 600;
+        color: var(--aih-navy);
+    }
+
+    .aih-comparison-value {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .aih-comparison-value.highlight {
+        color: var(--aih-success);
+    }
+
+    .aih-comparison-value.muted {
+        color: var(--aih-gray-600);
+    }
+
+    /* Module: Manufacturing Section Styles */
+    /* ============================================================================ */
+    .aih-manufacturing-section {
+        background-color: var(--aih-white);
+    }
+
+    .aih-manufacturing-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .aih-manufacturing-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 2rem 0;
+    }
+
+    .aih-badge {
+        background-color: var(--aih-primary);
+        color: var(--aih-white);
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .aih-badge-icon {
+        font-size: 1.25rem;
+    }
+
+    /* Module: FAQ Accordion Styles */
+    /* ============================================================================ */
+    .aih-faq-section {
+        background-color: var(--aih-gray-50);
+    }
+
+    .aih-accordion {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .aih-accordion-item {
+        background-color: var(--aih-white);
+        border-radius: var(--aih-border-radius);
+        margin-bottom: 1rem;
+        overflow: hidden;
+        box-shadow: var(--aih-shadow-sm);
+    }
+
+    .aih-accordion-header {
+        width: 100%;
+        padding: 1.5rem;
+        background-color: var(--aih-white);
+        border: none;
+        text-align: left;
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--aih-primary);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: var(--aih-transition);
+    }
+
+    .aih-accordion-header:hover {
+        background-color: var(--aih-gray-50);
+    }
+
+    .aih-accordion-icon {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--aih-secondary);
+        transition: transform 0.3s ease;
+    }
+
+    .aih-accordion-header.active .aih-accordion-icon {
+        transform: rotate(45deg);
+    }
+
+    .aih-accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+
+    .aih-accordion-content.active {
+        max-height: 1000px;
+        padding: 0 1.5rem 1.5rem;
+    }
+
+    .aih-accordion-content p {
+        color: var(--aih-gray-700);
+        margin: 0;
+    }
+
+    /* Module: Sticky CTA Bar Styles */
+    /* ============================================================================ */
+    .aih-sticky-cta {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--aih-navy);
+        color: var(--aih-white);
+        padding: 1rem 0;
+        box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
+        z-index: 1000;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .aih-sticky-cta.visible {
+        transform: translateY(0);
+    }
+
+    .aih-sticky-cta-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .aih-sticky-cta-text {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .aih-sticky-cta-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    /* Module: Final CTA Section Styles */
+    /* ============================================================================ */
+    .aih-final-cta {
+        background: linear-gradient(135deg, var(--aih-primary) 0%, var(--aih-navy) 100%);
+        color: var(--aih-white);
+        text-align: center;
+    }
+
+    .aih-final-cta h2 {
+        color: var(--aih-white);
+        margin-bottom: 1rem;
+    }
+
+    .aih-final-cta p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .aih-final-cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+    }
+
+    .aih-reassurance {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        font-size: 0.95rem;
+        opacity: 0.9;
+    }
+
+    .aih-reassurance-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    /* Module: Footnotes Styles */
+    /* ============================================================================ */
+    .aih-footnotes {
+        background-color: var(--aih-gray-50);
+        padding: 2rem 0;
+        font-size: 0.875rem;
+        color: var(--aih-gray-700);
+        border-top: 1px solid var(--aih-gray-300);
+    }
+
+    .aih-footnotes p {
+        margin: 0.5rem 0;
+        font-size: 0.875rem;
+    }
+
+    .aih-footnote-ref {
+        color: var(--aih-secondary);
+        font-weight: 600;
+    }
+
+    /* Animations */
+    /* ============================================================================ */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes growUp {
+        from { transform: scaleY(0); }
+        to { transform: scaleY(1); }
+    }
+
+    /* Scroll Animations */
+    .aih-scroll-reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .aih-scroll-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+        .aih-lp *,
+        .aih-lp *::before,
+        .aih-lp *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+        .aih-scroll-reveal {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    /* Responsive Design */
+    /* ============================================================================ */
+    @media (max-width: 768px) {
+        .aih-lp {
+            --aih-spacing-xl: 3rem;
+            --aih-spacing-lg: 2rem;
+        }
+        .aih-container,
+        .aih-container-wide,
+        .aih-container-narrow {
+            padding: 0 var(--aih-spacing-sm);
+        }
+        .aih-hero {
+            min-height: 500px;
+        }
+        .aih-hero-cta-group {
+            flex-direction: column;
+        }
+        .aih-btn {
+            width: 100%;
+        }
+        .aih-bushing-content,
+        .aih-availability-content,
+        .aih-manufacturing-content {
+            grid-template-columns: 1fr;
+        }
+        .aih-chart-bars {
+            height: 250px;
+            gap: 1rem;
+        }
+        .aih-tab-nav {
+            flex-direction: column;
+        }
+        .aih-tab-button {
+            width: 100%;
+            text-align: left;
+        }
+        .aih-sticky-cta-content {
+            flex-direction: column;
+            text-align: center;
+        }
+        .aih-sticky-cta-buttons {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .aih-container,
+        .aih-container-wide,
+        .aih-container-narrow {
+            padding: 0 1rem;
+        }
+        .aih-value-grid,
+        .aih-feature-list {
+            grid-template-columns: 1fr;
+        }
+        .aih-chart-bars {
+            flex-direction: column;
+            height: auto;
+            align-items: stretch;
+        }
+        .aih-chart-bar-fill {
+            height: 60px !important;
+            width: 100%;
+        }
+        .aih-chart-value {
+            position: static;
+            transform: none;
+            margin-bottom: 0.5rem;
+        }
+    }
+</style>
+```
+
+---
+
+## 2️⃣ FOOTER HTML (ONE FILE - Copy into HubSpot FOOTER HTML)
+
+```html
+<script>
+(function() {
+    'use strict';
+
+    const pageContainer = document.querySelector('.aih-lp');
+    if (!pageContainer) return;
+
+    // Tab functionality
+    const tabButtons = pageContainer.querySelectorAll('.aih-tab-button');
+    const tabContents = pageContainer.querySelectorAll('.aih-tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-tab');
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            this.classList.add('active');
+            const targetContent = pageContainer.querySelector(`#tab-${targetTab}`);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        });
+    });
+
+    // Accordion functionality
+    const accordionHeaders = pageContainer.querySelectorAll('.aih-accordion-header');
+
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const isActive = this.classList.contains('active');
+
+            accordionHeaders.forEach(h => {
+                h.classList.remove('active');
+                if (h.nextElementSibling) {
+                    h.nextElementSibling.classList.remove('active');
+                }
+            });
+
+            if (!isActive) {
+                this.classList.add('active');
+                content.classList.add('active');
+            }
+        });
+    });
+
+    // Sticky CTA bar on scroll
+    const stickyCta = pageContainer.querySelector('#stickyCta');
+    const hero = pageContainer.querySelector('.aih-hero');
+
+    if (stickyCta && hero) {
+        let heroHeight = hero.offsetHeight;
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > heroHeight) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            heroHeight = hero.offsetHeight;
+        });
+    }
+
+    // Scroll reveal animations
+    const revealElements = pageContainer.querySelectorAll('.aih-scroll-reveal');
+
+    const revealOnScroll = function() {
+        revealElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (elementTop < windowHeight - 100) {
+                element.classList.add('revealed');
+            }
+        });
+    };
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReducedMotion) {
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    } else {
+        revealElements.forEach(element => element.classList.add('revealed'));
+    }
+
+    // Animate chart bars on scroll
+    const chartBars = pageContainer.querySelectorAll('.aih-chart-bar-fill');
+    let chartAnimated = false;
+
+    const animateChartOnScroll = function() {
+        if (chartAnimated) return;
+
+        const chartSection = pageContainer.querySelector('.aih-life-chart');
+        if (!chartSection) return;
+
+        const chartTop = chartSection.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (chartTop < windowHeight - 100) {
+            chartBars.forEach(bar => bar.classList.add('aih-animate'));
+            chartAnimated = true;
+        }
+    };
+
+    if (!prefersReducedMotion) {
+        window.addEventListener('scroll', animateChartOnScroll);
+        animateChartOnScroll();
+    }
+
+    // Smooth scroll for anchor links
+    pageContainer.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#' || href.length <= 1) return;
+
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                });
+            }
+        });
+    });
+
+})();
+</script>
+```
+
+---
+
+## 3️⃣ SOURCE CODE MODULES (SEPARATE FILES - Copy each module independently)
+
+### Module 1: Hero Section
+
+```html
+<div class="aih-lp">
+    <section class="aih-hero">
+        <div class="aih-hero-video-container">
+            <video class="aih-hero-video" autoplay muted loop playsinline poster="image-placeholder-hero.jpg">
+                <source src="video-placeholder-mta.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="aih-hero-overlay"></div>
+        <div class="aih-hero-content">
+            <div class="aih-container">
+                <div class="aih-hero-badge editable-text">Only AGMA-Rated Direct-Drive Reducer</div>
+                <h1 class="editable-text">Motorized Torque-Arm II:<br>The Ultimate Shaft-Mounted Reducer</h1>
+                <p class="aih-hero-subtitle editable-text">Direct-drive solution delivering premium performance with the highest torque ratings per case size on the market. Engineered to AGMA standards for 2x-2.78x longer life than DIN-rated competitors.</p>
+                <div class="aih-hero-cta-group">
+                    <a href="#shop-now" class="aih-btn aih-btn-primary aih-btn-lg editable-text">Shop Now</a>
+                    <a href="#find-your-size" class="aih-btn aih-btn-white aih-btn-lg editable-text">Find Your Size</a>
+                    <a href="#talk-to-expert" class="aih-btn aih-btn-secondary aih-btn-lg editable-text">Talk to an Expert</a>
+                </div>
+                <div class="aih-hero-features">
+                    <div class="aih-hero-feature">
+                        <div class="aih-hero-feature-icon">
+                            <span style="font-size: 1.5rem;">⚡</span>
+                        </div>
+                        <div class="aih-hero-feature-text editable-text">Up to 329,000 in-lbs torque</div>
+                    </div>
+                    <div class="aih-hero-feature">
+                        <div class="aih-hero-feature-icon">
+                            <span style="font-size: 1.5rem;">✓</span>
+                        </div>
+                        <div class="aih-hero-feature-text editable-text">5000-hour L10 bearing life</div>
+                    </div>
+                    <div class="aih-hero-feature">
+                        <div class="aih-hero-feature-icon">
+                            <span style="font-size: 1.5rem;">🚀</span>
+                        </div>
+                        <div class="aih-hero-feature-text editable-text">Available in days, not weeks</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+```
+
+### Module 2: Trust Bar
+
+```html
+<div class="aih-lp">
+    <section class="aih-trust-bar">
+        <div class="aih-container-wide">
+            <div class="aih-trust-items">
+                <div class="aih-trust-item aih-scroll-reveal">
+                    <div class="aih-trust-icon">1st</div>
+                    <div class="aih-trust-title editable-text">Only AGMA-Rated*</div>
+                    <p class="aih-trust-text editable-text">First and only AGMA-rated direct-drive reducer on the market</p>
+                </div>
+                <div class="aih-trust-item aih-scroll-reveal">
+                    <div class="aih-trust-icon">20+</div>
+                    <div class="aih-trust-title editable-text">Proven Performance</div>
+                    <p class="aih-trust-text editable-text">Over 20 years of field-tested reliability in toughest applications</p>
+                </div>
+                <div class="aih-trust-item aih-scroll-reveal">
+                    <div class="aih-trust-icon">🇺🇸</div>
+                    <div class="aih-trust-title editable-text">Made in USA</div>
+                    <p class="aih-trust-text editable-text">Manufactured in ISO 9001-certified facility in Greenville, SC</p>
+                </div>
+                <div class="aih-trust-item aih-scroll-reveal">
+                    <div class="aih-trust-icon">✓</div>
+                    <div class="aih-trust-title editable-text">100% Tested</div>
+                    <p class="aih-trust-text editable-text">Every gearbox spin-tested and leak-tested before shipping</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+```
+
+### Module 3: Value Props Grid
+
+```html
+<div class="aih-lp">
+    <section class="aih-value-props aih-section">
+        <div class="aih-container">
+            <div class="aih-section-header aih-scroll-reveal">
+                <h2 class="aih-section-title editable-text">Why Motorized Torque-Arm II Outperforms the Competition</h2>
+                <p class="aih-section-subtitle editable-text">Packed with industry-leading features for maximum reliability, minimal maintenance, and lower total cost of ownership.</p>
+            </div>
+            <div class="aih-value-grid">
+                <div class="aih-value-card aih-scroll-reveal">
+                    <div class="aih-value-icon">2.78x</div>
+                    <h3 class="editable-text">Longer Average Life*</h3>
+                    <p class="editable-text">Designed to AGMA standards for 5000-hour L10 bearing life—2.78x longer than DIN 1800-hour designs and 2x longer than DIN 2500-hour designs. Less downtime, fewer replacements.</p>
+                </div>
+                <div class="aih-value-card aih-scroll-reveal">
+                    <div class="aih-value-icon">⚡</div>
+                    <h3 class="editable-text">Highest Torque Per Size</h3>
+                    <p class="editable-text">Up to 329,000 inch-pounds of torque across 10 sizes—the highest torque ratings per case size on the market. Smaller, lighter, and more compact than competitive options.</p>
+                </div>
+                <div class="aih-value-card aih-scroll-reveal">
+                    <div class="aih-value-icon">📦</div>
+                    <h3 class="editable-text">Unmatched Availability*</h3>
+                    <p class="editable-text">Assembled with stock components and available in days versus weeks or months. Broadest off-the-shelf offering with every input option and most common sizes in stock.</p>
+                </div>
+                <div class="aih-value-card aih-scroll-reveal">
+                    <div class="aih-value-icon">💰</div>
+                    <h3 class="editable-text">Lower Total Cost</h3>
+                    <p class="editable-text">Compact footprint minimizes overhung load, potentially reducing supporting equipment size and component costs. Twin-tapered bushing system lowers installation and maintenance costs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+```
+
+### Module 4: AGMA-Rated Design Section
+
+```html
+<div class="aih-lp">
+    <section class="aih-agma-section aih-section">
+        <div class="aih-container">
+            <div class="aih-agma-content aih-scroll-reveal">
+                <div class="aih-agma-badge editable-text">INDUSTRY-LEADING DESIGN</div>
+                <h2 class="editable-text">AGMA-Rated Design: Engineered to Higher Standards*</h2>
+                <p class="editable-rich">As the <strong>only AGMA-rated direct-drive reducer on the market</strong>, Motorized Torque-Arm II is engineered to higher standards and longer life than competitors built to lesser DIN specifications. Proven through extensive testing and over 20 years in the field, MTA's heavy-duty design maximizes uptime in the toughest applications where others fail.</p>
+                <div class="aih-agma-highlights">
+                    <div class="aih-agma-highlight">
+                        <h4 class="editable-text">Superior Engineering Standards</h4>
+                        <p class="editable-text">AGMA (American Gear Manufacturers Association) standards exceed DIN specifications for gear design, bearing life, and durability testing.</p>
+                    </div>
+                    <div class="aih-agma-highlight">
+                        <h4 class="editable-text">Extended Service Life</h4>
+                        <p class="editable-text">5000-hour unadjusted L10 bearing life provides 2x to 2.78x longer service life than DIN-rated reducers, reducing replacement frequency and costs.</p>
+                    </div>
+                    <div class="aih-agma-highlight">
+                        <h4 class="editable-text">Proven in the Field</h4>
+                        <p class="editable-text">Over 20 years of field testing and real-world performance in harsh industrial environments validates superior reliability.</p>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <a href="#shop-now" class="aih-btn aih-btn-white aih-btn-lg editable-text">Shop AGMA-Rated Reducers</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+```
+
+### Module 5: Average Reducer Life Comparison
+
+```html
+<div class="aih-lp">
+    <section class="aih-life-section aih-section">
+        <div class="aih-container">
+            <div class="aih-section-header aih-scroll-reveal">
+                <h2 class="aih-section-title editable-text">Average Reducer Life: MTA vs. DIN-Rated Competitors*</h2>
+                <p class="aih-section-subtitle editable-text">Designed to AGMA standards for significantly longer average reducer life than DIN-rated alternatives.</p>
+            </div>
+            <div class="aih-life-chart aih-scroll-reveal">
+                <div class="aih-chart-bars">
+                    <div class="aih-chart-bar">
+                        <div class="aih-chart-bar-fill aih-animate" style="height: 36%;">
+                            <span class="aih-chart-value editable-text">1800</span>
+                        </div>
+                        <div class="aih-chart-label">
+                            <div class="editable-text">DIN 1800</div>
+                            <div class="aih-chart-sublabel editable-text">Typical Competitor</div>
+                        </div>
+                    </div>
+                    <div class="aih-chart-bar">
+                        <div class="aih-chart-bar-fill aih-animate" style="height: 50%;">
+                            <span class="aih-chart-value editable-text">2500</span>
+                        </div>
+                        <div class="aih-chart-label">
+                            <div class="editable-text">DIN 2500</div>
+                            <div class="aih-chart-sublabel editable-text">Premium Competitor</div>
+                        </div>
+                    </div>
+                    <div class="aih-chart-bar">
+                        <div class="aih-chart-bar-fill aih-animate" style="height: 100%; background: linear-gradient(180deg, var(--aih-accent) 0%, var(--aih-primary) 100%);">
+                            <span class="aih-chart-value editable-text">5000</span>
+                        </div>
+                        <div class="aih-chart-label">
+                            <div class="editable-text" style="color: var(--aih-primary); font-weight: 700;">MTA AGMA-Rated</div>
+                            <div class="aih-chart-sublabel editable-text">Industry Leader</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 1rem;">
+                    <p class="editable-text" style="font-size: 0.95rem; color: var(--aih-gray-700);"><strong>L10 Bearing Life (Hours)</strong> - Unadjusted bearing life rating based on manufacturer design standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+```
+
+### Module 6: Tabbed Content (Features/Benefits/Applications)
+
+```html
+<div class="aih-lp">
+    <section class="aih-tabs aih-section">
+        <div class="aih-container">
+            <div class="aih-section-header aih-scroll-reveal">
+                <h2 class="aih-section-title editable-text">Engineered for Maximum Durability</h2>
+            </div>
+            <div class="aih-tab-nav">
+                <button class="aih-tab-button active" data-tab="features">Features</button>
+                <button class="aih-tab-button" data-tab="benefits">Key Benefits</button>
+                <button class="aih-tab-button" data-tab="applications">Applications</button>
+            </div>
+            <div class="aih-tab-content active" id="tab-features">
+                <div class="aih-feature-list editable-rich">
+                    <div class="aih-feature-item">
+                        <div class="aih-feature-check">✓</div>
+                        <p class="aih-feature-text">Multiple breather options for harsh environments</p>
+                    </div>
+                    <div class="aih-feature-item">
+                        <div class="aih-feature-check">✓</div>
+                        <p class="aih-feature-text">Bushing cover and shaft guard ready</p>
+                    </div>
+                    <div class="aih-feature-item">
+                        <div class="aih-feature-check">✓</div>
+                        <p class="aih-feature-text">Straddle-mount pinion</p>
+                    </div>
+                    <div class="aih-feature-item">
+                        <div class="aih-feature-check">✓</div>
+                        <p class="aih-feature-text">Multiple input options</p>
+                    </div>
+                    <div class="aih-feature-item">
+                        <div class="aih-feature-check">✓</div>
+                        <p class="aih-feature-text">Safety input adapter for NEMA flanged motors</p>
+                    </div>
+                    <div class="aih-feature-item">
+                        <div class="aih-feature-check">✓</div>
+                        <p class="aih-feature-text">Enclosed input adapter for IEC and NEMA flanged motors</p>
+                    </div>
+                    <div class="aih-feature-item">
+                        <div class="aih-feature-check">✓</div>
+                        <p class="aih-feature-text">Heavy-duty cast iron housing</p>
+                    </div>
+                    <div class="aih-feature-item">
+                        <div class="aih-feature-check">✓</div>
+                        <p class="aih-feature-text">Extreme pressure lubricant-compatible backstop</p>
+                    </div>
+                    <div class="aih-feature-item">
+                        <div class="aih-feature-check">✓</div>
+                        <p class="aih-feature-text">Harsh-duty sealing system</p>
+                    </div>
+                    <div class="aih-feature-item">
+                        <div class="aih-feature-check">✓</div>
+                        <p class="aih-feature-text">Twin-tapered bushings</p>
+                    </div>
+                    <div class="aih-feature-item">
+                        <div class="aih-feature-check">✓</div>
+                        <p class="aih-feature-text">Sensor-ready for remote condition monitoring</p>
+                    </div>
+                    <div class="aih-feature-item">
+                        <div class="aih-feature-check">✓</div>
+                        <p class="aih-feature-text">Tapered roller bearings</p>
+                    </div>
+                    <div class="aih-feature-item">
+                        <div class="aih-feature-check">✓</div>
+                        <p class="aih-feature-text">AGMA-rated gearing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="aih-tab-content" id="tab-benefits">
+                <div class="editable-rich">
+                    <h3>Key Benefits</h3>
+                    <ul style="font-size: 1.125rem; line-height: 1.8; color: var(--aih-gray-700);">
+                        <li><strong>Maximize Uptime:</strong> AGMA-rated design and 5000-hour L10 bearing life reduce maintenance frequency and unplanned downtime</li>
+                        <li><strong>Reduce Installation Costs:</strong> Twin-tapered bushing system simplifies installation and removal, shaft-ready out of the box</li>
+                        <li><strong>Minimize Footprint:</strong> Smaller and lighter than competitive options with equivalent torque capabilities</li>
+                        <li><strong>Lower Total Cost of Ownership:</strong> Longer life, faster availability, and reduced maintenance equal significant cost savings</li>
+                        <li><strong>Faster Lead Times:</strong> Assembled with stock components, available in days versus weeks or months</li>
+                        <li><strong>Application Flexibility:</strong> 10 sizes, multiple input options, supports drive packages up to 329,000 inch-pounds of torque</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="aih-tab-content" id="tab-applications">
+                <div class="editable-rich">
+                    <h3>Ideal Applications</h3>
+                    <p style="font-size: 1.125rem; margin-bottom: 1.5rem;">Motorized Torque-Arm II excels in demanding industrial applications where reliability, compact design, and high torque are critical:</p>
+                    <div class="aih-value-grid">
+                        <div style="padding: 1.5rem; background-color: var(--aih-gray-50); border-radius: var(--aih-border-radius);">
+                            <h4 style="color: var(--aih-primary);">Conveyor Systems</h4>
+                            <p>Heavy-duty conveyor drives in mining, aggregate, and bulk material handling</p>
+                        </div>
+                        <div style="padding: 1.5rem; background-color: var(--aih-gray-50); border-radius: var(--aih-border-radius);">
+                            <h4 style="color: var(--aih-primary);">Mixing & Agitation</h4>
+                            <p>Chemical processing, wastewater treatment, and industrial mixing applications</p>
+                        </div>
+                        <div style="padding: 1.5rem; background-color: var(--aih-gray-50); border-radius: var(--aih-border-radius);">
+                            <h4 style="color: var(--aih-primary);">Packaging Equipment</h4>
+                            <p>Food & beverage, pharmaceutical, and consumer goods packaging lines</p>
+                        </div>
+                        <div style="padding: 1.5rem; background-color: var(--aih-gray-50); border-radius: var(--aih-border-radius);">
+                            <h4 style="color: var(--aih-primary);">OEM Equipment</h4>
+                            <p>Custom machinery requiring compact, reliable, high-torque shaft mount solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+```
+
+### Module 7: Twin-Tapered Bushing System
+
+```html
+<div class="aih-lp">
+    <section class="aih-bushing-section aih-section">
+        <div class="aih-container">
+            <div class="aih-bushing-content">
+                <div class="aih-scroll-reveal">
+                    <img src="image-placeholder-bushing-system.jpg" alt="Twin-Tapered Bushing System" class="aih-bushing-image">
+                </div>
+                <div class="aih-scroll-reveal">
+                    <h2 class="editable-text">Premier Performance: Twin-Tapered Bushing System</h2>
+                    <p class="editable-rich">The twin-tapered bushing system is a key differentiator that simplifies installation, reduces maintenance costs, and extends equipment life. This innovative design eliminates common problems like shaft-to-reducer fretting, eccentricity, and wobble.</p>
+                    <ul class="aih-bushing-benefits editable-rich">
+                        <li>Simplifies installation and removal</li>
+                        <li>Mitigates shaft-to-reducer fretting</li>
+                        <li>Eliminates eccentricity and wobble</li>
+                        <li>Available in standard and short-shaft versions</li>
+                        <li>Available in inch and metric bores</li>
+                        <li>Increased bore capability in many sizes</li>
+                        <li>Shaft-ready out of the box</li>
+                        <li>Lowers total cost of ownership</li>
+                    </ul>
+                    <div style="margin-top: 2rem;">
+                        <a href="#shop-now" class="aih-btn aih-btn-primary editable-text">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+```
+
+### Module 8: Availability Section
+
+```html
+<div class="aih-lp">
+    <section class="aih-availability-section aih-section">
+        <div class="aih-container">
+            <div class="aih-availability-content">
+                <div class="aih-scroll-reveal">
+                    <h2 class="editable-text">Unmatched Availability: Days, Not Weeks*</h2>
+                    <p class="editable-rich">Whether you design new equipment or rely on gear reducers for critical applications, Motorized Torque-Arm II is assembled with <strong>stock components to be available in days</strong>, offering significantly faster lead times than competitive options that take weeks or months to be assembled and shipped.</p>
+                    <p class="editable-rich">In addition to unparalleled lead times, MTA has the <strong>largest offering on the market</strong> with every input option and the most common reducer case sizes and ratios available off the shelf to support virtually any application from stock.</p>
+                    <div style="margin-top: 2rem;">
+                        <a href="#find-your-size" class="aih-btn aih-btn-primary editable-text">Find Your Size</a>
+                        <a href="#talk-to-expert" class="aih-btn aih-btn-secondary editable-text" style="margin-left: 1rem;">Talk to an Expert</a>
+                    </div>
+                </div>
+                <div class="aih-scroll-reveal">
+                    <div class="aih-availability-comparison">
+                        <h3 class="editable-text" style="text-align: center; margin-bottom: 1.5rem;">Lead Time Comparison</h3>
+                        <div class="aih-comparison-row">
+                            <span class="aih-comparison-label editable-text">Typical Competitors</span>
+                            <span class="aih-comparison-value muted editable-text">6-12 weeks</span>
+                        </div>
+                        <div class="aih-comparison-row">
+                            <span class="aih-comparison-label editable-text">Premium Competitors</span>
+                            <span class="aih-comparison-value muted editable-text">4-8 weeks</span>
+                        </div>
+                        <div class="aih-comparison-row" style="background-color: rgba(0, 131, 143, 0.05);">
+                            <span class="aih-comparison-label editable-text" style="font-size: 1.25rem;">Motorized Torque-Arm II</span>
+                            <span class="aih-comparison-value highlight editable-text">Days</span>
+                        </div>
+                    </div>
+                    <img src="image-placeholder-availability.jpg" alt="Stock Components Ready to Ship" style="width: 100%; border-radius: var(--aih-border-radius); margin-top: 2rem; box-shadow: var(--aih-shadow-md);">
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+```
+
+### Module 9: Manufacturing Quality
+
+```html
+<div class="aih-lp">
+    <section class="aih-manufacturing-section aih-section">
+        <div class="aih-container">
+            <div class="aih-manufacturing-content">
+                <div class="aih-scroll-reveal">
+                    <img src="image-placeholder-manufacturing.jpg" alt="ISO 9001 Manufacturing Facility" style="width: 100%; border-radius: var(--aih-border-radius); box-shadow: var(--aih-shadow-lg);">
+                </div>
+                <div class="aih-scroll-reveal">
+                    <h2 class="editable-text">Manufactured in the USA with World-Class Quality</h2>
+                    <p class="editable-rich">Every Motorized Torque-Arm II reducer is manufactured in our <strong>ISO 9001-certified facility in Greenville, South Carolina</strong>. Our commitment to quality means that every single MTA gearbox is <strong>spin-tested and leak-tested</strong> before it goes out the door to ensure long-lasting performance and provide you with peace of mind.</p>
+                    <div class="aih-manufacturing-badges">
+                        <div class="aih-badge">
+                            <span class="aih-badge-icon">🇺🇸</span>
+                            <span class="editable-text">Made in USA</span>
+                        </div>
+                        <div class="aih-badge">
+                            <span class="aih-badge-icon">✓</span>
+                            <span class="editable-text">ISO 9001 Certified</span>
+                        </div>
+                        <div class="aih-badge">
+                            <span class="aih-badge-icon">⚙️</span>
+                            <span class="editable-text">100% Spin-Tested</span>
+                        </div>
+                        <div class="aih-badge">
+                            <span class="aih-badge-icon">🔍</span>
+                            <span class="editable-text">100% Leak-Tested</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <a href="#shop-now" class="aih-btn aih-btn-primary editable-text">Shop USA-Made Reducers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+```
+
+### Module 10: FAQ Accordion
+
+```html
+<div class="aih-lp">
+    <section class="aih-faq-section aih-section">
+        <div class="aih-container">
+            <div class="aih-section-header aih-scroll-reveal">
+                <h2 class="aih-section-title editable-text">Frequently Asked Questions</h2>
+            </div>
+            <div class="aih-accordion">
+                <div class="aih-accordion-item aih-scroll-reveal">
+                    <button class="aih-accordion-header">
+                        <span class="editable-text">What makes AGMA-rated design superior to DIN specifications?</span>
+                        <span class="aih-accordion-icon">+</span>
+                    </button>
+                    <div class="aih-accordion-content">
+                        <p class="editable-rich">AGMA (American Gear Manufacturers Association) standards are more rigorous than DIN specifications for gear design, bearing life calculations, and durability testing. AGMA-rated designs are engineered for 5000-hour unadjusted L10 bearing life, compared to DIN standards of 1800-2500 hours. This translates to 2x to 2.78x longer average reducer life, fewer replacements, and lower total cost of ownership.</p>
+                    </div>
+                </div>
+                <div class="aih-accordion-item aih-scroll-reveal">
+                    <button class="aih-accordion-header">
+                        <span class="editable-text">How quickly can I get a Motorized Torque-Arm II reducer?</span>
+                        <span class="aih-accordion-icon">+</span>
+                    </button>
+                    <div class="aih-accordion-content">
+                        <p class="editable-rich">Motorized Torque-Arm II reducers are assembled with stock components and are typically available in days, compared to competitive options that can take 4-12 weeks. We maintain the broadest off-the-shelf offering with every input option and the most common case sizes and ratios in stock to support virtually any application.</p>
+                    </div>
+                </div>
+                <div class="aih-accordion-item aih-scroll-reveal">
+                    <button class="aih-accordion-header">
+                        <span class="editable-text">What are the benefits of the twin-tapered bushing system?</span>
+                        <span class="aih-accordion-icon">+</span>
+                    </button>
+                    <div class="aih-accordion-content">
+                        <p class="editable-rich">The twin-tapered bushing system simplifies installation and removal, mitigates shaft-to-reducer fretting, and eliminates eccentricity and wobble. It's available in standard and short-shaft versions, inch and metric bores, with increased bore capability in many sizes. The system is shaft-ready out of the box and significantly lowers total cost of ownership by reducing installation time and maintenance requirements.</p>
+                    </div>
+                </div>
+                <div class="aih-accordion-item aih-scroll-reveal">
+                    <button class="aih-accordion-header">
+                        <span class="editable-text">What torque range and sizes are available?</span>
+                        <span class="aih-accordion-icon">+</span>
+                    </button>
+                    <div class="aih-accordion-content">
+                        <p class="editable-rich">Motorized Torque-Arm II is available in 10 case sizes with multiple input options to support drive packages up to 329,000 inch-pounds of torque. This represents the highest torque ratings per case size on the market, and the units are both smaller and lighter than competitive options with equivalent torque capabilities.</p>
+                    </div>
+                </div>
+                <div class="aih-accordion-item aih-scroll-reveal">
+                    <button class="aih-accordion-header">
+                        <span class="editable-text">Is the Motorized Torque-Arm II suitable for harsh environments?</span>
+                        <span class="aih-accordion-icon">+</span>
+                    </button>
+                    <div class="aih-accordion-content">
+                        <p class="editable-rich">Yes, MTA is engineered for harsh industrial applications with multiple breather options for contaminated environments, harsh-duty sealing system, heavy-duty cast iron housing, and extreme pressure lubricant-compatible backstop. It's proven through over 20 years in the field and extensive testing in the toughest applications.</p>
+                    </div>
+                </div>
+                <div class="aih-accordion-item aih-scroll-reveal">
+                    <button class="aih-accordion-header">
+                        <span class="editable-text">What motor input options are compatible?</span>
+                        <span class="aih-accordion-icon">+</span>
+                    </button>
+                    <div class="aih-accordion-content">
+                        <p class="editable-rich">Motorized Torque-Arm II offers multiple input options including safety input adapter for NEMA flanged motors and enclosed input adapter for both IEC and NEMA flanged motors. This flexibility ensures compatibility with virtually any motor configuration in your application.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+```
+
+### Module 11: Final CTA Section
+
+```html
+<div class="aih-lp">
+    <section class="aih-final-cta aih-section">
+        <div class="aih-container">
+            <div class="aih-scroll-reveal">
+                <h2 class="editable-text">Ready to Experience Superior Performance?</h2>
+                <p class="editable-text">Get the only AGMA-rated direct-drive reducer on the market with 2x-2.78x longer life, unmatched availability, and industry-leading performance.</p>
+                <div class="aih-final-cta-buttons">
+                    <a href="#shop-now" class="aih-btn aih-btn-white aih-btn-lg editable-text">Shop Now</a>
+                    <a href="#find-your-size" class="aih-btn aih-btn-secondary aih-btn-lg editable-text">Find Your Size</a>
+                    <a href="#talk-to-expert" class="aih-btn aih-btn-secondary aih-btn-lg editable-text">Talk to an Expert</a>
+                </div>
+                <div class="aih-reassurance">
+                    <div class="aih-reassurance-item">
+                        <span>✓</span>
+                        <span class="editable-text">Available in Days</span>
+                    </div>
+                    <div class="aih-reassurance-item">
+                        <span>✓</span>
+                        <span class="editable-text">Made in USA</span>
+                    </div>
+                    <div class="aih-reassurance-item">
+                        <span>✓</span>
+                        <span class="editable-text">100% Tested</span>
+                    </div>
+                    <div class="aih-reassurance-item">
+                        <span>✓</span>
+                        <span class="editable-text">20+ Years Proven</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+```
+
+### Module 12: Footnotes
+
+```html
+<div class="aih-lp">
+    <section class="aih-footnotes">
+        <div class="aih-container-narrow">
+            <div class="editable-rich">
+                <p><span class="aih-footnote-ref">*AGMA-Rated Claim:</span> Based on manufacturer research, Motorized Torque-Arm II is the only direct-drive shaft mount reducer designed and rated to AGMA (American Gear Manufacturers Association) standards currently available on the market. Competitive products are typically designed to DIN specifications.</p>
+                <p><span class="aih-footnote-ref">*Average Reducer Life:</span> Life calculations based on unadjusted L10 bearing life ratings. MTA designed for 5000-hour L10 bearing life per AGMA standards. Comparison to typical DIN-rated designs at 2500 hours (2x longer) and 1800 hours (2.78x longer). Actual service life varies based on application conditions, maintenance practices, and operating parameters.</p>
+                <p><span class="aih-footnote-ref">*Availability Claims:</span> Lead times of "days versus weeks or months" based on stock component assembly for common configurations. Actual lead times may vary based on specific size, ratio, input option, and current inventory levels. Custom configurations may require extended lead times. Contact Applied Industrial Technologies for specific availability.</p>
+            </div>
+        </div>
+    </section>
+</div>
+```
+
+### Module 13: Sticky CTA Bar
+
+```html
+<div class="aih-lp">
+    <div class="aih-sticky-cta" id="stickyCta">
+        <div class="aih-container">
+            <div class="aih-sticky-cta-content">
+                <p class="aih-sticky-cta-text editable-text">Motorized Torque-Arm II: AGMA-Rated Performance You Can Trust</p>
+                <div class="aih-sticky-cta-buttons">
+                    <a href="#shop-now" class="aih-btn aih-btn-primary editable-text">Shop Now</a>
+                    <a href="#talk-to-expert" class="aih-btn aih-btn-white editable-text">Talk to an Expert</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+---
+
+## SUMMARY OF CHANGES
+
+### ✅ Updated to Applied Industrial Technologies Style Guide:
+- **Primary color:** Teal (#00838F)
+- **Secondary color:** Orange (#E84E0F)
+- **Accent color:** Yellow/Gold (#FDB71A)
+- **Navy:** (#1A2332)
+- **Typography:** Helvetica Neue, bold headings, uppercase buttons
+- **Border radius:** Reduced to 4px (sharper, more industrial)
+- **Better text alignment:** Headers now have proper padding/spacing
+
+### ✅ Modular Structure:
+- **1 HEAD HTML file** - Copy once into HubSpot HEAD HTML
+- **1 FOOTER HTML file** - Copy once into HubSpot FOOTER HTML
+- **13 SEPARATE MODULE files** - Copy individually, move/edit independently
+
+### ✅ Fixed Header Alignment:
+- Increased container padding to `var(--aih-spacing-md)` (2rem default)
+- Content no longer hugs the left edge
+- Better breathing room on mobile and desktop
+
+---
+
+Let me know if you need any other adjustments! 🚀
