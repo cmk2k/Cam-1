@@ -1,0 +1,297 @@
+<style>
+/* ========================================
+   MODULE 3: Shop Capabilities Hub - Scoped Styles
+   Namespace: aih- (Applied Industrial Heavyweight)
+   ======================================== */
+
+/* Section Container */
+.aih-shop-hub {
+  background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%);
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.aih-shop-hub__container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Section Header */
+.aih-shop-hub__header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aih-shop-hub__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #002855;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.1;
+}
+
+.aih-shop-hub__subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  color: #4A4A4A;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Capability Cards Grid */
+.aih-shop-hub__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+/* Individual Capability Card */
+.aih-shop-hub__card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 2px solid transparent;
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+
+.aih-shop-hub__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #00A3A1 0%, #FDB515 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.aih-shop-hub__card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 48px rgba(0, 163, 161, 0.2);
+  border-color: #00A3A1;
+}
+
+.aih-shop-hub__card:hover::before {
+  transform: scaleX(1);
+}
+
+.aih-shop-hub__card:focus {
+  outline: 3px solid #FDB515;
+  outline-offset: 4px;
+}
+
+/* Current Page Indicator */
+.aih-shop-hub__card--current {
+  background: linear-gradient(135deg, #00A3A1 0%, #008C8A 100%);
+  color: #FFFFFF;
+  border-color: #00A3A1;
+}
+
+.aih-shop-hub__card--current .aih-shop-hub__card-title,
+.aih-shop-hub__card--current .aih-shop-hub__card-description {
+  color: #FFFFFF;
+}
+
+.aih-shop-hub__card--current::before {
+  background: linear-gradient(90deg, #FDB515 0%, #FFFFFF 100%);
+}
+
+/* Card Icon */
+.aih-shop-hub__card-icon-wrapper {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 2rem auto;
+  background: linear-gradient(135deg, #F8F9FA 0%, #E8F4F4 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.aih-shop-hub__card:hover .aih-shop-hub__card-icon-wrapper {
+  background: linear-gradient(135deg, #00A3A1 0%, #008C8A 100%);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.aih-shop-hub__card--current .aih-shop-hub__card-icon-wrapper {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.aih-shop-hub__card-icon {
+  font-size: 3rem;
+  transition: all 0.4s ease;
+}
+
+.aih-shop-hub__card:hover .aih-shop-hub__card-icon {
+  transform: scale(1.15);
+}
+
+/* For image icons instead of emojis */
+.aih-shop-hub__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* Card Title */
+.aih-shop-hub__card-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #002855;
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.aih-shop-hub__card:hover .aih-shop-hub__card-title {
+  color: #00A3A1;
+}
+
+.aih-shop-hub__card--current:hover .aih-shop-hub__card-title {
+  color: #FFFFFF;
+}
+
+/* Card Description */
+.aih-shop-hub__card-description {
+  font-size: 1.0625rem;
+  color: #4A4A4A;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Card Link Arrow */
+.aih-shop-hub__card-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #00A3A1;
+  transition: all 0.3s ease;
+}
+
+.aih-shop-hub__card--current .aih-shop-hub__card-arrow {
+  color: #FFFFFF;
+}
+
+.aih-shop-hub__card:hover .aih-shop-hub__card-arrow {
+  gap: 1rem;
+}
+
+.aih-shop-hub__card-arrow-icon {
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.aih-shop-hub__card:hover .aih-shop-hub__card-arrow-icon {
+  transform: translateX(4px);
+}
+
+/* Special styling for Industrial Rubber Service card with badges */
+.aih-shop-hub__card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.aih-shop-hub__badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #F8F9FA;
+  color: #002855;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: 20px;
+  border: 2px solid #00A3A1;
+  transition: all 0.3s ease;
+}
+
+.aih-shop-hub__card:hover .aih-shop-hub__badge {
+  background: #00A3A1;
+  color: #FFFFFF;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .aih-shop-hub__card:hover,
+  .aih-shop-hub__card:hover .aih-shop-hub__card-icon-wrapper,
+  .aih-shop-hub__card:hover .aih-shop-hub__card-icon {
+    transform: none;
+  }
+
+  .aih-shop-hub__card::before {
+    transition: none;
+  }
+}
+
+/* Responsive Breakpoints */
+
+/* Mobile (360px - 767px) */
+@media (max-width: 767px) {
+  .aih-shop-hub {
+    padding: 3rem 1rem;
+  }
+
+  .aih-shop-hub__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .aih-shop-hub__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .aih-shop-hub__card {
+    padding: 2.5rem 2rem;
+  }
+
+  .aih-shop-hub__card-icon-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .aih-shop-hub__card-icon {
+    font-size: 2.5rem;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .aih-shop-hub {
+    padding: 4rem 2rem;
+  }
+
+  .aih-shop-hub__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Small Desktop (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .aih-shop-hub__grid {
+    gap: 2rem;
+  }
+}
+
+/* Editable Text Styling */
+.editable-text {
+  /* Marker class for HubSpot editors */
+}
+</style>
