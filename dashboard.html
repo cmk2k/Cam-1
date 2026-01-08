@@ -353,16 +353,16 @@
         </div>
 
         <div class="data-grid" id="dataGrid">
-            <div class="no-data">Upload an Excel file to view station data</div>
+            <div class="no-data">Upload a spreadsheet to view station data<br><small style="font-size: 1.2rem; color: #555; margin-top: 10px; display: block;">Supports: Excel, Numbers, Google Sheets, CSV, ODS</small></div>
         </div>
     </div>
 
     <!-- Upload Section -->
     <div class="upload-section" id="uploadSection">
         <div class="upload-icon">📊</div>
-        <div class="upload-title">Upload Excel File</div>
+        <div class="upload-title">Upload Spreadsheet</div>
         <div class="file-input-wrapper">
-            <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" />
+            <input type="file" id="fileInput" accept=".xlsx,.xls,.csv,.ods,.numbers,.tsv,.txt" />
             <button class="file-button" onclick="document.getElementById('fileInput').click()">Choose File</button>
         </div>
         <div class="file-name" id="fileName"></div>
@@ -426,11 +426,14 @@
             if (file) {
                 fileNameEl.textContent = file.name;
 
-                // Validate file type
-                if (file.name.endsWith('.xlsx') || file.name.endsWith('.xls') || file.name.endsWith('.csv')) {
+                // Validate file type - supports Excel, Numbers, Sheets, LibreOffice, CSV
+                const validExtensions = ['.xlsx', '.xls', '.csv', '.ods', '.numbers', '.tsv', '.txt'];
+                const isValid = validExtensions.some(ext => file.name.toLowerCase().endsWith(ext));
+
+                if (isValid) {
                     processExcelFile(file);
                 } else {
-                    statusEl.textContent = 'Invalid file type. Please upload Excel or CSV file.';
+                    statusEl.textContent = 'Invalid file type. Supported: Excel, Numbers, Sheets, CSV, ODS';
                     statusEl.className = 'upload-status error';
                     statusEl.style.display = 'block';
                     setTimeout(() => {
