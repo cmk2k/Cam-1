@@ -35,12 +35,54 @@
             background: #252525;
             border-radius: 12px;
             border: 2px solid #333;
+            gap: 40px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 40px;
         }
 
         .header h1 {
             font-size: 3.5rem;
             font-weight: 700;
             letter-spacing: 2px;
+        }
+
+        .rate-legend {
+            display: flex;
+            gap: 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .legend-color.hitting {
+            background: #00ff88;
+        }
+
+        .legend-color.warning {
+            background: #ffcc00;
+        }
+
+        .legend-color.below {
+            background: #ff4444;
+        }
+
+        .legend-text {
+            color: #ccc;
         }
 
         .header-right {
@@ -108,52 +150,12 @@
             background: #00ff88;
         }
 
-        .station-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
         .station-name {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-        }
-
-        .status-icon {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 1.6rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .status-icon.below {
-            background: rgba(255, 68, 68, 0.2);
-            color: #ff4444;
-        }
-
-        .status-icon.warning {
-            background: rgba(255, 204, 0, 0.2);
-            color: #ffcc00;
-        }
-
-        .status-icon.hitting {
-            background: rgba(0, 255, 136, 0.2);
-            color: #00ff88;
-        }
-
-        .status-icon::before {
-            content: '';
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: currentColor;
+            margin-bottom: 20px;
         }
 
         .station-metrics {
@@ -327,7 +329,23 @@
 <body>
     <div class="dashboard">
         <div class="header">
-            <h1>OPERATIONS DASHBOARD</h1>
+            <div class="header-left">
+                <h1>OPERATIONS DASHBOARD</h1>
+                <div class="rate-legend">
+                    <div class="legend-item">
+                        <div class="legend-color hitting"></div>
+                        <div class="legend-text">200+</div>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color warning"></div>
+                        <div class="legend-text">170-199</div>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color below"></div>
+                        <div class="legend-text">Under 170</div>
+                    </div>
+                </div>
+            </div>
             <div class="header-right">
                 <div class="current-time" id="currentTime"></div>
                 <div class="last-updated">Last Updated: <span class="last-updated-time" id="lastUpdate">Never</span></div>
@@ -498,9 +516,9 @@
 
         // Determine status from JPH value
         function determineStatus(jph) {
-            if (jph >= 180) {
+            if (jph >= 200) {
                 return 'hitting';
-            } else if (jph >= 160) {
+            } else if (jph >= 170) {
                 return 'warning';
             } else {
                 return 'below';
@@ -521,14 +539,8 @@
                 const card = document.createElement('div');
                 card.className = `station-card ${station.status}`;
 
-                const statusLabel = station.status === 'below' ? 'BELOW RATE' :
-                                   station.status === 'warning' ? 'WARNING' : 'HITTING RATE';
-
                 card.innerHTML = `
-                    <div class="station-header">
-                        <div class="station-name">${station.station}</div>
-                        <div class="status-icon ${station.status}">${statusLabel}</div>
-                    </div>
+                    <div class="station-name">${station.station}</div>
                     <div class="station-metrics">
                         <div class="metric">
                             <div class="metric-label">JPH</div>
