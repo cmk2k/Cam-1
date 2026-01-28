@@ -1,0 +1,139 @@
+<!-- ============================================================================ -->
+<!-- FINAL - Kroil Clear Landing Page - FOOTER HTML -->
+<!-- INSTANT response, no delays, optimized JavaScript -->
+<!-- ============================================================================ -->
+
+<script>
+(function() {
+  'use strict';
+
+  // Run immediately
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  function init() {
+    const container = document.querySelector('.aih-lp');
+    if (!container) return;
+
+    setupProductSelector();
+    setupAccordions();
+  }
+
+  // ========================================================================
+  // INSTANT Product Selector - NO DELAYS
+  // ========================================================================
+  function setupProductSelector() {
+    const dataEl = document.getElementById('productData');
+    const thumbs = document.querySelectorAll('.thumb');
+    const mainImg = document.getElementById('mainImage');
+    const title = document.getElementById('productTitle');
+    const sku = document.getElementById('productSku');
+    const desc = document.getElementById('productDesc');
+    const specs = document.getElementById('productSpecs');
+    const features = document.getElementById('productFeatures');
+    const apps = document.getElementById('productApps');
+    const buyBtn = document.getElementById('buyBtn');
+
+    if (!dataEl || !thumbs.length) return;
+
+    let products = [];
+    try {
+      products = JSON.parse(dataEl.textContent);
+    } catch (e) {
+      console.error('Product data error:', e);
+      return;
+    }
+
+    function selectProduct(index) {
+      const p = products[index];
+      if (!p) return;
+
+      // Update active thumb INSTANTLY
+      thumbs.forEach(function(t) {
+        t.classList.remove('active');
+      });
+      thumbs[index].classList.add('active');
+
+      // Update image INSTANTLY - no delays
+      if (mainImg) {
+        mainImg.src = p.image;
+        mainImg.alt = p.title;
+      }
+
+      // Update all text content INSTANTLY
+      if (title) title.textContent = p.title;
+      if (sku) sku.textContent = 'SKU: ' + p.sku + ' | Item #' + p.itemNumber;
+      if (desc) desc.textContent = p.description;
+      if (buyBtn) buyBtn.href = p.url;
+
+      // Update specs INSTANTLY
+      if (specs && p.specs) {
+        specs.innerHTML = p.specs.map(function(s) {
+          return '<li><strong>' + s.label + ':</strong> ' + s.value + '</li>';
+        }).join('');
+      }
+
+      // Update features INSTANTLY
+      if (features && p.features) {
+        features.innerHTML = p.features.map(function(f) {
+          return '<li>' + f + '</li>';
+        }).join('');
+      }
+
+      // Update applications INSTANTLY
+      if (apps && p.applications) {
+        apps.innerHTML = '<p>Ideal for use on:</p><ul class="feature-list">' +
+          p.applications.map(function(a) {
+            return '<li>' + a + '</li>';
+          }).join('') + '</ul>';
+      }
+    }
+
+    // Click handlers - INSTANT response
+    thumbs.forEach(function(thumb, i) {
+      thumb.addEventListener('click', function() {
+        selectProduct(i);
+      });
+
+      // Keyboard navigation
+      thumb.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          selectProduct(i);
+        }
+      });
+    });
+
+    // Initialize first product
+    selectProduct(0);
+  }
+
+  // ========================================================================
+  // Accordions - INSTANT toggle
+  // ========================================================================
+  function setupAccordions() {
+    const accordions = document.querySelectorAll('.accordion');
+
+    accordions.forEach(function(acc) {
+      const btn = acc.querySelector('.accordion-btn');
+      if (!btn) return;
+
+      btn.addEventListener('click', function() {
+        acc.classList.toggle('active');
+      });
+
+      // Keyboard support
+      btn.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          btn.click();
+        }
+      });
+    });
+  }
+
+})();
+</script>

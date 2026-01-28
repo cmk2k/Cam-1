@@ -1,0 +1,717 @@
+<!-- ============================================================================ -->
+<!-- FINAL - Kroil Clear Landing Page - HEAD HTML -->
+<!-- Instant loading, Applied Industrial style guide, mobile optimized -->
+<!-- ============================================================================ -->
+
+<style>
+/* ========================================================================== */
+/* Applied Industrial Technologies - Kroil Clear Landing Page */
+/* Optimized for speed, style guide compliance, mobile responsive */
+/* ========================================================================== */
+
+.aih-lp {
+  --primary: #00838F;
+  --primary-dark: #005662;
+  --accent: #FDB71A;
+  --navy: #1A2332;
+  --gray-100: #F5F5F5;
+  --gray-200: #EEEEEE;
+  --gray-300: #E0E0E0;
+  --gray-700: #616161;
+  --gray-800: #424242;
+  --white: #FFFFFF;
+}
+
+.aih-lp * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.aih-lp {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--gray-800);
+}
+
+/* Typography - Applied Industrial Style Guide */
+.aih-lp h1, .aih-lp h2, .aih-lp h3, .aih-lp h4 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.aih-lp h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+.aih-lp h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+.aih-lp h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+.aih-lp h4 { font-size: clamp(1rem, 2.5vw, 1.35rem); }
+.aih-lp p { margin-bottom: 1rem; font-size: 1rem; }
+
+/* Layout */
+.aih-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.aih-section {
+  padding: 4rem 0;
+}
+
+/* ========================================================================== */
+/* INSTANT BUTTONS - No lag */
+/* ========================================================================== */
+.aih-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.aih-btn-primary {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.aih-btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 131, 143, 0.3);
+}
+
+.aih-btn-secondary {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.aih-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.aih-btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.aih-btn-outline:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.aih-btn-lg { padding: 1.125rem 2.5rem; }
+.aih-btn-full { width: 100%; }
+
+/* ========================================================================== */
+/* HERO SECTION - Fast loading */
+/* ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    rgba(26, 35, 60, 0.7) 0%,
+    rgba(26, 35, 60, 0.4) 60%,
+    transparent 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-text {
+  color: var(--white);
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-badge {
+  background: rgba(0, 131, 143, 0.3);
+  color: var(--white);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.hero h2 {
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.hero-stat-label {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+/* ========================================================================== */
+/* MODULE 2 - Instant, optimized, style guide compliant */
+/* ========================================================================== */
+
+.section-light {
+  background: var(--gray-100);
+}
+
+.product-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Product Image */
+.product-image-area {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 3rem;
+  border: 1px solid var(--gray-300);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.product-badge {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-image-area img {
+  max-width: 100%;
+  max-height: 450px;
+  object-fit: contain;
+}
+
+/* Thumbnails */
+.product-thumbs {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.thumb {
+  width: 85px;
+  height: 85px;
+  background: var(--white);
+  border: 2px solid var(--gray-300);
+  border-radius: 8px;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.thumb:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 131, 143, 0.2);
+}
+
+.thumb.active {
+  border-color: var(--primary);
+  background: rgba(0, 131, 143, 0.08);
+  box-shadow: 0 0 0 3px rgba(0, 131, 143, 0.15);
+}
+
+.thumb img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.thumb-label {
+  font-size: 0.7rem;
+  color: var(--gray-700);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.thumb.active .thumb-label {
+  color: var(--primary);
+}
+
+/* Product Info - Style Guide Typography */
+.product-info {
+  color: var(--gray-800);
+}
+
+.product-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--gray-300);
+}
+
+.product-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.3;
+}
+
+.product-sku {
+  font-size: 0.9rem;
+  color: var(--primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* ========================================================================== */
+/* ACCORDIONS - Applied Industrial Style */
+/* ========================================================================== */
+.accordions {
+  margin-bottom: 2rem;
+}
+
+.accordion {
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.accordion:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--white);
+  border: none;
+  color: var(--navy);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: left;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition: all 0.2s ease;
+}
+
+.accordion-btn:hover {
+  background: var(--gray-100);
+  color: var(--primary);
+}
+
+.accordion.active .accordion-btn {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.accordion-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 131, 143, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.accordion.active .accordion-icon {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.accordion-arrow {
+  margin-left: auto;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+  opacity: 0.7;
+}
+
+.accordion.active .accordion-arrow {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  display: none;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  background: var(--white);
+}
+
+.accordion.active .accordion-content {
+  display: block;
+}
+
+.accordion-content p {
+  color: var(--gray-700);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Specs List */
+.specs-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.specs-list li {
+  font-size: 0.9rem;
+  color: var(--gray-700);
+  line-height: 1.6;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.specs-list strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Feature List */
+.feature-list {
+  list-style: none;
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--gray-700);
+  line-height: 1.6;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.feature-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* Trust Badges */
+.trust-badges {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem 0;
+  border-top: 2px solid var(--gray-300);
+  border-bottom: 2px solid var(--gray-300);
+}
+
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.trust-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.trust-badge span {
+  font-size: 0.8rem;
+  color: var(--gray-700);
+  font-weight: 600;
+  line-height: 1.3;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* CTA Buttons */
+.product-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ========================================================================== */
+/* MOBILE & TABLET RESPONSIVE */
+/* ========================================================================== */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .product-selector {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .product-image-area {
+    min-height: 400px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .aih-container {
+    padding: 0 1.5rem;
+  }
+
+  .aih-section {
+    padding: 3rem 0;
+  }
+
+  .hero {
+    min-height: 500px;
+    padding: 2rem 0;
+  }
+
+  .hero-content {
+    gap: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-stats {
+    gap: 1.5rem;
+  }
+
+  .hero-stat-number {
+    font-size: 1.75rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons .aih-btn {
+    width: 100%;
+  }
+
+  .product-selector {
+    gap: 2rem;
+  }
+
+  .product-image-area {
+    min-height: 350px;
+    padding: 2rem;
+  }
+
+  .product-thumbs {
+    gap: 0.5rem;
+  }
+
+  .thumb {
+    width: 70px;
+    height: 70px;
+  }
+
+  .thumb img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .thumb-label {
+    font-size: 0.65rem;
+  }
+
+  .product-title {
+    font-size: 1.5rem;
+  }
+
+  .specs-list {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-badges {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .accordion-btn {
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .accordion-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .aih-container {
+    padding: 0 1rem;
+  }
+
+  .hero {
+    min-height: 450px;
+  }
+
+  .hero-stats {
+    gap: 1rem;
+  }
+
+  .hero-stat-number {
+    font-size: 1.5rem;
+  }
+
+  .product-image-area {
+    min-height: 300px;
+    padding: 1.5rem;
+  }
+
+  .product-image-area img {
+    max-height: 350px;
+  }
+
+  .thumb {
+    width: 60px;
+    height: 60px;
+  }
+
+  .thumb img {
+    width: 35px;
+    height: 35px;
+  }
+}
+</style>
