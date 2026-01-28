@@ -1,0 +1,305 @@
+<!-- ============================================================================ -->
+<!-- Kroil Clear Penetrant (Food Grade) Landing Page - FOOTER HTML -->
+<!-- Applied Industrial Technologies -->
+<!-- Copy this entire file into HubSpot FOOTER HTML section -->
+<!-- ============================================================================ -->
+
+<script>
+// Optimized background image loading with immediate fallback
+(function() {
+  'use strict';
+
+  // Immediately show fallback color, then load image
+  const bg = document.querySelector('.aih-hero-bg-image');
+  if (bg) {
+    const imgUrl = bg.style.backgroundImage.match(/url\(['"]?(.+?)['"]?\)/);
+    if (imgUrl && imgUrl[1]) {
+      const img = new Image();
+      img.onload = function() {
+        bg.classList.add('loaded');
+      };
+      img.onerror = function() {
+        // If image fails to load, still show the gradient overlay
+        bg.classList.add('loaded');
+      };
+      // Start loading the image
+      img.src = imgUrl[1];
+    } else {
+      // No background image, just show the fallback
+      bg.classList.add('loaded');
+    }
+  }
+})();
+</script>
+
+<script>
+(function() {
+    'use strict';
+
+    // Scoped to .aih-lp to avoid global conflicts
+    const pageContainer = document.querySelector('.aih-lp');
+    if (!pageContainer) return;
+
+    /* ========================================================================== */
+    /* Sticky CTA Bar on Scroll */
+    /* ========================================================================== */
+    const stickyCta = document.querySelector('#stickyCta');
+    const stickyCtaClose = document.getElementById('stickyCtaClose');
+    const hero = pageContainer.querySelector('.aih-hero-redesigned') || pageContainer.querySelector('.aih-hero');
+    const footer = pageContainer.querySelector('.aih-final-cta') || document.querySelector('footer') || document.querySelector('[class*="footer"]');
+
+    if (stickyCta && hero) {
+        let heroHeight = hero.offsetHeight;
+        let ticking = false;
+        let isClosed = false;
+
+        const updateStickyCta = function() {
+            // Don't show if user closed it
+            if (isClosed) {
+                stickyCta.classList.remove('visible');
+                return;
+            }
+
+            const scrollPos = window.pageYOffset;
+            const windowHeight = window.innerHeight;
+
+            // Check if past hero
+            const pastHero = scrollPos > heroHeight;
+
+            // Check if footer is visible (hide sticky CTA to avoid overlap)
+            let footerVisible = false;
+            if (footer) {
+                const footerRect = footer.getBoundingClientRect();
+                footerVisible = footerRect.top < windowHeight;
+            }
+
+            // Show sticky CTA if past hero and footer not visible
+            if (pastHero && !footerVisible) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+
+            ticking = false;
+        };
+
+        // Close button handler
+        if (stickyCtaClose) {
+            stickyCtaClose.addEventListener('click', function() {
+                isClosed = true;
+                stickyCta.classList.add('hidden');
+                stickyCta.classList.remove('visible');
+            });
+        }
+
+        // Throttled scroll handler for better performance
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(updateStickyCta);
+                ticking = true;
+            }
+        });
+
+        // Update hero height on resize
+        window.addEventListener('resize', function() {
+            heroHeight = hero.offsetHeight;
+        });
+
+        // Initial check
+        updateStickyCta();
+    }
+
+    /* ========================================================================== */
+    /* Scroll Reveal Animations - Enhanced with Intersection Observer */
+    /* ========================================================================== */
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Get all elements with animation classes
+    const revealElements = pageContainer.querySelectorAll('.aih-scroll-reveal, .aih-fade-in-left, .aih-fade-in-right, .aih-scale-up');
+
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+        // Use Intersection Observer for better performance
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(element => observer.observe(element));
+    } else if (!prefersReducedMotion) {
+        // Fallback for browsers without Intersection Observer
+        const revealOnScroll = function() {
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('revealed');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+    } else {
+        // If reduced motion is preferred, reveal all immediately
+        revealElements.forEach(element => element.classList.add('revealed'));
+    }
+
+    /* ========================================================================== */
+    /* Smooth Scroll for Anchor Links */
+    /* ========================================================================== */
+    pageContainer.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#' || href.length <= 1) return;
+
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                const offsetTop = target.offsetTop - 80; // Account for any sticky header
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                });
+            }
+        });
+    });
+
+    /* ========================================================================== */
+    /* Interactive Product Selector */
+    /* ========================================================================== */
+    const productDataEl = document.getElementById('kroilProductData');
+    const thumbnails = document.querySelectorAll('.aih-thumbnail');
+    const mainImage = document.getElementById('productMainImage');
+    const productTitle = document.getElementById('productTitle');
+    const productSku = document.getElementById('productSku');
+    const productDescription = document.getElementById('productDescription');
+    const productSpecs = document.getElementById('productSpecs');
+    const productBuyNow = document.getElementById('productBuyNow');
+
+    if (productDataEl && thumbnails.length > 0) {
+        let products = [];
+        try {
+            products = JSON.parse(productDataEl.textContent);
+        } catch (e) {
+            console.error('Error parsing product data:', e);
+        }
+
+        // Product selection handler
+        const selectProduct = function(index) {
+            const product = products[index];
+            if (!product) return;
+
+            // Update active thumbnail
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            thumbnails[index].classList.add('active');
+
+            // Animate image transition
+            if (mainImage) {
+                mainImage.classList.add('switching');
+                setTimeout(() => {
+                    mainImage.src = product.image;
+                    mainImage.alt = product.title;
+                    mainImage.classList.remove('switching');
+                }, 200);
+            }
+
+            // Update product info
+            if (productTitle) productTitle.textContent = product.title;
+            if (productSku) productSku.textContent = 'SKU: ' + product.sku;
+            if (productDescription) productDescription.textContent = product.description;
+
+            // Update specs
+            if (productSpecs && product.specs) {
+                productSpecs.innerHTML = product.specs.map(spec =>
+                    '<li><strong>' + spec.label + ':</strong> ' + spec.value + '</li>'
+                ).join('');
+            }
+
+            // Update buy button URL
+            if (productBuyNow) productBuyNow.href = product.url;
+        };
+
+        // Add click handlers to thumbnails
+        thumbnails.forEach((thumb, index) => {
+            thumb.addEventListener('click', function() {
+                selectProduct(index);
+            });
+
+            // Keyboard accessibility
+            thumb.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    selectProduct(index);
+                }
+            });
+        });
+
+        // Keyboard navigation with arrow keys
+        const thumbnailContainer = document.querySelector('.aih-product-thumbnails');
+        if (thumbnailContainer) {
+            thumbnailContainer.addEventListener('keydown', function(e) {
+                const activeThumb = document.querySelector('.aih-thumbnail.active');
+                const currentIndex = parseInt(activeThumb?.dataset.product || 0);
+
+                if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    const nextIndex = (currentIndex + 1) % products.length;
+                    selectProduct(nextIndex);
+                    thumbnails[nextIndex].focus();
+                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    const prevIndex = (currentIndex - 1 + products.length) % products.length;
+                    selectProduct(prevIndex);
+                    thumbnails[prevIndex].focus();
+                }
+            });
+        }
+    }
+
+    /* ========================================================================== */
+    /* Accordion Functionality */
+    /* ========================================================================== */
+    const accordions = document.querySelectorAll('.aih-accordion');
+
+    accordions.forEach(accordion => {
+        const header = accordion.querySelector('.aih-accordion-header');
+
+        if (header) {
+            header.addEventListener('click', function() {
+                const isActive = accordion.classList.contains('active');
+
+                // Close all accordions (optional - remove this block for independent accordions)
+                // accordions.forEach(acc => acc.classList.remove('active'));
+
+                // Toggle current accordion
+                if (isActive) {
+                    accordion.classList.remove('active');
+                    header.setAttribute('aria-expanded', 'false');
+                } else {
+                    accordion.classList.add('active');
+                    header.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            // Keyboard accessibility
+            header.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    header.click();
+                }
+            });
+        }
+    });
+
+})();
+</script>
