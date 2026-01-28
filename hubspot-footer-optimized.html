@@ -1,0 +1,166 @@
+<!-- ============================================================================ -->
+<!-- OPTIMIZED Kroil Clear Landing Page - FOOTER HTML -->
+<!-- SIMPLE, FAST, RELIABLE JavaScript -->
+<!-- ============================================================================ -->
+
+<script>
+(function() {
+  'use strict';
+
+  // Wait for DOM to be fully loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  function init() {
+    // Only run if .aih-lp container exists
+    const pageContainer = document.querySelector('.aih-lp');
+    if (!pageContainer) return;
+
+    // Initialize product selector
+    initProductSelector();
+
+    // Initialize accordions
+    initAccordions();
+  }
+
+  /* ========================================================================== */
+  /* PRODUCT SELECTOR - Simplified & Fast */
+  /* ========================================================================== */
+  function initProductSelector() {
+    const productDataEl = document.getElementById('kroilProductData');
+    const thumbnails = document.querySelectorAll('.aih-thumbnail');
+    const mainImage = document.getElementById('productMainImage');
+    const productTitle = document.getElementById('productTitle');
+    const productSku = document.getElementById('productSku');
+    const productDescription = document.getElementById('productDescription');
+    const productSpecs = document.getElementById('productSpecs');
+    const productFeatures = document.getElementById('productFeatures');
+    const productApplications = document.getElementById('productApplications');
+    const productBuyNow = document.getElementById('productBuyNow');
+
+    // Exit if essential elements don't exist
+    if (!productDataEl || thumbnails.length === 0) return;
+
+    let products = [];
+    try {
+      products = JSON.parse(productDataEl.textContent);
+    } catch (e) {
+      console.error('Error parsing product data:', e);
+      return;
+    }
+
+    // Product selection function
+    function selectProduct(index) {
+      const product = products[index];
+      if (!product) return;
+
+      // Update active thumbnail
+      thumbnails.forEach(function(thumb) {
+        thumb.classList.remove('active');
+      });
+      thumbnails[index].classList.add('active');
+
+      // Update main image with transition
+      if (mainImage) {
+        mainImage.classList.add('switching');
+        setTimeout(function() {
+          mainImage.src = product.image;
+          mainImage.alt = product.title;
+          mainImage.classList.remove('switching');
+        }, 150);
+      }
+
+      // Update product info
+      if (productTitle) productTitle.textContent = product.title;
+      if (productSku) productSku.textContent = 'SKU: ' + product.sku + ' | Item #' + product.itemNumber;
+
+      // Update description
+      if (productDescription) {
+        productDescription.textContent = product.description;
+      }
+
+      // Update specs
+      if (productSpecs && product.specs) {
+        productSpecs.innerHTML = product.specs.map(function(spec) {
+          return '<li><strong>' + spec.label + ':</strong> ' + spec.value + '</li>';
+        }).join('');
+      }
+
+      // Update features
+      if (productFeatures && product.features) {
+        productFeatures.innerHTML = product.features.map(function(feature) {
+          return '<li>' + feature + '</li>';
+        }).join('');
+      }
+
+      // Update applications
+      if (productApplications && product.applications) {
+        productApplications.innerHTML = '<p>Ideal for use on:</p><ul class="aih-feature-list">' +
+          product.applications.map(function(app) {
+            return '<li>' + app + '</li>';
+          }).join('') +
+          '</ul>';
+      }
+
+      // Update buy button
+      if (productBuyNow) productBuyNow.href = product.url;
+    }
+
+    // Add click handlers to thumbnails
+    thumbnails.forEach(function(thumb, index) {
+      thumb.addEventListener('click', function() {
+        selectProduct(index);
+      });
+
+      // Keyboard support
+      thumb.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          selectProduct(index);
+        }
+      });
+    });
+
+    // Initialize with first product
+    selectProduct(0);
+  }
+
+  /* ========================================================================== */
+  /* ACCORDIONS - Simple Toggle */
+  /* ========================================================================== */
+  function initAccordions() {
+    const accordions = document.querySelectorAll('.aih-accordion');
+
+    accordions.forEach(function(accordion) {
+      const header = accordion.querySelector('.aih-accordion-header');
+
+      if (header) {
+        header.addEventListener('click', function() {
+          const isActive = accordion.classList.contains('active');
+
+          // Toggle accordion
+          if (isActive) {
+            accordion.classList.remove('active');
+            header.setAttribute('aria-expanded', 'false');
+          } else {
+            accordion.classList.add('active');
+            header.setAttribute('aria-expanded', 'true');
+          }
+        });
+
+        // Keyboard support
+        header.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            header.click();
+          }
+        });
+      }
+    });
+  }
+
+})();
+</script>
