@@ -1,0 +1,152 @@
+<!-- ============================================================================ -->
+<!-- FIXED - Kroil Clear Landing Page - FOOTER HTML -->
+<!-- Fixed: Image switching works properly, smooth transitions -->
+<!-- ============================================================================ -->
+
+<script>
+(function() {
+  'use strict';
+
+  // Run immediately when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  function init() {
+    const container = document.querySelector('.aih-lp');
+    if (!container) return;
+
+    setupProductSelector();
+    setupAccordions();
+  }
+
+  // ========================================================================
+  // FIXED: Product selector with working image switching
+  // ========================================================================
+  function setupProductSelector() {
+    const dataEl = document.getElementById('productData');
+    const thumbs = document.querySelectorAll('.thumb');
+    const mainImg = document.getElementById('mainImage');
+    const title = document.getElementById('productTitle');
+    const sku = document.getElementById('productSku');
+    const desc = document.getElementById('productDesc');
+    const specs = document.getElementById('productSpecs');
+    const features = document.getElementById('productFeatures');
+    const apps = document.getElementById('productApps');
+    const buyBtn = document.getElementById('buyBtn');
+
+    if (!dataEl || !thumbs.length) return;
+
+    let products = [];
+    try {
+      products = JSON.parse(dataEl.textContent);
+    } catch (e) {
+      console.error('Product data error:', e);
+      return;
+    }
+
+    function selectProduct(index) {
+      const p = products[index];
+      if (!p) return;
+
+      console.log('Selecting product:', index, p.sku);  // Debug log
+
+      // Update active thumb
+      thumbs.forEach(function(t) {
+        t.classList.remove('active');
+      });
+      thumbs[index].classList.add('active');
+
+      // FIXED: Image switching with transition
+      if (mainImg) {
+        mainImg.classList.add('switching');
+
+        // Small delay for smooth transition
+        setTimeout(function() {
+          mainImg.src = p.image;
+          mainImg.alt = p.title;
+
+          // Remove switching class after image loads
+          setTimeout(function() {
+            mainImg.classList.remove('switching');
+          }, 100);
+        }, 150);
+      }
+
+      // Update text content
+      if (title) title.textContent = p.title;
+      if (sku) sku.textContent = 'SKU: ' + p.sku + ' | Item #' + p.itemNumber;
+      if (desc) desc.textContent = p.description;
+      if (buyBtn) buyBtn.href = p.url;
+
+      // Update specs
+      if (specs && p.specs) {
+        specs.innerHTML = p.specs.map(function(s) {
+          return '<li><strong>' + s.label + ':</strong> ' + s.value + '</li>';
+        }).join('');
+      }
+
+      // Update features
+      if (features && p.features) {
+        features.innerHTML = p.features.map(function(f) {
+          return '<li>' + f + '</li>';
+        }).join('');
+      }
+
+      // Update applications
+      if (apps && p.applications) {
+        apps.innerHTML = '<p>Ideal for use on:</p><ul class="feature-list">' +
+          p.applications.map(function(a) {
+            return '<li>' + a + '</li>';
+          }).join('') + '</ul>';
+      }
+    }
+
+    // FIXED: Click handlers with proper event binding
+    thumbs.forEach(function(thumb, i) {
+      thumb.addEventListener('click', function() {
+        selectProduct(i);
+      });
+
+      // Also support keyboard navigation
+      thumb.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          selectProduct(i);
+        }
+      });
+    });
+
+    // Initialize first product
+    console.log('Initializing with product 0');
+    selectProduct(0);
+  }
+
+  // ========================================================================
+  // Accordions - Simple toggle
+  // ========================================================================
+  function setupAccordions() {
+    const accordions = document.querySelectorAll('.accordion');
+
+    accordions.forEach(function(acc) {
+      const btn = acc.querySelector('.accordion-btn');
+      if (!btn) return;
+
+      btn.addEventListener('click', function() {
+        acc.classList.toggle('active');
+      });
+
+      // Keyboard support
+      btn.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          btn.click();
+        }
+      });
+    });
+  }
+
+})();
+</script>
