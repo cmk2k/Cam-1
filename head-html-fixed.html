@@ -502,16 +502,16 @@ html { scroll-behavior: smooth; }
 }
 
 /* ========================================================================== */
-/* MODULE 3: STATS SECTION - FIXED AND IMPROVED */
+/* MODULE 3: STATS SECTION - LIGHT MODE WITH TEAL ACCENTS */
 /* ========================================================================== */
 .stats-section {
-  background: var(--navy);
-  color: var(--white);
+  background: var(--gray-100);
+  color: var(--gray-800);
 }
 
 .stats-section-light {
-  background: var(--navy);
-  color: var(--white);
+  background: var(--gray-100);
+  color: var(--gray-800);
 }
 
 .stats-header {
@@ -520,12 +520,12 @@ html { scroll-behavior: smooth; }
 }
 
 .stats-header h2 {
-  color: var(--white);
+  color: var(--navy);
   margin-bottom: 0.75rem;
 }
 
 .stats-header p {
-  color: rgba(255,255,255,0.85);
+  color: var(--gray-700);
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto;
@@ -539,26 +539,26 @@ html { scroll-behavior: smooth; }
 }
 
 .stat-card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--white);
+  border: 2px solid var(--gray-200);
   border-radius: var(--radius);
   padding: 2rem 1.5rem;
   text-align: center;
   transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .stat-card:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(253, 183, 26, 0.3);
+  background: var(--white);
+  border-color: var(--primary);
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: var(--shadow-md);
 }
 
 .stat-number {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--primary);
   display: block;
   margin-bottom: 0.5rem;
   line-height: 1;
@@ -576,13 +576,13 @@ html { scroll-behavior: smooth; }
 .stat-label {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--white);
+  color: var(--navy);
   margin-bottom: 0.25rem;
 }
 
 .stat-sublabel {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.6);
+  color: var(--gray-600);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -596,27 +596,28 @@ html { scroll-behavior: smooth; }
 }
 
 .stats-text {
-  color: rgba(255,255,255,0.9);
+  color: var(--gray-700);
   font-size: 1rem;
   line-height: 1.8;
 }
 
 .stats-text strong {
-  color: var(--white);
+  color: var(--navy);
   font-weight: 700;
 }
 
 .stats-image-wrapper {
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--gray-200);
   transition: all 0.3s ease;
 }
 
 .stats-image-wrapper:hover {
   transform: scale(1.02);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
 }
 
 .stats-image-wrapper img {
@@ -627,7 +628,7 @@ html { scroll-behavior: smooth; }
 }
 
 .industry-header {
-  color: var(--accent);
+  color: var(--primary);
   margin: 2rem 0 1rem;
   font-size: 1rem;
   text-transform: uppercase;
@@ -643,19 +644,19 @@ html { scroll-behavior: smooth; }
 }
 
 .industry-item {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
   padding: 0.75rem 1rem;
   border-radius: 6px;
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.9);
+  color: var(--gray-700);
   font-weight: 500;
   transition: all 0.2s ease;
 }
 
 .industry-item:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: var(--accent);
+  background: var(--primary-light);
+  border-color: var(--primary);
   transform: translateX(5px);
 }
 
@@ -665,17 +666,17 @@ html { scroll-behavior: smooth; }
 }
 
 .stats-cta .aih-btn {
-  background: var(--accent);
-  color: var(--navy);
+  background: var(--primary);
+  color: var(--white);
   border: none;
   padding: 1.125rem 2.5rem;
   font-size: 1rem;
 }
 
 .stats-cta .aih-btn:hover {
-  background: #FFC940;
+  background: var(--primary-dark);
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(253, 183, 26, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 131, 143, 0.4);
 }
 
 /* ========================================================================== */
