@@ -1,0 +1,157 @@
+<!-- ============================================================================ -->
+<!-- MODULE 3: THE REAL COST OF DOWNTIME - FIXED -->
+<!-- Clean structure, no embedded styles, proper semantic HTML -->
+<!-- ============================================================================ -->
+
+<div class="aih-lp">
+  <section class="aih-section stats-section-light">
+    <div class="aih-container">
+
+      <!-- Header -->
+      <div class="stats-header">
+        <h2>The Real Cost of Downtime</h2>
+        <p>In food and beverage plants, reliable maintenance isn't optional. It's essential for keeping production moving.</p>
+      </div>
+
+      <!-- Stats Grid with Counter Animation -->
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat-card">
+          <div class="stat-number animate" data-target="6.5" data-prefix="$" data-suffix="T+" data-decimals="1">$6.5T+</div>
+          <div class="stat-label">Global F&amp;B Market</div>
+          <div class="stat-sublabel">2023 Industry Size</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number animate" data-target="2" data-prefix="$" data-suffix="B+" data-decimals="0">$2B+</div>
+          <div class="stat-label">Annual Corrosion Costs</div>
+          <div class="stat-sublabel">US Food Processing</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number animate" data-target="4" data-prefix="$" data-suffix="K-30K" data-decimals="0">$4K-30K</div>
+          <div class="stat-label">Hourly Downtime Cost</div>
+          <div class="stat-sublabel">F&amp;B Manufacturing</div>
+        </div>
+      </div>
+
+      <!-- Content Grid: Text Left, Image Right -->
+      <div class="stats-content">
+
+        <!-- Left: Text Content -->
+        <div>
+          <div class="stats-text">
+            <p>With over <strong>42,000 food and beverage processing plants</strong> running nonstop in the U.S., equipment failures are common. Even small issues like worn chains, switches, or rotating parts can disrupt production.</p>
+
+            <p>These environments are highly corrosive due to frequent cleaning and harsh ingredients. Without proper maintenance, equipment can become a source of contamination that affects product quality.</p>
+
+            <p><strong>Kroil Clear</strong> meets NSF-H1 and Kosher standards, giving maintenance teams the trusted tools they need to work quickly, cleanly, and safely.</p>
+          </div>
+
+          <h4 class="industry-header">Built for these environments</h4>
+          <div class="industry-list">
+            <div class="industry-item">Food Processing</div>
+            <div class="industry-item">Beverage Production</div>
+            <div class="industry-item">Packaging Manufacturing</div>
+            <div class="industry-item">Sports Venues</div>
+            <div class="industry-item">Amusement Parks</div>
+            <div class="industry-item">Hospitality</div>
+            <div class="industry-item">Pharmaceuticals</div>
+            <div class="industry-item">Textile Production</div>
+            <div class="industry-item">HVAC Systems</div>
+            <div class="industry-item">Commercial Kitchens</div>
+          </div>
+
+          <!-- CTA -->
+          <div class="stats-cta">
+            <a href="https://www.applied.com/search?text=kroil+clear" class="aih-btn aih-btn-lg" target="_blank" rel="noopener">
+              Shop All Kroil Clear Products →
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Image Area -->
+        <div class="stats-image-wrapper">
+          <!-- EDITABLE: Replace with your F&B facility/equipment image -->
+          <img
+            src="https://6847819.fs1.hubspotusercontent-na1.net/hubfs/6847819/PROVEN%20PRODUCTS%20FOR%20FOOD%20AND%20BEVERAGE%20MANUFACTURING%20(1).png"
+            alt="Food and Beverage Manufacturing Equipment"
+            loading="lazy">
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- Counter Animation Script -->
+<script>
+(function() {
+  'use strict';
+
+  var statsGrid = document.getElementById('statsGrid');
+  if (!statsGrid) return;
+
+  var statNumbers = statsGrid.querySelectorAll('.stat-number');
+  var animated = false;
+
+  function animateCounters() {
+    if (animated) return;
+    animated = true;
+
+    statNumbers.forEach(function(el, index) {
+      setTimeout(function() {
+        el.classList.add('animate');
+        countUp(el);
+      }, index * 200);
+    });
+  }
+
+  function countUp(el) {
+    var target = parseFloat(el.dataset.target) || 0;
+    var prefix = el.dataset.prefix || '';
+    var suffix = el.dataset.suffix || '';
+    var decimals = parseInt(el.dataset.decimals) || 0;
+    var duration = 2000;
+    var start = 0;
+    var startTime = null;
+
+    function easeOut(t) {
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    function update(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var current = start + (target - start) * easeOut(progress);
+
+      if (decimals > 0) {
+        el.textContent = prefix + current.toFixed(decimals) + suffix;
+      } else {
+        el.textContent = prefix + Math.round(current) + suffix;
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  // Intersection Observer to trigger animation when visible
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          animateCounters();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(statsGrid);
+  } else {
+    // Fallback for browsers without IntersectionObserver
+    animateCounters();
+  }
+})();
+</script>
