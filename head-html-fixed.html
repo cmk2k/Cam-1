@@ -505,13 +505,13 @@ html { scroll-behavior: smooth; }
 /* MODULE 3: STATS SECTION - COLORFUL WITH TEAL GRADIENTS */
 /* ========================================================================== */
 .stats-section {
-  background: linear-gradient(135deg, #E8F5F7 0%, #F0F9FA 100%);
+  background: var(--gray-100);
   color: var(--gray-800);
   position: relative;
 }
 
 .stats-section-light {
-  background: linear-gradient(135deg, #E8F5F7 0%, #F0F9FA 100%);
+  background: var(--gray-100);
   color: var(--gray-800);
 }
 
@@ -522,7 +522,7 @@ html { scroll-behavior: smooth; }
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--primary) 0%, #00A5B5 50%, var(--primary) 100%);
+  background: var(--primary);
 }
 
 .stats-header {
@@ -546,7 +546,7 @@ html { scroll-behavior: smooth; }
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, var(--primary), #00A5B5);
+  background: var(--primary);
   border-radius: 2px;
 }
 
@@ -567,7 +567,7 @@ html { scroll-behavior: smooth; }
 
 /* Colorful gradient stat cards */
 .stat-card {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F0FAFB 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #E8F5F7 100%);
   border: none;
   border-left: 4px solid var(--primary);
   border-radius: var(--radius);
@@ -591,22 +591,6 @@ html { scroll-behavior: smooth; }
   transform: translate(30%, -30%);
 }
 
-/* Different colors for each card */
-.stat-card:nth-child(1) {
-  border-left-color: #00838F;
-  background: linear-gradient(135deg, #FFFFFF 0%, #E8F5F7 100%);
-}
-
-.stat-card:nth-child(2) {
-  border-left-color: #00A5B5;
-  background: linear-gradient(135deg, #FFFFFF 0%, #E6F7F9 100%);
-}
-
-.stat-card:nth-child(3) {
-  border-left-color: #006B77;
-  background: linear-gradient(135deg, #FFFFFF 0%, #EAF6F8 100%);
-}
-
 .stat-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 25px rgba(0, 131, 143, 0.2);
@@ -621,19 +605,6 @@ html { scroll-behavior: smooth; }
   margin-bottom: 0.5rem;
   line-height: 1;
   text-shadow: 0 2px 4px rgba(0, 131, 143, 0.1);
-}
-
-/* Different number colors for visual variety */
-.stat-card:nth-child(1) .stat-number {
-  color: #00838F;
-}
-
-.stat-card:nth-child(2) .stat-number {
-  color: #00A5B5;
-}
-
-.stat-card:nth-child(3) .stat-number {
-  color: #006B77;
 }
 
 .stat-number.animate {
@@ -692,13 +663,10 @@ html { scroll-behavior: smooth; }
   position: absolute;
   inset: 0;
   border-radius: var(--radius);
-  border: 2px solid transparent;
-  background: linear-gradient(135deg, var(--primary), #00A5B5) border-box;
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
+  border: 2px solid var(--primary);
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .stats-image-wrapper:hover {
@@ -719,7 +687,7 @@ html { scroll-behavior: smooth; }
 
 .industry-header {
   color: var(--white);
-  background: linear-gradient(90deg, var(--primary), #00A5B5);
+  background: var(--primary);
   margin: 2rem 0 1rem;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -781,7 +749,7 @@ html { scroll-behavior: smooth; }
 }
 
 .stats-cta .aih-btn {
-  background: linear-gradient(135deg, var(--primary) 0%, #00A5B5 100%);
+  background: var(--primary);
   color: var(--white);
   border: none;
   padding: 1.25rem 3rem;
@@ -807,7 +775,7 @@ html { scroll-behavior: smooth; }
 }
 
 .stats-cta .aih-btn:hover {
-  background: linear-gradient(135deg, #006B77 0%, #00838F 100%);
+  background: var(--primary-dark);
   transform: translateY(-3px);
   box-shadow: 0 8px 30px rgba(0, 131, 143, 0.4);
 }
